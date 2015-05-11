@@ -1,0 +1,93 @@
+body {
+	background: url(/struckaxiom.png) center center !important;
+}
+
+.account-masthead {
+        background: none !important;
+        background-color: #171514 !important;
+}
+
+.account-masthead .account ul li {
+        border: none !important;
+}
+
+.masthead {
+        background: none !important;
+        background-color: #171514 !important;
+        padding: 5px 0px !important;
+}
+
+.masthead .nav a {
+        color: #ffffff !important;
+}
+
+.masthead .nav a:hover, .masthead .nav li.active a {
+        color: #ffffff !important;
+}
+
+.gravatar {
+        display: none !important;
+}
+
+.box, .wrapper {
+        -webkit-border-radius: 0px !important;
+        -moz-border-radius: 0px !important;
+        border-radius: 0px !important;
+}
+/*
+.toolbar .breadcrumb, .toolbar .breadcrumb a {
+	color: #FFFFFF !important;
+}
+
+.breadcrumb > li {
+	text-shadow: 0 1px 0 #171514 !important;
+}
+*/
+[role=main], .main {
+        background: none !important;
+}
+
+.homepage .module-search .module-content, .homepage .module-search .tags {
+        border-radius: 0px !important;
+}
+
+.homepage .module-search .module-content {
+	background-color: #7B7877 !important;
+}
+
+.homepage .module-search .tags {
+	background-color: #171514 !important;
+}
+
+.site-footer {
+        background: none !important;
+        color: #ffffff !important;
+}
+
+.site-footer .container {
+	min-height: 100px !important;
+}
+
+.site-footer a {
+        color: #ffffff !important;
+}
+
+.site-footer .footer-links {
+        width: 940px !important;
+}
+
+.site-footer .footer-links ul {
+        width: auto !important;
+}
+
+.site-footer .footer-links li {
+        float: left !important;
+        height: 30px !important;
+        line-height: 30px !important;
+        padding-right: 30px !important;
+        width: auto !important;
+}
+
+.site-footer .footer-links li a {
+        white-space: nowrap !important;
+}

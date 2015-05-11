@@ -1,0 +1,40 @@
+<div role="main" class="hero">
+  <div class="container">
+    <div class="row row1">
+      <div class="span12 col1">
+        {% snippet 'home/snippets/search.html' %}
+      </div>
+    </div>
+  </div>
+</div>
+<div role="main">
+  <div class="container">
+    <div class="row row2">
+      <div class="span6 col1">
+        <div class="box">
+          <section class="group-list module module-narrow module-shallow">
+            <header class="module-heading">
+              <h3 class="media-heading"><a href="{% url_for controller='package', action='search', sort='metadata_created desc' %}">{{ _("Last updated") }}</a></h3>
+            </header>
+            {% set list_class = "unstyled dataset-list" %}
+            {% set item_class = "dataset-item module-content" %}
+            {% set truncate = 120 %}
+            {% set truncate_title = 50 %}
+            {% snippet 'snippets/package_list.html', packages=h.portalopendatadk_latest_datasets(), list_class=list_class, item_class=item_class, truncate=truncate, truncate_title=truncate_title %}
+          </section>
+        </div>
+      </div>
+      <div class="span6 col2">
+        <div class="box">
+          <section class="group-list module module-narrow module-shallow">
+            <header class="module-heading">
+              <h3 class="media-heading"><a href="{% url_for controller='package', action='search', sort='views_recent desc' %}">{{ _("Popular") }}</a></h3>
+            </header>
+            {% snippet 'snippets/package_list.html', packages=h.portalopendatadk_most_popular_datasets(), list_class=list_class, item_class=item_class, truncate=truncate, truncate_title=truncate_title %}
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

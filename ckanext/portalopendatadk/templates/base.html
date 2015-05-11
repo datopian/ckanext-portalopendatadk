@@ -1,0 +1,13 @@
+{% ckan_extends %}
+
+{% block styles %}
+  {{ super() }}
+
+  {# Import style.css using Fanstatic.
+     'portalopendatadk/' is the name that the portalopendatadk/fanstatic directory
+     was registered with when the toolkit.add_resource() function was called.
+     'style.css' is the path to the CSS file, relative to the root of
+     the fanstatic directory. #}
+  {% resource 'portalopendatadk/style.css' %}
+  {% resource 'portalopendatadk/ga.js' %}
+{% endblock %}
