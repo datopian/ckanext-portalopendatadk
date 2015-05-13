@@ -16,8 +16,13 @@ body {
         background: #ffffff none !important;
 }
 
-ul.nav li a {
+.navbar .nav > li a {
         color: #000000 !important;
+}
+
+.masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li.active a {
+        background-color: #e32e12 !important;
+        color: #ffffff !important;
 }
 
 [role=main], .main {
@@ -29,7 +34,7 @@ ul.nav li a {
         background-size: cover !important;
 }
 
-.search-form {
+.hero .search-form {
         background: #e32e12 none !important;
 }
 
