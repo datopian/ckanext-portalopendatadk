@@ -1,28 +1,5 @@
 body {
-	background: url(/struckaxiom.png) center center !important;
-}
-
-.account-masthead {
-        background: none !important;
-        background-color: #171514 !important;
-}
-
-.account-masthead .account ul li {
-        border: none !important;
-}
-
-.masthead {
-        background: none !important;
-        background-color: #171514 !important;
-        padding: 5px 0px !important;
-}
-
-.masthead .nav a {
-        color: #ffffff !important;
-}
-
-.masthead .nav a:hover, .masthead .nav li.active a {
-        color: #ffffff !important;
+        background: #000000 none !important;
 }
 
 .gravatar {
@@ -34,33 +11,34 @@ body {
         -moz-border-radius: 0px !important;
         border-radius: 0px !important;
 }
-/*
-.toolbar .breadcrumb, .toolbar .breadcrumb a {
-	color: #FFFFFF !important;
+
+.navbar {
+        background: #ffffff none !important;
 }
 
-.breadcrumb > li {
-	text-shadow: 0 1px 0 #171514 !important;
+ul.nav li a {
+        color: #000000 !important;
 }
-*/
+
 [role=main], .main {
-        background: none !important;
+        background: #ffffff none !important;
 }
 
-.homepage .module-search .module-content, .homepage .module-search .tags {
-        border-radius: 0px !important;
+.hero {
+        background: url(/background.jpg) center center !important;
+        background-size: cover !important;
 }
 
-.homepage .module-search .module-content {
-	background-color: #7B7877 !important;
+.search-form {
+        background: #e32e12 none !important;
 }
 
-.homepage .module-search .tags {
-	background-color: #171514 !important;
+.tags {
+        background: #b50000 none !important;
 }
 
 .site-footer {
-        background: none !important;
+        background: #000000 none !important;
         color: #ffffff !important;
 }
 
