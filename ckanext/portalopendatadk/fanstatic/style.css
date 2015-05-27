@@ -27,6 +27,7 @@ body {
 
 [role=main], .main {
         background: #ffffff none !important;
+        min-height: 150px !important;
 }
 
 .hero {
