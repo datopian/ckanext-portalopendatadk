@@ -66,9 +66,7 @@ body {
 
 .site-footer .footer-links li {
         float: left !important;
-        height: 30px !important;
-        line-height: 30px !important;
-        padding-right: 30px !important;
+        padding-right: 20px !important;
         width: auto !important;
 }
 
