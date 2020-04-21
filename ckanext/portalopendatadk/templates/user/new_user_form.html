@@ -11,9 +11,7 @@
   {% if g.recaptcha_publickey %}
     {% snippet "user/snippets/recaptcha.html", public_key=g.recaptcha_publickey %}
   {% endif %}
-<div class="error-explanation alert alert-error ">
-<p>Bemærk: Navn, Brugernavn og e-mail vil vises offentligt sammen med alle de datasæt som du lægger på portalen.</p>
-</div>
+
   <div class="form-actions">
     {% block form_actions %}
     <button class="btn btn-primary" type="submit" name="save">{{ _("Create Account") }}</button>
