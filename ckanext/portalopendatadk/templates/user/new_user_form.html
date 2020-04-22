@@ -1,4 +1,17 @@
 {% import "macros/form.html" as form %}
+<script>                
+  function checkBoxClick() {
+          if (document.getElementById('field-privacy').checked==true) {
+                  if (document.getElementById('idSave') != null) {
+                          document.getElementById('idSave').disabled=false;
+                  }
+          } else {
+                  if (document.getElementById('idSave') != null) {
+                          document.getElementById('idSave').disabled=true;                       
+                  }
+          }
+  }
+</script>
 
 <form id="user-register-form" class="form-horizontal" action="" method="post">
   {{ form.errors(error_summary) }}
@@ -7,16 +20,85 @@
   {{ form.input("email", id="field-email", label=_("Email"), type="email", placeholder=_("joe@example.com"), value=data.email, error=errors.email, classes=["control-medium"]) }}
   {{ form.input("password1", id="field-password", label=_("Password"), type="password", placeholder="••••••••", value=data.password1, error=errors.password1, classes=["control-medium"]) }}
   {{ form.input("password2", id="field-confirm-password", label=_("Confirm"), type="password", placeholder="••••••••", value=data.password2, error=errors.password1, classes=["control-medium"]) }}
+  
+  <div class="control-group" style="font-weight: bold;font-size:14px">
+    
+    <h3>Oplysninger om anvendelse af persondata</h3>
+    
+    <p>I forbindelse med oprettelse af bruger på Open Data DK 
+    dataplatformen, skal vi jf. Databeskyttelsesforordningen informere 
+    dig om en række detaljer i vores håndtering af dine oplysninger og 
+    oplyse dig om dine rettigheder i den forbindelse.</p>
+    
+    <p>Vi behandler personoplysninger om dig i kategorierne 
+    identifikationsoplysninger (email-adresse, navn og brugernavn). 
+    Det gør vi for at kunne oprette en bruger til dig på Open Data DK 
+    dataplatformen og efterfølgende for at kunne identificere dig som 
+    bruger, samt give dig adgang til at udstille data, hvis du er fra 
+    en offentlig myndighed.</p>  
+    
+    <p>Det er frivilligt at afgive oplysningerne. Dog kan man derved 
+    ikke blive oprettet som bruger på Open Data DK dataplatformen.  
+    Når du har oprettet en brugerprofil på dataplatformen, vil Navn, 
+    Brugernavn og e-mail blive synlig for andre på administrations 
+    portalen, når du foretager handlinger herpå.</p>
+    
+    <p>Oplysningerne er opbevaret sikkert hos vores leverandører.</p>
+    
+    <p>Hvis du er dataudgiver eller vedligeholder, vil dine data blive
+    anonymiseret, hvis du beder om det.</p> 
+    
+    <p>Du har ret til at anmode om indsigt i oplysningerne, vi har om 
+    dig. Du har også ret til at anmode om berigtigelse eller sletning 
+    af oplysninger, og du kan også bede om en begrænsning af behandlingen 
+    af oplysningerne. Du skal dog være opmærksom på, at kommunen typisk 
+    er forpligtet til at gemme de oplysninger, vi har noteret om dig, 
+    indtil den ovennævnte slettefrist indtræder.</p> 
+    
+    <p>Det samtykke, du har givet til behandlingen, kan til enhver tid 
+    trækkes tilbage, dog uden at ændre på lovligheden af den behandling, 
+    der allerede måtte være foretaget.</p>
+    
+    <p>Den dataansvarlige er Aarhus Kommune, Kultur og Borgerservice, ITK, 
+    Hack Kampmann Plads 2, 8000 Aarhus C som kan kontaktes på info@opendata.dk. 
+    Har du spørgsmål i forbindelse med Aarhus Kommunes databeskyttelse af dine 
+    oplysninger, så kan du også kontakte Aarhus Kommunes databeskyttelsesrådgiver 
+    på mail <a>databeskyttelsesraadgiver@aarhus.dk</a>.</p>
+    
+    <p>Du skal slutteligt vide, at det er muligt at klage til Datatilsynet over 
+    behandlingen af personoplysningerne. </p>
+    
+    <p>---------------------------------------------------------------</p>
+    
+    <h3>Samtykke:</h3>
+    
+    <p>Du bedes sætte kryds i nedenstående, hvis du giver samtykke til den 
+    beskrevne behandling. Hvis du <b>ikke</b> sætter kryds, vil vi <b>ikke</b> 
+    bruge personoplysningerne til den beskrevne behandling. Dog kan man derved 
+    ikke blive oprettet som bruger på Open Data DK dataplatformen.    
+  
+  </div>
+  
+  <label class="checkbox" for="field-privacy" onClick="checkBoxClick()">
+    <input id="field-privacy" type="checkbox" name="privacy" value=""   />
+      <p>Open Data DK v. Aarhus Kommune må gøre mit navn, brugernavn og 
+      email-adresse synlig for andre på administrations portalen, 
+      når jeg foretager handlinger derpå.</p>
+  </label>
 
-  {% if g.recaptcha_publickey %}
-    {% snippet "user/snippets/recaptcha.html", public_key=g.recaptcha_publickey %}
-  {% endif %}
-<div class="error-explanation alert alert-error ">
-<p>Bemærk: Navn, Brugernavn og e-mail vil vises offentligt sammen med alle de datasæt som du lægger på portalen.</p>
-</div>
+  <div class="control-group" style="font-weight: bold;font-size:14px">
+    <p>Det samtykke, du har givet til behandlingen, kan til enhver tid 
+    trækkes tilbage, dog uden at ændre på lovligheden af den behandling, 
+    der allerede måtte være foretaget. Du kan tilbagetrække et afgivet 
+    samtykke ved at henvende dig, mundtligt eller skriftligt, til Aarhus 
+    Kommune, Kultur og Borgerservice, ITK, Hack Kampmann Plads 2, 8000 
+    Aarhus C, <a>info@opendata.dk</a> and  og bede om at få samtykket trukket 
+    tilbage.</p>  
+  </div>
+ 
   <div class="form-actions">
     {% block form_actions %}
-    <button class="btn btn-primary" type="submit" name="save">{{ _("Create Account") }}</button>
+    <button class="btn btn-primary" type="submit" disabled=true id="idSave" name="save">{{ _("Create Account") }}</button>
     {% endblock %}
   </div>
 </form>
