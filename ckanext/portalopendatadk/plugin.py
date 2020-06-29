@@ -148,8 +148,6 @@ def send_password_notice_email(context, data_dict):
         toolkit.abort(403, _('You are not authorized to access this list'))
 
     user_list = toolkit.get_action('user_list')(context, data_dict)
-    #admin_list = [user for user in user_list if user['sysadmin'] is True]
-
     update_password_email = \
             'Hello {},\n\nWe are improving our user login password security according \
 to the industry standards. Please update your current account password \
@@ -170,13 +168,14 @@ Have a great day.\n\n\
 Message sent by Open Data DK -  (https://admin.opendata.dk)'
 
     for user in user_list:
+        
         email = user['email']
-        if not email:
-            continue
-        mailer.mail_recipient(
-                user['name'], email,
-                'Login security update for Open Data DK portal',
-                update_password_email.format(user['display_name'],
-                config.get('ckan.pass_date','24th June 2020'),
-                config.get('ckan.pass_date','24th June 2020')))
+        
+        if email:
+            mailer.mail_recipient(
+                    user['name'], email,
+                    'Login security update for Open Data DK portal',
+                    update_password_email.format(user['display_name'],
+                    config.get('ckan.pass_date','24th June 2020'),
+                    config.get('ckan.pass_date','24th June 2020')))
     return u'Email Sent Successfully'
