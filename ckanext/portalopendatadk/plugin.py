@@ -52,7 +52,7 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin):
         return {
             'user_create': custom_user_create,
             'user_update': custom_user_update,
-            'send_password_notice_email': send_password_notice_email
+            'get_user_email': get_user_email
         }
 
 # Custom actions
@@ -141,41 +141,20 @@ def custom_user_password_validator(key, data, errors, context):
         errors[('password',)].append(_(WRONG_PASSWORD_MESSAGE))
 
 @toolkit.side_effect_free
-def send_password_notice_email(context, data_dict):
-    '''Sends an email to all the users according to new rules'''
-
+def get_user_email(context, data_dict):
+    '''
+    Returns the user names and emails of all the users
+    '''
     if not authz.is_sysadmin(toolkit.c.user):
         toolkit.abort(403, _('You are not authorized to access this list'))
 
     user_list = toolkit.get_action('user_list')(context, data_dict)
-    update_password_email = \
-            'Hello {},\n\nWe are improving our user login password security according \
-to the industry standards. Please update your current account password \
-according to the new password criteria stated below. \n\n\
-- Your new password should be of minimum 8 characters or longer\n\
-- Should have at least one of each\n\
-  - capital letter\n\
-  - one small letter\n\
-  - one number(0-9)\n\
-  - one special character\n\
-For example, the structure of the password should be similar to this \
-"Capsmall12!@".\n\n\
-Make sure to update your password before {}. After {}, you would not \
-be able to login using your old password (which does not meet the \
-criteria stated above).\n\n\
-Have a great day.\n\n\
----\n\n\
-Message sent by Open Data DK -  (https://admin.opendata.dk)'
+    user_name_email = []
 
-    for user in user_list:
-        
-        email = user['email']
-        
-        if email:
-            mailer.mail_recipient(
-                    user['name'], email,
-                    'Login security update for Open Data DK portal',
-                    update_password_email.format(user['display_name'],
-                    config.get('ckan.pass_date','24th June 2020'),
-                    config.get('ckan.pass_date','24th June 2020')))
-    return u'Email Sent Successfully'
+    for user in user_list:                                          
+        email = user['email']                                       
+        user_name = user['display_name']                                        
+        user_name_email.append({'user_name':user_name,
+                                'email_address':email})
+
+    return user_name_email
