@@ -73,3 +73,27 @@ body {
 .site-footer .footer-links li a {
         white-space: nowrap !important;
 }
+
+#promo-banner {
+        background: url(/promo-banner-bg.png) repeat-x, repeat-y;
+        background-size: auto 5.75em;
+        border: none;
+        border-radius: 0;
+        font-size: large;
+        display: flex;
+}
+
+#promo-banner .promo-banner-text {
+        color: #444444;
+        background-color: #fff;
+        padding: 0.75em 1.5em;
+        font-size: larger;
+        margin: 0.5em auto;
+        border: #e32e12;
+        border-width: thick;
+        border-style: solid;
+}
+
+#promo-banner button {
+        margin-bottom: auto;
+}

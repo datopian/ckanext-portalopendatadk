@@ -1,0 +1,21 @@
+{#
+Displays a promo banner. PROMO_BANNER env variable should be set to the name
+of the snippet to be displayed on every page of the
+
+Example:
+
+{% snippet 'snippets/promo-banners/influence-development.html' %}
+
+#}
+
+<div id="promo-banner" class="alert alert-info alert-dismissible" role="alert">
+  <a target="_blank" class="promo-banner-text" href="https://www.survey-xact.dk/LinkCollector?key=6D46XF46SK35">
+    <u class="underline whitespace-no-wrap">{{ _('Giv feedback') }}</u>&nbsp;
+    {{ _('til udviklingen af Open Data DK og vind en sensor') }}
+  </a>
+  <button id="promo-banner-close-button" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+{% resource 'portalopendatadk/promo.banner.js' %}
