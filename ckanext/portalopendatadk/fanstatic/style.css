@@ -81,6 +81,7 @@ body {
         border-radius: 0;
         font-size: large;
         display: flex;
+        margin-bottom: 0;
 }
 
 #promo-banner .promo-banner-text {
@@ -96,4 +97,9 @@ body {
 
 #promo-banner button {
         margin-bottom: auto;
+        padding: 0.1em 0.3em;
+        background-color: white;
+        opacity: 1;
+        color: #444444;
+        font-size: x-large;
 }
