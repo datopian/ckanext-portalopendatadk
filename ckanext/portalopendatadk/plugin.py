@@ -45,7 +45,8 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin):
 
     def get_helpers(self):
         return {'portalopendatadk_latest_datasets': latest_datasets,
-                'portalopendatadk_most_popular_datasets': most_popular_datasets}
+                'portalopendatadk_most_popular_datasets': most_popular_datasets,
+                'get_update_frequencies': get_update_frequencies}
     
     def get_actions(self):
 
@@ -158,3 +159,12 @@ def get_user_email(context, data_dict):
                                 'email_address':email})
 
     return user_name_email
+
+
+UPDATE_FREQUENCIES = ['FREQUENT', 'MONTHLY', 'YEARLY', 'HISTORICAL']
+
+
+def get_update_frequencies():
+    return [{'text': ' ', 'value': None}] + [
+        {'text': _(freq.title()), 'value': freq}
+        for freq in UPDATE_FREQUENCIES]
