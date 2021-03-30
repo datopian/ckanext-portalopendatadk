@@ -31,7 +31,7 @@ def most_popular_datasets():
     return datasets['results']
 
 
-class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation):
+class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.DefaultDatasetForm):
     '''portal.opendata.dk theme plugin.
 
     '''
@@ -39,6 +39,7 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.ITranslation)
+    plugins.implements(plugins.IDatasetForm, inherit=True)
 
     def update_config(self, config):
         toolkit.add_template_directory(config, 'templates')
@@ -57,6 +58,40 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation):
             'user_update': custom_user_update,
             'get_user_email': get_user_email
         }
+
+    def _modify_package_schema(self, schema):
+        schema.update({
+            'update_frequency': [toolkit.get_converter('convert_to_extras'),
+                                 toolkit.get_validator('ignore_missing')],
+            'update_frequency_notes': [
+                toolkit.get_converter('convert_to_extras'),
+                toolkit.get_validator('ignore_missing')]
+        })
+        return schema
+
+    def create_package_schema(self):
+        schema = super(PortalOpenDataDKPlugin, self).create_package_schema()
+        schema = self._modify_package_schema(schema)
+        return schema
+
+    def update_package_schema(self):
+        schema = super(PortalOpenDataDKPlugin, self).update_package_schema()
+        schema = self._modify_package_schema(schema)
+        return schema
+
+    def show_package_schema(self):
+        schema = super(PortalOpenDataDKPlugin, self).show_package_schema()
+        schema.update({
+            'update_frequency': [toolkit.get_converter('convert_from_extras'),
+                                 toolkit.get_validator('ignore_missing')],
+            'update_frequency_notes': [
+                toolkit.get_converter('convert_from_extras'),
+                toolkit.get_validator('ignore_missing')]
+        })
+        return schema
+
+    def package_types(self):
+        return ['dataset']
 
 # Custom actions
 

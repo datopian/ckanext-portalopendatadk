@@ -54,6 +54,13 @@ msgid "joe@example.com"
 msgstr "kontor@kommune.dk"
 
 #: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:11
-msgid "Update Frequency"
+msgid "Update frequency"
 msgstr "Opdatering"
 
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
+msgid "Update comments"
+msgstr "Opdatering kommentarer"
+
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
+msgid "For example, update date"
+msgstr "For eksempel opdateringsdato"
