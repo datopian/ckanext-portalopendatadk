@@ -26,5 +26,14 @@ setup(
         [ckan.plugins]
         # Add plugins here, e.g.
         portalopendatadk=ckanext.portalopendatadk.plugin:PortalOpenDataDKPlugin
+        [babel.extractors]
+        ckan = ckan.lib.extract:extract_ckan
     ''',
+    message_extractors={
+        'ckanext': [
+            ('**.py', 'python', None),
+            ('**.js', 'javascript', None),
+            ('**/templates/**.html', 'ckan', None),
+        ],
+    }
 )

@@ -6,6 +6,7 @@ from ckan.logic.schema import default_user_schema, default_update_user_schema
 from ckan.logic.action.create import user_create as core_user_create
 from ckan.logic.action.update import user_update as core_user_update
 from ckan.lib import mailer
+from ckan.lib.plugins import DefaultTranslation
 from pylons import config
 from ckan import authz
 _ = toolkit._
@@ -30,13 +31,14 @@ def most_popular_datasets():
     return datasets['results']
 
 
-class PortalOpenDataDKPlugin(plugins.SingletonPlugin):
+class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation):
     '''portal.opendata.dk theme plugin.
 
     '''
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IActions)
+    plugins.implements(plugins.ITranslation)
 
     def update_config(self, config):
         toolkit.add_template_directory(config, 'templates')
@@ -161,10 +163,11 @@ def get_user_email(context, data_dict):
     return user_name_email
 
 
-UPDATE_FREQUENCIES = ['FREQUENT', 'MONTHLY', 'YEARLY', 'HISTORICAL']
-
-
 def get_update_frequencies():
+    update_frequencies = ['FREQUENT', 'MONTHLY', 'YEARLY', 'HISTORICAL']
+    update_frequencies_translations = [_('Frequent'), _('Monthly'),
+                                       _('Yearly'), _('Historical')]
     return [{'text': ' ', 'value': None}] + [
-        {'text': _(freq.title()), 'value': freq}
-        for freq in UPDATE_FREQUENCIES]
+        {'text': update_frequencies_translations[i].title(),
+         'value': update_frequencies[i]}
+        for i in range(len(update_frequencies))]

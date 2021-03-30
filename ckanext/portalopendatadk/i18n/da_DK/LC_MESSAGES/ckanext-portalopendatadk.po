@@ -1,0 +1,59 @@
+# Danish (Denmark) translations for ckanext-portalopendatadk.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the
+# ckanext-portalopendatadk project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-portalopendatadk 0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-03-30 13:54+0000\n"
+"PO-Revision-Date: 2021-03-30 13:55+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: da_DK\n"
+"Language-Team: da_DK <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ckanext/portalopendatadk/plugin.py:166
+msgid "Frequent"
+msgstr "Løbende"
+
+#: ckanext/portalopendatadk/plugin.py:166
+msgid "Monthly"
+msgstr "Månedligt"
+
+#: ckanext/portalopendatadk/plugin.py:167
+msgid "Yearly"
+msgstr "Årligt"
+
+#: ckanext/portalopendatadk/plugin.py:167
+msgid "Historical"
+msgstr "Historisk"
+
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:6
+msgid "Author"
+msgstr "Dataejer"
+
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:6
+#: ckanext/portalopendatadk/templates/user/new_user_form.html:19
+msgid "Joe Bloggs"
+msgstr "Person eler afdeling"
+
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:8
+msgid "Author Email"
+msgstr "Dataejer e-mail"
+
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:8
+#: ckanext/portalopendatadk/templates/user/new_user_form.html:20
+msgid "joe@example.com"
+msgstr "kontor@kommune.dk"
+
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:11
+msgid "Update Frequency"
+msgstr "Opdatering"
+
