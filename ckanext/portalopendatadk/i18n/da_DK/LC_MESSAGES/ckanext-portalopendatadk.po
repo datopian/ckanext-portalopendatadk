@@ -48,6 +48,10 @@ msgstr "Person eler afdeling"
 msgid "Author Email"
 msgstr "Dataejer e-mail"
 
+#: Manually added for missing error message
+msgid "Author email"
+msgstr "Dataejer e-mail"
+
 #: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:8
 #: ckanext/portalopendatadk/templates/user/new_user_form.html:20
 msgid "joe@example.com"

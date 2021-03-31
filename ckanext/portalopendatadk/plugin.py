@@ -65,7 +65,10 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
                                  toolkit.get_validator('ignore_missing')],
             'update_frequency_notes': [
                 toolkit.get_converter('convert_to_extras'),
-                toolkit.get_validator('ignore_missing')]
+                toolkit.get_validator('ignore_missing')],
+            'author': [toolkit.get_validator('not_empty')],
+            'author_email': [toolkit.get_validator('not_empty'),
+                             toolkit.get_validator('email_validator')]
         })
         return schema
 
@@ -86,7 +89,10 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
                                  toolkit.get_validator('ignore_missing')],
             'update_frequency_notes': [
                 toolkit.get_converter('convert_from_extras'),
-                toolkit.get_validator('ignore_missing')]
+                toolkit.get_validator('ignore_missing')],
+            'author': [toolkit.get_validator('not_empty')],
+            'author_email': [toolkit.get_validator('not_empty'),
+                             toolkit.get_validator('email_validator')]
         })
         return schema
 
