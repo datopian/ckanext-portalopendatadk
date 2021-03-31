@@ -40,6 +40,7 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
     plugins.implements(plugins.IActions)
     plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IDatasetForm, inherit=True)
+    plugins.implements(plugins.IFacets)
 
     def update_config(self, config):
         toolkit.add_template_directory(config, 'templates')
@@ -72,6 +73,8 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
         })
         return schema
 
+    # IDatasetForm
+
     def create_package_schema(self):
         schema = super(PortalOpenDataDKPlugin, self).create_package_schema()
         schema = self._modify_package_schema(schema)
@@ -98,6 +101,20 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
 
     def package_types(self):
         return ['dataset']
+
+    # IFacets
+
+    def dataset_facets(self, facets_dict, package_type):
+        facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
+        return facets_dict
+
+    def organization_facets(self, facets_dict, organization_type, package_type):
+        facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
+        return facets_dict
+
+    def group_facets(self, facets_dict, group_type, package_type):
+        facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
+        return facets_dict
 
 # Custom actions
 
@@ -205,7 +222,7 @@ def get_user_email(context, data_dict):
 
 
 def get_update_frequencies():
-    update_frequencies = ['FREQUENT', 'MONTHLY', 'YEARLY', 'HISTORICAL']
+    update_frequencies = ['Frequent', 'Monthly', 'Yearly', 'Historical']
     update_frequencies_translations = [_('Frequent'), _('Monthly'),
                                        _('Yearly'), _('Historical')]
     return [{'text': ' ', 'value': None}] + [
