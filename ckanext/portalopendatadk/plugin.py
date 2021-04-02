@@ -6,6 +6,7 @@ from ckan.logic.schema import default_user_schema, default_update_user_schema
 from ckan.logic.action.create import user_create as core_user_create
 from ckan.logic.action.update import user_update as core_user_update
 from ckan.lib import mailer
+from ckan.lib.plugins import DefaultTranslation
 from pylons import config
 from ckan import authz
 _ = toolkit._
@@ -30,13 +31,16 @@ def most_popular_datasets():
     return datasets['results']
 
 
-class PortalOpenDataDKPlugin(plugins.SingletonPlugin):
+class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.DefaultDatasetForm):
     '''portal.opendata.dk theme plugin.
 
     '''
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
     plugins.implements(plugins.IActions)
+    plugins.implements(plugins.ITranslation)
+    plugins.implements(plugins.IDatasetForm, inherit=True)
+    plugins.implements(plugins.IFacets)
 
     def update_config(self, config):
         toolkit.add_template_directory(config, 'templates')
@@ -45,7 +49,8 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin):
 
     def get_helpers(self):
         return {'portalopendatadk_latest_datasets': latest_datasets,
-                'portalopendatadk_most_popular_datasets': most_popular_datasets}
+                'portalopendatadk_most_popular_datasets': most_popular_datasets,
+                'get_update_frequencies': get_update_frequencies}
     
     def get_actions(self):
 
@@ -54,6 +59,62 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin):
             'user_update': custom_user_update,
             'get_user_email': get_user_email
         }
+
+    def _modify_package_schema(self, schema):
+        schema.update({
+            'update_frequency': [toolkit.get_converter('convert_to_extras'),
+                                 toolkit.get_validator('ignore_missing')],
+            'update_frequency_notes': [
+                toolkit.get_converter('convert_to_extras'),
+                toolkit.get_validator('ignore_missing')],
+            'author': [toolkit.get_validator('not_empty')],
+            'author_email': [toolkit.get_validator('not_empty'),
+                             toolkit.get_validator('email_validator')]
+        })
+        return schema
+
+    # IDatasetForm
+
+    def create_package_schema(self):
+        schema = super(PortalOpenDataDKPlugin, self).create_package_schema()
+        schema = self._modify_package_schema(schema)
+        return schema
+
+    def update_package_schema(self):
+        schema = super(PortalOpenDataDKPlugin, self).update_package_schema()
+        schema = self._modify_package_schema(schema)
+        return schema
+
+    def show_package_schema(self):
+        schema = super(PortalOpenDataDKPlugin, self).show_package_schema()
+        schema.update({
+            'update_frequency': [toolkit.get_converter('convert_from_extras'),
+                                 toolkit.get_validator('ignore_missing')],
+            'update_frequency_notes': [
+                toolkit.get_converter('convert_from_extras'),
+                toolkit.get_validator('ignore_missing')],
+            'author': [toolkit.get_validator('not_empty')],
+            'author_email': [toolkit.get_validator('not_empty'),
+                             toolkit.get_validator('email_validator')]
+        })
+        return schema
+
+    def package_types(self):
+        return ['dataset']
+
+    # IFacets
+
+    def dataset_facets(self, facets_dict, package_type):
+        facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
+        return facets_dict
+
+    def organization_facets(self, facets_dict, organization_type, package_type):
+        facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
+        return facets_dict
+
+    def group_facets(self, facets_dict, group_type, package_type):
+        facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
+        return facets_dict
 
 # Custom actions
 
@@ -158,3 +219,13 @@ def get_user_email(context, data_dict):
                                 'email_address':email})
 
     return user_name_email
+
+
+def get_update_frequencies():
+    update_frequencies = ['Frequent', 'Monthly', 'Yearly', 'Historical']
+    update_frequencies_translations = [_('Frequent'), _('Monthly'),
+                                       _('Yearly'), _('Historical')]
+    return [{'text': ' ', 'value': ''}] + [
+        {'text': update_frequencies_translations[i].title(),
+         'value': update_frequencies[i]}
+        for i in range(len(update_frequencies))]
