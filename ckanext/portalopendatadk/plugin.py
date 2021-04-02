@@ -225,7 +225,7 @@ def get_update_frequencies():
     update_frequencies = ['Frequent', 'Monthly', 'Yearly', 'Historical']
     update_frequencies_translations = [_('Frequent'), _('Monthly'),
                                        _('Yearly'), _('Historical')]
-    return [{'text': ' ', 'value': None}] + [
+    return [{'text': ' ', 'value': ''}] + [
         {'text': update_frequencies_translations[i].title(),
          'value': update_frequencies[i]}
         for i in range(len(update_frequencies))]
