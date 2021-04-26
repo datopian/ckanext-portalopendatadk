@@ -59,7 +59,7 @@ msgstr "kontor@kommune.dk"
 
 #: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:11
 msgid "Update frequency"
-msgstr "Opdatering"
+msgstr "Opdatering frekvens"
 
 #: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
 msgid "Update comments"
