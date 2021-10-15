@@ -51,7 +51,7 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
         return {'portalopendatadk_latest_datasets': latest_datasets,
                 'portalopendatadk_most_popular_datasets': most_popular_datasets,
                 'get_update_frequencies': get_update_frequencies}
-    
+
     def get_actions(self):
 
         return {
@@ -60,47 +60,8 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
             'get_user_email': get_user_email
         }
 
-    def _modify_package_schema(self, schema):
-        schema.update({
-            'update_frequency': [toolkit.get_converter('convert_to_extras'),
-                                 toolkit.get_validator('ignore_missing')],
-            'update_frequency_notes': [
-                toolkit.get_converter('convert_to_extras'),
-                toolkit.get_validator('ignore_missing')],
-            'author': [toolkit.get_validator('not_empty')],
-            'author_email': [toolkit.get_validator('not_empty'),
-                             toolkit.get_validator('email_validator')]
-        })
-        return schema
-
-    # IDatasetForm
-
-    def create_package_schema(self):
-        schema = super(PortalOpenDataDKPlugin, self).create_package_schema()
-        schema = self._modify_package_schema(schema)
-        return schema
-
-    def update_package_schema(self):
-        schema = super(PortalOpenDataDKPlugin, self).update_package_schema()
-        schema = self._modify_package_schema(schema)
-        return schema
-
-    def show_package_schema(self):
-        schema = super(PortalOpenDataDKPlugin, self).show_package_schema()
-        schema.update({
-            'update_frequency': [toolkit.get_converter('convert_from_extras'),
-                                 toolkit.get_validator('ignore_missing')],
-            'update_frequency_notes': [
-                toolkit.get_converter('convert_from_extras'),
-                toolkit.get_validator('ignore_missing')],
-            'author': [toolkit.get_validator('not_empty')],
-            'author_email': [toolkit.get_validator('not_empty'),
-                             toolkit.get_validator('email_validator')]
-        })
-        return schema
-
     def package_types(self):
-        return ['dataset']
+        return []
 
     # IFacets
 
