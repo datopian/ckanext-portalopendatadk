@@ -9,6 +9,9 @@ from ckan.lib import mailer
 from ckan.lib.plugins import DefaultTranslation
 from pylons import config
 from ckan import authz
+
+from ckanext.portalopendatadk import actions as oddk_actions
+
 _ = toolkit._
 
 
@@ -57,7 +60,9 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
         return {
             'user_create': custom_user_create,
             'user_update': custom_user_update,
-            'get_user_email': get_user_email
+            'get_user_email': get_user_email,
+            'package_update': oddk_actions.package_update,
+            'package_create': oddk_actions.package_create
         }
 
     def package_types(self):
