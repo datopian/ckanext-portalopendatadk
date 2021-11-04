@@ -1,5 +1,7 @@
 import logging
 import datetime
+import markdown
+import html2text
 
 import ckan.lib.plugins as lib_plugins
 import ckan.logic as logic
@@ -27,6 +29,7 @@ log = logging.getLogger(__name__)
 
 
 def translate_fields(context, data_dict):
+    html_convert = html2text.HTML2Text()
     pkg_title = data_dict.get('title')
     pkg_notes = data_dict.get('notes')
     default_lang = config.get('ckan.locale_default', 'da').split('_')[0]
@@ -45,7 +48,7 @@ def translate_fields(context, data_dict):
             translation = _get_action('translate')(context, {
                 "input": {
                     "title": pkg_title,
-                    "notes": pkg_notes
+                    "notes": markdown.markdown(pkg_notes)
                 },
                 "from": default_lang,
                 "to": lang
@@ -54,7 +57,7 @@ def translate_fields(context, data_dict):
             data_dict['title_translated-{}'.format(lang)] = \
                 translation['output'].get('title')
             data_dict['notes_translated-{}'.format(lang)] = \
-                translation['output'].get('notes')
+                html_convert.handle(translation['output'].get('notes'))
 
         except Exception as e:
             log.debug('Unable to retrieve {} translation for {}: {}'
