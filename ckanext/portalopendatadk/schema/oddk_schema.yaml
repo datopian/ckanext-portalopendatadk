@@ -1,0 +1,103 @@
+scheming_version: 2
+dataset_type: dataset
+about: A reimplementation of the default CKAN dataset schema
+about_url: http://github.com/ckan/ckanext-scheming
+
+
+dataset_fields:
+
+- field_name: title
+  label: Title
+  preset: title
+  form_placeholder: eg. A descriptive title
+
+- field_name: title_translated
+  label: Title
+  preset: fluent_core_translated
+  form_placeholder: eg. A descriptive title
+
+- field_name: name
+  label: URL
+  preset: dataset_slug
+  form_placeholder: eg. my-dataset
+
+- field_name: notes
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: eg. Some useful notes about the data
+
+- field_name: notes_translated
+  label: Description
+  preset: fluent_markdown
+  form_placeholder: eg. Some useful notes about the data
+
+- field_name: tag_string
+  label: Tags
+  preset: tag_string_autocomplete
+  form_placeholder: eg. economy, mental health, government
+
+- field_name: license_id
+  label: License
+  form_snippet: license.html
+  default: opendatadk
+  help_allow_html: True
+  help_text: ' License definitions and additional information can be found at <a href="http://opendefinition.org/licenses/">opendefinition.org</a> '
+
+- field_name: owner_org
+  label: Organization
+  preset: dataset_organization
+
+- field_name: author
+  label: Author
+  form_placeholder: Joe Bloggs
+  display_property: dc:creator
+  validators: not_empty
+
+- field_name: author_email
+  label: Author Email
+  form_placeholder: joe@example.com
+  display_property: dc:creator
+  display_snippet: email.html
+  display_email_name_field: author
+  validators: not_empty email_validator
+
+- field_name: update_frequency
+  label: Update frequency
+  preset: select
+  selected: Frequent
+  choices:
+    - value: Frequent
+      label: Frequent
+    - value: Monthly
+      label: Monthly
+    - value: Yearly
+      label: Yearly
+    - value: Historical
+      label: Historical
+  validators: ignore_missing
+
+- field_name: update_frequency_notes
+  label: Update comments
+  form_placeholder: For example, update date
+  form_snippet: textarea.html
+  validators: ignore_missing
+
+
+resource_fields:
+
+- field_name: url
+  label: URL
+  preset: resource_url_upload
+
+- field_name: name
+  label: Name
+  form_placeholder: eg. January 2011 Gold Prices
+
+- field_name: description
+  label: Description
+  form_snippet: markdown.html
+  form_placeholder: Some useful notes about the data
+
+- field_name: format
+  label: Format
+  preset: resource_format_autocomplete
