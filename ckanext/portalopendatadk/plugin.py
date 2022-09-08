@@ -44,6 +44,37 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
     plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IDatasetForm, inherit=True)
     plugins.implements(plugins.IFacets)
+    plugins.implements(plugins.IRoutes, inherit=True)
+
+    def before_map(self, map):
+        # Pass requests to ODDKUserController to verify admin status
+        map.connect(
+            '/user',
+            controller='ckanext.portalopendatadk.controller:ODDKUserController',
+            action='index'
+        )
+        map.connect(
+            '/user/register',
+            controller='ckanext.portalopendatadk.controller:ODDKUserController',
+            action='register'
+        )
+        map.connect(
+            '/user/edit',
+            controller='ckanext.portalopendatadk.controller:ODDKUserController',
+            action='edit'
+        )
+        map.connect(
+            '/user/edit/{id:.*}',
+            controller='ckanext.portalopendatadk.controller:ODDKUserController',
+            action='edit'
+        )
+
+        return map
+
+
+    def after_map(self, map):
+        return map
+
 
     def update_config(self, config):
         toolkit.add_template_directory(config, 'templates')
