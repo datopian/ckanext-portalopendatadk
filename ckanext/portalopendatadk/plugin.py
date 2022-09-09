@@ -11,6 +11,7 @@ from pylons import config
 from ckan import authz
 
 from ckanext.portalopendatadk import actions as oddk_actions
+from ckanext.portalopendatadk import auth_functions as auth
 
 _ = toolkit._
 
@@ -45,6 +46,7 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
     plugins.implements(plugins.IDatasetForm, inherit=True)
     plugins.implements(plugins.IFacets)
     plugins.implements(plugins.IRoutes, inherit=True)
+    plugins.implements(plugins.IAuthFunctions, inherit=True)
 
     def before_map(self, map):
         # Pass requests to ODDKUserController to verify admin status
@@ -112,6 +114,19 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
     def group_facets(self, facets_dict, group_type, package_type):
         facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
         return facets_dict
+
+    # IAuthFunctions
+
+    def get_auth_functions(self):
+        """ Override the 'related' auth functions with our own.
+        """
+        auth_functions = {
+            'user_list': auth.user_list,
+            'user_show': auth.user_show,
+            'group_show': auth.group_show
+        }
+
+        return auth_functions
 
 # Custom actions
 
