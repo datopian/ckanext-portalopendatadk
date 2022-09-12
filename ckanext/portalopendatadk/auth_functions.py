@@ -1,8 +1,8 @@
 # encoding: utf-8
 
 """
-These auth functions allow only sysadmins to view the API results of `user_list`
-and `user_show`. The origin of these overrides can be found here:
+These auth functions allow only sysadmins to view the API results of `user_list` and `user_show`.
+The origin of these overrides (and imported helper: `user_has_admin_access`) can be found here:
 
 Queensland Government CKAN extension
 https://github.com/qld-gov-au/ckanext-qgov
@@ -12,13 +12,10 @@ from ckan import authz, model
 from ckan.logic import auth as logic_auth
 from ckan.plugins.toolkit import _, asbool, auth_allow_anonymous_access
 
-from ckanext.portalopendatadk.helpers import user_has_admin_access
-
-
 
 def user_list(context, data_dict=None):
     """Check whether access to the user list is authorised.
-    Restricted to organisation admins as per QOL-5710.
+    Restricted to organisation admins or sysadmins.
     """
     return {'success': _requester_is_admin(context)}
 
@@ -26,7 +23,7 @@ def user_list(context, data_dict=None):
 @auth_allow_anonymous_access
 def user_show(context, data_dict):
     """Check whether access to individual user details is authorised.
-    Restricted to organisation admins or self, as per QOL-5710.
+    Restricted to organisation admins, sysadmin, or self.
     """
     if _requester_is_admin(context):
         return {'success': True}
@@ -46,7 +43,7 @@ def user_show(context, data_dict):
 def group_show(context, data_dict):
     """Check whether access to a group is authorised.
     If it's just the group metadata, this requires no privileges,
-    but if user details have been requested, it requires a group admin.
+    but if user details have been requested, it requires a group admin or sysadmin.
     """
     user = context.get('user')
     group = logic_auth.get_group_object(context, data_dict)
