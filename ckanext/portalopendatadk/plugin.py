@@ -12,6 +12,7 @@ from ckan import authz
 
 from ckanext.portalopendatadk import actions as oddk_actions
 from ckanext.portalopendatadk import auth_functions as auth
+from ckanext.portalopendatadk.helpers import user_has_admin_access
 
 _ = toolkit._
 
@@ -86,7 +87,8 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
     def get_helpers(self):
         return {'portalopendatadk_latest_datasets': latest_datasets,
                 'portalopendatadk_most_popular_datasets': most_popular_datasets,
-                'get_update_frequencies': get_update_frequencies}
+                'get_update_frequencies': get_update_frequencies,
+                'user_has_admin_access': user_has_admin_access}
 
     def get_actions(self):
 

@@ -20,6 +20,6 @@
       {{ h.build_extra_admin_nav() }}
     {% endblock %}
   </ul>
-  <a class="btn" id="add-user-button" href="{{ h.url_for(controller='user', action='register') }}">{{ _('Create an Account') }}</a>
+  <div id="add-user-button">{% link_for _('Create an Account'), controller='user', action='register', class_='btn', icon='plus' %}</div>
 </header>
 {% endblock %}
