@@ -74,7 +74,9 @@ class ODDKUserController(UserController):
             data_dict = logic.clean_dict(unflatten(
                 logic.tuplize_dict(logic.parse_params(request.params))))
             context['message'] = data_dict.get('log_message', '')
-            captcha.check_recaptcha(request)
+            # NOTE: On ODDK, we don't need a captcha as there's
+            # no public registration.
+            # captcha.check_recaptcha(request)
             user = get_action('user_create')(context, data_dict)
         except NotAuthorized:
             abort(403, _('Unauthorized to create user %s') % '')
@@ -82,10 +84,15 @@ class ODDKUserController(UserController):
             abort(404, _('User not found'))
         except DataError:
             abort(400, _(u'Integrity Error'))
-        except captcha.CaptchaError:
-            error_msg = _(u'Bad Captcha. Please try again.')
-            h.flash_error(error_msg)
-            return self.new(data_dict)
+
+        # NOTE: On ODDK, we don't need a captcha as there's
+        # no public registration.
+        #
+        # except captcha.CaptchaError:
+        #     error_msg = _(u'Bad Captcha. Please try again.')
+        #     h.flash_error(error_msg)
+        #     return self.new(data_dict)
+
         except ValidationError, e:
             errors = e.error_dict
             error_summary = e.error_summary
