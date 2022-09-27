@@ -11,8 +11,6 @@ from pylons import config
 from ckan import authz
 
 from ckanext.portalopendatadk import actions as oddk_actions
-from ckanext.portalopendatadk import auth_functions as auth
-from ckanext.portalopendatadk.helpers import user_has_admin_access
 
 _ = toolkit._
 
@@ -46,38 +44,6 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
     plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IDatasetForm, inherit=True)
     plugins.implements(plugins.IFacets)
-    plugins.implements(plugins.IRoutes, inherit=True)
-    plugins.implements(plugins.IAuthFunctions, inherit=True)
-
-    def before_map(self, map):
-        # Pass requests to ODDKUserController to verify admin status
-        map.connect(
-            '/user',
-            controller='ckanext.portalopendatadk.controller:ODDKUserController',
-            action='index'
-        )
-        map.connect(
-            '/user/register',
-            controller='ckanext.portalopendatadk.controller:ODDKUserController',
-            action='register'
-        )
-        map.connect(
-            '/user/edit',
-            controller='ckanext.portalopendatadk.controller:ODDKUserController',
-            action='edit'
-        )
-        map.connect(
-            '/user/edit/{id:.*}',
-            controller='ckanext.portalopendatadk.controller:ODDKUserController',
-            action='edit'
-        )
-
-        return map
-
-
-    def after_map(self, map):
-        return map
-
 
     def update_config(self, config):
         toolkit.add_template_directory(config, 'templates')
@@ -87,8 +53,7 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
     def get_helpers(self):
         return {'portalopendatadk_latest_datasets': latest_datasets,
                 'portalopendatadk_most_popular_datasets': most_popular_datasets,
-                'get_update_frequencies': get_update_frequencies,
-                'user_has_admin_access': user_has_admin_access}
+                'get_update_frequencies': get_update_frequencies}
 
     def get_actions(self):
 
@@ -116,19 +81,6 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
     def group_facets(self, facets_dict, group_type, package_type):
         facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
         return facets_dict
-
-    # IAuthFunctions
-
-    def get_auth_functions(self):
-        """ Override the 'related' auth functions with our own.
-        """
-        auth_functions = {
-            'user_list': auth.user_list,
-            'user_show': auth.user_show,
-            'group_show': auth.group_show
-        }
-
-        return auth_functions
 
 # Custom actions
 
