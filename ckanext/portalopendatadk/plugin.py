@@ -71,6 +71,11 @@ class PortalOpenDataDKPlugin(plugins.SingletonPlugin, DefaultTranslation, toolki
             controller='ckanext.portalopendatadk.controller:ODDKUserController',
             action='edit'
         )
+        map.connect(
+            '/user/reset',
+            controller='ckanext.portalopendatadk.controller:ODDKUserController',
+            action='request_reset'
+        )
 
         return map
 

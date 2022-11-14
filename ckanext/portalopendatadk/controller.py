@@ -10,6 +10,7 @@ import ckan.logic as logic
 from ckan.common import _, c, request
 import ckan.lib.navl.dictization_functions as dictization_functions
 import ckan.lib.captcha as captcha
+import ckan.lib.mailer as mailer
 
 from ckanext.portalopendatadk.helpers import user_has_admin_access
 
@@ -30,8 +31,9 @@ class ODDKUserController(UserController):
     def __before__(self, action, **env):
         UserController.__before__(self, action, **env)
 
-        # Verify user is an admin, else redirect to the home page
-        if not user_has_admin_access(False):
+        # Verify user is an admin or we're doing a password reset
+        # else redirect to the home page
+        if not user_has_admin_access(False) and action != 'request_reset':
             h.redirect_to(controller='home', action='index')
 
     def new(self, data=None, errors=None, error_summary=None):
@@ -126,3 +128,70 @@ class ODDKUserController(UserController):
 
             h.flash_success(_('User "%s" is now registered.' % data_dict['name']))
             h.redirect_to(controller='user', action='activity', id=data_dict['name'])
+
+    def request_reset(self):
+        context = {
+            'model': model, 'session': model.Session,
+            'user': c.user, 'auth_user_obj': c.userobj,
+            'ignore_auth': True
+        }
+        data_dict = {'id': request.params.get('user')}
+
+        try:
+            # NOTE: we need a new variable to knonw this is a reset
+            context['from_request_reset'] = True
+            check_access('request_reset', context)
+        except NotAuthorized:
+            abort(403, _('Unauthorized to request reset password.'))
+
+        if request.method == 'POST':
+            id = request.params.get('user')
+
+            context = {
+                'model': model,
+                'user': c.user,
+                'ignore_auth': True,
+            }
+
+            data_dict = {'id': id}
+            user_obj = None
+            try:
+                user_dict = get_action('user_show')(context, data_dict)
+                user_obj = context['user_obj']
+            except NotFound:
+                # Try searching the user
+                del data_dict['id']
+                data_dict['q'] = id
+
+                if id and len(id) > 2:
+                    user_list = get_action('user_list')(context, data_dict)
+                    if len(user_list) == 1:
+                        # This is ugly, but we need the user object for the
+                        # mailer,
+                        # and user_list does not return them
+                        del data_dict['q']
+                        data_dict['id'] = user_list[0]['id']
+                        user_dict = get_action('user_show')(context, data_dict)
+                        user_obj = context['user_obj']
+                # NOTE: We override core behavior because we don't want to give 
+                # away any information about the existence of a user
+                #    elif len(user_list) > 1:
+                #        h.flash_error(_('"%s" matched several users') % (id))
+                #    else:
+                #        h.flash_error(_('No such user: %s') % id)
+                #else:
+                #    h.flash_error(_('No such user: %s') % id)
+
+            if user_obj:
+                try:
+                    mailer.send_reset_link(user_obj)
+                except mailer.MailerException, e:
+                    h.flash_error(_('Could not send reset link: %s') %
+                                  unicode(e))
+
+            h.flash_success(
+                _('A reset link has been emailed to you '
+                  '(unless the account specified does not exist)'))
+            h.redirect_to('/')
+
+        return render('user/request_reset.html')
