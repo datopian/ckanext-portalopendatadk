@@ -25,6 +25,11 @@ def user_show(context, data_dict):
     """Check whether access to individual user details is authorised.
     Restricted to organisation admins, sysadmin, or self.
     """
+    # CKAN core will check permissions, but we've blocked non-admin users
+    # We use this variable passed from request_reset to bypass this check
+    if context.get('from_request_reset'):
+        return {'success': True}
+
     if _requester_is_admin(context):
         return {'success': True}
     requester = context.get('user')

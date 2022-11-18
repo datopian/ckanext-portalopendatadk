@@ -67,3 +67,7 @@ msgstr ""
 #: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
 msgid "For example, update date"
 msgstr ""
+
+#: Manually added for missing error message
+msgid "A reset link has been emailed to you (unless the account specified does not exist)"
+msgstr ""
