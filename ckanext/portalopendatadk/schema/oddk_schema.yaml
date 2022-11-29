@@ -61,6 +61,9 @@ dataset_fields:
   display_email_name_field: author
   validators: not_empty email_validator
 
+- field_name: data_directory
+  label: Data directory
+
 - field_name: update_frequency
   label: Update frequency
   preset: select
