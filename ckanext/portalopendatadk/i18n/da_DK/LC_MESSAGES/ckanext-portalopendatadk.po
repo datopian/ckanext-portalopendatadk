@@ -57,15 +57,19 @@ msgstr "Dataejer e-mail"
 msgid "joe@example.com"
 msgstr "kontor@kommune.dk"
 
-#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:11
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
+msgid "Data directory"
+msgstr "Datavejviser"
+
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:15
 msgid "Update frequency"
 msgstr "Opdatering frekvens"
 
-#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:16
 msgid "Update comments"
 msgstr "Opdatering kommentarer"
 
-#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:16
 msgid "For example, update date"
 msgstr "For eksempel opdateringsdato"
 
