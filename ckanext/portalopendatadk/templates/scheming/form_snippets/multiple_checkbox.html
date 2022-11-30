@@ -29,6 +29,7 @@ fieldset.checkboxes label input {
   {%- endif -%}
     <fieldset class="checkboxes">
         {%- for val, label in choices -%}
+            
             <label for="field-{{ field.field_name }}-{{ val }}">
                 <input id="field-{{ field.field_name }}-{{ val }}"
                     type="checkbox"

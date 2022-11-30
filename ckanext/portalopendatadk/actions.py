@@ -281,7 +281,6 @@ def package_update(context, data_dict):
     :rtype: dictionary
     '''
 
-    log.error(data_dict)
     model = context['model']
     user = context['user']
     name_or_id = data_dict.get('id') or data_dict.get('name')
@@ -378,5 +377,4 @@ def package_update(context, data_dict):
     output = data_dict['id'] if return_id_only \
         else _get_action('package_show')(context, {'id': data_dict['id']})
 
-    log.error(output)
     return output
