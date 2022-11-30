@@ -7,8 +7,7 @@ from ckan.logic.action.create import user_create as core_user_create
 from ckan.logic.action.update import user_update as core_user_update
 from ckan.lib import mailer
 from ckan.lib.plugins import DefaultTranslation
-#from pylons import config
-from ckan.common import _, config
+from pylons import config
 from ckan import authz
 
 from ckanext.portalopendatadk import actions as oddk_actions
