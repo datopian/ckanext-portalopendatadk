@@ -63,7 +63,10 @@ dataset_fields:
 
 - field_name: data_directory
   label: Data directory
-
+  preset: multiple_checkbox
+  choices:
+    - value: checked
+      label: 
 - field_name: update_frequency
   label: Update frequency
   preset: select

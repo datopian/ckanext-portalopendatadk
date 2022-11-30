@@ -61,6 +61,7 @@ msgstr "kontor@kommune.dk"
 msgid "Data directory"
 msgstr "Datavejviser"
 
+
 #: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:15
 msgid "Update frequency"
 msgstr "Opdatering frekvens"

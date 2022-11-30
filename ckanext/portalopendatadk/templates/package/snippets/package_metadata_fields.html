@@ -9,7 +9,7 @@
   {% endblock %}
   
   {% if c.userobj.sysadmin %}
-    {{ form.checkbox('data_directory', id='field-data-directory', label=_('Data directory'), checked=false) }}
+    {{ form.checkbox('data_directory', label=_('Data directory'), id='field-data-directory', checked=false) }}
   {% endif %}
   
   {{ form.select('update_frequency', label=_('Update frequency'), id='field-update-frequency', options=h.get_update_frequencies(), selected=data.update_frequency, error=errors.update_frequency) }}
