@@ -30,8 +30,7 @@ fieldset.checkboxes label input {
   {%- endif -%}
     <fieldset class="checkboxes">
         {%- for val, label in choices -%}
-            
-        <label for="field-{{ field.field_name }}-{{ val }}" 
+            <label for="field-{{ field.field_name }}"
             {{"style=pointer-events:none; " if not c.userobj.sysadmin }}>
                 <input id="field-{{ field.field_name }}"
                     type="checkbox"
