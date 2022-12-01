@@ -14,6 +14,7 @@ fieldset.checkboxes label input {
 }
 </style>
 
+
 {%- call form.input_block(
     label=h.scheming_language_text(field.label),
     classes=['control-medium'],
@@ -35,7 +36,7 @@ fieldset.checkboxes label input {
                     type="checkbox"
                     name="{{ field.field_name }}"
                     value="{{ val }}"
-                    {{"checked " if val in data[field.field_name] }}
+                    {{"checked " if data[field.field_name] == True }}
                     {{"disabled " if not c.userobj.sysadmin }} />
                 {{ label }}
             </label>

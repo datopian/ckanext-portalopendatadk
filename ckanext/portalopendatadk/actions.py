@@ -152,7 +152,7 @@ def package_create(context, data_dict):
     '''
     model = context['model']
     user = context['user']
-
+    
     if 'type' not in data_dict:
         package_plugin = lib_plugins.lookup_package_plugin()
         try:

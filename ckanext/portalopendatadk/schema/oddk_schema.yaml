@@ -86,9 +86,11 @@ dataset_fields:
   label: Data directory
   preset: multiple_checkbox
   choices:
-    - value: checked
-      label: 
-
+    - value: True
+      label:
+  validators: boolean_validator
+  output_validators: boolean_validator
+     
 resource_fields:
 
 - field_name: url
