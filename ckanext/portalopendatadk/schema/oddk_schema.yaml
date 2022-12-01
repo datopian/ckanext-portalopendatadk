@@ -61,12 +61,6 @@ dataset_fields:
   display_email_name_field: author
   validators: not_empty email_validator
 
-- field_name: data_directory
-  label: Data directory
-  preset: multiple_checkbox
-  choices:
-    - value: checked
-      label: 
 - field_name: update_frequency
   label: Update frequency
   preset: select
@@ -88,6 +82,12 @@ dataset_fields:
   form_snippet: textarea.html
   validators: ignore_missing
 
+- field_name: data_directory
+  label: Data directory
+  preset: multiple_checkbox
+  choices:
+    - value: checked
+      label: 
 
 resource_fields:
 
