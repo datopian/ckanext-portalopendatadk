@@ -170,6 +170,11 @@ def package_create(context, data_dict):
         schema = context['schema']
     else:
         schema = package_plugin.create_package_schema()
+    for extra in data_dict.get('extras', []):
+        if extra.get('key') == 'contact_name' and not data_dict.get('author'):
+            data_dict['author'] = extra['value']
+        if extra.get('key') == 'contact_email' and not data_dict.get('author_email'):
+            data_dict['author_email'] = extra['value']
 
     data_dict = translate_fields(context, data_dict)
 
@@ -293,6 +298,12 @@ def package_update(context, data_dict):
     context["package"] = pkg
     data_dict["id"] = pkg.id
     data_dict['type'] = pkg.type
+
+    for extra in data_dict.get('extras', []):
+        if extra.get('key') == 'contact_name' and not data_dict.get('author'):
+            data_dict['author'] = extra['value']
+        if extra.get('key') == 'contact_email' and not data_dict.get('author_email'):
+            data_dict['author_email'] = extra['value']
 
     data_dict = translate_fields(context, data_dict)
 
