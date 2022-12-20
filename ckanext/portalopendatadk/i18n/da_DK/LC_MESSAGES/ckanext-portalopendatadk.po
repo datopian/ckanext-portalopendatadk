@@ -74,6 +74,10 @@ msgstr "For eksempel opdateringsdato"
 msgid "Data directory"
 msgstr "Datavejviser"
 
+#: ckanext/portalopendatadk/templates/scheming/form_snippets/multiple_checkbox.html:41
+msgid "Metadata transferred to datavejviseren"
+msgstr "Metadata overføres til datavejviseren"
+
 #: Manually added for missing error message
 msgid "A reset link has been emailed to you (unless the account specified does not exist)"
 msgstr "Der er blevet sendt et nulstillingslink til dig (medmindre den angivne konto ikke eksisterer)"

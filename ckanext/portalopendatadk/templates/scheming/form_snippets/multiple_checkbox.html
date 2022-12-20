@@ -35,9 +35,11 @@ fieldset.checkboxes label input {
                 <input id="field-{{ field.field_name }}"
                     type="checkbox"
                     name="{{ field.field_name }}"
-                    value="{{ val }}"
+                    value="{{ val }}"                   
                     {{"checked " if data[field.field_name] == True }} />
-                {{ label }}
+
+                {{"Metadata transferred to datavejviseren " if not c.userobj.sysadmin }}  
+                {{ label }}    
             </label>
         {%- endfor -%}
     </fieldset>
