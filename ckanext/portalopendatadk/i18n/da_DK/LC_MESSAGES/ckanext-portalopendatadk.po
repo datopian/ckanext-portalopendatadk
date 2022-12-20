@@ -74,6 +74,7 @@ msgstr "For eksempel opdateringsdato"
 msgid "Data directory"
 msgstr "Datavejviser"
 
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:16
 #: ckanext/portalopendatadk/templates/scheming/form_snippets/multiple_checkbox.html:41
 msgid "Metadata transferred to datavejviseren"
 msgstr "Metadata overføres til datavejviseren"

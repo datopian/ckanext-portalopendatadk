@@ -87,7 +87,7 @@ dataset_fields:
   preset: multiple_checkbox
   choices:
     - value: True
-      label:
+      label: Metadata transferred to datavejviseren
   validators: boolean_validator
   output_validators: boolean_validator
      
