@@ -57,17 +57,26 @@ msgstr "Dataejer e-mail"
 msgid "joe@example.com"
 msgstr "kontor@kommune.dk"
 
-#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:11
+
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
 msgid "Update frequency"
 msgstr "Opdatering frekvens"
 
-#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:13
 msgid "Update comments"
 msgstr "Opdatering kommentarer"
 
-#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:13
 msgid "For example, update date"
 msgstr "For eksempel opdateringsdato"
+
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:16
+msgid "Data directory"
+msgstr "Datavejviser"
+
+#: ckanext/portalopendatadk/templates/scheming/form_snippets/multiple_checkbox.html:41
+msgid "Metadata transferred to datavejviseren"
+msgstr "Metadata overføres til datavejviseren"
 
 #: Manually added for missing error message
 msgid "A reset link has been emailed to you (unless the account specified does not exist)"

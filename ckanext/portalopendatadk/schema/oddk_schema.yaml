@@ -82,7 +82,15 @@ dataset_fields:
   form_snippet: textarea.html
   validators: ignore_missing
 
-
+- field_name: data_directory
+  label: Data directory
+  preset: multiple_checkbox
+  choices:
+    - value: True
+      label: Metadata transferred to datavejviseren
+  validators: boolean_validator
+  output_validators: boolean_validator
+     
 resource_fields:
 
 - field_name: url
