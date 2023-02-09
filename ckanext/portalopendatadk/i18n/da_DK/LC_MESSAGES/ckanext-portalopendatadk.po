@@ -81,3 +81,15 @@ msgstr "Metadata overføres til datavejviseren"
 #: Manually added for missing error message
 msgid "A reset link has been emailed to you (unless the account specified does not exist)"
 msgstr "Der er blevet sendt et nulstillingslink til dig (medmindre den angivne konto ikke eksisterer)"
+
+#: Manually added
+msgid "Groups"
+msgstr "Emner"
+
+#: Manually added
+msgid "Organizations"
+msgstr "Udstillere"
+
+#: Manually added
+msgid "Find more data at"
+msgstr "Find flere data på"
