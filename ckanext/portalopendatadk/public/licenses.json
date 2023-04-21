@@ -4,15 +4,15 @@
     "status": "active",
     "maintainer": "",
     "family": "",
-    "title": "opendata.dk",
+    "title": "Creative Commons CC0 1.0 Universelt (CC0 1.0)",
     "domain_data": "False",
     "is_okd_compliant": "True",
     "is_generic": "True",
-    "url": "http://portal.opendata.dk/dataset/open-data-dk-licens",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC0",
     "is_osi_compliant": "False",
     "domain_content": "True",
     "domain_software": "False",
-    "id": "opendatadk"
+    "id": "cco"
 
 },
 {
@@ -20,77 +20,13 @@
     "status": "active",
     "maintainer": "",
     "family": "",
-    "title": "Aarhus licens",
+    "title": "Creative Commons Navngivelse 4.0 International (CC BY 4.0)",
     "domain_data": "False",
     "is_okd_compliant": "True",
     "is_generic": "True",
-    "url": "http://www.odaa.dk/base/image/Vilk%C3%A5r%20for%20brug%20af%20danske%20offentlige%20data%20-%20Aarhus%20Kommune.%20docx.pdf",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BY",
     "is_osi_compliant": "False",
     "domain_content": "True",
-    "domain_software": "False",
-    "id": "aarhus-license"
-
-},
-{
-
-    "status": "active",
-    "maintainer": "",
-    "family": "",
-    "title": "Odense licens",
-    "domain_data": "False",
-    "is_okd_compliant": "True",
-    "is_generic": "True",
-    "url": "http://http://portal.opendata.dk/dataset/660c384a-1990-4ade-880d-da729a79f80e/resource/14468d82-fa0a-4edd-ac07-b7fa7a1f40b0/download/Odenselicensodd.pdf",
-    "is_osi_compliant": "False",
-    "domain_content": "True",
-    "domain_software": "False",
-    "id": "odense-license"
-
-},
-{
-
-    "status": "active",
-    "maintainer": "",
-    "family": "",
-    "title": "Andet (Open)",
-    "domain_data": "False",
-    "is_okd_compliant": "True",
-    "is_generic": "True",
-    "url": "",
-    "is_osi_compliant": "False",
-    "domain_content": "True",
-    "domain_software": "False",
-    "id": "other-open"
-
-},
-{
-
-    "status": "active",
-    "maintainer": "",
-    "family": "",
-    "title": "Andet (Attribution)",
-    "domain_data": "False",
-    "is_okd_compliant": "True",
-    "is_generic": "True",
-    "url": "",
-    "is_osi_compliant": "False",
-    "domain_content": "True",
-    "domain_software": "False",
-    "id": "other-at"
-
-},
-{
-
-    "status": "active",
-    "maintainer": "",
-    "family": "",
-    "title": "Creative Commons Attribution",
-    "domain_data": "False",
-    "is_okd_compliant": "True",
-    "is_generic": "False",
-    "url": "http://www.opendefinition.org/licenses/cc-by",
-    "is_osi_compliant": "False",
-    "domain_content": "False",
     "domain_software": "False",
     "id": "cc-by"
 
@@ -100,15 +36,15 @@
     "status": "active",
     "maintainer": "",
     "family": "",
-    "title": "Creative Commons Attribution Share-Alike",
+    "title": "Creative Commons Navngivelse–DelPåSammeVilkår 4.0 International (CC BY-SA 4.0)",
     "domain_data": "False",
     "is_okd_compliant": "True",
-    "is_generic": "False",
-    "url": "http://www.opendefinition.org/licenses/cc-by-sa",
+    "is_generic": "True",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA",
     "is_osi_compliant": "False",
     "domain_content": "True",
     "domain_software": "False",
-    "id": "cc-by-sa"
+    "id": "cc-bysa"
 
 },
 {
@@ -116,16 +52,15 @@
     "status": "active",
     "maintainer": "",
     "family": "",
-    "title": "Creative Commons CCZero",
-    "domain_data": "True",
+    "title": "See license terms on dataset description",
+    "domain_data": "False",
     "is_okd_compliant": "True",
-    "is_generic": "False",
-    "url": "http://www.opendefinition.org/licenses/cc-zero",
+    "is_generic": "True",
+    "url": "https://www.opendata.dk",
     "is_osi_compliant": "False",
     "domain_content": "True",
     "domain_software": "False",
-    "id": "cc-zero"
-
+    "id": "oddk"
 }
 ]
 
