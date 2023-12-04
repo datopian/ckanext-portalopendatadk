@@ -31,11 +31,11 @@ log = logging.getLogger(__name__)
 def translate_fields(context, data_dict):
     html_convert = html2text.HTML2Text()
     pkg_title = data_dict.get('title')
-    pkg_notes = data_dict.get('notes')
+    pkg_notes = data_dict.get('notes', '')
     default_lang = config.get('ckan.locale_default', 'da').split('_')[0]
 
     data_dict['title_translated-{}'.format(default_lang)] = pkg_title
-    data_dict['notes_translated-{}'.format(default_lang)] = pkg_notes
+    data_dict['notes_translated-{}'.format(default_lang)] = pkg_notes if pkg_notes else ''
 
     languages_offered = config.get('ckan.locales_offered', 'en fr')
     languages = languages_offered.split()
@@ -53,17 +53,41 @@ def translate_fields(context, data_dict):
                 "from": default_lang,
                 "to": lang
             })
+            translation_title_output = translation['output'].get('title')
+            translation_notes_output = translation['output'].get('notes')
+            translation_outputs = {
+                'title': translation_title_output,
+                'notes': translation_notes_output
+            }
+
+            for name, translation_output in translation_outputs:
+                if translation_output.startswith('\n\n'):
+                    translation_outputs[name] = translation_output[2:]
+
+                if translation_output.endswith('\n\n'):
+                    translation_outputs[name] = translation_output[:-2]
 
             data_dict['title_translated-{}'.format(lang)] = \
-                translation['output'].get('title')
+                translation_outputs['title']
             data_dict['notes_translated-{}'.format(lang)] = \
-                html_convert.handle(translation['output'].get('notes'))
+                html_convert.handle(translation_outputs['notes'])
 
         except Exception as e:
             log.debug('Unable to retrieve {} translation for {}: {}'
                       .format(lang, data_dict.get('name'), e))
             data_dict['title_translated-{}'.format(lang)] = pkg_title
             data_dict['notes_translated-{}'.format(lang)] = pkg_notes
+
+    existing_title_translations = data_dict.get('title_translated')
+    existing_notes_translations = data_dict.get('notes_translated')
+
+    if existing_title_translations:
+        for lang, translation in existing_title_translations.items():
+            data_dict['title_translated'][lang] = data_dict['title_translated-{}'.format(lang)]
+
+    if existing_notes_translations:
+        for lang, translation in existing_notes_translations.items():
+            data_dict['notes_translated'][lang] = data_dict['notes_translated-{}'.format(lang)]
 
     return data_dict
 
