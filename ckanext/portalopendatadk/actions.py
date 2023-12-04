@@ -60,7 +60,7 @@ def translate_fields(context, data_dict):
                 'notes': translation_notes_output
             }
 
-            for name, translation_output in translation_outputs:
+            for name, translation_output in translation_outputs.items():
                 if translation_output.startswith('\n\n'):
                     translation_outputs[name] = translation_output[2:]
 
