@@ -77,12 +77,12 @@ GEOJSON_IMT = 'https://www.iana.org/assignments/media-types/application/vnd.geo+
 EUROPA_BASE_URI = 'http://publications.europa.eu/resource/'
 FREQUENCY_BASE_URI = 'http://publications.europa.eu/resource/authority/frequency/'
 FORMAT_BASE_URI = 'http://publications.europa.eu/resource/authority/file-type/'
-LANGUAGE_BASE_URI = 'http://publications.europa.eu/resource/authority/language/'
+LANGUAGE_BASE_URI = 'http://publications.europa.eu/resource/dataset/language/'
 ACCESS_RIGHTS_URI = 'http://publications.europa.eu/resource/authority/access-right/'
 DATA_THEME_BASE_URI = 'http://publications.europa.eu/resource/authority/data-theme/'
 LICENSES_BASE_URI = 'http://publications.europa.eu/resource/authority/licence/'
 PLANNED_AVAILABILITY_URI = (
-    'http://publications.europa.eu/resource/authority/planned-availability/'
+    'http://data.europa.eu/r5r/availability/'
 )
 MEDIA_TYPES_BASE_URI = 'http://www.iana.org/assignments/media-types/'
 CONFORMS_TO = 'https://digst.github.io/DCAT-AP-DK/releases/v.2.0/docs/'
@@ -667,6 +667,7 @@ class DanishDCATAPProfile(RDFProfile):
                     skos_license = skos_licenses[license_id]
                     license_uri = URIRef(LICENSES_BASE_URI + skos_license)
                     g.add((license_uri, RDF.type, SKOS.Concept))
+                    g.add((license_uri, RDF.type, DCT.LicenseDocument))
                     g.add(
                         (
                             license_uri,
@@ -860,6 +861,10 @@ class DanishDCATAPProfile(RDFProfile):
         # Theme Taxonomy
         theme_taxonomy_uri = URIRef(DATA_THEME_BASE_URI)
         g.add((catalog_ref, DCAT.themeTaxonomy, theme_taxonomy_uri))
+        g.add((theme_taxonomy_uri, RDF.type, SKOS.ConceptScheme))
+        g.add((theme_taxonomy_uri, DCT.title, Literal('emneklassifikation', lang='da')))
+        g.add((theme_taxonomy_uri, DCT.title, Literal('theme taxonomy', lang='en')))
+        g.add((theme_taxonomy_uri, DCT.title, Literal('taxonomie des thèmes', lang='fr')))
 
         for item in items:
             key, predicate, fallback, _type = item
@@ -872,7 +877,6 @@ class DanishDCATAPProfile(RDFProfile):
             if key == 'language':
                 value = URIRef(LANGUAGE_BASE_URI + value)
             if key == 'homepage':
-                # Make sure homepage has class foaf:Document
                 homepage_uri = URIRef(value)
                 g.add((homepage_uri, RDF.type, FOAF.Document))
             if value:
