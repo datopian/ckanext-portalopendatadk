@@ -281,11 +281,6 @@ class DCATController(BaseController):
         toolkit.response.headers.update(
             {'Content-type': CONTENT_TYPES[_format]})
         try:
-            profiles = data_dict.get('profiles')
-
-            if profiles and not isinstance(profiles, list) and all(_ not in profiles for _ in [',', ' ']):
-                data_dict['profiles'] = [profiles]
-
             return toolkit.get_action('dcat_catalog_show')({}, data_dict)
         except (toolkit.ValidationError, RDFProfileException) as e:
             toolkit.abort(409, str(e))

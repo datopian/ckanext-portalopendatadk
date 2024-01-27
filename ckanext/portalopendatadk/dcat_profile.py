@@ -25,6 +25,8 @@ from ckanext.dcat.utils import (
 )
 from ckanext.dcat.profiles import RDFProfile, CleanedURIRef, URIRefOrLiteral
 
+from ckanext.portalopendatadk import helpers as oddk_helpers
+
 
 log = logging.getLogger(__name__)
 
@@ -78,12 +80,12 @@ FORMAT_BASE_URI = 'http://publications.europa.eu/resource/authority/file-type/'
 LANGUAGE_BASE_URI = 'http://publications.europa.eu/resource/authority/language/'
 ACCESS_RIGHTS_URI = 'http://publications.europa.eu/resource/authority/access-right/'
 DATA_THEME_BASE_URI = 'http://publications.europa.eu/resource/authority/data-theme/'
+LICENSES_BASE_URI = 'http://publications.europa.eu/resource/authority/licence/'
 PLANNED_AVAILABILITY_URI = (
     'http://publications.europa.eu/resource/authority/planned-availability/'
 )
 MEDIA_TYPES_BASE_URI = 'http://www.iana.org/assignments/media-types/'
 CONFORMS_TO = 'https://digst.github.io/DCAT-AP-DK/releases/v.2.0/docs/'
-
 
 
 def _get_from_file(file_name):
@@ -98,13 +100,11 @@ def _get_from_file(file_name):
         return {}
 
 
-
 GROUP_TO_THEME = _get_from_file('group_to_theme.json')
 PLANNED_AVAILABILITY_LABELS = _get_from_file('planned_availability_skos.json')
 DATA_THEME_LABELS = _get_from_file('data_themes_skos.json')
 ACCESS_RIGHTS_LABELS = _get_from_file('access_rights_skos.json')
 LICENSES = _get_from_file('licenses.json')
-
 
 
 class DanishDCATAPProfile(RDFProfile):
@@ -374,8 +374,9 @@ class DanishDCATAPProfile(RDFProfile):
 
         # Update frequency
         update_frequency = self._get_dataset_value(dataset_dict, 'update_frequency')
+        dcat_frequencies = oddk_helpers.frequencies_from_file()
 
-        if update_frequency:
+        if update_frequency and update_frequency in dcat_frequencies:
             frequency_uri = URIRef(FREQUENCY_BASE_URI + update_frequency)
             g.add((dataset_ref, DCT.accrualPeriodicity, frequency_uri))
 
@@ -607,119 +608,6 @@ class DanishDCATAPProfile(RDFProfile):
 
         # Resources
         for resource_dict in dataset_dict.get('resources', []):
-            #distribution = URIRef(
-            #    '{}/dataset/{}/resource/{}'.format(
-            #        config.get('ckan.site_url'),
-            #        dataset_dict.get('name'),
-            #        resource_dict.get('id'),
-            #    )
-            #)
-            # BNode() #CleanedURIRef(resource_uri(resource_dict))
-            distribution = CleanedURIRef('{}/dataset/{}/resource/{}'.format(
-                config.get('ckan.site_url'),
-                dataset_dict.get('name'),
-                resource_dict.get('id'),
-            ))
-
-            g.add((dataset_ref, DCAT.distribution, distribution))
-
-            g.add((distribution, RDF.type, DCAT.Distribution))
-
-            #  Simple values
-            items = [
-                ('name', DCT.title, None, Literal),
-                ('description', DCT.description, None, Literal),
-                ('status', ADMS.status, None, URIRefOrLiteral),
-                ('rights', DCT.rights, None, URIRefOrLiteral),
-                ('access_url', DCAT.accessURL, None, URIRef),
-                ('download_url', DCAT.downloadURL, None, URIRef),
-            ]
-
-            self._add_triples_from_dict(resource_dict, distribution, items)
-
-            # License (uses SKOS concept)
-            license_id = resource_dict.get('license_id')
-            skos_licenses = {
-                'cc-zero': 'CC0',
-                'cc-by': 'CC_BY',
-                'cc-by-sa': 'CC_BY_SA',
-            }
-
-            if license_id and license_id in skos_licenses:
-                license_uri = URIRef(EUROPA_BASE_URI + license_id)
-                g.add((license_uri, RDF.type, SKOS.Concept))
-                g.add(
-                    (
-                        license_uri,
-                        SKOS.prefLabel,
-                        Literal(LICENSES[license_id]['da'], lang='da'),
-                    )
-                )
-                g.add(
-                    (
-                        license_uri,
-                        SKOS.prefLabel,
-                        Literal(LICENSES[license_id]['en'], lang='en'),
-                    )
-                )
-                g.add(
-                    (
-                        license_uri,
-                        SKOS.prefLabel,
-                        Literal(LICENSES[license_id]['fr'], lang='fr'),
-                    )
-                )
-                g.add((distribution, DCT.license, license_uri))
-
-            # Availability type (uses SKOS concept)
-            planned_availability = resource_dict.get('planned_availability')
-            if planned_availability:
-                availability_uri = URIRef(
-                    PLANNED_AVAILABILITY_URI + planned_availability
-                )
-                g.add((availability_uri, RDF.type, SKOS.Concept))
-                g.add(
-                    (
-                        availability_uri,
-                        SKOS.prefLabel,
-                        Literal(
-                            PLANNED_AVAILABILITY_LABELS[planned_availability]['da'],
-                            lang='da',
-                        ),
-                    )
-                )
-                g.add(
-                    (
-                        availability_uri,
-                        SKOS.prefLabel,
-                        Literal(
-                            PLANNED_AVAILABILITY_LABELS[planned_availability]['en'],
-                            lang='en',
-                        ),
-                    )
-                )
-                g.add(
-                    (
-                        availability_uri,
-                        SKOS.prefLabel,
-                        Literal(
-                            PLANNED_AVAILABILITY_LABELS[planned_availability]['fr'],
-                            lang='fr',
-                        ),
-                    )
-                )
-                g.add((distribution, DCAT_AP['availability'], availability_uri))
-
-            #  Lists
-            items = [
-                ('documentation', FOAF.page, None, URIRefOrLiteral),
-                ('language', DCT.language, None, URIRefOrLiteral),
-            ]
-            self._add_list_triples_from_dict(resource_dict, distribution, items)
-
-            # Conforms to
-            g.add((distribution, DC.conformsTo, URIRef(CONFORMS_TO)))
-
             # Format
             mimetype = resource_dict.get('mimetype')
             fmt = resource_dict.get('format')
@@ -740,63 +628,187 @@ class DanishDCATAPProfile(RDFProfile):
                     # Use dct:format
                     mimetype = None
 
-            if fmt:
-                fmt_uri = URIRef(FORMAT_BASE_URI + fmt)
-                g.add((distribution, DCT['format'], fmt_uri))
+            dcat_formats = oddk_helpers.formats_from_file()
 
-            # URL fallback and old behavior
-            url = resource_dict.get('url')
-            download_url = resource_dict.get('download_url')
-            access_url = resource_dict.get('access_url')
-            # Use url as fallback for access_url if access_url is not set and download_url is not equal
-            if url and not access_url:
-                if (not download_url) or (download_url and url != download_url):
-                    self._add_triple_from_dict(
-                        resource_dict, distribution, DCAT.accessURL, 'url', _type=URIRef
-                    )
-
-            # Dates
-            items = [
-                ('issued', DC.issued, None, Literal),
-                ('modified', DC.modified, None, Literal),
-            ]
-
-            self._add_date_triples_from_dict(resource_dict, distribution, items)
-
-            # Numbers
-            if resource_dict.get('size'):
-                try:
-                    g.add(
-                        (
-                            distribution,
-                            DCAT.byteSize,
-                            Literal(float(resource_dict['size']), datatype=XSD.decimal),
-                        )
-                    )
-                except (ValueError, TypeError):
-                    g.add((distribution, DCAT.byteSize, Literal(resource_dict['size'])))
-            # Checksum
-            if resource_dict.get('hash'):
-                checksum = BNode()
-                g.add((checksum, RDF.type, SPDX.Checksum))
-                g.add(
-                    (
-                        checksum,
-                        SPDX.checksumValue,
-                        Literal(resource_dict['hash'], datatype=XSD.hexBinary),
+            if fmt and fmt in dcat_formats:
+                distribution = CleanedURIRef(
+                    '{}/dataset/{}/resource/{}'.format(
+                        config.get('ckan.site_url'),
+                        dataset_dict.get('name'),
+                        resource_dict.get('id'),
                     )
                 )
 
-                if resource_dict.get('hash_algorithm'):
+                g.add((dataset_ref, DCAT.distribution, distribution))
+
+                g.add((distribution, RDF.type, DCAT.Distribution))
+
+                #  Simple values
+                items = [
+                    ('name', DCT.title, None, Literal),
+                    ('description', DCT.description, None, Literal),
+                    ('status', ADMS.status, None, URIRefOrLiteral),
+                    ('rights', DCT.rights, None, URIRefOrLiteral),
+                    ('access_url', DCAT.accessURL, None, URIRef),
+                    ('download_url', DCAT.downloadURL, None, URIRef),
+                ]
+
+                self._add_triples_from_dict(resource_dict, distribution, items)
+
+                # License (uses SKOS concept)
+                license_id = resource_dict.get('license_id')
+                skos_licenses = {
+                    'cco': 'CC0',
+                    'cc-by': 'CC_BY',
+                    'cc-bysa': 'CC_BYSA',
+                }
+
+                if license_id and license_id in skos_licenses:
+                    skos_license = skos_licenses[license_id]
+                    license_uri = URIRef(LICENSES_BASE_URI + skos_license)
+                    g.add((license_uri, RDF.type, SKOS.Concept))
+                    g.add(
+                        (
+                            license_uri,
+                            SKOS.prefLabel,
+                            Literal(LICENSES[skos_license]['label']['dan'], lang='da'),
+                        )
+                    )
+                    g.add(
+                        (
+                            license_uri,
+                            SKOS.prefLabel,
+                            Literal(LICENSES[skos_license]['label']['eng'], lang='en'),
+                        )
+                    )
+                    g.add(
+                        (
+                            license_uri,
+                            SKOS.prefLabel,
+                            Literal(LICENSES[skos_license]['label']['fra'], lang='fr'),
+                        )
+                    )
+                    g.add((distribution, DCT.license, license_uri))
+
+                # Availability type (uses SKOS concept)
+                planned_availability = resource_dict.get('planned_availability')
+
+                if planned_availability:
+                    availability_uri = URIRef(
+                        PLANNED_AVAILABILITY_URI + planned_availability
+                    )
+                    g.add((availability_uri, RDF.type, SKOS.Concept))
+                    g.add(
+                        (
+                            availability_uri,
+                            SKOS.prefLabel,
+                            Literal(
+                                PLANNED_AVAILABILITY_LABELS[planned_availability]['da'],
+                                lang='da',
+                            ),
+                        )
+                    )
+                    g.add(
+                        (
+                            availability_uri,
+                            SKOS.prefLabel,
+                            Literal(
+                                PLANNED_AVAILABILITY_LABELS[planned_availability]['en'],
+                                lang='en',
+                            ),
+                        )
+                    )
+                    g.add(
+                        (
+                            availability_uri,
+                            SKOS.prefLabel,
+                            Literal(
+                                PLANNED_AVAILABILITY_LABELS[planned_availability]['fr'],
+                                lang='fr',
+                            ),
+                        )
+                    )
+                    g.add((distribution, DCAT_AP['availability'], availability_uri))
+
+                #  Lists
+                items = [
+                    ('documentation', FOAF.page, None, URIRefOrLiteral),
+                    ('language', DCT.language, None, URIRefOrLiteral),
+                ]
+                self._add_list_triples_from_dict(resource_dict, distribution, items)
+
+                # Conforms to
+                g.add((distribution, DC.conformsTo, URIRef(CONFORMS_TO)))
+
+                if fmt:
+                    fmt_uri = URIRef(FORMAT_BASE_URI + fmt)
+                    g.add((distribution, DCT['format'], fmt_uri))
+
+                # URL fallback and old behavior
+                url = resource_dict.get('url')
+                download_url = resource_dict.get('download_url')
+                access_url = resource_dict.get('access_url')
+                # Use url as fallback for access_url if access_url is not set and download_url is not equal
+                if url and not access_url:
+                    if (not download_url) or (download_url and url != download_url):
+                        self._add_triple_from_dict(
+                            resource_dict,
+                            distribution,
+                            DCAT.accessURL,
+                            'url',
+                            _type=URIRef,
+                        )
+
+                # Dates
+                items = [
+                    ('issued', DC.issued, None, Literal),
+                    ('modified', DC.modified, None, Literal),
+                ]
+
+                self._add_date_triples_from_dict(resource_dict, distribution, items)
+
+                # Numbers
+                if resource_dict.get('size'):
+                    try:
+                        g.add(
+                            (
+                                distribution,
+                                DCAT.byteSize,
+                                Literal(
+                                    float(resource_dict['size']), datatype=XSD.decimal
+                                ),
+                            )
+                        )
+                    except (ValueError, TypeError):
+                        g.add(
+                            (
+                                distribution,
+                                DCAT.byteSize,
+                                Literal(resource_dict['size']),
+                            )
+                        )
+                # Checksum
+                if resource_dict.get('hash'):
+                    checksum = BNode()
+                    g.add((checksum, RDF.type, SPDX.Checksum))
                     g.add(
                         (
                             checksum,
-                            SPDX.algorithm,
-                            URIRefOrLiteral(resource_dict['hash_algorithm']),
+                            SPDX.checksumValue,
+                            Literal(resource_dict['hash'], datatype=XSD.hexBinary),
                         )
                     )
 
-                g.add((distribution, SPDX.checksum, checksum))
+                    if resource_dict.get('hash_algorithm'):
+                        g.add(
+                            (
+                                checksum,
+                                SPDX.algorithm,
+                                URIRefOrLiteral(resource_dict['hash_algorithm']),
+                            )
+                        )
+
+                    g.add((distribution, SPDX.checksum, checksum))
 
     def graph_from_catalog(self, catalog_dict, catalog_ref):
         g = self.g

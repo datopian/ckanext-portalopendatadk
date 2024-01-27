@@ -44,6 +44,7 @@ dataset_fields:
   label: License
   form_snippet: license.html
   default: opendatadk
+  help_allow_html: True
 
 - field_name: owner_org
   label: Organization
