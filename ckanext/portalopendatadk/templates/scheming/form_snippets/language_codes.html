@@ -1,0 +1,12 @@
+{% macro language_code_option_tag(language_code, selected_language_code) %}
+<option value="{{ language_code.name }}" {% if selected_language_code %} selected="selected" {% endif %}>
+    {{ language_code.name }}
+</option>
+{% endmacro %}
+
+{% snippet "scheming/form_snippets/_language_code_select.html",
+    field=field,
+    data=data,
+    errors=errors,
+    language_codes_available=h.get_language_codes(),
+    language_code_option_tag=language_code_option_tag %}

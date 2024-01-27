@@ -1,0 +1,37 @@
+{% import 'macros/form.html' as form %}
+
+{% macro _resource_format() %}
+{% set existing_resource_format = data.format %}
+
+{% if existing_resource_format %}
+    {% set existing_resource_format = existing_resource_format.upper() %}
+{% endif %}
+
+
+{% call form.input_block('field-format',
+    label=h.scheming_language_text(field.label),
+    error=errors[field.field_name],
+    is_required=field.required,
+    classes=field.classes if 'classes' in field else ['form-format', 'control-medium'],
+    extra_html=caller() if caller,
+) %}
+<div {{ form.attributes(field.form_attrs) if 'form_attrs' in field else '' }}>
+    <select id="field-format" name="format" {{ form.attributes( field.get('form_select_attrs',
+        {'data-module':'autocomplete'})) }}>
+        <option value="" {% if not selected_resource_format %} selected="selected" {% endif %}>
+            {{ _("Select file format") }}
+        </option>
+        {% for resource_format in resource_formats_available %}
+            {% set selected_resource_format = existing_resource_format == resource_format.name %}
+            {{ resource_format_option_tag(resource_format, selected_resource_format) }}
+        {% endfor %}
+    </select>
+    {% set field_name = field.field_name %}
+    {% snippet 'scheming/form_snippets/dcat_text.html', is_required=True, field_name=field.field_name %}
+</div>
+{% endcall %}
+{% endmacro %}
+
+{% call _resource_format() %}
+    {%- snippet 'scheming/form_snippets/help_text.html', field=field %}
+{% endcall %}

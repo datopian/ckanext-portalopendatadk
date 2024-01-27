@@ -39,9 +39,9 @@ fieldset.checkboxes label input {
                     type="checkbox"
                     name="{{ field.field_name }}"
                     value="{{ val }}"                   
-                    {{"checked " if data[field.field_name] == True }} /> 
+                    {{"checked " if data[field.field_name] == True or data[field.field_name] == 'True' }} />
                 <span class="info-block info-inline info-adj">
-                    {{ label if not c.userobj.sysadmin}}    
+                    {{ label if not c.userobj.sysadmin}}
                 </span>
             </label>
         {%- endfor -%}

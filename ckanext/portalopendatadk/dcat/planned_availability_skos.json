@@ -1,0 +1,27 @@
+{
+  "AVAILABLE": {
+    "da": "til rådighed",
+    "en": "available",
+    "fr": "disponible"
+  },
+  "EXPERIMENTAL": {
+    "da": "eksperimentel",
+    "en": "experimental",
+    "fr": "expérimental"
+  },
+  "STABLE": {
+    "da": "stabil",
+    "en": "stable",
+    "fr": "stable"
+  },
+  "TEMPORARY": {
+    "da": "midlertidig",
+    "en": "temporary",
+    "fr": "temporaire"
+  },
+  "OP_DATPRO": {
+    "da": "Midlertidige data",
+    "en": "Provisional data",
+    "fr": "Données provisoires"
+  }
+}

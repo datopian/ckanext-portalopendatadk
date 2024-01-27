@@ -1,0 +1,35 @@
+{% import 'macros/form.html' as form %}
+
+{% macro _language_code() %}
+{% set existing_language_code = data.language %}
+
+{% if existing_language_code %}
+    {% set existing_language_code = existing_language_code.upper() %}
+{% endif %}
+
+
+{% call form.input_block('field-language',
+    label=h.scheming_language_text(field.label),
+    error=errors[field.field_name],
+    is_required=field.required,
+    classes=field.classes if 'classes' in field else ['form-language', 'control-medium'],
+    extra_html=caller() if caller,
+) %}
+<div {{ form.attributes(field.form_attrs) if 'form_attrs' in field else '' }}>
+    <select id="field-language" name="language" {{ form.attributes( field.get('form_select_attrs',
+        {'data-module':'autocomplete'})) }}>
+        <option value="" {% if not selected_language_code %} selected="selected" {% endif %}>
+            {{ _("Select language") }}
+        </option>
+        {% for language_code in language_codes_available %}
+            {% set selected_language_code = existing_language_code == language_code.name %}
+            {{ language_code_option_tag(language_code, selected_language_code) }}
+        {% endfor %}
+    </select>
+</div>
+{% endcall %}
+{% endmacro %}
+
+{% call _language_code() %}
+    {%- snippet 'scheming/form_snippets/help_text.html', field=field %}
+{% endcall %}

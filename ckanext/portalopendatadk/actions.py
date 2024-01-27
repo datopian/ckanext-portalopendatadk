@@ -13,6 +13,7 @@ import ckan.lib.navl.dictization_functions
 import ckan.lib.datapreview
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
+import ckan.lib.uploader as uploader
 
 from ckan.common import _, config
 
@@ -27,6 +28,15 @@ NotFound = logic.NotFound
 
 log = logging.getLogger(__name__)
 
+DCAT_DATASET_FIELDS = [
+    'update_frequency',
+    'temporal_start',
+    'temporal_end',
+    'notes',
+    'access_rights',
+    'landing_page',
+]
+
 
 def translate_fields(context, data_dict):
     html_convert = html2text.HTML2Text()
@@ -35,29 +45,32 @@ def translate_fields(context, data_dict):
     default_lang = config.get('ckan.locale_default', 'da').split('_')[0]
 
     data_dict['title_translated-{}'.format(default_lang)] = pkg_title
-    data_dict['notes_translated-{}'.format(default_lang)] = pkg_notes if pkg_notes else ''
+    data_dict['notes_translated-{}'.format(default_lang)] = (
+        pkg_notes if pkg_notes else ''
+    )
 
     languages_offered = config.get('ckan.locales_offered', 'en fr')
     languages = languages_offered.split()
-    languages = [
-        lang.split('_')[0] for lang in languages if lang != default_lang
-    ]
+    languages = [lang.split('_')[0] for lang in languages if lang != default_lang]
 
     for lang in languages:
         try:
-            translation = _get_action('translate')(context, {
-                "input": {
-                    "title": pkg_title,
-                    "notes": markdown.markdown(pkg_notes)
+            translation = _get_action('translate')(
+                context,
+                {
+                    'input': {
+                        'title': pkg_title,
+                        'notes': markdown.markdown(pkg_notes),
+                    },
+                    'from': default_lang,
+                    'to': lang,
                 },
-                "from": default_lang,
-                "to": lang
-            })
+            )
             translation_title_output = translation['output'].get('title')
             translation_notes_output = translation['output'].get('notes')
             translation_outputs = {
                 'title': translation_title_output,
-                'notes': translation_notes_output
+                'notes': translation_notes_output,
             }
 
             for name, translation_output in translation_outputs.items():
@@ -67,14 +80,17 @@ def translate_fields(context, data_dict):
                 if translation_output.endswith('\n\n'):
                     translation_outputs[name] = translation_output[:-2]
 
-            data_dict['title_translated-{}'.format(lang)] = \
-                translation_outputs['title']
-            data_dict['notes_translated-{}'.format(lang)] = \
-                html_convert.handle(translation_outputs['notes'])
+            data_dict['title_translated-{}'.format(lang)] = translation_outputs['title']
+            data_dict['notes_translated-{}'.format(lang)] = html_convert.handle(
+                translation_outputs['notes']
+            )
 
         except Exception as e:
-            log.debug('Unable to retrieve {} translation for {}: {}'
-                      .format(lang, data_dict.get('name'), e))
+            log.debug(
+                'Unable to retrieve {} translation for {}: {}'.format(
+                    lang, data_dict.get('name'), e
+                )
+            )
             data_dict['title_translated-{}'.format(lang)] = pkg_title
             data_dict['notes_translated-{}'.format(lang)] = pkg_notes
 
@@ -83,18 +99,22 @@ def translate_fields(context, data_dict):
 
     if existing_title_translations:
         for lang, translation in existing_title_translations.items():
-            data_dict['title_translated'][lang] = data_dict['title_translated-{}'.format(lang)]
+            data_dict['title_translated'][lang] = data_dict[
+                'title_translated-{}'.format(lang)
+            ]
 
     if existing_notes_translations:
         for lang, translation in existing_notes_translations.items():
-            data_dict['notes_translated'][lang] = data_dict['notes_translated-{}'.format(lang)]
+            data_dict['notes_translated'][lang] = data_dict[
+                'notes_translated-{}'.format(lang)
+            ]
 
     return data_dict
 
 
 @toolkit.side_effect_free
 def package_create(context, data_dict):
-    '''Create a new dataset (package).
+    """Create a new dataset (package).
     You must be authorized to create new datasets. If you specify any groups
     for the new dataset, you must also be authorized to edit these groups.
     Plugins may change the parameters of this function depending on the value
@@ -173,10 +193,10 @@ def package_create(context, data_dict):
               in the context, in which case just the dataset id will
               be returned)
     :rtype: dictionary
-    '''
+    """
     model = context['model']
     user = context['user']
-    
+
     if 'type' not in data_dict:
         package_plugin = lib_plugins.lookup_package_plugin()
         try:
@@ -218,10 +238,15 @@ def package_create(context, data_dict):
                 package_plugin.check_data_dict(data_dict)
 
     data, errors = lib_plugins.plugin_validate(
-        package_plugin, context, data_dict, schema, 'package_create')
-    log.debug('package_create validate_errs=%r user=%s package=%s data=%r',
-              errors, context.get('user'),
-              data.get('name'), data_dict)
+        package_plugin, context, data_dict, schema, 'package_create'
+    )
+    log.debug(
+        'package_create validate_errs=%r user=%s package=%s data=%r',
+        errors,
+        context.get('user'),
+        data.get('name'),
+        data_dict,
+    )
 
     if errors:
         model.Session.rollback()
@@ -232,7 +257,7 @@ def package_create(context, data_dict):
     if 'message' in context:
         rev.message = context['message']
     else:
-        rev.message = _(u'REST API: Create object %s') % data.get("name")
+        rev.message = _('REST API: Create object %s') % data.get('name')
 
     if user:
         user_obj = model.User.by_name(user.decode('utf8'))
@@ -252,9 +277,9 @@ def package_create(context, data_dict):
     context_org_update['ignore_auth'] = True
     context_org_update['defer_commit'] = True
     context_org_update['add_revision'] = False
-    _get_action('package_owner_org_update')(context_org_update,
-                                            {'id': pkg.id,
-                                             'organization_id': pkg.owner_org})
+    _get_action('package_owner_org_update')(
+        context_org_update, {'id': pkg.id, 'organization_id': pkg.owner_org}
+    )
 
     for item in plugins.PluginImplementations(plugins.IPackageController):
         item.create(pkg)
@@ -268,30 +293,33 @@ def package_create(context, data_dict):
     # Create default views for resources if necessary
     if data.get('resources'):
         logic.get_action('package_create_default_resource_views')(
-            {'model': context['model'], 'user': context['user'],
-             'ignore_auth': True},
-            {'package': data})
+            {'model': context['model'], 'user': context['user'], 'ignore_auth': True},
+            {'package': data},
+        )
 
     if not context.get('defer_commit'):
         model.repo.commit()
 
     # need to let rest api create
-    context["package"] = pkg
+    context['package'] = pkg
     # this is added so that the rest controller can make a new location
-    context["id"] = pkg.id
+    context['id'] = pkg.id
     log.debug('Created object %s' % pkg.name)
 
     return_id_only = context.get('return_id_only', False)
 
-    output = context['id'] if return_id_only \
+    output = (
+        context['id']
+        if return_id_only
         else _get_action('package_show')(context, {'id': context['id']})
+    )
 
     return output
 
 
 @toolkit.side_effect_free
 def package_update(context, data_dict):
-    '''Update a dataset (package).
+    """Update a dataset (package).
     You must be authorized to edit the dataset and the groups that it belongs
     to.
     It is recommended to call
@@ -308,7 +336,7 @@ def package_update(context, data_dict):
               the context, which is the default. Otherwise returns just the
               dataset id)
     :rtype: dictionary
-    '''
+    """
 
     model = context['model']
     user = context['user']
@@ -319,8 +347,8 @@ def package_update(context, data_dict):
     pkg = model.Package.get(name_or_id)
     if pkg is None:
         raise NotFound(_('Package was not found.'))
-    context["package"] = pkg
-    data_dict["id"] = pkg.id
+    context['package'] = pkg
+    data_dict['id'] = pkg.id
     data_dict['type'] = pkg.type
 
     for extra in data_dict.get('extras', []):
@@ -354,11 +382,36 @@ def package_update(context, data_dict):
                 package_plugin.check_data_dict(data_dict)
 
     data, errors = lib_plugins.plugin_validate(
-        package_plugin, context, data_dict, schema, 'package_update')
-    log.debug('package_update validate_errs=%r user=%s package=%s data=%r',
-              errors, context.get('user'),
-              context.get('package').name if context.get('package') else '',
-              data)
+        package_plugin, context, data_dict, schema, 'package_update'
+    )
+
+    if data_dict.get('data_directory') in [True, 'True']:
+        for field in DCAT_DATASET_FIELDS:
+            if not data_dict.get(field):
+                errors[field] = [_('Missing value')]
+
+    try:
+        data_dict['url'] = data_dict.get('documentation')
+        upload = uploader.get_resource_uploader(data_dict)
+
+        if 'mimtype' not in data_dict:
+            if hasattr(upload, 'mimetype'):
+                data_dict['mimetype'] = upload.mimetype
+        if 'size' not in data_dict:
+            if hasattr(upload, 'size'):
+                data_dict['size'] = upload.size
+
+        upload.upload(data_dict['id'], uploader.get_max_resource_size())
+    except Exception as e:
+        errors['upload'] = [_('Upload failed: %s') % str(e)]
+
+    log.debug(
+        'package_update validate_errs=%r user=%s package=%s data=%r',
+        errors,
+        context.get('user'),
+        context.get('package').name if context.get('package') else '',
+        data,
+    )
 
     if errors:
         model.Session.rollback()
@@ -369,11 +422,12 @@ def package_update(context, data_dict):
     if 'message' in context:
         rev.message = context['message']
     else:
-        rev.message = _(u'REST API: Update object %s') % data.get("name")
+        rev.message = _('REST API: Update object %s') % data.get('name')
 
     # avoid revisioning by updating directly
     model.Session.query(model.Package).filter_by(id=pkg.id).update(
-        {"metadata_modified": datetime.datetime.utcnow()})
+        {'metadata_modified': datetime.datetime.utcnow()}
+    )
     model.Session.refresh(pkg)
 
     pkg = model_save.package_dict_save(data, context)
@@ -382,9 +436,9 @@ def package_update(context, data_dict):
     context_org_update['ignore_auth'] = True
     context_org_update['defer_commit'] = True
     context_org_update['add_revision'] = False
-    _get_action('package_owner_org_update')(context_org_update,
-                                            {'id': pkg.id,
-                                             'organization_id': pkg.owner_org})
+    _get_action('package_owner_org_update')(
+        context_org_update, {'id': pkg.id, 'organization_id': pkg.owner_org}
+    )
 
     # Needed to let extensions know the new resources ids
     model.Session.flush()
@@ -409,7 +463,10 @@ def package_update(context, data_dict):
 
     # we could update the dataset so we should still be able to read it.
     context['ignore_auth'] = True
-    output = data_dict['id'] if return_id_only \
+    output = (
+        data_dict['id']
+        if return_id_only
         else _get_action('package_show')(context, {'id': data_dict['id']})
+    )
 
     return output

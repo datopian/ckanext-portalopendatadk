@@ -1,4 +1,8 @@
 import logging as log
+import json
+import mimetypes
+import paste.fileapp
+import os
 
 from ckan.controllers.user import UserController, set_repoze_user
 from ckan import authz
@@ -7,10 +11,29 @@ import ckan.lib.helpers as h
 import ckan.lib.base as base
 import ckan.model as model
 import ckan.logic as logic
-from ckan.common import _, c, request
+from ckan.common import _, c, request, config, response
 import ckan.lib.navl.dictization_functions as dictization_functions
 import ckan.lib.captcha as captcha
 import ckan.lib.mailer as mailer
+from ckan.plugins import toolkit
+import ckan.lib.uploader as uploader
+
+if toolkit.check_ckan_version(min_version='2.1'):
+    BaseController = toolkit.BaseController
+else:
+    from ckan.lib.base import BaseController
+
+if toolkit.check_ckan_version(max_version='2.8.99'):
+    from ckan.controllers.package import PackageController
+    from ckan.controllers.home import HomeController
+    read_endpoint = PackageController().read
+    index_endpoint = HomeController().index
+else:
+    from ckan.views.home import index as index_endpoint
+    from ckan.views.dataset import read as read_endpoint
+
+from ckanext.dcat.utils import CONTENT_TYPES, parse_accept_header
+from ckanext.dcat.processors import RDFProfileException
 
 from ckanext.portalopendatadk.helpers import user_has_admin_access
 
@@ -26,6 +49,8 @@ ValidationError = logic.ValidationError
 DataError = dictization_functions.DataError
 unflatten = dictization_functions.unflatten
 
+log = log.getLogger(__name__)
+
 
 class ODDKUserController(UserController):
     def __before__(self, action, **env):
@@ -37,9 +62,9 @@ class ODDKUserController(UserController):
             h.redirect_to(controller='home', action='index')
 
     def new(self, data=None, errors=None, error_summary=None):
-        '''GET to display a form for registering a new user.
+        """GET to display a form for registering a new user.
            or POST the form data to actually do the user registration.
-        '''
+        """
         context = {'model': model,
                    'session': model.Session,
                    'user': c.user,
@@ -195,3 +220,159 @@ class ODDKUserController(UserController):
             h.redirect_to('/')
 
         return render('user/request_reset.html')
+
+
+def _get_package_type(id):
+    """
+    Given the id of a package this method will return the type of the
+    package, or 'dataset' if no type is currently set
+    """
+    pkg = model.Package.get(id)
+    if pkg:
+        return pkg.type or u'dataset'
+    return None
+
+
+def check_access_header():
+    _format = None
+
+    # Check Accept headers
+    accept_header = toolkit.request.headers.get('Accept', '')
+    if accept_header:
+        _format = parse_accept_header(accept_header)
+    return _format
+
+
+class DCATController(BaseController):
+
+    def read_catalog(self, _format=None):
+
+        if not _format:
+            _format = check_access_header()
+
+        if not _format:
+            return index_endpoint()
+
+        # Default to 'danish_dcat_ap' for now
+        #_profiles = toolkit.request.params.get('profiles')
+        #if _profiles:
+        #    _profiles = _profiles.split(',')
+        _profiles = ['danish_dcat_ap']
+
+        fq = toolkit.request.params.get('fq')
+
+        if config.get('ckanext.portalopendatadk.dcat_data_directory_only', False):
+            if fq:
+                fq = fq + ' +data_directory:true'
+            else:
+                fq = 'data_directory:true'
+
+        data_dict = {
+            'page': toolkit.request.params.get('page'),
+            'modified_since': toolkit.request.params.get('modified_since'),
+            'q': toolkit.request.params.get('q'),
+            'fq': fq,
+            'format': _format,
+            'profiles': _profiles,
+        }
+
+        toolkit.response.headers.update(
+            {'Content-type': CONTENT_TYPES[_format]})
+        try:
+            profiles = data_dict.get('profiles')
+
+            if profiles and not isinstance(profiles, list) and all(_ not in profiles for _ in [',', ' ']):
+                data_dict['profiles'] = [profiles]
+
+            return toolkit.get_action('dcat_catalog_show')({}, data_dict)
+        except (toolkit.ValidationError, RDFProfileException) as e:
+            toolkit.abort(409, str(e))
+
+    def read_dataset(self, _id, _format=None):
+
+        if not _format:
+            _format = check_access_header()
+
+        if not _format:
+            if toolkit.check_ckan_version(max_version='2.8.99'):
+                return read_endpoint(_id)
+            else:
+                return read_endpoint(_get_package_type(_id), _id)
+
+        _profiles = toolkit.request.params.get('profiles')
+        if _profiles:
+            _profiles = _profiles.split(',')
+
+        toolkit.response.headers.update(
+            {'Content-type': CONTENT_TYPES[_format]})
+
+        try:
+            result = toolkit.get_action('dcat_dataset_show')({}, {'id': _id,
+                'format': _format, 'profiles': _profiles})
+        except toolkit.ObjectNotFound:
+            toolkit.abort(404)
+        except (toolkit.ValidationError, RDFProfileException) as e:
+            toolkit.abort(409, str(e))
+
+        return result
+
+    def dcat_json(self):
+
+        data_dict = {
+            'page': toolkit.request.params.get('page'),
+            'modified_since': toolkit.request.params.get('modified_since'),
+        }
+
+        try:
+            datasets = toolkit.get_action('dcat_datasets_list')({},
+                                                                data_dict)
+        except toolkit.ValidationError, e:
+            toolkit.abort(409, str(e))
+
+        content = json.dumps(datasets)
+
+        toolkit.response.headers['Content-Type'] = 'application/json'
+        toolkit.response.headers['Content-Length'] = len(content)
+
+        return content
+
+
+class ODDKDocumentationController(base.BaseController):
+    def documentation_download(self, id, resource_id, filename=None):
+        """
+        Provides a direct download by either redirecting the user to the url
+        stored or downloading an uploaded file directly.
+        """
+        context = {'model': model, 'session': model.Session,
+                   'user': c.user, 'auth_user_obj': c.userobj}
+
+        try:
+            rsc = get_action('package_show')(context, {'id': id})
+        except (NotFound, NotAuthorized):
+            abort(404, _('Resource not found'))
+
+        documentation = rsc.get('documentation')
+
+        if 'http' in documentation:
+            h.redirect_to(documentation)
+        elif documentation is not None:
+            path = uploader.get_storage_path()
+            filepath = os.path.join(
+                path, 'resources', resource_id[0:3], resource_id[3:6], resource_id[6:]
+            )
+            fileapp = paste.fileapp.FileApp(filepath)
+
+            try:
+                status, headers, app_iter = request.call_application(fileapp)
+            except OSError:
+                abort(404, _('Resource data not found'))
+
+            response.headers.update(dict(headers))
+            content_type, content_enc = mimetypes.guess_type(
+                documentation)
+
+            if content_type:
+                response.headers['Content-Type'] = content_type
+
+            response.status = status
+            return app_iter

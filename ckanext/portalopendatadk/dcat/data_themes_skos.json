@@ -1,0 +1,67 @@
+{
+  "SOCI": {
+    "da": "Befolkning og samfund",
+    "en": "Population and society",
+    "fr": "Population et société"
+  },
+  "ENER": {
+    "da": "Energi",
+    "en": "Energy",
+    "fr": "Énergie"
+  },
+  "INTR": {
+    "da": "Internationale spørgsmål",
+    "en": "International issues",
+    "fr": "Questions internationales"
+  },
+  "AGRI": {
+    "da": "Landbrug, fiskeri, skovbrug og fødevarer",
+    "en": "Agriculture, fisheries, forestry and food",
+    "fr": "Agriculture, pêche, forêt et alimentation"
+  },
+  "ENVI": {
+    "da": "Miljø",
+    "en": "Environment",
+    "fr": "Environnement"
+  },
+  "ECON": {
+    "da": "Økonomi og finanser",
+    "en": "Economy and finance",
+    "fr": "Économie et finances"
+  },
+  "GOVE": {
+    "da": "Regering og offentlig sektor",
+    "en": "Government and public sector",
+    "fr": "Gouvernement et secteur public"
+  },
+  "REGI": {
+    "da": "Regioner og byer",
+    "en": "Regions and cities",
+    "fr": "Régions et villes"
+  },
+  "JUST": {
+    "da": "Retfærdighed, retssystem og offentlig sikkerhed",
+    "en": "Justice, legal system and public safety",
+    "fr": "Justice, système juridique et sécurité publique"
+  },
+  "HEAL": {
+    "da": "Sundhed",
+    "en": "Health",
+    "fr": "Santé"
+  },
+  "TRAN": {
+    "da": "Transport",
+    "en": "Transport",
+    "fr": "Transport"
+  },
+  "EDUC": {
+    "da": "Uddannelse, kultur og sport",
+    "en": "Education, culture and sport",
+    "fr": "Éducation, culture et sport"
+  },
+  "TECH": {
+    "da": "Videnskab og teknologi",
+    "en": "Science and technology",
+    "fr": "Science et technologie"
+  }
+}

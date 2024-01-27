@@ -1,0 +1,18 @@
+{
+  "title": "Title (mandatory): Specifies title of the dataset. It can appear once for each language variant of the title.",
+  "notes": "Description (mandatory): Describes the dataset's purpose and content. It can appear once for each language variant of the description.",
+  "owner_org": "Publisher or Dataset Responsible Organization (mandatory): Indicates the actor (organization or dataset responsible organization) responsible for making the dataset available. Every dataset in a given catalog must be associated with at least one.",
+  "update_frequency": "Update Frequency (recommended): Specifies the frequency with which the dataset is updated. It can appear once for each dataset.",
+  "access_rights": "Access Rights (recommended): Specifies the conditions under which the dataset can be accessed. It can appear once for each dataset.",
+  "documentation": "Documentation (recommended): Provides a downloadable file or link to the documentation of the dataset. It can appear once for each dataset.",
+  "temporal_start": "Temporal Coverage Start (recommended): Specifies the start of the time period covered by the dataset. It can appear once for each dataset.",
+  "temporal_end": "Temporal Coverage End (recommended): Specifies the end of the time period covered by the dataset. It can appear once for each dataset.",
+  "landing_page": "Landing Page (recommended): Provides a link to the landing page of the dataset. It can appear once for each dataset.",
+  "author": "Creator (recommended): Specifies the creator of the dataset. It can appear once for each dataset.",
+  "author_email": "Contact Point (recommended): Specifies the email address of the creator of the dataset. It can appear once for each dataset.",
+  "description": "Description (recommended): Provides a text-based description of the resource (distribution). It can appear once for each resource.",
+  "url": "Distribution (mandatory): Provides a file or link to the resource (distribution) of the dataset. The property can appear once for each distribution.",
+  "planned_availability": "Planned Availability (recommended): Specifies availability type of the resource (distribution). It can appear once for each distribution.",
+  "license_id": "License (recommended): Specifies the license of the resource (distribution). It can appear once for each distribution.",
+  "format": "Format (mandatory if distribution exists): Specifies the file format of the resource (distribution). It can appear once for each distribution."
+}

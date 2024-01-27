@@ -1,0 +1,8 @@
+<span class="{% if is_required == True %}dcat-required {% endif %}dcat-info-block dcat-info-inline">
+    <span class="dcat-info-text">
+        DCAT
+    </span>
+    <span class="dcat-info-tooltip">
+        {{ h.scheming_language_text(h.get_dcat_info_text(field_name)) }}
+    </span>
+</span>
