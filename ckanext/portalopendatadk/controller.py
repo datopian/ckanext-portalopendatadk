@@ -60,6 +60,8 @@ class ODDKUserController(UserController):
         # else redirect to the home page
         if not user_has_admin_access(False) and action != 'request_reset':
             h.redirect_to(controller='home', action='index')
+        if not authz.is_sysadmin(c.user) and action == 'register':
+            h.redirect_to(controller='home', action='index')
 
     def new(self, data=None, errors=None, error_summary=None):
         """GET to display a form for registering a new user.
