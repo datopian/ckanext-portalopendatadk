@@ -33,12 +33,8 @@ NotFound = logic.NotFound
 log = logging.getLogger(__name__)
 
 DCAT_DATASET_FIELDS = [
-    'update_frequency',
-    'temporal_start',
-    'temporal_end',
+    'title',
     'notes',
-    'access_rights',
-    'landing_page',
 ]
 
 
@@ -772,8 +768,8 @@ def package_search(context, data_dict):
             for result in search_results['results']
             if all(
                 [
-                    result.get(field) not in [None, '']
-                    for field in ['notes', 'title']
+                    result.get(field) not in [None, ''] and len(result.get(field)) > 0
+                    for field in DCAT_DATASET_FIELDS
                 ]
             )
         ]

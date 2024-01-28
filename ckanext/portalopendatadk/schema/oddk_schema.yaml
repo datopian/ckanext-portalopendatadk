@@ -179,12 +179,9 @@ dataset_fields:
   validators: ignore_missing
   dcat_field: True
 
-#- field_name: language
-#  label: Language
-#  preset: language_codes
-
 - field_name: documentation
   label: Documentation
+  upload_label: Documentation
   preset: documentation_upload
 
 - field_name: data_directory
