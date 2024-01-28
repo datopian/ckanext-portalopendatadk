@@ -5,7 +5,7 @@
 {%- endif -%}
 
 {% if not licenses %}
-  {% set options = [{'value': '', 'text': _('Select License')}] %}
+  {% set options = [{'value': '', 'text': _('Select license')}] %}
   {% set existing_license_id = data.get(field.field_name, '') %}
   {% set licenses = h.license_options(existing_license_id) %}
   {% for license_id, license_desc in licenses %}

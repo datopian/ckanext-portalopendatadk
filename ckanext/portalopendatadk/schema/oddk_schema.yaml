@@ -141,25 +141,25 @@ dataset_fields:
   form_snippet: textarea.html
   validators: ignore_missing
 
-- field_name: access_rights
-  label: Access rights
-  preset: select
-  choices:
-    - value: PUBLIC
-      label: Public
-    - value: RESTRICTED
-      label: Restricted
-    - value: NON_PUBLIC
-      label: Non-public
-    - value: SENSITIVE
-      label: Sensitive
-    - value: CONFIDENTIAL
-      label: Confidential
-    - value: NORMAL
-      label: Normal
-  validators: ignore_missing
-  form_include_help_choice: True
-  dcat_field: True
+#- field_name: access_rights
+#  label: Access rights
+#  preset: select
+#  choices:
+#    - value: PUBLIC
+#      label: Public
+#    - value: RESTRICTED
+#      label: Restricted
+#    - value: NON_PUBLIC
+#      label: Non-public
+#    - value: SENSITIVE
+#      label: Sensitive
+#    - value: CONFIDENTIAL
+#      label: Confidential
+#    - value: NORMAL
+#      label: Normal
+#  validators: ignore_missing
+#  form_include_help_choice: True
+#  dcat_field: True
 
 - field_name: landing_page
   label: Landing page

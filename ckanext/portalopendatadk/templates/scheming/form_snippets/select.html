@@ -9,7 +9,7 @@
 {%- endif -%}
 {%- if not h.scheming_field_required(field) and
     field.get('form_include_help_choice', false) -%}
-    {% set help_text_choice = h.scheming_language_text('Select ' + field.label) %}
+    {% set help_text_choice = h.scheming_language_text('Select ' + field.label.lower()) %}
   {%- do options.append({'value': '', 'text': help_text_choice}) -%}
 {%- endif -%}
 {%- for c in h.scheming_field_choices(field) -%}
