@@ -240,6 +240,12 @@ def package_create(context, data_dict):
     data, errors = lib_plugins.plugin_validate(
         package_plugin, context, data_dict, schema, 'package_create'
     )
+
+    if data_dict.get('data_directory') in [True, 'True']:
+        for field in DCAT_DATASET_FIELDS:
+            if not data_dict.get(field):
+                errors[field] = [_('Missing value')]
+
     log.debug(
         'package_create validate_errs=%r user=%s package=%s data=%r',
         errors,
@@ -265,6 +271,16 @@ def package_create(context, data_dict):
             data['creator_user_id'] = user_obj.id
 
     pkg = model_save.package_dict_save(data, context)
+
+    # We have to do this after save so the package id is available.
+    # If this fails, we have to rollback the transaction.
+    try:
+        data_dict['url'] = data_dict.get('documentation')
+        upload = uploader.get_resource_uploader(data_dict)
+        upload.upload(pkg.id, uploader.get_max_resource_size())
+    except Exception as e:
+        model.Session.rollback()
+        raise ValidationError({'upload': [_('Documentation upload failed: {}').format(e)]})
 
     # Needed to let extensions know the package and resources ids
     model.Session.flush()
@@ -393,14 +409,6 @@ def package_update(context, data_dict):
     try:
         data_dict['url'] = data_dict.get('documentation')
         upload = uploader.get_resource_uploader(data_dict)
-
-        if 'mimtype' not in data_dict:
-            if hasattr(upload, 'mimetype'):
-                data_dict['mimetype'] = upload.mimetype
-        if 'size' not in data_dict:
-            if hasattr(upload, 'size'):
-                data_dict['size'] = upload.size
-
         upload.upload(data_dict['id'], uploader.get_max_resource_size())
     except Exception as e:
         errors['upload'] = [_('Upload failed: %s') % str(e)]
