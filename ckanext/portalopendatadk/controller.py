@@ -275,13 +275,13 @@ class DCATController(BaseController):
             'q': toolkit.request.params.get('q'),
             'fq': fq,
             'format': _format,
-            'profiles': _profiles,
+            'profiles': _profiles
         }
 
         toolkit.response.headers.update(
             {'Content-type': CONTENT_TYPES[_format]})
         try:
-            return toolkit.get_action('dcat_catalog_show')({}, data_dict)
+            return toolkit.get_action('dcat_catalog_show')({'from_dcat': True}, data_dict)
         except (toolkit.ValidationError, RDFProfileException) as e:
             toolkit.abort(409, str(e))
 

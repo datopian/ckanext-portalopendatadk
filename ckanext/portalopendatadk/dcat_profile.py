@@ -338,17 +338,17 @@ class DanishDCATAPProfile(RDFProfile):
 
         if translated_titles:
             for lang, title in translated_titles.iteritems():
-                # strip whitespace from title start and end
                 title = title.strip()
-                g.add((dataset_ref, DCT.title, Literal(title, lang=lang)))
+                if title:
+                    g.add((dataset_ref, DCT.title, Literal(title, lang=lang)))
 
         translated_descriptions = dataset_dict.get('notes_translated')
 
         if translated_descriptions:
             for lang, description in translated_descriptions.iteritems():
-                # strip whitespace from description start and end
                 description = description.strip()
-                g.add((dataset_ref, DCT.description, Literal(description, lang=lang)))
+                if description:
+                    g.add((dataset_ref, DCT.description, Literal(description, lang=lang)))
 
         # Basic fields
         items = [

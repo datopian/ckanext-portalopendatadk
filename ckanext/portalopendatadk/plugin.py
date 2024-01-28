@@ -162,6 +162,7 @@ class PortalOpenDataDKPlugin(
             'get_user_email': get_user_email,
             'package_update': oddk_actions.package_update,
             'package_create': oddk_actions.package_create,
+            'package_search': oddk_actions.package_search,
         }
 
     def package_types(self):
