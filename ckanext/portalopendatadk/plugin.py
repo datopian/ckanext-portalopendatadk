@@ -153,6 +153,7 @@ class PortalOpenDataDKPlugin(
             'get_resource_file_types': oddk_helpers.get_resource_file_types,
             'get_language_codes': oddk_helpers.get_language_codes,
             'get_dcat_info_text': oddk_helpers.get_dcat_info_text,
+            'get_dcat_license_options': oddk_helpers.get_dcat_license_options,
         }
 
     def get_actions(self):

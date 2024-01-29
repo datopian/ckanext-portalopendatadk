@@ -1,0 +1,797 @@
+[
+  {
+    "id": "COM_REUSE",
+    "title": "European Commission reuse notice",
+    "url": "https://publications.europa.eu/resource/authority/licence/COM_REUSE"
+  },
+  {
+    "id": "ISA_OML",
+    "title": "ISA Open Metadata Licence 1.1",
+    "url": "https://publications.europa.eu/resource/authority/licence/ISA_OML"
+  },
+  {
+    "id": "CC0",
+    "title": "Creative Commons CC0 1.0 Universal",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC0"
+  },
+  {
+    "id": "CC_BY",
+    "title": "Creative Commons Attribution 4.0 International",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BY"
+  },
+  {
+    "id": "CC_BYSA",
+    "title": "Creative Commons Attribution\u2013ShareAlike 4.0 International",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA"
+  },
+  {
+    "id": "CC_BYND",
+    "title": "Creative Commons Attribution\u2013NoDerivatives 4.0 International",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYND"
+  },
+  {
+    "id": "CC_BYNC",
+    "title": "Creative Commons Attribution\u2013NonCommercial 4.0 International",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNC"
+  },
+  {
+    "id": "CC_BYNCSA",
+    "title": "Creative Commons Attribution\u2013NonCommercial\u2013ShareAlike 4.0 International",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCSA"
+  },
+  {
+    "id": "CC_BYNCND",
+    "title": "Creative Commons Attribution\u2013NonCommercial\u2013NoDerivatives 4.0 International",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCND"
+  },
+  {
+    "id": "CC_BY_3_0",
+    "title": "Creative Commons Attribution 3.0 Unported",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BY_3_0"
+  },
+  {
+    "id": "CC_BYSA_3_0",
+    "title": "Creative Commons Attribution\u2013ShareAlike 3.0 Unported",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA_3_0"
+  },
+  {
+    "id": "CC_BYND_3_0",
+    "title": "Creative Commons Attribution\u2013NoDerivs 3.0 Unported",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYND_3_0"
+  },
+  {
+    "id": "CC_BYNC_3_0",
+    "title": "Creative Commons Attribution\u2013NonCommercial 3.0 Unported",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNC_3_0"
+  },
+  {
+    "id": "CC_BYNCSA_3_0",
+    "title": "Creative Commons Attribution\u2013NonCommercial\u2013ShareAlike 3.0 Unported",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCSA_3_0"
+  },
+  {
+    "id": "CC_BYNCND_3_0",
+    "title": "Creative Commons Attribution\u2013NonCommercial\u2013NoDerivs 3.0 Unported",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCND_3_0"
+  },
+  {
+    "id": "CC_BY_2_0",
+    "title": "Creative Commons Attribution 2.0 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BY_2_0"
+  },
+  {
+    "id": "CC_BYSA_2_0",
+    "title": "Creative Commons Attribution\u2013ShareAlike 2.0 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA_2_0"
+  },
+  {
+    "id": "CC_BYND_2_0",
+    "title": "Creative Commons Attribution\u2013NoDerivs 2.0 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYND_2_0"
+  },
+  {
+    "id": "CC_BYNC_2_0",
+    "title": "Creative Commons Attribution\u2013NonCommercial 2.0 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNC_2_0"
+  },
+  {
+    "id": "CC_BYNCSA_2_0",
+    "title": "Creative Commons Attribution\u2013NonCommercial\u2013ShareAlike 2.0 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCSA_2_0"
+  },
+  {
+    "id": "CC_BYNCND_2_0",
+    "title": "Creative Commons Attribution\u2013NonCommercial\u2013NoDerivs 2.0 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCND_2_0"
+  },
+  {
+    "id": "CC_BY_1_0",
+    "title": "Creative Commons Attribution 1.0 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BY_1_0"
+  },
+  {
+    "id": "CC_BYSA_1_0",
+    "title": "Creative Commons Attribution\u2013ShareAlike 1.0 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA_1_0"
+  },
+  {
+    "id": "CC_BYND_1_0",
+    "title": "Creative Commons Attribution\u2013NoDerivs 1.0 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYND_1_0"
+  },
+  {
+    "id": "CC_BYNC_1_0",
+    "title": "Creative Commons Attribution\u2013NonCommercial 1.0 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNC_1_0"
+  },
+  {
+    "id": "CC_BYNCSA_1_0",
+    "title": "Creative Commons Attribution\u2013NonCommercial\u2013ShareAlike 1.0 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCSA_1_0"
+  },
+  {
+    "id": "CC_BYNCND_1_0",
+    "title": "Creative Commons Attribution\u2013NoDerivs\u2013NonCommercial 1.0 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCND_1_0"
+  },
+  {
+    "id": "ODC_PDDL",
+    "title": "Open Data Commons Public Domain Dedication and License 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/ODC_PDDL"
+  },
+  {
+    "id": "ODC_BY",
+    "title": "Open Data Commons Attribution License v1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/ODC_BY"
+  },
+  {
+    "id": "ODC_BL",
+    "title": "Open Data Commons Open Database License v1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/ODC_BL"
+  },
+  {
+    "id": "GNU_FDL",
+    "title": "GNU Free Documentation License",
+    "url": "https://publications.europa.eu/resource/authority/licence/GNU_FDL"
+  },
+  {
+    "id": "CC_BY_2_5",
+    "title": "Creative Commons Attribution 2.5 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BY_2_5"
+  },
+  {
+    "id": "CC_BYSA_2_5",
+    "title": "Creative Commons Attribution\u2013ShareAlike 2.5 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA_2_5"
+  },
+  {
+    "id": "CC_BYND_2_5",
+    "title": "Creative Commons Attribution\u2013NoDerivs 2.5 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYND_2_5"
+  },
+  {
+    "id": "CC_BYNC_2_5",
+    "title": "Creative Commons Attribution\u2013NonCommercial 2.5 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNC_2_5"
+  },
+  {
+    "id": "CC_BYNCSA_2_5",
+    "title": "Creative Commons Attribution\u2013NonCommercial\u2013ShareAlike 2.5 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCSA_2_5"
+  },
+  {
+    "id": "CC_BYNCND_2_5",
+    "title": "Creative Commons Attribution\u2013NonCommercial\u2013NoDerivs 2.5 Generic",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCND_2_5"
+  },
+  {
+    "id": "EUPL_1_0",
+    "title": "European Union Public Licence v.1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/EUPL_1_0"
+  },
+  {
+    "id": "EUPL_1_1",
+    "title": "European Union Public Licence v. 1.1",
+    "url": "https://publications.europa.eu/resource/authority/licence/EUPL_1_1"
+  },
+  {
+    "id": "EUPL_1_2",
+    "title": "European Union Public Licence v. 1.2",
+    "url": "https://publications.europa.eu/resource/authority/licence/EUPL_1_2"
+  },
+  {
+    "id": "CC_BY_4_0",
+    "title": "Creative Commons Attribution 4.0 International",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BY_4_0"
+  },
+  {
+    "id": "CC_BYNC_4_0",
+    "title": "Creative Commons Attribution\u2013NonCommercial 4.0 International",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNC_4_0"
+  },
+  {
+    "id": "CC_BYNCND_4_0",
+    "title": "Creative Commons Attribution\u2013NonCommercial\u2013NoDerivatives 4.0 International",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCND_4_0"
+  },
+  {
+    "id": "CC_BYNCSA_4_0",
+    "title": "Creative Commons Attribution\u2013NonCommercial\u2013ShareAlike 4.0 International",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCSA_4_0"
+  },
+  {
+    "id": "CC_BYND_4_0",
+    "title": "Creative Commons Attribution\u2013NoDerivatives 4.0 International",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYND_4_0"
+  },
+  {
+    "id": "CC_BYSA_4_0",
+    "title": "Creative Commons Attribution\u2013ShareAlike 4.0 International",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA_4_0"
+  },
+  {
+    "id": "CC_BYSA_3_0_NL",
+    "title": "Attribution-ShareAlike 3.0 Netherlands",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA_3_0_NL"
+  },
+  {
+    "id": "CC_BY_3_0_NL",
+    "title": "Attribution 3.0 Netherlands",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BY_3_0_NL"
+  },
+  {
+    "id": "CC_PDM_1_0",
+    "title": "Public Domain Mark 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_PDM_1_0"
+  },
+  {
+    "id": "CC_BY_3_0_AT",
+    "title": "Attribution 3.0 Austria",
+    "url": "https://publications.europa.eu/resource/authority/licence/CC_BY_3_0_AT"
+  },
+  {
+    "id": "DLDE_BYNC_1_0",
+    "title": "Data licence Germany \u2013 attribution \u2013 non-commercial \u2013 Version 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/DLDE_BYNC_1_0"
+  },
+  {
+    "id": "DLDE_BY_1_0",
+    "title": "Data licence Germany \u2013 attribution \u2013 Version 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/DLDE_BY_1_0"
+  },
+  {
+    "id": "DLDE_BY_2_0",
+    "title": "Data licence Germany \u2013 attribution \u2013 Version 2.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/DLDE_BY_2_0"
+  },
+  {
+    "id": "DLDE_ZERO_2_0",
+    "title": "Data licence Germany \u2013 Zero \u2013 Version 2.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/DLDE_ZERO_2_0"
+  },
+  {
+    "id": "GNU_FDL_1_1",
+    "title": "GNU Free Documentation License 1.1",
+    "url": "https://publications.europa.eu/resource/authority/licence/GNU_FDL_1_1"
+  },
+  {
+    "id": "GNU_FDL_1_2",
+    "title": "GNU Free Documentation License 1.2",
+    "url": "https://publications.europa.eu/resource/authority/licence/GNU_FDL_1_2"
+  },
+  {
+    "id": "HROD",
+    "title": "Open Licence \u2013 The Republic of Croatia",
+    "url": "https://publications.europa.eu/resource/authority/licence/HROD"
+  },
+  {
+    "id": "IODL_1_0",
+    "title": "Italian Open Data License v1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/IODL_1_0"
+  },
+  {
+    "id": "IODL_2_0",
+    "title": "Italian Open Data License v2.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/IODL_2_0"
+  },
+  {
+    "id": "NLOD_1_0",
+    "title": "Norwegian Licence for Open Government Data 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/NLOD_1_0"
+  },
+  {
+    "id": "OGL_NC",
+    "title": "Non-Commercial Government Licence",
+    "url": "https://publications.europa.eu/resource/authority/licence/OGL_NC"
+  },
+  {
+    "id": "OGL_ROU_1_0",
+    "title": "Non-Commercial Government Licence 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/OGL_ROU_1_0"
+  },
+  {
+    "id": "OGL_1_0",
+    "title": "Open Government Licence 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/OGL_1_0"
+  },
+  {
+    "id": "OGL_2_0",
+    "title": "Open Government Licence 2.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/OGL_2_0"
+  },
+  {
+    "id": "OGL_3_0",
+    "title": "Open Government Licence 3.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/OGL_3_0"
+  },
+  {
+    "id": "PSEUL",
+    "title": "INSPIRE End User Licence",
+    "url": "https://publications.europa.eu/resource/authority/licence/PSEUL"
+  },
+  {
+    "id": "BSD_2_CLAUSE",
+    "title": "2-Clause BSD License",
+    "url": "https://publications.europa.eu/resource/authority/licence/BSD_2_CLAUSE"
+  },
+  {
+    "id": "BSD_3_CLAUSE",
+    "title": "3-Clause BSD License",
+    "url": "https://publications.europa.eu/resource/authority/licence/BSD_3_CLAUSE"
+  },
+  {
+    "id": "APL_1_0",
+    "title": "Adaptive Public License 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/APL_1_0"
+  },
+  {
+    "id": "APACHE_1_1",
+    "title": "Apache Software License, version 1.1 (Apache-1.1)",
+    "url": "https://publications.europa.eu/resource/authority/licence/APACHE_1_1"
+  },
+  {
+    "id": "APACHE_2_0",
+    "title": "Apache License, Version 2.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/APACHE_2_0"
+  },
+  {
+    "id": "APSL_2_0",
+    "title": "Apple Public Source License 2.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/APSL_2_0"
+  },
+  {
+    "id": "ARTISTIC_1_0",
+    "title": "Artistic License 1.0 (Artistic-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/ARTISTIC_1_0"
+  },
+  {
+    "id": "ARTISTIC_2_0",
+    "title": "Artistic License 2.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/ARTISTIC_2_0"
+  },
+  {
+    "id": "BSL_1_0",
+    "title": "Boost Software License 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/BSL_1_0"
+  },
+  {
+    "id": "BSD_PLUS_PATENT",
+    "title": "BSD+Patent",
+    "url": "https://publications.europa.eu/resource/authority/licence/BSD_PLUS_PATENT"
+  },
+  {
+    "id": "CECILL_2_1",
+    "title": "CEA CNRS Inria Free Software License Agreement, v2.1 (CECILL-2.1)",
+    "url": "https://publications.europa.eu/resource/authority/licence/CECILL_2_1"
+  },
+  {
+    "id": "CDDL_1_0",
+    "title": "Common Development and Distribution License 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/CDDL_1_0"
+  },
+  {
+    "id": "CPAL_1_0",
+    "title": "Common Public Attribution License Version 1.0 (CPAL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/CPAL_1_0"
+  },
+  {
+    "id": "CPL_1_0",
+    "title": "Common Public License, version 1.0 (CPL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/CPL_1_0"
+  },
+  {
+    "id": "CATOSL_1_1",
+    "title": "Computer Associates Trusted Open Source License 1.1 (CATOSL-1.1)",
+    "url": "https://publications.europa.eu/resource/authority/licence/CATOSL_1_1"
+  },
+  {
+    "id": "EPL_1_0",
+    "title": "Eclipse Public License 1.0 (EPL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/EPL_1_0"
+  },
+  {
+    "id": "EPL_2_0",
+    "title": "Eclipse Public License version 2.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/EPL_2_0"
+  },
+  {
+    "id": "ECOS_2_0",
+    "title": "eCos License version 2.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/ECOS_2_0"
+  },
+  {
+    "id": "ECL_1_0",
+    "title": "Educational Community License version 1.0 (ECL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/ECL_1_0"
+  },
+  {
+    "id": "ECL_2_0",
+    "title": "Educational Community License version 2.0 (ECL-2.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/ECL_2_0"
+  },
+  {
+    "id": "EFL_1_0",
+    "title": "The Eiffel Forum License, version 1 (EFL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/EFL_1_0"
+  },
+  {
+    "id": "EFL_2",
+    "title": "Eiffel Forum License, version 2",
+    "url": "https://publications.europa.eu/resource/authority/licence/EFL_2"
+  },
+  {
+    "id": "ENTESSA",
+    "title": "Entessa Public License Version 1.0 (Entessa)",
+    "url": "https://publications.europa.eu/resource/authority/licence/ENTESSA"
+  },
+  {
+    "id": "EU_DATAGRID",
+    "title": "EU DataGrid Software License (EUDatagrid)",
+    "url": "https://publications.europa.eu/resource/authority/licence/EU_DATAGRID"
+  },
+  {
+    "id": "FAIR",
+    "title": "Fair License (Fair)",
+    "url": "https://publications.europa.eu/resource/authority/licence/FAIR"
+  },
+  {
+    "id": "FRAMEWORX_1_0",
+    "title": "Frameworx License 1.0 (Frameworx-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/FRAMEWORX_1_0"
+  },
+  {
+    "id": "AGPL_3_0",
+    "title": "GNU Affero General Public License version 3",
+    "url": "https://publications.europa.eu/resource/authority/licence/AGPL_3_0"
+  },
+  {
+    "id": "GPL_2_0",
+    "title": "GNU General Public License version 2",
+    "url": "https://publications.europa.eu/resource/authority/licence/GPL_2_0"
+  },
+  {
+    "id": "GPL_3_0",
+    "title": "GNU General Public License version 3",
+    "url": "https://publications.europa.eu/resource/authority/licence/GPL_3_0"
+  },
+  {
+    "id": "LGPL_2_1",
+    "title": "GNU Lesser General Public License version 2.1",
+    "url": "https://publications.europa.eu/resource/authority/licence/LGPL_2_1"
+  },
+  {
+    "id": "LGPL_3_0",
+    "title": "GNU Lesser General Public License version 3",
+    "url": "https://publications.europa.eu/resource/authority/licence/LGPL_3_0"
+  },
+  {
+    "id": "HPND",
+    "title": "Historical Permission Notice and Disclaimer (HPND)",
+    "url": "https://publications.europa.eu/resource/authority/licence/HPND"
+  },
+  {
+    "id": "IPL_1_0",
+    "title": "IBM Public License Version 1.0 (IPL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/IPL_1_0"
+  },
+  {
+    "id": "IPA",
+    "title": "IPA Font License (IPA)",
+    "url": "https://publications.europa.eu/resource/authority/licence/IPA"
+  },
+  {
+    "id": "ISC",
+    "title": "ISC License (ISC)",
+    "url": "https://publications.europa.eu/resource/authority/licence/ISC"
+  },
+  {
+    "id": "LPPL_1_3C",
+    "title": "LaTeX Project Public License v1.3c (LPPL-1.3c)",
+    "url": "https://publications.europa.eu/resource/authority/licence/LPPL_1_3C"
+  },
+  {
+    "id": "BSD_3_CLAUSE_LBNL",
+    "title": "Lawrence Berkeley National Labs BSD Variant License (BSD-3-Clause-LBNL)",
+    "url": "https://publications.europa.eu/resource/authority/licence/BSD_3_CLAUSE_LBNL"
+  },
+  {
+    "id": "LILIQ_P_1_1",
+    "title": "Qu\u00e9bec Free and Open-Source Licence \u2013 Permissive (LiLiQ-P) version 1.1",
+    "url": "https://publications.europa.eu/resource/authority/licence/LILIQ_P_1_1"
+  },
+  {
+    "id": "LILIQ_R_1_1",
+    "title": "Qu\u00e9bec Free and Open-Source Licence \u2013 Reciprocity (LiLiQ-R) version 1.1",
+    "url": "https://publications.europa.eu/resource/authority/licence/LILIQ_R_1_1"
+  },
+  {
+    "id": "LILIQ_RPLUS_1_1",
+    "title": "Qu\u00e9bec Free and Open-Source Licence \u2013 Strong Reciprocity (LiLiQ-R+) version 1.1",
+    "url": "https://publications.europa.eu/resource/authority/licence/LILIQ_RPLUS_1_1"
+  },
+  {
+    "id": "LPL_1_0",
+    "title": "Lucent Public License, Plan 9, version 1.0 (LPL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/LPL_1_0"
+  },
+  {
+    "id": "LPL_1_02",
+    "title": "Lucent Public License Version 1.02 (LPL-1.02)",
+    "url": "https://publications.europa.eu/resource/authority/licence/LPL_1_02"
+  },
+  {
+    "id": "MS_PL",
+    "title": "Microsoft Public License (MS-PL)",
+    "url": "https://publications.europa.eu/resource/authority/licence/MS_PL"
+  },
+  {
+    "id": "MS_RL",
+    "title": "Microsoft Reciprocal License (MS-RL)",
+    "url": "https://publications.europa.eu/resource/authority/licence/MS_RL"
+  },
+  {
+    "id": "MIROS",
+    "title": "MirOS License (MirOS)",
+    "url": "https://publications.europa.eu/resource/authority/licence/MIROS"
+  },
+  {
+    "id": "MIT",
+    "title": "The MIT License",
+    "url": "https://publications.europa.eu/resource/authority/licence/MIT"
+  },
+  {
+    "id": "MOTOSOTO",
+    "title": "Motosoto Open Source License \u2013 Version 0.9.1 (Motosoto)",
+    "url": "https://publications.europa.eu/resource/authority/licence/MOTOSOTO"
+  },
+  {
+    "id": "MPL_1_0",
+    "title": "The Mozilla Public License (MPL), version 1.0 (MPL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/MPL_1_0"
+  },
+  {
+    "id": "MPL_1_1",
+    "title": "Mozilla Public License (MPL), version 1.1 (MPL-1.1)",
+    "url": "https://publications.europa.eu/resource/authority/licence/MPL_1_1"
+  },
+  {
+    "id": "MPL_2_0",
+    "title": "Mozilla Public License (MPL), version 2.0 (MPL-2.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/MPL_2_0"
+  },
+  {
+    "id": "MULTICS",
+    "title": "Multics License (Multics)",
+    "url": "https://publications.europa.eu/resource/authority/licence/MULTICS"
+  },
+  {
+    "id": "NASA_1_3",
+    "title": "NASA Open Source Agreement v1.3 (NASA-1.3)",
+    "url": "https://publications.europa.eu/resource/authority/licence/NASA_1_3"
+  },
+  {
+    "id": "NAUMEN",
+    "title": "NAUMEN Public License (Naumen)",
+    "url": "https://publications.europa.eu/resource/authority/licence/NAUMEN"
+  },
+  {
+    "id": "NGPL",
+    "title": "The Nethack General Public License (NGPL)",
+    "url": "https://publications.europa.eu/resource/authority/licence/NGPL"
+  },
+  {
+    "id": "NOKIA",
+    "title": "Nokia Open Source License Version 1.0a (NOKIA)",
+    "url": "https://publications.europa.eu/resource/authority/licence/NOKIA"
+  },
+  {
+    "id": "NPOSL_3_0",
+    "title": "The Non-Profit Open Software License version 3.0 (NPOSL-3.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/NPOSL_3_0"
+  },
+  {
+    "id": "NTP",
+    "title": "NTP License (NTP)",
+    "url": "https://publications.europa.eu/resource/authority/licence/NTP"
+  },
+  {
+    "id": "OCLC_2_0",
+    "title": "The OCLC Research Public License 2.0 License (OCLC-2.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/OCLC_2_0"
+  },
+  {
+    "id": "OGTSL",
+    "title": "The Open Group Test Suite License (OGTSL)",
+    "url": "https://publications.europa.eu/resource/authority/licence/OGTSL"
+  },
+  {
+    "id": "OSL_1_0",
+    "title": "Open Software License, version 1.0 (OSL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/OSL_1_0"
+  },
+  {
+    "id": "OSL_2_1",
+    "title": "The Open Software License, version 2.1 (OSL-2.1)",
+    "url": "https://publications.europa.eu/resource/authority/licence/OSL_2_1"
+  },
+  {
+    "id": "OSL_3_0",
+    "title": "Open Software License, version 3.0 (OSL-3.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/OSL_3_0"
+  },
+  {
+    "id": "OPL_2_1",
+    "title": "OSET Public License version 2.1",
+    "url": "https://publications.europa.eu/resource/authority/licence/OPL_2_1"
+  },
+  {
+    "id": "PHP_3_0",
+    "title": "The PHP License 3.0 (PHP-3.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/PHP_3_0"
+  },
+  {
+    "id": "POSTGRE_SQL",
+    "title": "The PostgreSQL Licence (PostgreSQL)",
+    "url": "https://publications.europa.eu/resource/authority/licence/POSTGRE_SQL"
+  },
+  {
+    "id": "PYTHON_2_0",
+    "title": "Python License (Python-2.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/PYTHON_2_0"
+  },
+  {
+    "id": "CNRI_PYTHON",
+    "title": "The CNRI portion of the multi-part Python License (CNRI-Python)",
+    "url": "https://publications.europa.eu/resource/authority/licence/CNRI_PYTHON"
+  },
+  {
+    "id": "QPL_1_0",
+    "title": "The Q Public License Version (QPL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/QPL_1_0"
+  },
+  {
+    "id": "RPSL_1_0",
+    "title": "RealNetworks Public Source License Version 1.0 (RPSL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/RPSL_1_0"
+  },
+  {
+    "id": "RPL_1_1",
+    "title": "Reciprocal Public License, version 1.1",
+    "url": "https://publications.europa.eu/resource/authority/licence/RPL_1_1"
+  },
+  {
+    "id": "RPL_1_5",
+    "title": "Reciprocal Public License 1.5 (RPL-1.5)",
+    "url": "https://publications.europa.eu/resource/authority/licence/RPL_1_5"
+  },
+  {
+    "id": "RSCPL",
+    "title": "The Ricoh Source Code Public License (RSCPL)",
+    "url": "https://publications.europa.eu/resource/authority/licence/RSCPL"
+  },
+  {
+    "id": "OFL_1_1",
+    "title": "SIL Open Font License (OFL-1.1)",
+    "url": "https://publications.europa.eu/resource/authority/licence/OFL_1_1"
+  },
+  {
+    "id": "SIMPL_2_0",
+    "title": "Simple Public License (SimPL-2.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/SIMPL_2_0"
+  },
+  {
+    "id": "SLEEPYCAT",
+    "title": "The Sleepycat License (Sleepycat)",
+    "url": "https://publications.europa.eu/resource/authority/licence/SLEEPYCAT"
+  },
+  {
+    "id": "SPL_1_0",
+    "title": "Sun Public License Version 1.0 (SPL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/SPL_1_0"
+  },
+  {
+    "id": "WATCOM_1_0",
+    "title": "The Sybase Open Source Licence (Watcom-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/WATCOM_1_0"
+  },
+  {
+    "id": "UPL_1_0",
+    "title": "The Universal Permissive License (UPL), Version 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/UPL_1_0"
+  },
+  {
+    "id": "NCSA",
+    "title": "The University of Illinois/NCSA Open Source License (NCSA)",
+    "url": "https://publications.europa.eu/resource/authority/licence/NCSA"
+  },
+  {
+    "id": "UCL_1_0",
+    "title": "Upstream Compatibility License v1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/UCL_1_0"
+  },
+  {
+    "id": "VSL_1_0",
+    "title": "The Vovida Software License v. 1.0 (VSL-1.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/VSL_1_0"
+  },
+  {
+    "id": "W3C",
+    "title": "The W3C Software Notice and License (W3C)",
+    "url": "https://publications.europa.eu/resource/authority/licence/W3C"
+  },
+  {
+    "id": "WXWINDOWS",
+    "title": "The wxWindows Library Licence (wxWindows)",
+    "url": "https://publications.europa.eu/resource/authority/licence/WXWINDOWS"
+  },
+  {
+    "id": "XNET",
+    "title": "The X.Net, Inc. License (Xnet)",
+    "url": "https://publications.europa.eu/resource/authority/licence/XNET"
+  },
+  {
+    "id": "0BSD",
+    "title": "Zero-Clause BSD / Free Public License 1.0.0 (0BSD)",
+    "url": "https://publications.europa.eu/resource/authority/licence/0BSD"
+  },
+  {
+    "id": "ZPL_2_0",
+    "title": "The Zope Public License Version 2.0 (ZPL-2.0)",
+    "url": "https://publications.europa.eu/resource/authority/licence/ZPL_2_0"
+  },
+  {
+    "id": "ZLIB",
+    "title": "The zlib/libpng License (Zlib)",
+    "url": "https://publications.europa.eu/resource/authority/licence/ZLIB"
+  },
+  {
+    "id": "NLOD_2_0",
+    "title": "Norwegian Licence for Open Government Data (NLOD) 2.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/NLOD_2_0"
+  },
+  {
+    "id": "GNU_FDL_1_3",
+    "title": "GNU Free Documentation License 1.3",
+    "url": "https://publications.europa.eu/resource/authority/licence/GNU_FDL_1_3"
+  },
+  {
+    "id": "CLARIN_ACA_1_0",
+    "title": "Clarin Academic End-User Licence (ACA) 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/CLARIN_ACA_1_0"
+  },
+  {
+    "id": "ISA_OML_1_1",
+    "title": "ISA Open Metadata Licence 1.1",
+    "url": "https://publications.europa.eu/resource/authority/licence/ISA_OML_1_1"
+  },
+  {
+    "id": "ETALAB_2_0",
+    "title": "Etalab Open Licence V 2.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/ETALAB_2_0"
+  },
+  {
+    "id": "EUROGEO_2022",
+    "title": "EuroGeographics Open Data Licence v.2022",
+    "url": "https://publications.europa.eu/resource/authority/licence/EUROGEO_2022"
+  }
+]

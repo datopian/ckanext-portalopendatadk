@@ -79,3 +79,18 @@ def get_dcat_info_text(field_name):
         log.error('Error reading dcat_info_text.json: %s' % e)
 
     return info_text
+
+
+def get_dcat_license_options():
+    dcat_license_options = []
+
+    try:
+        cur_dir = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(cur_dir, 'dcat/license_options.json')
+
+        with open(file_path, 'r') as file:
+            dcat_license_options = json.loads(file.read())
+    except Exception as e:
+        log.error('Error reading dcat_license_options.json: %s' % e)
+
+    return dcat_license_options

@@ -661,6 +661,15 @@ class DanishDCATAPProfile(RDFProfile):
                     'cco': 'CC0',
                     'cc-by': 'CC_BY',
                     'cc-bysa': 'CC_BYSA',
+                    'PDDL-1.0': 'ODC_PDDL',
+                    'ODbL-1.0': 'ODC_BL',
+                    'ODC-BY-1.0': 'ODC_BY',
+                    'CC0-1.0': 'CC0',
+                    'CC-BY-4.0': 'CC_BY_4_0',
+                    'CC-BY-SA-4.0': 'CC_BYSA_4_0',
+                    'GFDL-1.3-no-cover-texts-no-invariant-sections': 'GNU_FDL_1_3',
+                    'OGL-UK-2.0': 'OGL_NC',
+                    'CC-BY-NC-4.0': 'CC_BYNC_4_0',
                 }
 
                 if license_id and license_id in skos_licenses:

@@ -3,6 +3,7 @@ import json
 import mimetypes
 import paste.fileapp
 import os
+from botocore.exceptions import ClientError
 
 from ckan.controllers.user import UserController, set_repoze_user
 from ckan import authz
@@ -17,6 +18,7 @@ import ckan.lib.captcha as captcha
 import ckan.lib.mailer as mailer
 from ckan.plugins import toolkit
 import ckan.lib.uploader as uploader
+from ckan.lib import munge
 
 if toolkit.check_ckan_version(min_version='2.1'):
     BaseController = toolkit.BaseController
@@ -353,23 +355,92 @@ class ODDKDocumentationController(base.BaseController):
         if 'http' in documentation:
             h.redirect_to(documentation)
         elif documentation is not None:
-            path = uploader.get_storage_path()
-            filepath = os.path.join(
-                path, 'resources', resource_id[0:3], resource_id[3:6], resource_id[6:]
-            )
-            fileapp = paste.fileapp.FileApp(filepath)
+            ckan_plugins = config.get('ckan.plugins', '').split()
+            if 's3filestore' not in ckan_plugins:
+                path = uploader.get_storage_path()
+                filepath = os.path.join(
+                    path, 'resources', resource_id[0:3], resource_id[3:6], resource_id[6:]
+                )
+                fileapp = paste.fileapp.FileApp(filepath)
 
-            try:
-                status, headers, app_iter = request.call_application(fileapp)
-            except OSError:
-                abort(404, _('Resource data not found'))
+                try:
+                    status, headers, app_iter = request.call_application(fileapp)
+                except OSError:
+                    abort(404, _('Resource data not found'))
 
-            response.headers.update(dict(headers))
-            content_type, content_enc = mimetypes.guess_type(
-                documentation)
+                response.headers.update(dict(headers))
+                content_type, content_enc = mimetypes.guess_type(
+                    documentation)
 
-            if content_type:
-                response.headers['Content-Type'] = content_type
+                if content_type:
+                    response.headers['Content-Type'] = content_type
 
-            response.status = status
-            return app_iter
+                response.status = status
+                return app_iter
+            else:
+                rsc['url'] = documentation
+                upload = uploader.get_resource_uploader(rsc)
+                bucket_name = config.get("ckanext.s3filestore.aws_bucket_name")
+                host_name = config.get("ckanext.s3filestore.host_name")
+                bucket = upload.get_s3_bucket(bucket_name)
+                signed_url_expiry = int(
+                    config.get("ckanext.s3filestore.signed_url_expiry", "60")
+                )
+
+                if documentation is None:
+                    documentation = os.path.basename(rsc["url"])
+
+                munged_documentation = munge.munge_filename(documentation)
+
+                key_path = os.path.join(
+                    'resources', resource_id, munged_documentation
+                )
+
+                key = munged_documentation
+
+                if key is None:
+                    log.warn(
+                        "Key '{0}' not found in bucket '{1}'".format(key_path, bucket_name)
+                    )
+
+                try:
+                    # Small workaround to manage downloading of large files
+                    # We are using redirect to minio's resource public URL
+                    s3 = upload.get_s3_session()
+                    client = s3.client(service_name="s3", endpoint_url=host_name)
+                    contentDeposition = "attachment; filename=" + documentation
+                    url = client.generate_presigned_url(
+                        ClientMethod="get_object",
+                        Params={
+                            "Bucket": bucket.name,
+                            "Key": key_path,
+                            "ResponseContentDisposition": contentDeposition,
+                            "ResponseContentType": "application/octet-stream",
+                        },
+                        ExpiresIn=signed_url_expiry,
+                    )
+                    toolkit.redirect_to(url)
+
+                except ClientError as ex:
+                    if ex.response["Error"]["Code"] == "NoSuchKey":
+                        # attempt fallback
+                        if config.get(
+                            "ckanext.s3filestore.filesystem_download_fallback", False
+                        ):
+                            log.info(
+                                "Attempting filesystem fallback for resource {0}".format(
+                                    resource_id
+                                )
+                            )
+                            url = toolkit.url_for(
+                                controller="ckanext.s3filestore.controller:S3Controller",
+                                action="filesystem_resource_download",
+                                id=id,
+                                resource_id=resource_id,
+                                filename=documentation
+                            )
+                            toolkit.redirect_to(url)
+
+                        abort(404, _("Resource data not found"))
+                    else:
+                        raise ex

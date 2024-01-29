@@ -7,13 +7,13 @@
 {% if not licenses %}
   {% set options = [{'value': '', 'text': _('Select license')}] %}
   {% set existing_license_id = data.get(field.field_name, '') %}
-  {% set licenses = h.license_options(existing_license_id) %}
-  {% for license_id, license_desc in licenses %}
+  {% set licenses = h.get_dcat_license_options() %}
+  {% for license in licenses %}
     {% do options.append({
-      'value': license_id,
-      'text': license_desc}) %}
+      'value': license['id'],
+      'text': _(license['title'])
+    }) %}
   {% endfor %}
-  {% set selected = existing_license_id %}
 {% else %}
 {%- set options=[] -%}
 {%- for license_desc, license_id in licenses -%}
