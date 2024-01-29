@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var dcat_fields = ["field-notes", "field-title"];
+  var dcat_fields = ["field-notes", "field-title", "field-organizations"];
 
   function updateDcatFields() {
     console.log($("#field-data_directory"));

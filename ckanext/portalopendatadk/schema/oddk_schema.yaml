@@ -49,6 +49,7 @@ dataset_fields:
 - field_name: owner_org
   label: Organization
   preset: dataset_organization
+  dcat_required: True
 
 - field_name: author
   label: Author

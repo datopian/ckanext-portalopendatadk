@@ -19,7 +19,7 @@ not used as a form_snippet directly #}
           {{ organization_option_tag(organization, selected_org) }}
         {% endfor %}
       </select>
-        {% snippet 'scheming/form_snippets/dcat_text.html', is_required=is_required, field_name='owner_org' %}
+        {% snippet 'scheming/form_snippets/dcat_text.html', is_required=True, field_name='owner_org' %}
     </div>
   {% endcall %}
 {% endmacro %}
