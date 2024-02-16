@@ -77,13 +77,11 @@ GEOJSON_IMT = 'https://www.iana.org/assignments/media-types/application/vnd.geo+
 EUROPA_BASE_URI = 'http://publications.europa.eu/resource/'
 FREQUENCY_BASE_URI = 'http://publications.europa.eu/resource/authority/frequency/'
 FORMAT_BASE_URI = 'http://publications.europa.eu/resource/authority/file-type/'
-LANGUAGE_BASE_URI = 'http://publications.europa.eu/resource/dataset/language/'
+LANGUAGE_BASE_URI = 'http://publications.europa.eu/resource/authority/language/'
 ACCESS_RIGHTS_URI = 'http://publications.europa.eu/resource/authority/access-right/'
 DATA_THEME_BASE_URI = 'http://publications.europa.eu/resource/authority/data-theme/'
 LICENSES_BASE_URI = 'http://publications.europa.eu/resource/authority/licence/'
-PLANNED_AVAILABILITY_URI = (
-    'http://data.europa.eu/r5r/availability/'
-)
+PLANNED_AVAILABILITY_URI = 'http://data.europa.eu/r5r/availability/'
 MEDIA_TYPES_BASE_URI = 'http://www.iana.org/assignments/media-types/'
 CONFORMS_TO = 'https://digst.github.io/DCAT-AP-DK/releases/v.2.0/docs/'
 
@@ -214,9 +212,9 @@ class DanishDCATAPProfile(RDFProfile):
             if spatial.get(key):
                 dataset_dict['extras'].append(
                     {
-                        'key': 'spatial_{0}'.format(key)
-                        if key != 'geom'
-                        else 'spatial',
+                        'key': (
+                            'spatial_{0}'.format(key) if key != 'geom' else 'spatial'
+                        ),
                         'value': spatial.get(key),
                     }
                 )
@@ -248,7 +246,7 @@ class DanishDCATAPProfile(RDFProfile):
                 ('description', DCT.description),
                 ('access_url', DCAT.accessURL),
                 ('download_url', DCAT.downloadURL),
-                ('issued', DC.issued),
+                ('issued', DCT.issued),
                 ('modified', DC.modified),
                 ('status', ADMS.status),
                 ('rights', DCT.rights),
@@ -348,7 +346,9 @@ class DanishDCATAPProfile(RDFProfile):
             for lang, description in translated_descriptions.iteritems():
                 description = description.strip()
                 if description:
-                    g.add((dataset_ref, DCT.description, Literal(description, lang=lang)))
+                    g.add(
+                        (dataset_ref, DCT.description, Literal(description, lang=lang))
+                    )
 
         # Basic fields
         items = [
@@ -367,8 +367,8 @@ class DanishDCATAPProfile(RDFProfile):
 
         # Dates
         items = [
-            ('issued', DC.issued, ['metadata_created'], Literal),
-            ('modified', DC.modified, ['metadata_modified'], Literal),
+            ('issued', DCT.issued, ['metadata_created'], Literal),
+            ('modified', DCT.modified, ['metadata_modified'], Literal),
         ]
         self._add_date_triples_from_dict(dataset_dict, dataset_ref, items)
 
@@ -434,24 +434,24 @@ class DanishDCATAPProfile(RDFProfile):
                         Literal(DATA_THEME_LABELS[theme_name]['da'], lang='da'),
                     )
                 )
-                g.add(
-                    (
-                        theme_uri,
-                        SKOS.prefLabel,
-                        Literal(DATA_THEME_LABELS[theme_name]['en'], lang='en'),
-                    )
-                )
-                g.add(
-                    (
-                        theme_uri,
-                        SKOS.prefLabel,
-                        Literal(DATA_THEME_LABELS[theme_name]['fr'], lang='fr'),
-                    )
-                )
+                # g.add(
+                #    (
+                #        theme_uri,
+                #        SKOS.prefLabel,
+                #        Literal(DATA_THEME_LABELS[theme_name]['en'], lang='en'),
+                #    )
+                # )
+                # g.add(
+                #    (
+                #        theme_uri,
+                #        SKOS.prefLabel,
+                #        Literal(DATA_THEME_LABELS[theme_name]['fr'], lang='fr'),
+                #    )
+                # )
                 g.add((dataset_ref, DCAT.theme, theme_uri))
 
         # Conforms to
-        g.add((dataset_ref, DC.conformsTo, URIRef(CONFORMS_TO)))
+        g.add((dataset_ref, DCT.conformsTo, URIRef(CONFORMS_TO)))
 
         # Language
         titles_translated = dataset_dict.get('title_translated')
@@ -465,7 +465,7 @@ class DanishDCATAPProfile(RDFProfile):
         language_conversion = {
             'en': 'ENG',
             'da': 'DAN',
-            'fr': 'FRE',
+            'fr': 'FRA',
         }
 
         for lang in languages:
@@ -684,20 +684,20 @@ class DanishDCATAPProfile(RDFProfile):
                             Literal(LICENSES[skos_license]['label']['dan'], lang='da'),
                         )
                     )
-                    g.add(
-                        (
-                            license_uri,
-                            SKOS.prefLabel,
-                            Literal(LICENSES[skos_license]['label']['eng'], lang='en'),
-                        )
-                    )
-                    g.add(
-                        (
-                            license_uri,
-                            SKOS.prefLabel,
-                            Literal(LICENSES[skos_license]['label']['fra'], lang='fr'),
-                        )
-                    )
+                    # g.add(
+                    #    (
+                    #        license_uri,
+                    #        SKOS.prefLabel,
+                    #        Literal(LICENSES[skos_license]['label']['eng'], lang='en'),
+                    #    )
+                    # )
+                    # g.add(
+                    #    (
+                    #        license_uri,
+                    #        SKOS.prefLabel,
+                    #        Literal(LICENSES[skos_license]['label']['fra'], lang='fr'),
+                    #    )
+                    # )
                     g.add((distribution, DCT.license, license_uri))
 
                 # Availability type (uses SKOS concept)
@@ -718,26 +718,26 @@ class DanishDCATAPProfile(RDFProfile):
                             ),
                         )
                     )
-                    g.add(
-                        (
-                            availability_uri,
-                            SKOS.prefLabel,
-                            Literal(
-                                PLANNED_AVAILABILITY_LABELS[planned_availability]['en'],
-                                lang='en',
-                            ),
-                        )
-                    )
-                    g.add(
-                        (
-                            availability_uri,
-                            SKOS.prefLabel,
-                            Literal(
-                                PLANNED_AVAILABILITY_LABELS[planned_availability]['fr'],
-                                lang='fr',
-                            ),
-                        )
-                    )
+                    # g.add(
+                    #    (
+                    #        availability_uri,
+                    #        SKOS.prefLabel,
+                    #        Literal(
+                    #            PLANNED_AVAILABILITY_LABELS[planned_availability]['en'],
+                    #            lang='en',
+                    #        ),
+                    #    )
+                    # )
+                    # g.add(
+                    #    (
+                    #        availability_uri,
+                    #        SKOS.prefLabel,
+                    #        Literal(
+                    #            PLANNED_AVAILABILITY_LABELS[planned_availability]['fr'],
+                    #            lang='fr',
+                    #        ),
+                    #    )
+                    # )
                     g.add((distribution, DCAT_AP['availability'], availability_uri))
 
                 #  Lists
@@ -771,8 +771,8 @@ class DanishDCATAPProfile(RDFProfile):
 
                 # Dates
                 items = [
-                    ('issued', DC.issued, None, Literal),
-                    ('modified', DC.modified, None, Literal),
+                    ('issued', DCT.issued, None, Literal),
+                    ('modified', DCT.modified, None, Literal),
                 ]
 
                 self._add_date_triples_from_dict(resource_dict, distribution, items)
@@ -823,6 +823,10 @@ class DanishDCATAPProfile(RDFProfile):
     def graph_from_catalog(self, catalog_dict, catalog_ref):
         g = self.g
 
+        frontend_site_url = config.get(
+            'ckanext.portalopendatadk.frontend_site_url', config.get('ckan.site_url')
+        )
+
         for prefix, namespace in namespaces.iteritems():
             g.bind(prefix, namespace)
 
@@ -837,34 +841,42 @@ class DanishDCATAPProfile(RDFProfile):
                 config.get('ckan.site_description') or 'Open Data DK',
                 Literal,
             ),
-            ('homepage', FOAF.homepage, config.get('ckan.site_url'), URIRef),
+            (
+                'homepage',
+                FOAF.homepage,
+                frontend_site_url,
+                URIRef,
+            ),
         ]
 
         # Languages
-        languages = [
-            lang.split('_')[0]
-            for lang in config.get('ckan.locales_offered', 'en').split()
-        ]
-        language_conversion = {
-            'en': 'ENG',
-            'da': 'DAN',
-            'fr': 'FRE',
-        }
-        items.extend(
-            [
-                ('language', DCT.language, language_conversion[lang], URIRefOrLiteral)
-                for lang in languages
-                if lang in language_conversion
-            ]
-        )
+        # languages = [
+        #    lang.split('_')[0]
+        #    for lang in config.get('ckan.locales_offered', 'en').split()
+        # ]
+        # language_conversion = {
+        #    'en': 'ENG',
+        #    'da': 'DAN',
+        #    'fr': 'FRA',
+        # }
+        # items.extend(
+        #    [
+        #        ('language', DCT.language, language_conversion[lang], URIRefOrLiteral)
+        #        for lang in languages
+        #        if lang in language_conversion
+        #    ]
+        # )
+
+        # Only add 'da' language for now
+        g.add((catalog_ref, DCT.language, URIRef(LANGUAGE_BASE_URI + 'DAN')))
 
         # Spatial
         spatial = BNode()
         g.add((spatial, RDF.type, DCT.Location))
         g.add((catalog_ref, DCT.spatial, spatial))
         g.add((spatial, SKOS.prefLabel, Literal('Danmark', lang='da')))
-        g.add((spatial, SKOS.prefLabel, Literal('Denmark', lang='en')))
-        g.add((spatial, SKOS.prefLabel, Literal('Danemark', lang='fr')))
+        # g.add((spatial, SKOS.prefLabel, Literal('Denmark', lang='en')))
+        # g.add((spatial, SKOS.prefLabel, Literal('Danemark', lang='fr')))
         g.add((spatial, LOCN.geometry, Literal('Denmark', datatype=GEOJSON_IMT)))
 
         # Theme Taxonomy
@@ -872,8 +884,8 @@ class DanishDCATAPProfile(RDFProfile):
         g.add((catalog_ref, DCAT.themeTaxonomy, theme_taxonomy_uri))
         g.add((theme_taxonomy_uri, RDF.type, SKOS.ConceptScheme))
         g.add((theme_taxonomy_uri, DCT.title, Literal('emneklassifikation', lang='da')))
-        g.add((theme_taxonomy_uri, DCT.title, Literal('theme taxonomy', lang='en')))
-        g.add((theme_taxonomy_uri, DCT.title, Literal('taxonomie des thèmes', lang='fr')))
+        # g.add((theme_taxonomy_uri, DCT.title, Literal('theme taxonomy', lang='en')))
+        # g.add((theme_taxonomy_uri, DCT.title, Literal('taxonomie des thèmes', lang='fr')))
 
         for item in items:
             key, predicate, fallback, _type = item
@@ -891,7 +903,7 @@ class DanishDCATAPProfile(RDFProfile):
             if value:
                 g.add((catalog_ref, predicate, _type(value)))
 
-        publisher_uri = URIRef(config.get('ckan.site_url') + '/hvad-er-open-data-dk')
+        publisher_uri = URIRef(frontend_site_url + '/hvad-er-open-data-dk')
         g.add((publisher_uri, RDF.type, FOAF.Agent))
         g.add((publisher_uri, FOAF.name, Literal('Open Data DK')))
         g.add((catalog_ref, DCT.publisher, publisher_uri))
