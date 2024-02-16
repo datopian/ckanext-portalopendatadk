@@ -333,22 +333,40 @@ class DanishDCATAPProfile(RDFProfile):
         g.add((dataset_ref, RDF.type, DCAT.Dataset))
 
         translated_titles = dataset_dict.get('title_translated')
+        translated_descriptions = dataset_dict.get('notes_translated')
 
+        # if translated_titles:
+        #     for lang, title in translated_titles.iteritems():
+        #         title = title.strip()
+        #         if title:
+        #             g.add((dataset_ref, DCT.title, Literal(title, lang=lang)))
+
+        # translated_descriptions = dataset_dict.get('notes_translated')
+
+        # if translated_descriptions:
+        #     for lang, description in translated_descriptions.iteritems():
+        #         description = description.strip()
+        #         if description:
+        #             g.add(
+        #                 (dataset_ref, DCT.description, Literal(description, lang=lang))
+        #             )
+
+        # Only add 'da' as language for now
         if translated_titles:
             for lang, title in translated_titles.iteritems():
-                title = title.strip()
-                if title:
-                    g.add((dataset_ref, DCT.title, Literal(title, lang=lang)))
-
-        translated_descriptions = dataset_dict.get('notes_translated')
+                if lang == 'da':
+                    title = title.strip()
+                    if title:
+                        g.add((dataset_ref, DCT.title, Literal(title, lang=lang)))
 
         if translated_descriptions:
             for lang, description in translated_descriptions.iteritems():
-                description = description.strip()
-                if description:
-                    g.add(
-                        (dataset_ref, DCT.description, Literal(description, lang=lang))
-                    )
+                if lang == 'da':
+                    description = description.strip()
+                    if description:
+                        g.add(
+                            (dataset_ref, DCT.description, Literal(description, lang=lang))
+                        )
 
         # Basic fields
         items = [
@@ -454,29 +472,34 @@ class DanishDCATAPProfile(RDFProfile):
         g.add((dataset_ref, DCT.conformsTo, URIRef(CONFORMS_TO)))
 
         # Language
-        titles_translated = dataset_dict.get('title_translated')
-        languages = []
+        # titles_translated = dataset_dict.get('title_translated')
+        # languages = []
 
-        if titles_translated:
-            for lang, title in titles_translated.iteritems():
-                if title:
-                    languages.append(lang)
+        # if titles_translated:
+        #    for lang, title in titles_translated.iteritems():
+        #        if title:
+        #            languages.append(lang)
 
-        language_conversion = {
-            'en': 'ENG',
-            'da': 'DAN',
-            'fr': 'FRA',
-        }
+        # Only add 'da' as language for now
 
-        for lang in languages:
-            if lang in language_conversion:
-                g.add(
-                    (
-                        dataset_ref,
-                        DCT.language,
-                        URIRef(LANGUAGE_BASE_URI + language_conversion[lang]),
-                    )
-                )
+        # language_conversion = {
+        #    'en': 'ENG',
+        #    'da': 'DAN',
+        #    'fr': 'FRA',
+        # }
+
+        # for lang in languages:
+        #    if lang in language_conversion:
+        #        g.add(
+        #            (
+        #                dataset_ref,
+        #                DCT.language,
+        #                URIRef(LANGUAGE_BASE_URI + language_conversion[lang]),
+        #            )
+        #        )
+
+        # Only add 'da' as language for now
+        g.add((dataset_ref, DCT.language, URIRef(LANGUAGE_BASE_URI + 'DAN')))
 
         # Contact details
         if any(
