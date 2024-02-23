@@ -247,7 +247,7 @@ class DanishDCATAPProfile(RDFProfile):
                 ('access_url', DCAT.accessURL),
                 ('download_url', DCAT.downloadURL),
                 ('issued', DCT.issued),
-                ('modified', DC.modified),
+                ('modified', DCT.modified),
                 ('status', ADMS.status),
                 ('rights', DCT.rights),
                 ('license', DCT.license),
@@ -771,7 +771,7 @@ class DanishDCATAPProfile(RDFProfile):
                 self._add_list_triples_from_dict(resource_dict, distribution, items)
 
                 # Conforms to
-                g.add((distribution, DC.conformsTo, URIRef(CONFORMS_TO)))
+                g.add((distribution, DCT.conformsTo, URIRef(CONFORMS_TO)))
 
                 if fmt:
                     fmt_uri = URIRef(FORMAT_BASE_URI + fmt)
@@ -935,4 +935,4 @@ class DanishDCATAPProfile(RDFProfile):
         modified = self._last_catalog_modification()
 
         if modified:
-            self._add_date_triple(catalog_ref, DC.modified, modified)
+            self._add_date_triple(catalog_ref, DCT.modified, modified)
