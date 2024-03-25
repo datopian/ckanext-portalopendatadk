@@ -365,7 +365,11 @@ class DanishDCATAPProfile(RDFProfile):
                     description = description.strip()
                     if description:
                         g.add(
-                            (dataset_ref, DCT.description, Literal(description, lang=lang))
+                            (
+                                dataset_ref,
+                                DCT.description,
+                                Literal(description, lang=lang),
+                            )
                         )
 
         # Basic fields
@@ -694,17 +698,27 @@ class DanishDCATAPProfile(RDFProfile):
                     'OGL-UK-2.0': 'OGL_NC',
                     'CC-BY-NC-4.0': 'CC_BYNC_4_0',
                 }
+                skos_licenses.update(
+                    {v: v for v in LICENSES.keys() if v not in skos_licenses}
+                )
 
                 if license_id and license_id in skos_licenses:
                     skos_license = skos_licenses[license_id]
                     license_uri = URIRef(LICENSES_BASE_URI + skos_license)
+
+                    skos_labels = LICENSES[skos_license]['label']
+                    skos_label = skos_labels.get('dan')
+
+                    if not skos_label:
+                        skos_label = skos_labels.get('eng', skos_license)
+
                     g.add((license_uri, RDF.type, SKOS.Concept))
                     g.add((license_uri, RDF.type, DCT.LicenseDocument))
                     g.add(
                         (
                             license_uri,
                             SKOS.prefLabel,
-                            Literal(LICENSES[skos_license]['label']['dan'], lang='da'),
+                            Literal(skos_label, lang='da'),
                         )
                     )
                     # g.add(
