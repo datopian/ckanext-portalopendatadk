@@ -23,8 +23,9 @@
             'text': license_desc}) -%}
     {%- endif -%}
 {%- endfor -%}
-{% set selected = data.get(field.field_name, field.get('default', 'notspecified')) %}
 {% endif %}
+
+{% set selected = data.get(field.field_name, field.get('default', 'notspecified')) %}
 
 {% set dcat_field = field.get('dcat_field', False) %}
 {% if dcat_field %}
