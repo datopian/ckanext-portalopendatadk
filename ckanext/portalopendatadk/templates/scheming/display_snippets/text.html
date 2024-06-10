@@ -1,0 +1,7 @@
+
+{% if field.field_name == 'license_id' %}
+  {% set license = h.get_dcat_license_options(selected=data[field.field_name]) %}
+  {{ license.title or _('No License Provided') }}
+{% else %}
+  {{ data[field.field_name] }}
+{% endif %}

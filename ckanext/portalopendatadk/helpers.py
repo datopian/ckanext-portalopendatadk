@@ -81,7 +81,7 @@ def get_dcat_info_text(field_name):
     return info_text
 
 
-def get_dcat_license_options():
+def get_dcat_license_options(selected=None):
     dcat_license_options = []
 
     try:
@@ -92,5 +92,11 @@ def get_dcat_license_options():
             dcat_license_options = json.loads(file.read())
     except Exception as e:
         log.error('Error reading dcat_license_options.json: %s' % e)
+
+    if selected:
+        for option in dcat_license_options:
+            if option['id'] == selected:
+                return option
+        return None
 
     return dcat_license_options
