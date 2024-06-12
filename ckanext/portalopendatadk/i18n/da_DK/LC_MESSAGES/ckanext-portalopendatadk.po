@@ -93,3 +93,919 @@ msgstr "Udstillere"
 #: Manually added
 msgid "Find more data at"
 msgstr "Find flere data på"
+
+#: Manually added
+msgid "Title (mandatory): Specifies title of the dataset. It can appear once for each language variant of the title."
+msgstr "Titel (obligatorisk): Angiver titlen på datasættet. Det kan forekomme én gang for hver sprogvariant af titlen."
+
+#: Manually added
+msgid "Description (mandatory): Describes the dataset's purpose and content. It can appear once for each language variant of the description."
+msgstr "Beskrivelse (obligatorisk): Beskriver datasættets formål og indhold. Det kan forekomme én gang for hver sprogvariant af beskrivelsen."
+
+#: Manually added
+msgid "Publisher or Dataset Responsible Organization (mandatory): Indicates the actor (organization or dataset responsible organization) responsible for making the dataset available. Every dataset in a given catalog must be associated with at least one."
+msgstr "Udgiver eller datasæt ansvarlig organisation (obligatorisk): Denne egenskab angiver den organisation der har det juridiske ansvar for datasættet. Ethvert datasæt i et givet katalog skal være tilknyttet mindst én aktør, enten en udgiver eller en datasætanvarlig organisation."
+
+#: Manually added
+msgid "Update Frequency (recommended): Specifies the frequency with which the dataset is updated. It can appear once for each dataset."
+msgstr "Opdatering frekvens (anbefalet): Angiver frekvensen, hvormed datasættet opdateres. Det kan forekomme én gang for hvert datasæt."
+
+#: Manually added
+msgid "Access Rights (recommended): Specifies the conditions under which the dataset can be accessed. It can appear once for each dataset."
+msgstr "Adgangsrettigheder (anbefalet): Angiver de betingelser, under hvilke datasættet kan fås adgang til. Det kan forekomme én gang for hvert datasæt."
+
+#: Manually added
+msgid "Documentation (recommended): Provides a downloadable file or link to the documentation of the dataset. It can appear once for each dataset."
+msgstr "Dokumentation (anbefalet): Denne egenskab angiver en webside eller et dokument som beskriver datasættet. Det kan forekomme én gang for hvert datasæt."
+
+#: Manually added
+msgid "Temporal Coverage Start (recommended): Specifies the start of the time period covered by the dataset. It can appear once for each dataset."
+msgstr "Tidsmæssig dækning Start (anbefalet): Denne egenskab angiver startdatoen for den periode, som datasættet dækker. Det er kombineret med \"Temporal coverage end\" for at danne det tidsmæssige dækningsområde. Det kan forekomme én gang for hvert datasæt."
+
+#: Manually added
+msgid "Temporal Coverage End (recommended): Specifies the end of the time period covered by the dataset. It can appear once for each dataset."
+msgstr "Tidsmæssig dækning End (anbefalet): Denne egenskab angiver slutdatoen for den periode, som datasættet dækker. Det er kombineret med \"Temporal coverage start\" for at danne det tidsmæssige dækningsinterval. Det kan forekomme én gang for hvert datasæt."
+
+#: Manually added
+msgid "Landing Page (recommended): Provides a link to the landing page of the dataset. It can appear once for each dataset."
+msgstr "Destinationsside (anbefalet): Denne egenskab angiver en webside som giver adgang til datasættet, dets distributioner og/eller yderligere information. Egenskaben bør pege på en webside hos den oprindelige dataudstiller - ikke en side eller et websted hos tredjepart, såsom en aggregator. Det kan forekomme én gang for hvert datasæt."
+
+#: Manually added
+msgid "Creator (recommended): Specifies the creator of the dataset. It can appear once for each dataset."
+msgstr "Skaber (anbefalet): Denne egenskab angiver den aktør der er primært ansvarlig for datasættets skabelse. Det kan være en person, en gruppe eller en organisation. Det kan forekomme én gang for hvert datasæt."
+
+#: Manually added
+msgid "Contact Point (recommended): Specifies the email address of the creator of the dataset. It can appear once for each dataset."
+msgstr "Kontaktpunkt (anbefalet): Denne egenskab angiver kontaktoplysninger som kan anvendes til at indsende spørgsmål eller kommentarer om datasættet. Det kan være en e-mailadresse, et telefonnummer eller en webside med et kontaktformular."
+
+#: Manually added
+msgid "Description (recommended): Provides a text-based description of the resource (distribution). It can appear once for each resource."
+msgstr "Beskrivelse (anbefalet): Giver en tekstbaseret beskrivelse af ressourcen (distribution). Det kan forekomme én gang for hver ressource."
+
+#: Manually added
+msgid "Distribution (mandatory): Provides a file or link to the resource (distribution) of the dataset. The property can appear once for each distribution."
+msgstr "Distribution (obligatorisk): Giver en fil eller link til ressourcen (distribution) af datasættet. Egenskaben kan forekomme én gang for hver distribution."
+
+#: Manually added
+msgid "Planned Availability (recommended): Specifies availability type of the resource (distribution). It can appear once for each distribution."
+msgstr "Ttilgængeligstype (anbefalet): Denne egenskab angiver, hvor længe distributionen af ​​datasættet er planlagt til at være tilgængelig. Det kan forekomme én gang for hver distribution."
+
+#: Manually added
+msgid "License (recommended): Specifies the license of the resource (distribution). It can appear once for each distribution."
+msgstr "Licens (anbefalet): Angiver licensen for ressourcen (distribution). Det kan forekomme én gang for hver distribution."
+
+#: Manually added
+msgid "Format (mandatory if distribution exists): Specifies the file format of the resource (distribution). It can appear once for each distribution."
+msgstr "Format (obligatorisk, hvis distributionen findes): Denne egenskab angiver filformatet for distributionen. Det kan forekomme én gang for hver distribution."
+
+#: Manually added
+msgid "Unknown"
+msgstr "Ubekendt"
+
+#: Manually added
+msgid "Triennial (every three years)"
+msgstr "Treårlig (hvert tredje år)"
+
+#: Manually added
+msgid "Biennial (every two years)"
+msgstr "Toårig (hvert andet år)"
+
+#: Manually added
+msgid "Annual (every year)"
+msgstr "Årlig (hvert år)"
+
+#: Manually added
+msgid "Semiannual (twice a year)"
+msgstr "Halvårlig (to gange om året)"
+
+#: Manually added
+msgid "Three times a year"
+msgstr "Tre gange årligt" 
+
+#: Manually added
+msgid "Quarterly (every three months)"
+msgstr "Kvartalsvis (hvert tredje måned)"
+
+#: Manually added
+msgid "Bimonthly (every two months)"
+msgstr "Hver anden måned"
+
+#: Manually added
+msgid "Monthly (once a month)"
+msgstr "Månedlig (en gang om måneden)"
+
+#: Manually added
+msgid "Semimonthly (twice a month)"
+msgstr "To gange månedligt"
+
+#: Manually added
+msgid "Biweekly (every two weeks)"
+msgstr "Hver fjortende dag"
+
+#: Manually added
+msgid "Three times a month"
+msgstr "Tre gange månedligt"
+
+#: Manually added
+msgid "Weekly (once a week)"
+msgstr "Ugentlig (en gang om ugen)"
+
+#: Manually added
+msgid "Semiweekly (twice a week)"
+msgstr "To gange ugentligt"
+
+#: Manually added
+msgid "Three times a week"
+msgstr "Tre gange ugentligt"
+
+#: Manually added
+msgid "Daily (once a day)"
+msgstr "Daglig (en gang om dagen)"
+
+#: Manually added
+msgid "Continuously updated"
+msgstr "Opdateres løbende"
+
+#: Manually added
+msgid "Irregular"
+msgstr "Uregelmæssig"
+
+#: Manually added
+msgid "Other"
+msgstr "Anden"
+
+#: Manually added
+msgid "Twice a day"
+msgstr "To gange om dagen"
+
+#: Manually added
+msgid "Continuous"
+msgstr "Kontinuerlig"
+
+#: Manually added
+msgid "Never"
+msgstr "Aldrig"
+
+#: Manually added
+msgid "Quadrennial (every four years)"
+msgstr "Hvert fjerde år"
+
+#: Manually added
+msgid "Quinquennial (every five years)"
+msgstr "Hvert femte år"
+
+#: Manually added
+msgid "Hourly (every hour)"
+msgstr "Hver time"
+
+#: Manually added
+msgid "Decennial (every ten years)"
+msgstr "Hvert tiende år"
+
+#: Manually added
+msgid "Bihourly (every two hours)"
+msgstr "Hver anden time"
+
+#: Manually added
+msgid "Trihourly (every three hours)"
+msgstr "Hver tredje time"
+
+#: Manually added
+msgid "Bidecennial (every twenty years)"
+msgstr "Hvert tyvende år"
+
+#: Manually added
+msgid "Tridecennial (every thirty years)"
+msgstr "Hvert tredive år"
+
+#: Manually added
+msgid "Public"
+msgstr "Offentlig"
+
+#: Manually added
+msgid "Restricted"
+msgstr "Begrænset"
+
+#: Manually added
+msgid "Non-public"
+msgstr "Ikke-offentlig"
+
+#: Manually added
+msgid "Sensitive"
+msgstr "Følsom"
+
+#: Manually added
+msgid "Confidential"
+msgstr "Fortrolig"
+
+#: Manually added
+msgid "Normal"
+msgstr "Normal"
+
+#: Manually added
+msgid "Available"
+msgstr "Til rådighed"
+
+#: Manually added
+msgid "Experimental"
+msgstr "Eksperimentel"
+
+#: Manually added
+msgid "Stable"
+msgstr "Stabil"
+
+#: Manually added
+msgid "Temporary"
+msgstr "Midlertidig"
+
+#: Manually added
+msgid "Provisional"
+msgstr "Midlertidige data"
+
+#: Manually added
+msgid "Select language"
+msgstr "Vælg sprog"
+
+#: Manually added
+msgid "Select file format"
+msgstr "Vælg filformat"
+
+#: Manually added
+msgid "Select access rights"
+msgstr "Vælg adgangsrettigheder"
+
+#: Manually added
+msgid "Select update frequency"
+msgstr "Vælg opdatering frekvens"
+
+#: Manually added
+msgid "Select planned availability"
+msgstr "Vælg tilgængeligstype"
+
+#: Manually added
+msgid "Select license"
+msgstr "Vælg licens"
+
+#: Manually added
+msgid "Documentation"
+msgstr "Dokumentation"
+
+#: Manually added
+msgid "Access rights"
+msgstr "Adgangsrettigheder"
+
+#: Manually added
+msgid "Temporal coverage start"
+msgstr "Dækningsperiode start"
+
+#: Manually added
+msgid "Temporal coverage end"
+msgstr "Dækningsperiode end"
+
+#: Manually added
+msgid "Landing page"
+msgstr "Websted"
+
+#: Manually added
+msgid "Temporal coverage"
+msgstr "Dækningsperiode"
+
+#: Manually added
+msgid "Planned availability"
+msgstr "Tilgængeligstype"
+
+#: COM_REUSE
+msgid "European Commission reuse notice"
+msgstr ""
+
+#: ISA_OML
+msgid "ISA Open Metadata Licence 1.1"
+msgstr ""
+
+#: CC0
+msgid "Creative Commons CC0 1.0 Universal"
+msgstr "Creative Commons CC0 1.0 Universel"
+
+#: CC_BY
+msgid "Creative Commons Attribution 4.0 International"
+msgstr "Creative Commons Navngivelse 4.0 International"
+
+#: CC_BYSA
+msgid "Creative Commons Attribution–ShareAlike 4.0 International"
+msgstr "Creative Commons Navngivelse–DelPåSammeVilkår 4.0 International"
+
+#: CC_BYND
+msgid "Creative Commons Attribution–NoDerivatives 4.0 International"
+msgstr "Creative Commons Navngivelse–IngenBearbejdelse 4.0 International"
+
+#: CC_BYNC
+msgid "Creative Commons Attribution–NonCommercial 4.0 International"
+msgstr "Creative Commons Navngivelse–IkkeKommerciel 4.0 International"
+
+#: CC_BYNCSA
+msgid "Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International"
+msgstr "Creative Commons Navngivelse–IkkeKommerciel–DelPåSammeVilkår 4.0 International"
+
+#: CC_BYNCND
+msgid "Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International"
+msgstr "Creative Commons Navngivelse–IkkeKommerciel–IngenBearbejdelse 4.0 International"
+
+#: CC_BY_3_0
+msgid "Creative Commons Attribution 3.0 Unported"
+msgstr "Creative Commons Kreditering 3.0 Ikke porteret"
+
+#: CC_BYSA_3_0
+msgid "Creative Commons Attribution–ShareAlike 3.0 Unported"
+msgstr "Creative Commons Kreditering-Deling på samme vilkår 3.0 Ikke porteret"
+
+#: CC_BYND_3_0
+msgid "Creative Commons Attribution–NoDerivs 3.0 Unported"
+msgstr "Creative Commons Kreditering-Ingen afledninger 3.0 Ikke porteret"
+
+#: CC_BYNC_3_0
+msgid "Creative Commons Attribution–NonCommercial 3.0 Unported"
+msgstr "Creative Commons Kreditering-Ikkekommerciel 3.0 Ikke porteret"
+
+#: CC_BYNCSA_3_0
+msgid "Creative Commons Attribution–NonCommercial–ShareAlike 3.0 Unported"
+msgstr "Creative Commons Kreditering-Ikkekommerciel-Deling på samme vilkår 3.0 Ikke porteret"
+
+#: CC_BYNCND_3_0
+msgid "Creative Commons Attribution–NonCommercial–NoDerivs 3.0 Unported"
+msgstr "Creative Commons Kreditering-Ikkekommerciel-Ingen afledninger 3.0 Ikke porteret"
+
+#: CC_BY_2_0
+msgid "Creative Commons Attribution 2.0 Generic"
+msgstr "Creative Commons Kreditering 2.0 Generisk"
+
+#: CC_BYSA_2_0
+msgid "Creative Commons Attribution–ShareAlike 2.0 Generic"
+msgstr "Creative Commons Kreditering-Deling på samme vilkår 2.0 Generisk"
+
+#: CC_BYND_2_0
+msgid "Creative Commons Attribution–NoDerivs 2.0 Generic"
+msgstr "Creative Commons Kreditering-Ingen afledninger 2.0 Generisk"
+
+#: CC_BYNC_2_0
+msgid "Creative Commons Attribution–NonCommercial 2.0 Generic"
+msgstr "Creative Commons Kreditering-Ikkekommerciel 2.0 Generisk"
+
+#: CC_BYNCSA_2_0
+msgid "Creative Commons Attribution–NonCommercial–ShareAlike 2.0 Generic"
+msgstr "Creative Commons Kreditering-Ikkekommerciel-Deling på samme vilkår 2.0 Generisk"
+
+#: CC_BYNCND_2_0
+msgid "Creative Commons Attribution–NonCommercial–NoDerivs 2.0 Generic"
+msgstr "Creative Commons Kreditering-Ikkekommerciel-Ingen afledninger 2.0 Generisk"
+
+#: CC_BY_1_0
+msgid "Creative Commons Attribution 1.0 Generic"
+msgstr "Creative Commons Kreditering 1.0 Generisk"
+
+#: CC_BYSA_1_0
+msgid "Creative Commons Attribution–ShareAlike 1.0 Generic"
+msgstr "Creative Commons Kreditering-Deling på samme vilkår 1.0 Generisk"
+
+#: CC_BYND_1_0
+msgid "Creative Commons Attribution–NoDerivs 1.0 Generic"
+msgstr "Creative Commons Kreditering-Ingen afledninger 1.0 Generisk"
+
+#: CC_BYNC_1_0
+msgid "Creative Commons Attribution–NonCommercial 1.0 Generic"
+msgstr "Creative Commons Kreditering-Ikkekommerciel 1.0 Generisk"
+
+#: CC_BYNCSA_1_0
+msgid "Creative Commons Attribution–NonCommercial–ShareAlike 1.0 Generic"
+msgstr "Creative Commons Kreditering-Ikkekommerciel-Deling på samme vilkår 1.0 Generisk"
+
+#: CC_BYNCND_1_0
+msgid "Creative Commons Attribution–NoDerivs–NonCommercial 1.0 Generic"
+msgstr "Creative Commons Kreditering-Ingen afledninger-Ikkekommerciel 1.0 Generisk"
+
+#: ODC_PDDL
+msgid "Open Data Commons Public Domain Dedication and License 1.0"
+msgstr ""
+
+#: ODC_BY
+msgid "Open Data Commons Attribution License v1.0"
+msgstr ""
+
+#: ODC_BL
+msgid "Open Data Commons Open Database License v1.0"
+msgstr ""
+
+#: GNU_FDL
+msgid "GNU Free Documentation License"
+msgstr ""
+
+#: CC_BY_2_5
+msgid "Creative Commons Attribution 2.5 Generic"
+msgstr "Creative Commons Kreditering 2.5 Generisk"
+
+#: CC_BYSA_2_5
+msgid "Creative Commons Attribution–ShareAlike 2.5 Generic"
+msgstr "Creative Commons Kreditering-Deling på samme vilkår 2.5 Generisk"
+
+#: CC_BYND_2_5
+msgid "Creative Commons Attribution–NoDerivs 2.5 Generic"
+msgstr "Creative Commons Kreditering-Ingen afledninger 2.5 Generisk"
+
+#: CC_BYNC_2_5
+msgid "Creative Commons Attribution–NonCommercial 2.5 Generic"
+msgstr "Creative Commons Kreditering-Ikkekommerciel 2.5 Generisk"
+
+#: CC_BYNCSA_2_5
+msgid "Creative Commons Attribution–NonCommercial–ShareAlike 2.5 Generic"
+msgstr "Creative Commons Kreditering-Ikkekommerciel-Deling på samme vilkår 2.5 Generisk"
+
+#: CC_BYNCND_2_5
+msgid "Creative Commons Attribution–NonCommercial–NoDerivs 2.5 Generic"
+msgstr "Creative Commons Kreditering-Ikkekommerciel-Ingen afledninger 2.5 Generisk"
+
+#: EUPL_1_0
+msgid "European Union Public Licence v.1.0"
+msgstr "Europæiske Unions Offentlige Licens v.1.0"
+
+#: EUPL_1_1
+msgid "European Union Public Licence v. 1.1"
+msgstr "Europæiske Unions Offentlige Licens v.1.1"
+
+#: EUPL_1_2
+msgid "European Union Public Licence v. 1.2"
+msgstr "Europæiske Unions Offentlige Licens v.1.2"
+
+#: CC_BY_4_0
+msgid "Creative Commons Attribution 4.0 International"
+msgstr "Creative Commons Kreditering 4.0 International"
+
+#: CC_BYNC_4_0
+msgid "Creative Commons Attribution–NonCommercial 4.0 International"
+msgstr "Creative Commons Kreditering-Ikkekommerciel 4.0 International"
+
+#: CC_BYNCND_4_0
+msgid "Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International"
+msgstr "Creative Commons Kreditering-Ikkekommerciel-Ingen afledninger 4.0 International"
+
+#: CC_BYNCSA_4_0
+msgid "Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International"
+msgstr "Creative Commons Kreditering-Ikkekommerciel-Deling på samme vilkår 4.0 International"
+
+#: CC_BYND_4_0
+msgid "Creative Commons Attribution–NoDerivatives 4.0 International"
+msgstr "Creative Commons Kreditering-Ingen afledninger 4.0 International"
+
+#: CC_BYSA_4_0
+msgid "Creative Commons Attribution–ShareAlike 4.0 International"
+msgstr "Creative Commons Kreditering-Deling på samme vilkår 4.0 International"
+
+#: CC_BYSA_3_0_NL
+msgid "Attribution-ShareAlike 3.0 Netherlands"
+msgstr "Kreditering-Deling på samme vilkår 3.0 Holland"
+
+#: CC_BY_3_0_NL
+msgid "Attribution 3.0 Netherlands"
+msgstr "Kreditering 3.0 Holland"
+
+#: CC_PDM_1_0
+msgid "Public Domain Mark 1.0"
+msgstr "Public domain-mærke 1.0"
+
+#: CC_BY_3_0_AT
+msgid "Attribution 3.0 Austria"
+msgstr "Kreditering 3.0 Østrig"
+
+#: DLDE_BYNC_1_0
+msgid "Data licence Germany – attribution – non-commercial – Version 1.0"
+msgstr ""
+
+#: DLDE_BY_1_0
+msgid "Data licence Germany – attribution – Version 1.0"
+msgstr ""
+
+#: DLDE_BY_2_0
+msgid "Data licence Germany – attribution – Version 2.0"
+msgstr ""
+
+#: DLDE_ZERO_2_0
+msgid "Data licence Germany – Zero – Version 2.0"
+msgstr ""
+
+#: GNU_FDL_1_1
+msgid "GNU Free Documentation License 1.1"
+msgstr ""
+
+#: GNU_FDL_1_2
+msgid "GNU Free Documentation License 1.2"
+msgstr ""
+
+#: HROD
+msgid "Open Licence – The Republic of Croatia"
+msgstr ""
+
+#: IODL_1_0
+msgid "Italian Open Data License v1.0"
+msgstr ""
+
+#: IODL_2_0
+msgid "Italian Open Data License v2.0"
+msgstr ""
+
+#: NLOD_1_0
+msgid "Norwegian Licence for Open Government Data 1.0"
+msgstr ""
+
+#: OGL_NC
+msgid "Non-Commercial Government Licence"
+msgstr ""
+
+#: OGL_ROU_1_0
+msgid "Non-Commercial Government Licence 1.0"
+msgstr ""
+
+#: OGL_1_0
+msgid "Open Government Licence 1.0"
+msgstr ""
+
+#: OGL_2_0
+msgid "Open Government Licence 2.0"
+msgstr ""
+
+#: OGL_3_0
+msgid "Open Government Licence 3.0"
+msgstr ""
+
+#: PSEUL
+msgid "INSPIRE End User Licence"
+msgstr ""
+
+#: BSD_2_CLAUSE
+msgid "2-Clause BSD License"
+msgstr ""
+
+#: BSD_3_CLAUSE
+msgid "3-Clause BSD License"
+msgstr ""
+
+#: APL_1_0
+msgid "Adaptive Public License 1.0"
+msgstr ""
+
+#: APACHE_1_1
+msgid "Apache Software License, version 1.1 (Apache-1.1)"
+msgstr ""
+
+#: APACHE_2_0
+msgid "Apache License, Version 2.0"
+msgstr ""
+
+#: APSL_2_0
+msgid "Apple Public Source License 2.0"
+msgstr ""
+
+#: ARTISTIC_1_0
+msgid "Artistic License 1.0 (Artistic-1.0)"
+msgstr ""
+
+#: ARTISTIC_2_0
+msgid "Artistic License 2.0"
+msgstr ""
+
+#: BSL_1_0
+msgid "Boost Software License 1.0"
+msgstr ""
+
+#: BSD_PLUS_PATENT
+msgid "BSD+Patent"
+msgstr ""
+
+#: CECILL_2_1
+msgid "CEA CNRS Inria Free Software License Agreement, v2.1 (CECILL-2.1)"
+msgstr ""
+
+#: CDDL_1_0
+msgid "Common Development and Distribution License 1.0"
+msgstr ""
+
+#: CPAL_1_0
+msgid "Common Public Attribution License Version 1.0 (CPAL-1.0)"
+msgstr ""
+
+#: CPL_1_0
+msgid "Common Public License, version 1.0 (CPL-1.0)"
+msgstr ""
+
+#: CATOSL_1_1
+msgid "Computer Associates Trusted Open Source License 1.1 (CATOSL-1.1)"
+msgstr ""
+
+#: EPL_1_0
+msgid "Eclipse Public License 1.0 (EPL-1.0)"
+msgstr ""
+
+#: EPL_2_0
+msgid "Eclipse Public License version 2.0"
+msgstr ""
+
+#: ECOS_2_0
+msgid "eCos License version 2.0"
+msgstr ""
+
+#: ECL_1_0
+msgid "Educational Community License version 1.0 (ECL-1.0)"
+msgstr ""
+
+#: ECL_2_0
+msgid "Educational Community License version 2.0 (ECL-2.0)"
+msgstr ""
+
+#: EFL_1_0
+msgid "The Eiffel Forum License, version 1 (EFL-1.0)"
+msgstr ""
+
+#: EFL_2
+msgid "Eiffel Forum License, version 2"
+msgstr ""
+
+#: ENTESSA
+msgid "Entessa Public License Version 1.0 (Entessa)"
+msgstr ""
+
+#: EU_DATAGRID
+msgid "EU DataGrid Software License (EUDatagrid)"
+msgstr ""
+
+#: FAIR
+msgid "Fair License (Fair)"
+msgstr ""
+
+#: FRAMEWORX_1_0
+msgid "Frameworx License 1.0 (Frameworx-1.0)"
+msgstr ""
+
+#: AGPL_3_0
+msgid "GNU Affero General Public License version 3"
+msgstr ""
+
+#: GPL_2_0
+msgid "GNU General Public License version 2"
+msgstr ""
+
+#: GPL_3_0
+msgid "GNU General Public License version 3"
+msgstr ""
+
+#: LGPL_2_1
+msgid "GNU Lesser General Public License version 2.1"
+msgstr ""
+
+#: LGPL_3_0
+msgid "GNU Lesser General Public License version 3"
+msgstr ""
+
+#: HPND
+msgid "Historical Permission Notice and Disclaimer (HPND)"
+msgstr ""
+
+#: IPL_1_0
+msgid "IBM Public License Version 1.0 (IPL-1.0)"
+msgstr ""
+
+#: IPA
+msgid "IPA Font License (IPA)"
+msgstr ""
+
+#: ISC
+msgid "ISC License (ISC)"
+msgstr ""
+
+#: LPPL_1_3C
+msgid "LaTeX Project Public License v1.3c (LPPL-1.3c)"
+msgstr ""
+
+#: BSD_3_CLAUSE_LBNL
+msgid "Lawrence Berkeley National Labs BSD Variant License (BSD-3-Clause-LBNL)"
+msgstr ""
+
+#: LILIQ_P_1_1
+msgid "Québec Free and Open-Source Licence – Permissive (LiLiQ-P) version 1.1"
+msgstr ""
+
+#: LILIQ_R_1_1
+msgid "Québec Free and Open-Source Licence – Reciprocity (LiLiQ-R) version 1.1"
+msgstr ""
+
+#: LILIQ_RPLUS_1_1
+msgid "Québec Free and Open-Source Licence – Strong Reciprocity (LiLiQ-R+) version 1.1"
+msgstr ""
+
+#: LPL_1_0
+msgid "Lucent Public License, Plan 9, version 1.0 (LPL-1.0)"
+msgstr ""
+
+#: LPL_1_02
+msgid "Lucent Public License Version 1.02 (LPL-1.02)"
+msgstr ""
+
+#: MS_PL
+msgid "Microsoft Public License (MS-PL)"
+msgstr ""
+
+#: MS_RL
+msgid "Microsoft Reciprocal License (MS-RL)"
+msgstr ""
+
+#: MIROS
+msgid "MirOS License (MirOS)"
+msgstr ""
+
+#: MIT
+msgid "The MIT License"
+msgstr ""
+
+#: MOTOSOTO
+msgid "Motosoto Open Source License – Version 0.9.1 (Motosoto)"
+msgstr ""
+
+#: MPL_1_0
+msgid "The Mozilla Public License (MPL), version 1.0 (MPL-1.0)"
+msgstr ""
+
+#: MPL_1_1
+msgid "Mozilla Public License (MPL), version 1.1 (MPL-1.1)"
+msgstr ""
+
+#: MPL_2_0
+msgid "Mozilla Public License (MPL), version 2.0 (MPL-2.0)"
+msgstr ""
+
+#: MULTICS
+msgid "Multics License (Multics)"
+msgstr ""
+
+#: NASA_1_3
+msgid "NASA Open Source Agreement v1.3 (NASA-1.3)"
+msgstr ""
+
+#: NAUMEN
+msgid "NAUMEN Public License (Naumen)"
+msgstr ""
+
+#: NGPL
+msgid "The Nethack General Public License (NGPL)"
+msgstr ""
+
+#: NOKIA
+msgid "Nokia Open Source License Version 1.0a (NOKIA)"
+msgstr ""
+
+#: NPOSL_3_0
+msgid "The Non-Profit Open Software License version 3.0 (NPOSL-3.0)"
+msgstr ""
+
+#: NTP
+msgid "NTP License (NTP)"
+msgstr ""
+
+#: OCLC_2_0
+msgid "The OCLC Research Public License 2.0 License (OCLC-2.0)"
+msgstr ""
+
+#: OGTSL
+msgid "The Open Group Test Suite License (OGTSL)"
+msgstr ""
+
+#: OSL_1_0
+msgid "Open Software License, version 1.0 (OSL-1.0)"
+msgstr ""
+
+#: OSL_2_1
+msgid "The Open Software License, version 2.1 (OSL-2.1)"
+msgstr ""
+
+#: OSL_3_0
+msgid "Open Software License, version 3.0 (OSL-3.0)"
+msgstr ""
+
+#: OPL_2_1
+msgid "OSET Public License version 2.1"
+msgstr ""
+
+#: PHP_3_0
+msgid "The PHP License 3.0 (PHP-3.0)"
+msgstr ""
+
+#: POSTGRE_SQL
+msgid "The PostgreSQL Licence (PostgreSQL)"
+msgstr ""
+
+#: PYTHON_2_0
+msgid "Python License (Python-2.0)"
+msgstr ""
+
+#: CNRI_PYTHON
+msgid "The CNRI portion of the multi-part Python License (CNRI-Python)"
+msgstr ""
+
+#: QPL_1_0
+msgid "The Q Public License Version (QPL-1.0)"
+msgstr ""
+
+#: RPSL_1_0
+msgid "RealNetworks Public Source License Version 1.0 (RPSL-1.0)"
+msgstr ""
+
+#: RPL_1_1
+msgid "Reciprocal Public License, version 1.1"
+msgstr ""
+
+#: RPL_1_5
+msgid "Reciprocal Public License 1.5 (RPL-1.5)"
+msgstr ""
+
+#: RSCPL
+msgid "The Ricoh Source Code Public License (RSCPL)"
+msgstr ""
+
+#: OFL_1_1
+msgid "SIL Open Font License (OFL-1.1)"
+msgstr ""
+
+#: SIMPL_2_0
+msgid "Simple Public License (SimPL-2.0)"
+msgstr ""
+
+#: SLEEPYCAT
+msgid "The Sleepycat License (Sleepycat)"
+msgstr ""
+
+#: SPL_1_0
+msgid "Sun Public License Version 1.0 (SPL-1.0)"
+msgstr ""
+
+#: WATCOM_1_0
+msgid "The Sybase Open Source Licence (Watcom-1.0)"
+msgstr ""
+
+#: UPL_1_0
+msgid "The Universal Permissive License (UPL), Version 1.0"
+msgstr ""
+
+#: NCSA
+msgid "The University of Illinois/NCSA Open Source License (NCSA)"
+msgstr ""
+
+#: UCL_1_0
+msgid "Upstream Compatibility License v1.0"
+msgstr ""
+
+#: VSL_1_0
+msgid "The Vovida Software License v. 1.0 (VSL-1.0)"
+msgstr ""
+
+#: W3C
+msgid "The W3C Software Notice and License (W3C)"
+msgstr ""
+
+#: WXWINDOWS
+msgid "The wxWindows Library Licence (wxWindows)"
+msgstr ""
+
+#: XNET
+msgid "The X.Net, Inc. License (Xnet)"
+msgstr ""
+
+#: 0BSD
+msgid "Zero-Clause BSD / Free Public License 1.0.0 (0BSD)"
+msgstr ""
+
+#: ZPL_2_0
+msgid "The Zope Public License Version 2.0 (ZPL-2.0)"
+msgstr ""
+
+#: ZLIB
+msgid "The zlib/libpng License (Zlib)"
+msgstr ""
+
+#: NLOD_2_0
+msgid "Norwegian Licence for Open Government Data (NLOD) 2.0"
+msgstr ""
+
+#: GNU_FDL_1_3
+msgid "GNU Free Documentation License 1.3"
+msgstr ""
+
+#: CLARIN_ACA_1_0
+msgid "Clarin Academic End-User Licence (ACA) 1.0"
+msgstr ""
+
+#: ISA_OML_1_1
+msgid "ISA Open Metadata Licence 1.1"
+msgstr ""
+
+#: ETALAB_2_0
+msgid "Etalab Open Licence V 2.0"
+msgstr ""
+
+#: EUROGEO_2022
+msgid "EuroGeographics Open Data Licence v.2022"
+msgstr ""

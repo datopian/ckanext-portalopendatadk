@@ -26,6 +26,8 @@ setup(
         [ckan.plugins]
         # Add plugins here, e.g.
         portalopendatadk=ckanext.portalopendatadk.plugin:PortalOpenDataDKPlugin
+        [ckan.rdf.profiles]
+        danish_dcat_ap=ckanext.portalopendatadk.dcat_profile:DanishDCATAPProfile
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
     ''',

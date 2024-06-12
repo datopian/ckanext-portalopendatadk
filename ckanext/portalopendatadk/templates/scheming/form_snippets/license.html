@@ -1,9 +1,21 @@
 {% import 'macros/form.html' as form %}
 
-{%- set options=[] -%}
 {%- if field.get('sorted_choices', true) -%}
     {%- set licenses = licenses|sort -%}
 {%- endif -%}
+
+{% if not licenses %}
+  {% set options = [{'value': '', 'text': _('Select license')}] %}
+  {% set existing_license_id = data.get(field.field_name, '') %}
+  {% set licenses = h.get_dcat_license_options() %}
+  {% for license in licenses %}
+    {% do options.append({
+      'value': license['id'],
+      'text': _(license['title'])
+    }) %}
+  {% endfor %}
+{% else %}
+{%- set options=[] -%}
 {%- for license_desc, license_id in licenses -%}
     {%- if license_id or not h.scheming_field_required(field) -%}
         {%- do options.append({
@@ -11,26 +23,42 @@
             'text': license_desc}) -%}
     {%- endif -%}
 {%- endfor -%}
+{% endif %}
 
-{% call form.select(
-    field.field_name,
-    id='field-' + field.field_name,
-    label=h.scheming_language_text(field.label),
-    options=options,
-    selected=data.get(field.field_name, field.get('default', 'notspecified')),
-    error=errors[field.field_name],
-    classes=['control-medium'],
-    attrs=field.form_attrs if 'form_attrs' in field else {
-      "data-module": "autocomplete"
-    },
-    is_required=h.scheming_field_required(field),
-    )
-%}
-  <span class="info-block info-inline">
-    <i class="fa fa-info-circle"></i>
-    {% trans %}
-      License definitions and additional information can be found
-      at <a href="http://opendefinition.org/licenses/">opendefinition.org</a>
-    {% endtrans %}
-  </span>
-{% endcall %}
+{% set selected = data.get(field.field_name, field.get('default', 'notspecified')) %}
+
+{% set dcat_field = field.get('dcat_field', False) %}
+{% if dcat_field %}
+<div class="dcat-row">
+  <div class="dcat-container">
+{% endif %}
+    {% call form.select(
+        field.field_name,
+        id='field-' + field.field_name,
+        label=h.scheming_language_text(field.label),
+        options=options,
+        selected=selected,
+        error=errors[field.field_name],
+        classes=['control-medium'],
+        attrs=field.form_attrs if 'form_attrs' in field else {
+          "data-module": "autocomplete"
+        },
+        is_required=h.scheming_field_required(field),
+        )
+    %}
+    {% if not dcat_field %}
+      <span class="info-block info-inline">
+        <i class="fa fa-info-circle"></i>
+        {% trans %}
+          License definitions and additional information can be found
+          at <a href="http://opendefinition.org/licenses/">opendefinition.org</a>
+        {% endtrans %}
+      </span>
+    {% endif %}
+    {% endcall %}
+{% if dcat_field %}
+  </div>
+    {% set dcat_required = field.get('dcat_required', False) %}
+    {% snippet 'scheming/form_snippets/dcat_text.html', is_required=dcat_required, field_name=field.field_name %}
+</div>
+{% endif %}

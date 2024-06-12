@@ -10,6 +10,8 @@ dataset_fields:
   label: Title
   preset: title
   form_placeholder: eg. A descriptive title
+  dcat_required: True
+  dcat_field: True
 
 - field_name: title_translated
   label: Title
@@ -25,6 +27,8 @@ dataset_fields:
   label: Description
   form_snippet: markdown.html
   form_placeholder: eg. Some useful notes about the data
+  dcat_required: True
+  dcat_field: True
 
 - field_name: notes_translated
   label: Description
@@ -41,17 +45,18 @@ dataset_fields:
   form_snippet: license.html
   default: opendatadk
   help_allow_html: True
-  help_text: ' License definitions and additional information can be found at <a href="http://opendefinition.org/licenses/">opendefinition.org</a> '
 
 - field_name: owner_org
   label: Organization
   preset: dataset_organization
+  dcat_required: True
 
 - field_name: author
   label: Author
   form_placeholder: Joe Bloggs
   display_property: dc:creator
   validators: not_empty
+  dcat_field: True
 
 - field_name: author_email
   label: Author Email
@@ -60,27 +65,125 @@ dataset_fields:
   display_snippet: email.html
   display_email_name_field: author
   validators: not_empty email_validator
+  dcat_field: True
 
 - field_name: update_frequency
   label: Update frequency
   preset: select
   selected: Frequent
   choices:
-    - value: Frequent
-      label: Frequent
-    - value: Monthly
-      label: Monthly
-    - value: Yearly
-      label: Yearly
-    - value: Historical
-      label: Historical
+    - value: UNKNOWN
+      label: Unknown
+    - value: TRIENNIAL
+      label: Triennial (every three years)
+    - value: BIENNIAL
+      label: Biennial (every two years)
+    - value: ANNUAL
+      label: Annual (every year)
+    - value: ANNUAL_2
+      label: Semiannual (twice a year)
+    - value: ANNUAL_3
+      label: Three times a year
+    - value: QUARTERLY
+      label: Quarterly (every three months)
+    - value: BIMONTHLY
+      label: Bimonthly (every two months)
+    - value: MONTHLY
+      label: Monthly (once a month)
+    - value: MONTHLY_2
+      label: Semimonthly (twice a month)
+    - value: BIWEEKLY
+      label: Biweekly (every two weeks)
+    - value: MONTHLY_3
+      label: Three times a month
+    - value: WEEKLY
+      label: Weekly (once a week)
+    - value: WEEKLY_2
+      label: Semiweekly (twice a week)
+    - value: WEEKLY_3
+      label: Three times a week
+    - value: DAILY
+      label: Daily (once a day)
+    - value: UPDATE_CONT
+      label: Continuously updated
+    - value: IRREG
+      label: Irregular
+    - value: OTHER
+      label: Other
+    - value: DAILY_2
+      label: Twice a day
+    - value: CONTINOUOUS
+      label: Continuous
+    - value: NEVER
+      label: Never
+    - value: QUADRENNIAL
+      label: Quadrennial (every four years)
+    - value: QUINQUENNIAL
+      label: Quinquennial (every five years)
+    - value: HOURLY
+      label: Hourly (every hour)
+    - value: DECENNIAL
+      label: Decennial (every ten years)
+    - value: BIHOURLY
+      label: Bihourly (every two hours)
+    - value: TRIHOURLY
+      label: Trihourly (every three hours)
+    - value: BIDECENNIAL
+      label: Bidecennial (every twenty years)
+    - value: TRIDECENNIAL
+      label: Tridecennial (every thirty years)
   validators: ignore_missing
+  form_include_help_choice: True
+  dcat_field: True
 
 - field_name: update_frequency_notes
   label: Update comments
   form_placeholder: For example, update date
   form_snippet: textarea.html
   validators: ignore_missing
+
+#- field_name: access_rights
+#  label: Access rights
+#  preset: select
+#  choices:
+#    - value: PUBLIC
+#      label: Public
+#    - value: RESTRICTED
+#      label: Restricted
+#    - value: NON_PUBLIC
+#      label: Non-public
+#    - value: SENSITIVE
+#      label: Sensitive
+#    - value: CONFIDENTIAL
+#      label: Confidential
+#    - value: NORMAL
+#      label: Normal
+#  validators: ignore_missing
+#  form_include_help_choice: True
+#  dcat_field: True
+
+- field_name: landing_page
+  label: Landing page
+  form_placeholder: eg. http://example.com/homepage
+  validators: ignore_missing url_validator
+  dcat_field: True
+
+- field_name: temporal_start
+  label: Temporal coverage start
+  preset: date
+  validators: ignore_missing
+  dcat_field: True
+
+- field_name: temporal_end
+  label: Temporal coverage end
+  preset: date
+  validators: ignore_missing
+  dcat_field: True
+
+- field_name: documentation
+  label: Documentation
+  upload_label: Documentation
+  preset: documentation_upload
 
 - field_name: data_directory
   label: Data directory
@@ -96,6 +199,8 @@ resource_fields:
 - field_name: url
   label: URL
   preset: resource_url_upload
+  dcat_field: True
+  dcat_required: True
 
 - field_name: name
   label: Name
@@ -105,7 +210,32 @@ resource_fields:
   label: Description
   form_snippet: markdown.html
   form_placeholder: Some useful notes about the data
+  dcat_field: True
+
+- field_name: planned_availability
+  label: Planned availability
+  preset: select
+  choices:
+    - value: AVAILABLE
+      label: Available
+    - value: EXPERIMENTAL
+      label: Experimental
+    - value: STABLE
+      label: Stable
+    - value: TEMPORARY
+      label: Temporary
+    - value: OP_DATPRO
+      label: Provisional
+  dcat_field: True
+  form_include_help_choice: True
+
+- field_name: license_id
+  label: License
+  form_snippet: license.html
+  default: opendatadk
+  dcat_field: True
 
 - field_name: format
   label: Format
-  preset: resource_format_autocomplete
+  preset: resource_format
+  required: False

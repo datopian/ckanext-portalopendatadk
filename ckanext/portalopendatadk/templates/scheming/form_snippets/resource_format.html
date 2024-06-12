@@ -1,0 +1,12 @@
+{% macro resource_format_option_tag(resource_format, selected_resource_format) %}
+<option value="{{ resource_format.name }}" {% if selected_resource_format %} selected="selected" {% endif %}>
+    {{ resource_format.name }}
+</option>
+{% endmacro %}
+
+{% snippet "scheming/form_snippets/_resource_format_select.html",
+    field=field,
+    data=data,
+    errors=errors,
+    resource_formats_available=h.get_resource_file_types(),
+    resource_format_option_tag=resource_format_option_tag %}

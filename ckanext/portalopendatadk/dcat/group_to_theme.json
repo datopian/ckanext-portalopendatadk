@@ -1,0 +1,39 @@
+{
+  "population-and-social-conditions": {
+    "name": "SOCI",
+    "label": "Population and society"
+  },
+  "energy": { "name": "ENER", "label": "Energy" },
+  "international-issues": {
+    "name": "INTR",
+    "label": "International issues"
+  },
+  "agriculture-fisheries-forestry-food": {
+    "name": "AGRI",
+    "label": "Agriculture, fisheries, forestry and food"
+  },
+  "environment": { "name": "ENVI", "label": "Environment" },
+  "economy-and-finance": {
+    "name": "ECON",
+    "label": "Economy and finance"
+  },
+  "government-public-sector": {
+    "name": "GOVE",
+    "label": "Government and public sector"
+  },
+  "regions-cities": { "name": "REGI", "label": "Regions and cities" },
+  "justice-legal-system-public-safety": {
+    "name": "JUST",
+    "label": "Justice, legal system and public safety"
+  },
+  "health": { "name": "HEAL", "label": "Health" },
+  "transport": { "name": "TRAN", "label": "Transport" },
+  "education-culture-and-sport": {
+    "name": "EDUC",
+    "label": "Education, culture and sport"
+  },
+  "science-and-technology": {
+    "name": "TECH",
+    "label": "Science and technology"
+  }
+}

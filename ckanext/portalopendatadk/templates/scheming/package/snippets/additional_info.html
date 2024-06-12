@@ -78,7 +78,7 @@
         {% if pkg_dict.update_frequency and pkg_dict.update_frequency != 'None' %}
           <tr>
             <th scope="row" class="dataset-label">{{ _('Update frequency') }}</th>
-            <td class="dataset-details">{{ _(pkg_dict.update_frequency) }}</td>
+            <td class="dataset-details">{{ _(pkg_dict.update_frequency.title()) }}</td>
           </tr>
         {% endif %}
         {% if pkg_dict.update_frequency_notes %}
@@ -87,6 +87,52 @@
             <td class="dataset-details">{{ pkg_dict.update_frequency_notes }}</td>
           </tr>
         {% endif %}
+
+        {% set documentation = pkg_dict.documentation %}
+        {% if documentation %}
+          {% if 'http' in documentation %}
+            {% set documentation_item = documentation %}
+          {% else %}
+            {% set documentation_item = '/dataset/' + pkg_dict.name + '/documentation/' + pkg_dict.id %}
+          {% endif %}
+          <tr>
+            <th scope="row" class="dataset-label">{{ _('Documentation') }}</th>
+            <td class="dataset-details"><a href="{{ documentation_item }}">{{ documentation }}</a></td>
+          </tr>
+        {% endif %}
+
+        {% set access_rights = pkg_dict.access_rights %}
+        {% if access_rights %}
+          <tr>
+            <th scope="row" class="dataset-label">{{ _('Access rights') }}</th>
+            <td class="dataset-details">{{ _(access_rights.title()) }}</td>
+          </tr>
+        {% endif %}
+
+        {% set temporal_start = pkg_dict.temporal_start %}
+        {% set temporal_end = pkg_dict.temporal_end %}
+        {% if temporal_start or temporal_end %}
+          <tr>
+            <th scope="row" class="dataset-label">{{ _('Temporal coverage') }}</th>
+            <td class="dataset-details">{% if temporal_start %}{% snippet 'snippets/local_friendly_datetime.html', datetime_obj=temporal_start %}{% else %}?{% endif %} - {% if temporal_end %}{% snippet 'snippets/local_friendly_datetime.html', datetime_obj=temporal_end %}{% else %}?{% endif %}</td>
+          </tr>
+        {% endif %}
+
+        {% set landing_page = pkg_dict.landing_page %}
+        {% if landing_page %}
+          <tr>
+            <th scope="row" class="dataset-label">{{ _('Landing page') }}</th>
+            <td class="dataset-details"><a href="{{ landing_page }}">{{ landing_page }}</a></td>
+          </tr>
+        {% endif %}
+
+        {% set data_directory = pkg_dict.data_directory %}
+
+        {% set is_in_dcat = 'Yes' if data_directory == True else 'No' %}
+        <tr>
+          <th scope="row" class="dataset-label">{{ _('Data directory') }}</th>
+          <td class="dataset-details">{{ _(is_in_dcat) }}</td>
+        </tr>
 
       {% block extras scoped %}
         {% for extra in h.sorted_extras(pkg_dict.extras) %}
