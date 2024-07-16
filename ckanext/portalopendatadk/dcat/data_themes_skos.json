@@ -1,67 +1,139 @@
 {
-  "SOCI": {
-    "da": "Befolkning og samfund",
-    "en": "Population and society",
-    "fr": "Population et société"
-  },
-  "ENER": {
-    "da": "Energi",
-    "en": "Energy",
-    "fr": "Énergie"
-  },
-  "INTR": {
-    "da": "Internationale spørgsmål",
-    "en": "International issues",
-    "fr": "Questions internationales"
-  },
-  "AGRI": {
-    "da": "Landbrug, fiskeri, skovbrug og fødevarer",
-    "en": "Agriculture, fisheries, forestry and food",
-    "fr": "Agriculture, pêche, forêt et alimentation"
-  },
-  "ENVI": {
-    "da": "Miljø",
-    "en": "Environment",
-    "fr": "Environnement"
-  },
   "ECON": {
-    "da": "Økonomi og finanser",
-    "en": "Economy and finance",
-    "fr": "Économie et finances"
+    "identifier": "ECON",
+    "pref_label_en": "Economy and finance",
+    "definition_en": "dataset theme covering the domains of economic activity which involves production, distribution, trade, and consumption of goods and services, and finance activity focusing on the management of money at the individual, company, or government level",
+    "pref_label_fr": "\u00c9conomie et finances",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant les domaines de l\u2019activit\u00e9 \u00e9conomique au nombre desquels la production, la distribution, les \u00e9changes et la consommation de biens et de services, et l\u2019activit\u00e9 financi\u00e8re ax\u00e9e sur la gestion de l\u2019argent au niveau des individus, des entreprises ou des administrations publiques",
+    "pref_label_da": "\u00d8konomi og finanser",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5derne \u00f8konomisk virksomhed, der omfatter produktion, distribution, handel og forbrug af varer og tjenesteydelser, og finansiel virksomhed med fokus p\u00e5 forvaltning af penge p\u00e5 individuelt niveau, virksomhedsniveau eller myndighedsniveau",
+    "authority_code": "ECON"
   },
   "GOVE": {
-    "da": "Regering og offentlig sektor",
-    "en": "Government and public sector",
-    "fr": "Gouvernement et secteur public"
+    "identifier": "GOVE",
+    "pref_label_en": "Government and public sector",
+    "definition_en": "dataset theme covering the areas of government and the public sector, government being the system or group of individuals governing an organised community, usually a state, and the public sector comprising the segment of the economy involving public services and enterprises, which may be managed by central, regional or local authorities",
+    "pref_label_fr": "Gouvernement et secteur public",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant les domaines des administrations et du secteur public, les administrations \u00e9tant le syst\u00e8me ou le groupe de personnes qui gouvernent une communaut\u00e9 organis\u00e9e, g\u00e9n\u00e9ralement un \u00c9tat, et le secteur public comprenant le segment de l\u2019\u00e9conomie qui concerne les services publics et les entreprises et qui peut \u00eatre g\u00e9r\u00e9 par des autorit\u00e9s centrales, r\u00e9gionales ou locales",
+    "pref_label_da": "Regeringen og den offentlige sektor",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5derne regeringen og den offentlige sektor, hvor regeringen er det system eller den gruppe af enkeltpersoner, der leder et organiseret f\u00e6llesskab, s\u00e6dvanligvis en stat, mens den offentlige sektor omfatter det segment af \u00f8konomien, der vedr\u00f8rer offentlige tjenester og virksomheder, som kan forvaltes af centrale, regionale eller lokale myndigheder",
+    "authority_code": "GOVE"
   },
-  "REGI": {
-    "da": "Regioner og byer",
-    "en": "Regions and cities",
-    "fr": "Régions et villes"
+  "AGRI": {
+    "identifier": "AGRI",
+    "pref_label_en": "Agriculture, fisheries, forestry and food",
+    "definition_en": "dataset theme covering the domains of agriculture which involves the cultivation of plants and livestock; fisheries which focuses on the harvesting of fish from wild or farmed sources; forestry which relates to the management and conservation of forests and woodlands; and food which includes substances that provide nutritional support to organisms",
+    "pref_label_fr": "Agriculture, p\u00eache, sylviculture et alimentation",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant les domaines de l\u2019agriculture au nombre desquels la culture de plantes et l\u2019\u00e9levage d\u2019animaux, les p\u00eacheries ax\u00e9es sur la p\u00eache de poissons sauvages ou d\u2019\u00e9levage, la sylviculture pour la gestion et la conservation des for\u00eats et des zones bois\u00e9es et l\u2019alimentation, pour les substances qui apportent un soutien nutritionnel aux organismes",
+    "pref_label_da": "Landbrug, fiskeri, skovbrug og f\u00f8devarer",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5derne landbrug, der omfatter dyrkning af planter og husdyravl; fiskeri, der fokuserer p\u00e5 h\u00f8st af fisk fra vildtlevende eller opdr\u00e6ttede fisk; skovbrug, der vedr\u00f8rer forvaltning og bevarelse af skove og skovomr\u00e5der, og f\u00f8devarer, herunder stoffer, der tilf\u00f8rer n\u00e6ring til organismer",
+    "authority_code": "AGRI"
   },
-  "JUST": {
-    "da": "Retfærdighed, retssystem og offentlig sikkerhed",
-    "en": "Justice, legal system and public safety",
-    "fr": "Justice, système juridique et sécurité publique"
+  "ENVI": {
+    "identifier": "ENVI",
+    "pref_label_en": "Environment",
+    "definition_en": "dataset theme covering the domain of environment, defined as the interaction of all living species, climate, weather, and natural resources that impact human survival and economic activity",
+    "pref_label_fr": "Environnement",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant le domaine de l\u2019environnement, d\u00e9fini comme l\u2019interaction entre l\u2019ensemble des esp\u00e8ces vivantes, le climat, les conditions m\u00e9t\u00e9orologiques, et les ressources naturelles qui ont une incidence sur la survie humaine et l\u2019activit\u00e9 \u00e9conomique",
+    "pref_label_da": "Milj\u00f8",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5det milj\u00f8, der defineres som samspillet mellem alle levende arter, klima, vejr og naturressourcer, der p\u00e5virker menneskets overlevelse og den \u00f8konomiske aktivitet",
+    "authority_code": "ENVI"
   },
-  "HEAL": {
-    "da": "Sundhed",
-    "en": "Health",
-    "fr": "Santé"
-  },
-  "TRAN": {
-    "da": "Transport",
-    "en": "Transport",
-    "fr": "Transport"
+  "ENER": {
+    "identifier": "ENER",
+    "pref_label_en": "Energy",
+    "definition_en": "dataset theme covering the domain of energy, characterised as the quantitative property necessary to perform work on or heat objects, and vital element of living organisms and the operation of human civilisation",
+    "pref_label_fr": "\u00c9nergie",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant le domaine de l\u2019\u00e9nergie, d\u00e9finie comme la propri\u00e9t\u00e9 quantitative n\u00e9cessaire pour effectuer un travail sur l\u2019objet ou pour le chauffer, et comme un \u00e9l\u00e9ment vital pour les organismes vivants et le fonctionnement de la civilisation humaine",
+    "pref_label_da": "Energi",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5det energi, karakteriseret som den kvantitative egenskab, der er n\u00f8dvendig for at udf\u00f8re arbejde p\u00e5 eller opvarme genstande, og et vitalt element for levende organismer og den menneskelige civilisations funktion",
+    "authority_code": "ENER"
   },
   "EDUC": {
-    "da": "Uddannelse, kultur og sport",
-    "en": "Education, culture and sport",
-    "fr": "Éducation, culture et sport"
+    "identifier": "EDUC",
+    "pref_label_en": "Education, culture and sport",
+    "definition_en": "dataset theme covering the domains of education, which facilitates learning and the acquisition of knowledge, skills, values, beliefs, and habits; culture, which includes the social behaviour, norms, knowledge, beliefs, arts, laws, customs, capabilities, and habits found in human societies; and sport, encompassing competitive physical activities or games that improve physical ability, skills, and provide enjoyment to participants as well as entertainment to spectators",
+    "pref_label_fr": "\u00c9ducation, culture et sport",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant les domaines de l\u2019\u00e9ducation, qui permet l\u2019apprentissage et l\u2019acquisition de connaissances, de comp\u00e9tences, de valeurs, d\u2019opinions et d\u2019habitudes, de la culture, qui englobe le comportement social, les normes, les connaissances, les croyances, les arts, les lois, les coutumes, les capacit\u00e9s et les habitudes dans les soci\u00e9t\u00e9s humaines et du sport, qui englobe des activit\u00e9s physiques ou des jeux sous forme de comp\u00e9tition qui am\u00e9liorent les aptitudes et les comp\u00e9tences physiques en procurant du plaisir aux participants et du divertissement aux spectateurs",
+    "pref_label_da": "Uddannelse, kultur og sport",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5derne uddannelse, der fremmer l\u00e6ring og erhvervelse af viden, f\u00e6rdigheder, v\u00e6rdier, overbevisninger og vaner; kultur, der omfatter social adf\u00e6rd, normer, viden, overbevisninger, kunst, love, skikke, evner og vaner i menneskelige samfund, og sport, der omfatter konkurrencepr\u00e6gede fysiske aktiviteter eller spil, der forbedrer de fysiske evner og f\u00e6rdigheder og er til gl\u00e6de for deltagerne samt bringer underholdning til tilskuerne",
+    "authority_code": "EDUC"
+  },
+  "JUST": {
+    "identifier": "JUST",
+    "pref_label_en": "Justice, legal system and public safety",
+    "definition_en": "dataset theme covering the domains of justice, legal system and public safety, where justice refers to the procedural fairness in the application of law; legal system comprises various frameworks including civil, common, statutory, and religious law; and public safety denotes the governmental responsibility to protect individuals, organisations, and institutions from threats to their well-being and community prosperity",
+    "pref_label_fr": "Justice, syst\u00e8me juridique et s\u00e9curit\u00e9 publique",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant les domaines de la justice, du syst\u00e8me juridique et de la s\u00e9curit\u00e9 publique, la notion de justice faisant r\u00e9f\u00e9rence \u00e0 l\u2019\u00e9quit\u00e9 proc\u00e9durale dans l\u2019application du droit, le syst\u00e8me juridique comprenant diff\u00e9rents cadres, dont le droit civil, la common law, le droit statutaire et le droit religieux et la s\u00e9curit\u00e9 publique faisant r\u00e9f\u00e9rence \u00e0 la responsabilit\u00e9 gouvernementale en mati\u00e8re de protection des personnes, des organisations et des institutions contre les menaces pesant sur leur bien-\u00eatre et leur prosp\u00e9rit\u00e9 communautaire",
+    "pref_label_da": "Retf\u00e6rdighed, retssystem og offentlig sikkerhed",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5derne retf\u00e6rdighed, retssystem og offentlig sikkerhed, hvor retf\u00e6rdighed henviser til principperne om en retf\u00e6rdig rettergang i forbindelse med anvendelse af loven, mens retssystemet omfatter forskellige rammer, herunder civilret, common law, almindelig lov og religi\u00f8s ret, og offentlig sikkerhed betegner statens ansvar for at beskytte enkeltpersoner, organisationer og institutioner mod trusler mod deres trivsel og samfundets velstand",
+    "authority_code": "JUST"
+  },
+  "REGI": {
+    "identifier": "REGI",
+    "pref_label_en": "Regions and cities",
+    "definition_en": "dataset theme covering the domains of regions and cities, where regions is defined by political geography units including sovereign states, subnational administrative areas, and multinational groupings, and cities are characterised as large human settlements",
+    "pref_label_fr": "R\u00e9gions et villes",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant les domaines des r\u00e9gions et des villes, les r\u00e9gions \u00e9tant d\u00e9finies par des unit\u00e9s de g\u00e9ographie politique, dont les \u00c9tats souverains, les zones administratives infranationales et les groupements multinationaux, et les villes \u00e9tant d\u00e9finies comme de grands \u00e9tablissements humains",
+    "pref_label_da": "Regioner og byer",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5derne regioner og byer, hvor regionerne er defineret af politisk-geografiske enheder, herunder suver\u00e6ne stater, subnationale administrative omr\u00e5der og multinationale grupperinger, mens byer er karakteriseret som store menneskelige bos\u00e6ttelser",
+    "authority_code": "REGI"
+  },
+  "INTR": {
+    "identifier": "INTR",
+    "pref_label_en": "International issues",
+    "definition_en": "dataset theme covering the domain of international issues which relates to significant topics or problems that are subject to debate or discussion and involve participants from at least two different countries",
+    "pref_label_fr": "Questions internationales",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant le domaine des questions internationales qui se rapportent \u00e0 des sujets ou \u00e0 des probl\u00e8mes importants faisant l\u2019objet d\u2019un d\u00e9bat ou d\u2019une discussion et associant des participants d\u2019au moins deux pays diff\u00e9rents",
+    "pref_label_da": "Internationale sp\u00f8rgsm\u00e5l",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5det internationale sp\u00f8rgsm\u00e5l, der omhandler vigtige emner eller problemer, som er genstand for debat eller dr\u00f8ftelser, og som omfatter deltagere fra mindst to forskellige lande",
+    "authority_code": "INTR"
+  },
+  "HEAL": {
+    "identifier": "HEAL",
+    "pref_label_en": "Health",
+    "definition_en": "dataset theme covering the domain of health which includes health conditions, diseases, treatments, healthcare services, and health policies",
+    "pref_label_fr": "Sant\u00e9",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant le domaine de la sant\u00e9, qui comprend les conditions de sant\u00e9, les maladies, les traitements, les services de sant\u00e9 et les politiques de sant\u00e9",
+    "pref_label_da": "Sundhed",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5det sundhed, der omfatter sundhedsforhold, sygdomme, behandlinger, sundhedsydelser og sundhedspolitikker",
+    "authority_code": "HEAL"
+  },
+  "SOCI": {
+    "identifier": "SOCI",
+    "pref_label_en": "Population and society",
+    "definition_en": "dataset theme covering the domains of population and society, where population refers to the total number of people residing within various geographic levels from cities to the global scale, and society denotes a collective of individuals engaged in continuous social interaction within a common territory, often under the same political and cultural norms",
+    "pref_label_fr": "Population et soci\u00e9t\u00e9",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant les domaines de la population et de la soci\u00e9t\u00e9, la population faisant r\u00e9f\u00e9rence au nombre total de personnes r\u00e9sidant \u00e0 diff\u00e9rents niveaux g\u00e9ographiques, allant des villes jusqu\u2019\u00e0 l\u2019\u00e9chelle mondiale, et la soci\u00e9t\u00e9 d\u00e9signant un collectif de personnes engag\u00e9es dans une interaction sociale continue au sein d\u2019un territoire commun, souvent dans le cadre des m\u00eames normes politiques et culturelles",
+    "pref_label_da": "Befolkning og samfund",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5derne befolkning og samfund, hvor befolkning henviser til det samlede antal mennesker, der bor p\u00e5 forskellige geografiske niveauer, fra byer til globalt plan, mens samfund betegner en gruppe af personer, der l\u00f8bende interagerer socialt inden for et f\u00e6lles territorium og ofte efter de samme politiske og kulturelle normer",
+    "authority_code": "SOCI"
+  },
+  "OP_DATPRO": {
+    "identifier": "OP_DATPRO",
+    "pref_label_en": "Provisional data",
+    "pref_label_fr": "Donn\u00e9es provisoires",
+    "pref_label_da": "Midlertidige data",
+    "authority_code": "OP_DATPRO"
   },
   "TECH": {
-    "da": "Videnskab og teknologi",
-    "en": "Science and technology",
-    "fr": "Science et technologie"
+    "identifier": "TECH",
+    "pref_label_en": "Science and technology",
+    "definition_en": "dataset theme covering the domains of science and technology, with science being the systematic pursuit of knowledge through testable explanations and predictions across natural, social, and formal disciplines, and technology encompassing the collective techniques, skills, methods, and processes used in producing goods, providing services, or achieving objectives like scientific research",
+    "pref_label_fr": "Science et technologie",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant les domaines de la science et de la technologie, la science \u00e9tant la recherche syst\u00e9matique de connaissances au moyen d\u2019explications et de pr\u00e9dictions exploitables dans toutes les disciplines naturelles, sociales et formelles, et la technologie englobant les techniques, comp\u00e9tences, m\u00e9thodes et processus collectifs mis en \u0153uvre pour produire des biens, fournir des services ou atteindre des objectifs tels que la recherche scientifique",
+    "pref_label_da": "Videnskab og teknologi",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5derne videnskab og teknologi, hvor videnskab er den systematiske str\u00e6ben efter viden gennem forklaringer og forudsigelser, som kan afpr\u00f8ves, p\u00e5 tv\u00e6rs af naturlige, sociale og formelle discipliner, mens teknologi omfatter alle de teknikker, f\u00e6rdigheder, metoder og processer, der anvendes til at producere varer, levere tjenesteydelser eller n\u00e5 m\u00e5l s\u00e5som videnskabelig forskning",
+    "authority_code": "TECH"
+  },
+  "TRAN": {
+    "identifier": "TRAN",
+    "pref_label_en": "Transport",
+    "definition_en": "dataset theme covering the domain of transport, which involves the movement of humans, animals, and goods from one location to another using various modes such as air, land (rail and road), water, cable, pipeline and space",
+    "pref_label_fr": "Transports",
+    "definition_fr": "th\u00e8me d\u2019un ensemble de donn\u00e9es couvrant le domaine du transport, qui implique le d\u00e9placement d\u2019\u00eatres humains, d\u2019animaux et de biens d\u2019un endroit \u00e0 un autre en faisant appel \u00e0 diff\u00e9rents modes de transports tels que le transport a\u00e9rien, le transport terrestre (ferroviaire ou routier), le transport par voies navigables, le transport par c\u00e2ble, le transport par conduites et le transport spatial",
+    "pref_label_da": "Transport",
+    "definition_da": "tema for datas\u00e6t, som vedr\u00f8rer omr\u00e5det transport, der omfatter flytning af mennesker, dyr og varer fra et sted til et andet ved hj\u00e6lp af forskellige former for transport, bl.a. i luften, til lands (bane og vej), til vands, via kabler, via r\u00f8rledninger og i rummet",
+    "authority_code": "TRAN"
   }
 }
