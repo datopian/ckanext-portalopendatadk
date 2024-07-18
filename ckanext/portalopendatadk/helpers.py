@@ -100,3 +100,16 @@ def get_dcat_license_options(selected=None):
         return None
 
     return dcat_license_options
+
+
+def fix_data_themes(data_themes_raw):
+    data_themes = []
+
+    if data_themes_raw:
+        if isinstance(data_themes_raw, list):
+            data_themes_raw = data_themes_raw[0]
+
+        if isinstance(data_themes_raw, (str, unicode)):
+            data_themes = data_themes_raw.strip("{}").split(",")
+
+    return data_themes

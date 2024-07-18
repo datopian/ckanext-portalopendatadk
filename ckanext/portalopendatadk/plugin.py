@@ -62,6 +62,7 @@ class PortalOpenDataDKPlugin(
     plugins.implements(plugins.IRoutes, inherit=True)
     plugins.implements(plugins.IAuthFunctions, inherit=True)
     plugins.implements(plugins.IValidators, inherit=True)
+    plugins.implements(plugins.IPackageController, inherit=True)
 
     def before_map(self, map):
         # Pass requests to ODDKUserController to verify admin status
@@ -173,6 +174,7 @@ class PortalOpenDataDKPlugin(
 
     def dataset_facets(self, facets_dict, package_type):
         facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
+        facets_dict['data_themes'] = plugins.toolkit._('Categories')
         return facets_dict
 
     def organization_facets(self, facets_dict, organization_type, package_type):
@@ -182,6 +184,29 @@ class PortalOpenDataDKPlugin(
     def group_facets(self, facets_dict, group_type, package_type):
         facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
         return facets_dict
+
+    # IPackageController
+
+    def after_show(self, context, pkg_dict):
+        data_themes = pkg_dict.get('data_themes')
+        data_themes = oddk_helpers.fix_data_themes(data_themes)
+
+        if data_themes:
+            pkg_dict['data_themes'] = data_themes
+
+        return pkg_dict
+
+    def before_search(self, search_params):
+        return search_params
+
+    def before_index(self, pkg_dict):
+        data_themes = pkg_dict.get('extras_data_themes')
+        data_themes = oddk_helpers.fix_data_themes(data_themes)
+
+        if data_themes:
+            pkg_dict['data_themes'] = data_themes
+
+        return pkg_dict
 
     # IAuthFunctions
 
