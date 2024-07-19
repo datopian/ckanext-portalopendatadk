@@ -246,6 +246,9 @@ def package_create(context, data_dict):
             if not data_dict.get(field):
                 errors[field] = [_('Missing value')]
 
+    documentation = data_dict.get("documentation")
+    data_dict['url'] = documentation
+
     log.debug(
         'package_create validate_errs=%r user=%s package=%s data=%r',
         errors,
@@ -274,13 +277,13 @@ def package_create(context, data_dict):
 
     # We have to do this after save so the package id is available.
     # If this fails, we have to rollback the transaction.
-    try:
-        data_dict['url'] = data_dict.get('documentation')
-        upload = uploader.get_resource_uploader(data_dict)
-        upload.upload(pkg.id, uploader.get_max_resource_size())
-    except Exception as e:
-        model.Session.rollback()
-        raise ValidationError({'upload': [_('Documentation upload failed: {}').format(e)]})
+    if documentation and 'http' not in documentation:
+        try:
+            upload = uploader.get_resource_uploader(data_dict)
+            upload.upload(pkg.id, uploader.get_max_resource_size())
+        except Exception as e:
+            model.Session.rollback()
+            raise ValidationError({'upload': [_('Documentation upload failed: {}').format(e)]})
 
     # Needed to let extensions know the package and resources ids
     model.Session.flush()
@@ -406,12 +409,15 @@ def package_update(context, data_dict):
             if not data_dict.get(field):
                 errors[field] = [_('Missing value')]
 
-    try:
-        data_dict['url'] = data_dict.get('documentation')
-        upload = uploader.get_resource_uploader(data_dict)
-        upload.upload(data_dict['id'], uploader.get_max_resource_size())
-    except Exception as e:
-        errors['upload'] = [_('Upload failed: %s') % str(e)]
+    documentation = data_dict.get('documentation')
+    data_dict["url"] = documentation
+
+    if documentation and 'http' not in documentation:
+        try:
+            upload = uploader.get_resource_uploader(data_dict)
+            upload.upload(data_dict['id'], uploader.get_max_resource_size())
+        except Exception as e:
+            errors['upload'] = [_('Upload failed: %s') % str(e)]
 
     log.debug(
         'package_update validate_errs=%r user=%s package=%s data=%r',

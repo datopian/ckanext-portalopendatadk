@@ -159,6 +159,10 @@ msgid "Format (mandatory if distribution exists): Specifies the file format of t
 msgstr "Format (obligatorisk, hvis distributionen findes): Denne egenskab angiver filformatet for distributionen. Det kan forekomme én gang for hver distribution."
 
 #: Manually added
+msgid "Data Themes (recommended): Specifies the Data Themes (Categories) of the dataset. Multiple Data Themes can be assigned to a dataset."
+msgstr "Emne (anbefalet): Denne egenskab angiver emner (kategorier) som datasættet er relateret til. Det kan forekomme flere gange for hvert datasæt."
+
+#: Manually added
 msgid "Unknown"
 msgstr "Ubekendt"
 

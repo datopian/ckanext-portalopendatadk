@@ -117,29 +117,32 @@ body {
   align-items: center;
   text-align: center;
   position: relative;
-  background-color: #0e4ab4;
+  /*background-color: #0e4ab4;*/
   border-radius: 3px;
-  color: white;
+  color: #444444;
   height: 16px;
   width: 40px;
   padding: 2px;
   padding-top: 3px;
   cursor: pointer;
   float: right;
-  margin-right: 120px;
+  margin-right: 132px;
   font-size: 12px;
 }
 
-.dcat-required {
+/*.dcat-required {
   background-color: #e32e12 !important;
+}*/
+
+.fa-question-circle {
+  font-size: 16px;
 }
 
 .dcat-info-block .dcat-info-tooltip {
   visibility: hidden;
   width: 300px;
   background-color: rgb(251, 251, 251);
-  color: black;
-
+  color: #444444;
   border-radius: 6px;
   padding: 5px;
   position: absolute;

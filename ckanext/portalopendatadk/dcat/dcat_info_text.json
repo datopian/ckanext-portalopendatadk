@@ -14,5 +14,6 @@
   "url": "Distribution (mandatory): Provides a file or link to the resource (distribution) of the dataset. The property can appear once for each distribution.",
   "planned_availability": "Planned Availability (recommended): Specifies availability type of the resource (distribution). It can appear once for each distribution.",
   "license_id": "License (recommended): Specifies the license of the resource (distribution). It can appear once for each distribution.",
-  "format": "Format (mandatory if distribution exists): Specifies the file format of the resource (distribution). It can appear once for each distribution."
+  "format": "Format (mandatory if distribution exists): Specifies the file format of the resource (distribution). It can appear once for each distribution.",
+  "data_themes": "Data Themes (recommended): Specifies the Data Themes (Categories) of the dataset. Multiple Data Themes can be assigned to a dataset."
 }
