@@ -78,7 +78,7 @@
         {% if pkg_dict.update_frequency and pkg_dict.update_frequency != 'None' %}
           <tr>
             <th scope="row" class="dataset-label">{{ _('Update frequency') }}</th>
-            <td class="dataset-details">{{ _(pkg_dict.update_frequency.title()) }}</td>
+            <td class="dataset-details">{{ _(pkg_dict.update_frequency) }}</td>
           </tr>
         {% endif %}
         {% if pkg_dict.update_frequency_notes %}

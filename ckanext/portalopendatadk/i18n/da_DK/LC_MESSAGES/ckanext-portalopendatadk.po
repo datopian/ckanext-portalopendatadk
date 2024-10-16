@@ -1013,3 +1013,179 @@ msgstr ""
 #: EUROGEO_2022
 msgid "EuroGeographics Open Data Licence v.2022"
 msgstr ""
+
+#: Manually added
+msgid "UNKNOWN"
+msgstr "Ubekendt"
+
+#: Manually added
+msgid "TRIENNIAL"
+msgstr "Treårlig (hvert tredje år)"
+
+#: Manually added
+msgid "BIENNIAL"
+msgstr "Toårig (hvert andet år)"
+
+#: Manually added
+msgid "ANNUAL"
+msgstr "Årlig (hvert år)"
+
+#: Manually added
+msgid "ANNUAL_2"
+msgstr "Halvårlig (to gange om året)"
+
+#: Manually added
+msgid "ANNUAL_3"
+msgstr "Tre gange årligt"
+
+#: Manually added
+msgid "QUARTERLY"
+msgstr "Kvartalsvis (hvert tredje måned)"
+
+#: Manually added
+msgid "BIMONTHLY"
+msgstr "Hver anden måned"
+
+#: Manually added
+msgid "MONTHLY"
+msgstr "Månedlig (en gang om måneden)"
+
+#: Manually added
+msgid "MONTHLY_2"
+msgstr "To gange månedligt"
+
+#: Manually added
+msgid "BIWEEKLY"
+msgstr "Hver fjortende dag"
+
+#: Manually added
+msgid "MONTHLY_3"
+msgstr "Tre gange månedligt"
+
+#: Manually added
+msgid "WEEKLY"
+msgstr "Ugentlig (en gang om ugen)"
+
+#: Manually added
+msgid "WEEKLY_2"
+msgstr "To gange ugentligt"
+
+#: Manually added
+msgid "WEEKLY_3"
+msgstr "Tre gange ugentligt"
+
+#: Manually added
+msgid "DAILY"
+msgstr "Daglig (en gang om dagen)"
+
+#: Manually added
+msgid "UPDATE_CONT"
+msgstr "Opdateres løbende"
+
+#: Manually added
+msgid "IRREG"
+msgstr "Uregelmæssig"
+
+#: Manually added
+msgid "OTHER"
+msgstr "Andet"
+
+#: Manually added
+msgid "DAILY_2"
+msgstr "To gange om dagen"
+
+#: Manually added
+msgid "CONTINOUOUS"
+msgstr "Kontinuerlig"
+
+#: Manually added
+msgid "NEVER"
+msgstr "Aldrig"
+
+#: Manually added
+msgid "QUADRENNIAL"
+msgstr "Hvert fjerde år"
+
+#: Manually added
+msgid "QUINQUENNIAL"
+msgstr "Hvert femte år"
+
+#: Manually added
+msgid "HOURLY"
+msgstr "Hver time"
+
+#: Manually added
+msgid "DECENNIAL"
+msgstr "Hvert tiende år"
+
+#: Manually added
+msgid "BIHOURLY"
+msgstr "Hver anden time"
+
+#: Manually added
+msgid "TRIHOURLY"
+msgstr "Hver tredje time"
+
+#: Manually added
+msgid "BIDECENNIAL"
+msgstr "Hvert tyvende år"
+
+#: Manually added
+msgid "TRIDECENNIAL"
+msgstr "Hvert tredive år"
+
+#: Manually added
+msgid "ECON"
+msgstr "Økonomi og finans"
+
+#: Manually added
+msgid "GOVE"
+msgstr "Regering og offentlig sektor"
+
+#: Manually added
+msgid "AGRI"
+msgstr "Landbrug, fiskeri, skovbrug og fødevarer"
+
+#: Manually added
+msgid "ENVI"
+msgstr "Miljø"
+
+#: Manually added
+msgid "ENER"
+msgstr "Energi"
+
+#: Manually added
+msgid "EDUC"
+msgstr "Uddannelse, kultur og sport"
+
+#: Manually added
+msgid "JUST"
+msgstr "Retfærdighed, retssystem og offentlig sikkerhed"
+
+#: Manually added
+msgid "REGI"
+msgstr "Regioner og byer"
+
+#: Manually added
+msgid "INTR"
+msgstr "Internationale spørgsmål"
+
+#: Manually added
+msgid "SOCI"
+msgstr "Befolkning og samfund"
+
+#: Manually added
+msgid "OP_DATPRO"
+msgstr "Provisoriske data"
+
+#: Manually added
+msgid "TECH"
+msgstr "Videnskab og teknologi"
+
+#: Manually added
+msgid "HEAL"
+msgstr "Health"
+
+#: Manually added
+msgid "TRAN"
+msgstr "Transport"
