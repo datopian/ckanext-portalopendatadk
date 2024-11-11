@@ -1,0 +1,196 @@
+# English translations for ckanext-portalopendatadk.
+# Copyright (C) 2021 ORGANIZATION
+# This file is distributed under the same license as the
+# ckanext-portalopendatadk project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-portalopendatadk 0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-03-30 13:54+0000\n"
+"PO-Revision-Date: 2021-03-30 13:55+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: Manually added
+msgid "UNKNOWN"
+msgstr "Unknown"
+
+#: Manually added
+msgid "TRIENNIAL"
+msgstr "Triennial (once every three years)"
+
+#: Manually added
+msgid "BIENNIAL"
+msgstr "Biennial (once every two years)"
+
+#: Manually added
+msgid "ANNUAL"
+msgstr "Annual (once a year)"
+
+#: Manually added
+msgid "ANNUAL_2"
+msgstr "Twice a year"
+
+#: Manually added
+msgid "ANNUAL_3"
+msgstr "Three times a year"
+
+#: Manually added
+msgid "QUARTERLY"
+msgstr "Quarterly (once every three months)"
+
+#: Manually added
+msgid "BIMONTHLY"
+msgstr "Bimonthly (once every two months)"
+
+#: Manually added
+msgid "MONTHLY"
+msgstr "Monthly (once a month)"
+
+#: Manually added
+msgid "MONTHLY_2"
+msgstr "Twice a month"
+
+#: Manually added
+msgid "BIWEEKLY"
+msgstr "Biweekly (once every two weeks)"
+
+#: Manually added
+msgid "MONTHLY_3"
+msgstr "Three times a month"
+
+#: Manually added
+msgid "WEEKLY"
+msgstr "Weekly (once a week)"
+
+#: Manually added
+msgid "WEEKLY_2"
+msgstr "Twice a week"
+
+#: Manually added
+msgid "WEEKLY_3"
+msgstr "Three times a week"
+
+#: Manually added
+msgid "DAILY"
+msgstr "Daily"
+
+#: Manually added
+msgid "UPDATE_CONT"
+msgstr "Continuously updated"
+
+#: Manually added
+msgid "IRREG"
+msgstr "Irregular"
+
+#: Manually added
+msgid "OTHER"
+msgstr "Other"
+
+#: Manually added
+msgid "DAILY_2"
+msgstr "Twice a day"
+
+#: Manually added
+msgid "CONTINOUOUS"
+msgstr "Continuous"
+
+#: Manually added
+msgid "NEVER"
+msgstr "Never"
+
+#: Manually added
+msgid "QUADRENNIAL"
+msgstr "Quadrennial (once every four years)"
+
+#: Manually added
+msgid "QUINQUENNIAL"
+msgstr "Quinquennial (once every five years)"
+
+#: Manually added
+msgid "HOURLY"
+msgstr "Hourly"
+
+#: Manually added
+msgid "DECENNIAL"
+msgstr "Decennial (once every ten years)"
+
+#: Manually added
+msgid "BIHOURLY"
+msgstr "Every two hours"
+
+#: Manually added
+msgid "TRIHOURLY"
+msgstr "Every three hours"
+
+#: Manually added
+msgid "BIDECENNIAL"
+msgstr "Every 20 years"
+
+#: Manually added
+msgid "TRIDECENNIAL"
+msgstr "Every 30 years"
+
+#: Manually added
+msgid "ECON"
+msgstr "Economy and finance"
+
+#: Manually added
+msgid "GOVE"
+msgstr "Government and public sector"
+
+#: Manually added
+msgid "AGRI"
+msgstr "Agriculture, fisheries, forestry and food"
+
+#: Manually added
+msgid "ENVI"
+msgstr "Environment"
+
+#: Manually added
+msgid "ENER"
+msgstr "Energy"
+
+#: Manually added
+msgid "EDUC"
+msgstr "Education, culture and sport"
+
+#: Manually added
+msgid "JUST"
+msgstr "Justice, legal system and public safety"
+
+#: Manually added
+msgid "REGI"
+msgstr "Regions and cities"
+
+#: Manually added
+msgid "INTR"
+msgstr "International issues"
+
+#: Manually added
+msgid "SOCI"
+msgstr "Population and society"
+
+#: Manually added
+msgid "OP_DATPRO"
+msgstr "Provisional data"
+
+#: Manually added
+msgid "TECH"
+msgstr "Science and technology"
+
+#: Manually added
+msgid "HEAL"
+msgstr "Health"
+
+#: Manually added
+msgid "TRAN"
+msgstr "Transport"

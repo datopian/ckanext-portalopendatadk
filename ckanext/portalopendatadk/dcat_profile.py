@@ -385,7 +385,7 @@ class DanishDCATAPProfile(RDFProfile):
 
         # Landing page
         frontend_site_url = config.get(
-            "ckanext.portalopendatadk.frontend_site_url", "https://opendata.dk"
+            "ckanext.portalopendatadk.frontend_site_url", config.get("ckan.site_url")
         )
         g.add(
             (
@@ -505,7 +505,7 @@ class DanishDCATAPProfile(RDFProfile):
         #        g.add((dataset_ref, DCAT.theme, theme_uri))
 
         # Conforms to
-        g.add((dataset_ref, DCT.conformsTo, URIRef(CONFORMS_TO)))
+        #g.add((dataset_ref, DCT.conformsTo, URIRef(CONFORMS_TO)))
 
         # Language
         # titles_translated = dataset_dict.get('title_translated')
@@ -581,10 +581,20 @@ class DanishDCATAPProfile(RDFProfile):
             [
                 self._get_dataset_value(dataset_dict, "publisher_uri"),
                 self._get_dataset_value(dataset_dict, "publisher_name"),
-                dataset_dict.get("organization"),
+                (dataset_dict.get("organization") and dataset_dict["organization"].get("name")),
             ]
         ):
-            publisher_uri = publisher_uri_from_dataset_dict(dataset_dict)
+            publisher = dataset_dict.get("organization", {})
+            publisher_slug = publisher.get("name") if publisher else None
+
+            if not publisher_slug:
+                publisher_uri = publisher_uri_from_dataset_dict(dataset_dict)
+            else:
+                publisher_uri = "{frontend_site_url}/{organization_name}".format(
+                    frontend_site_url=frontend_site_url,
+                    organization_name=publisher_slug,
+                )
+
             if publisher_uri:
                 publisher_details = CleanedURIRef(publisher_uri)
             else:
@@ -690,13 +700,14 @@ class DanishDCATAPProfile(RDFProfile):
             dcat_formats = oddk_helpers.formats_from_file()
 
             if fmt and fmt in dcat_formats:
-                distribution = CleanedURIRef(
-                    "{}/dataset/{}/resource/{}".format(
-                        config.get("ckan.site_url"),
-                        dataset_dict.get("name"),
-                        resource_dict.get("id"),
-                    )
-                )
+                #distribution = CleanedURIRef(
+                #    "{}/dataset/{}/resource/{}".format(
+                #        config.get("ckan.site_url"),
+                #        dataset_dict.get("name"),
+                #        resource_dict.get("id"),
+                #    )
+                #)
+                distribution = URIRef(resource_dict.get("url"))
 
                 g.add((dataset_ref, DCAT.distribution, distribution))
 
@@ -817,7 +828,7 @@ class DanishDCATAPProfile(RDFProfile):
                 self._add_list_triples_from_dict(resource_dict, distribution, items)
 
                 # Conforms to
-                g.add((distribution, DCT.conformsTo, URIRef(CONFORMS_TO)))
+                #g.add((distribution, DCT.conformsTo, URIRef(CONFORMS_TO)))
 
                 if fmt:
                     fmt_uri = URIRef(FORMAT_BASE_URI + fmt)
