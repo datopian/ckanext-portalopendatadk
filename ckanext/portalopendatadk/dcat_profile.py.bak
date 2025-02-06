@@ -221,7 +221,7 @@ class DanishDCATAPProfile(RDFProfile):
 
         # Dataset URI (explicitly show the missing ones)
         dataset_uri = (
-            str(dataset_ref) if isinstance(dataset_ref, rdflib.term.URIRef) else ""
+            unicode(dataset_ref) if isinstance(dataset_ref, rdflib.term.URIRef) else ""
         )
         dataset_dict["extras"].append({"key": "uri", "value": dataset_uri})
 
@@ -300,7 +300,7 @@ class DanishDCATAPProfile(RDFProfile):
 
             # Distribution URI (explicitly show the missing ones)
             resource_dict["uri"] = (
-                str(distribution)
+                unicode(distribution)
                 if isinstance(distribution, rdflib.term.URIRef)
                 else ""
             )
@@ -327,7 +327,7 @@ class DanishDCATAPProfile(RDFProfile):
     def graph_from_dataset(self, dataset_dict, dataset_ref):
         g = self.g
 
-        for prefix, namespace in namespaces.items():
+        for prefix, namespace in namespaces.iteritems():
             g.bind(prefix, namespace)
 
         g.add((dataset_ref, RDF.type, DCAT.Dataset))
@@ -353,14 +353,14 @@ class DanishDCATAPProfile(RDFProfile):
 
         # Only add 'da' as language for now
         if translated_titles:
-            for lang, title in translated_titles.items():
+            for lang, title in translated_titles.iteritems():
                 if lang == "da":
                     title = title.strip()
                     if title:
                         g.add((dataset_ref, DCT.title, Literal(title, lang=lang)))
 
         if translated_descriptions:
-            for lang, description in translated_descriptions.items():
+            for lang, description in translated_descriptions.iteritems():
                 if lang == "da":
                     description = description.strip()
                     if description:
@@ -742,7 +742,7 @@ class DanishDCATAPProfile(RDFProfile):
                     "CC-BY-NC-4.0": "CC_BYNC_4_0",
                 }
                 skos_licenses.update(
-                    {v: v for v in list(LICENSES.keys()) if v not in skos_licenses}
+                    {v: v for v in LICENSES.keys() if v not in skos_licenses}
                 )
 
                 if license_id and license_id in skos_licenses:
@@ -907,7 +907,7 @@ class DanishDCATAPProfile(RDFProfile):
             "ckanext.portalopendatadk.frontend_site_url", config.get("ckan.site_url")
         )
 
-        for prefix, namespace in namespaces.items():
+        for prefix, namespace in namespaces.iteritems():
             g.bind(prefix, namespace)
 
         g.add((catalog_ref, RDF.type, DCAT.Catalog))

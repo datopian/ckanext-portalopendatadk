@@ -3,7 +3,7 @@ import datetime
 import markdown
 import html2text
 import json
-#from paste.deploy.converters import asbool
+from paste.deploy.converters import asbool
 
 import ckan.lib.plugins as lib_plugins
 import ckan.logic as logic
@@ -73,7 +73,7 @@ def translate_fields(context, data_dict):
                 'notes': translation_notes_output,
             }
 
-            for name, translation_output in list(translation_outputs.items()):
+            for name, translation_output in translation_outputs.items():
                 if translation_output.startswith('\n\n'):
                     translation_outputs[name] = translation_output[2:]
 
@@ -98,13 +98,13 @@ def translate_fields(context, data_dict):
     existing_notes_translations = data_dict.get('notes_translated')
 
     if existing_title_translations:
-        for lang, translation in list(existing_title_translations.items()):
+        for lang, translation in existing_title_translations.items():
             data_dict['title_translated'][lang] = data_dict[
                 'title_translated-{}'.format(lang)
             ]
 
     if existing_notes_translations:
-        for lang, translation in list(existing_notes_translations.items()):
+        for lang, translation in existing_notes_translations.items():
             data_dict['notes_translated'][lang] = data_dict[
                 'notes_translated-{}'.format(lang)
             ]
@@ -628,7 +628,7 @@ def package_search(context, data_dict):
     # Move ext_ params to extras and remove them from the root of the search
     # params, so they don't cause and error
     data_dict['extras'] = data_dict.get('extras', {})
-    for key in [key for key in list(data_dict.keys()) if key.startswith('ext_')]:
+    for key in [key for key in data_dict.keys() if key.startswith('ext_')]:
         data_dict['extras'][key] = data_dict.pop(key)
 
     # check if some extension needs to modify the search params
@@ -644,7 +644,7 @@ def package_search(context, data_dict):
 
     results = []
     if not abort:
-        if bool(data_dict.get('use_default_schema')):
+        if asbool(data_dict.get('use_default_schema')):
             data_source = 'data_dict'
         else:
             data_source = 'validated_data_dict'
@@ -657,8 +657,8 @@ def package_search(context, data_dict):
             data_dict['fl'] = ' '.join(result_fl)
 
         # Remove before these hit solr FIXME: whitelist instead
-        include_private = bool(data_dict.pop('include_private', False))
-        include_drafts = bool(data_dict.pop('include_drafts', False))
+        include_private = asbool(data_dict.pop('include_private', False))
+        include_drafts = asbool(data_dict.pop('include_drafts', False))
         data_dict.setdefault('fq', '')
         if not include_private:
             data_dict['fq'] = '+capacity:public ' + data_dict['fq']
@@ -726,7 +726,7 @@ def package_search(context, data_dict):
     # organizations in the current search's facets.
     group_names = []
     for field_name in ('groups', 'organization'):
-        group_names.extend(list(facets.get(field_name, {}).keys()))
+        group_names.extend(facets.get(field_name, {}).keys())
 
     groups = (
         session.query(model.Group.name, model.Group.title)
@@ -739,9 +739,9 @@ def package_search(context, data_dict):
 
     # Transform facets into a more useful data structure.
     restructured_facets = {}
-    for key, value in list(facets.items()):
+    for key, value in facets.items():
         restructured_facets[key] = {'title': key, 'items': []}
-        for key_, value_ in list(value.items()):
+        for key_, value_ in value.items():
             new_facet_dict = {}
             new_facet_dict['name'] = key_
             if key in ('groups', 'organization'):

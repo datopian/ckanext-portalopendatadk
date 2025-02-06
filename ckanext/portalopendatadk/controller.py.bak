@@ -1,7 +1,7 @@
 import logging as log
 import json
 import mimetypes
-#import paste.fileapp
+import paste.fileapp
 import os
 from botocore.exceptions import ClientError
 
@@ -111,10 +111,10 @@ class ODDKUserController(UserController):
             user = get_action('user_create')(context, data_dict)
         except NotAuthorized:
             abort(403, _('Unauthorized to create user %s') % '')
-        except NotFound as e:
+        except NotFound, e:
             abort(404, _('User not found'))
         except DataError:
-            abort(400, _('Integrity Error'))
+            abort(400, _(u'Integrity Error'))
 
         # NOTE: On ODDK, we don't need a captcha as there's
         # no public registration.
@@ -124,7 +124,7 @@ class ODDKUserController(UserController):
         #     h.flash_error(error_msg)
         #     return self.new(data_dict)
 
-        except ValidationError as e:
+        except ValidationError, e:
             errors = e.error_dict
             error_summary = e.error_summary
             return self.new(data_dict, errors, error_summary)
@@ -214,9 +214,9 @@ class ODDKUserController(UserController):
             if user_obj:
                 try:
                     mailer.send_reset_link(user_obj)
-                except mailer.MailerException as e:
+                except mailer.MailerException, e:
                     h.flash_error(_('Could not send reset link: %s') %
-                                  str(e))
+                                  unicode(e))
 
             h.flash_success(
                 _('A reset link has been emailed to you '
@@ -233,7 +233,7 @@ def _get_package_type(id):
     """
     pkg = model.Package.get(id)
     if pkg:
-        return pkg.type or 'dataset'
+        return pkg.type or u'dataset'
     return None
 
 
@@ -325,7 +325,7 @@ class DCATController(BaseController):
         try:
             datasets = toolkit.get_action('dcat_datasets_list')({},
                                                                 data_dict)
-        except toolkit.ValidationError as e:
+        except toolkit.ValidationError, e:
             toolkit.abort(409, str(e))
 
         content = json.dumps(datasets)
@@ -361,10 +361,10 @@ class ODDKDocumentationController(base.BaseController):
                 filepath = os.path.join(
                     path, 'resources', resource_id[0:3], resource_id[3:6], resource_id[6:]
                 )
-                #fileapp = paste.fileapp.FileApp(filepath)
+                fileapp = paste.fileapp.FileApp(filepath)
 
                 try:
-                    status, headers, app_iter = None, None, None #request.call_application(fileapp)
+                    status, headers, app_iter = request.call_application(fileapp)
                 except OSError:
                     abort(404, _('Resource data not found'))
 
