@@ -445,6 +445,7 @@ class RegisterView(MethodView):
             u'schema': _new_form_to_db_schema(),
             u'save': u'save' in request.form
         }
+        
         try:
             logic.check_access(u'user_create', context)
         except logic.NotAuthorized:
@@ -465,13 +466,6 @@ class RegisterView(MethodView):
         except dictization_functions.DataError:
             base.abort(400, _(u'Integrity Error'))
 
-        # try:
-        #     captcha.check_recaptcha(request)
-        # except captcha.CaptchaError:
-        #     error_msg = _(u'Bad Captcha. Please try again.')
-        #     h.flash_error(error_msg)
-        #     return self.get(data_dict)
-
         try:
             user_dict = logic.get_action(u'user_create')(context, data_dict)
         except logic.NotAuthorized:
@@ -484,13 +478,21 @@ class RegisterView(MethodView):
             return self.get(data_dict, errors, error_summary)
 
         user = current_user.name
-        if user:
-            # #1799 User has managed to register whilst logged in - warn user
-            # they are not re-logged in as new user.
+
+        if not authz.is_sysadmin(user):
+            base.abort(403, _(u'Only sysadmins can create user %s') % u'')
+
+        if not user:
+            # log the user in programatically
+            userobj = model.User.get(user_dict["id"])
+            if userobj:
+                login_user(userobj)
+                rotate_token()
+            resp = h.redirect_to(u'user.me')
+            return resp
+        else:
             h.flash_success(
-                _(u'User "%s" is now registered but you are still '
-                  u'logged in as "%s" from before') % (data_dict[u'name'],
-                                                       user))
+                _(u'User "%s" is now registered.'% (data_dict[u'name'])))
             if authz.is_sysadmin(user):
                 # the sysadmin created a new user. We redirect him to the
                 # activity page for the newly created user
@@ -498,17 +500,7 @@ class RegisterView(MethodView):
                     return h.redirect_to(
                         u'activity.user_activity', id=data_dict[u'name'])
                 return h.redirect_to(u'user.read', id=data_dict[u'name'])
-            else:
-                return base.render(u'user/logout_first.html')
-
-        # log the user in programatically
-        userobj = model.User.get(user_dict["id"])
-        if userobj:
-            login_user(userobj)
-            rotate_token()
-        resp = h.redirect_to(u'user.me')
-        return resp
-
+            
     def get(self,
             data: Optional[dict[str, Any]] = None,
             errors: Optional[dict[str, Any]] = None,
