@@ -12,7 +12,7 @@ import dominate.tags as dom_tags
 
 import ckan.lib.authenticator as authenticator
 import ckan.lib.base as base
-import ckan.lib.captcha as captcha
+# import ckan.lib.captcha as captcha
 from ckan.lib.helpers import helper_functions as h
 from ckan.lib.helpers import Page
 from ckan.lib.dictization import model_dictize
@@ -84,7 +84,6 @@ def _extra_template_variables(context: Context,
 
 
 def index():
-    log.info('it works')
     page_number = h.get_page_number(request.args)
     q = request.args.get('q', '')
     order_by = request.args.get('order_by', 'name')
@@ -466,12 +465,12 @@ class RegisterView(MethodView):
         except dictization_functions.DataError:
             base.abort(400, _(u'Integrity Error'))
 
-        try:
-            captcha.check_recaptcha(request)
-        except captcha.CaptchaError:
-            error_msg = _(u'Bad Captcha. Please try again.')
-            h.flash_error(error_msg)
-            return self.get(data_dict)
+        # try:
+        #     captcha.check_recaptcha(request)
+        # except captcha.CaptchaError:
+        #     error_msg = _(u'Bad Captcha. Please try again.')
+        #     h.flash_error(error_msg)
+        #     return self.get(data_dict)
 
         try:
             user_dict = logic.get_action(u'user_create')(context, data_dict)
@@ -676,12 +675,12 @@ class RequestResetView(MethodView):
     def post(self) -> Response:
         self._prepare()
 
-        try:
-            captcha.check_recaptcha(request)
-        except captcha.CaptchaError:
-            error_msg = _(u'Bad Captcha. Please try again.')
-            h.flash_error(error_msg)
-            return h.redirect_to(u'user.request_reset')
+        # try:
+        #     captcha.check_recaptcha(request)
+        # except captcha.CaptchaError:
+        #     error_msg = _(u'Bad Captcha. Please try again.')
+        #     h.flash_error(error_msg)
+        #     return h.redirect_to(u'user.request_reset')
 
         id = request.form.get(u'user', '')
         if id in (None, u''):
