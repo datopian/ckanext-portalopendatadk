@@ -1,1592 +1,1732 @@
 {
-    "COM_REUSE": {
-        "label": {
-            "dan": null,
-            "eng": "European Commission reuse notice",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "European Commission"
-    },
-    "ISA_OML": {
-        "label": {
-            "dan": null,
-            "eng": "ISA Open Metadata Licence 1.1",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Metadata",
-        "responsible_entity": "European Commission"
-    },
-    "CC0": {
-        "label": {
-            "dan": "Creative Commons CC0 1.0 Universel",
-            "eng": "Creative Commons CC0 1.0 Universal",
-            "fra": "Creative Commons CC0 1.0 Universel"
-        },
-        "use_conditions": "None",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BY": {
-        "label": {
-            "dan": "Creative Commons Navngivelse 4.0 International",
-            "eng": "Creative Commons Attribution 4.0 International",
-            "fra": "Creative Commons Attribution 4.0 International"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYSA": {
-        "label": {
-            "dan": "Creative Commons Navngivelse–DelPåSammeVilkår 4.0 International",
-            "eng": "Creative Commons Attribution–ShareAlike 4.0 International",
-            "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 4.0 International"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYND": {
-        "label": {
-            "dan": "Creative Commons Navngivelse–IngenBearbejdelse 4.0 International",
-            "eng": "Creative Commons Attribution–NoDerivatives 4.0 International",
-            "fra": "Creative Commons Attribution – Pas de Modification 4.0 International"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNC": {
-        "label": {
-            "dan": "Creative Commons Navngivelse–IkkeKommerciel 4.0 International",
-            "eng": "Creative Commons Attribution–NonCommercial 4.0 International",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale 4.0 International"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNCSA": {
-        "label": {
-            "dan": "Creative Commons Navngivelse–IkkeKommerciel–DelPåSammeVilkår 4.0 International",
-            "eng": "Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Partage dans les Mêmes Conditions 4.0 International"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNCND": {
-        "label": {
-            "dan": "Creative Commons Navngivelse–IkkeKommerciel–IngenBearbejdelse 4.0 International",
-            "eng": "Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International",
-            "fra": "Creative Commons Attribution – Pas d'Utilisation Commerciale – Pas de Modification 4.0 International"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BY_3_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering 3.0 Ikke porteret",
-            "eng": "Creative Commons Attribution 3.0 Unported",
-            "fra": "Creative Commons Attribution 3.0 non transposé"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYSA_3_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Deling på samme vilkår 3.0 Ikke porteret",
-            "eng": "Creative Commons Attribution–ShareAlike 3.0 Unported",
-            "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 3.0 non transposé"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYND_3_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ingen afledninger 3.0 Ikke porteret",
-            "eng": "Creative Commons Attribution–NoDerivs 3.0 Unported",
-            "fra": "Creative Commons Attribution – Pas de Modification 3.0 non transposé"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNC_3_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel 3.0 Ikke porteret",
-            "eng": "Creative Commons Attribution–NonCommercial 3.0 Unported",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale 3.0 non transposé"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNCSA_3_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel-Deling på samme vilkår 3.0 Ikke porteret",
-            "eng": "Creative Commons Attribution–NonCommercial–ShareAlike 3.0 Unported",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Partage dans les Mêmes Conditions 3.0 non transposé"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNCND_3_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel-Ingen afledninger 3.0 Ikke porteret",
-            "eng": "Creative Commons Attribution–NonCommercial–NoDerivs 3.0 Unported",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Pas de Modification 3.0 non transposé"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BY_2_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering 2.0 Generisk",
-            "eng": "Creative Commons Attribution 2.0 Generic",
-            "fra": "Creative Commons Attribution 2.0 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYSA_2_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Deling på samme vilkår 2.0 Generisk",
-            "eng": "Creative Commons Attribution–ShareAlike 2.0 Generic",
-            "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 2.0 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYND_2_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ingen afledninger 2.0 Generisk",
-            "eng": "Creative Commons Attribution–NoDerivs 2.0 Generic",
-            "fra": "Creative Commons Attribution – Pas de Modification 2.0 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNC_2_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel 2.0 Generisk",
-            "eng": "Creative Commons Attribution–NonCommercial 2.0 Generic",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale 2.0 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNCSA_2_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel-Deling på samme vilkår 2.0 Generisk",
-            "eng": "Creative Commons Attribution–NonCommercial–ShareAlike 2.0 Generic",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Partage dans les Mêmes Conditions 2.0 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNCND_2_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel-Ingen afledninger 2.0 Generisk",
-            "eng": "Creative Commons Attribution–NonCommercial–NoDerivs 2.0 Generic",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Pas de Modification 2.0 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BY_1_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering 1.0 Generisk",
-            "eng": "Creative Commons Attribution 1.0 Generic",
-            "fra": "Creative Commons Attribution 1.0 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYSA_1_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Deling på samme vilkår 1.0 Generisk",
-            "eng": "Creative Commons Attribution–ShareAlike 1.0 Generic",
-            "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 1.0 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYND_1_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ingen afledninger 1.0 Generisk",
-            "eng": "Creative Commons Attribution–NoDerivs 1.0 Generic",
-            "fra": "Creative Commons Attribution – Pas de Modification 1.0 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNC_1_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel 1.0 Generisk",
-            "eng": "Creative Commons Attribution–NonCommercial 1.0 Generic",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale 1.0 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNCSA_1_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel-Deling på samme vilkår 1.0 Generisk",
-            "eng": "Creative Commons Attribution–NonCommercial–ShareAlike 1.0 Generic",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Partage dans les Mêmes Conditions 1.0 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNCND_1_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ingen afledninger-Ikkekommerciel 1.0 Generisk",
-            "eng": "Creative Commons Attribution–NoDerivs–NonCommercial 1.0 Generic",
-            "fra": "Creative Commons Attribution – Pas de Modification – Pas d’Utilisation Commerciale 1.0 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "ODC_PDDL": {
-        "label": {
-            "dan": null,
-            "eng": "Open Data Commons Public Domain Dedication and License 1.0",
-            "fra": null
-        },
-        "use_conditions": "None",
-        "classification": "Data",
-        "responsible_entity": "Open Data Commons"
-    },
-    "ODC_BY": {
-        "label": {
-            "dan": null,
-            "eng": "Open Data Commons Attribution License v1.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "Open Data Commons"
-    },
-    "ODC_BL": {
-        "label": {
-            "dan": null,
-            "eng": "Open Data Commons Open Database License v1.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "Open Data Commons"
-    },
-    "GNU_FDL": {
-        "label": {
-            "dan": null,
-            "eng": "GNU Free Documentation License",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Literary works",
-        "responsible_entity": "Free Software Foundation"
-    },
-    "CC_BY_2_5": {
-        "label": {
-            "dan": "Creative Commons Kreditering 2.5 Generisk",
-            "eng": "Creative Commons Attribution 2.5 Generic",
-            "fra": "Creative Commons Attribution 2.5 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYSA_2_5": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Deling på samme vilkår 2.5 Generisk",
-            "eng": "Creative Commons Attribution–ShareAlike 2.5 Generic",
-            "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 2.5 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYND_2_5": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ingen afledninger 2.5 Generisk",
-            "eng": "Creative Commons Attribution–NoDerivs 2.5 Generic",
-            "fra": "Creative Commons Attribution – Pas de Modification 2.5 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNC_2_5": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel 2.5 Generisk",
-            "eng": "Creative Commons Attribution–NonCommercial 2.5 Generic",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale 2.5 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNCSA_2_5": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel-Deling på samme vilkår 2.5 Generisk",
-            "eng": "Creative Commons Attribution–NonCommercial–ShareAlike 2.5 Generic",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Partage dans les Mêmes Conditions 2.5 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNCND_2_5": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel-Ingen afledninger 2.5 Generisk",
-            "eng": "Creative Commons Attribution–NonCommercial–NoDerivs 2.5 Generic",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Pas de Modification 2.5 Générique"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "EUPL_1_0": {
-        "label": {
-            "dan": "Europæiske Unions Offentlige Licens v.1.0",
-            "eng": "European Union Public Licence v.1.0",
-            "fra": "Licence Publique de l’Union européenne v.1.0"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "European Commission"
-    },
-    "EUPL_1_1": {
-        "label": {
-            "dan": "Europæiske Unions Offentlige Licens v.1.1",
-            "eng": "European Union Public Licence v. 1.1",
-            "fra": "Licence publique de l'Union européenne v. 1.1"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "European Commission"
-    },
-    "EUPL_1_2": {
-        "label": {
-            "dan": "Europæiske Unions Offentlige Licens v.1.2",
-            "eng": "European Union Public Licence v. 1.2",
-            "fra": "Licence publique de l'Union européenne v. 1.2"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "European Commission"
-    },
-    "CC_BY_4_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering 4.0 International",
-            "eng": "Creative Commons Attribution 4.0 International",
-            "fra": "Creative Commons Attribution 4.0 International"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNC_4_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel 4.0 International",
-            "eng": "Creative Commons Attribution–NonCommercial 4.0 International",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale 4.0 International"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNCND_4_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel-Ingen afledninger 4.0 International",
-            "eng": "Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International",
-            "fra": "Creative Commons Attribution – Pas d'Utilisation Commerciale – Pas de Modification 4.0 International"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYNCSA_4_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ikkekommerciel-Deling på samme vilkår 4.0 International",
-            "eng": "Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International",
-            "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Partage dans les Mêmes Conditions 4.0 International"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYND_4_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Ingen afledninger 4.0 International",
-            "eng": "Creative Commons Attribution–NoDerivatives 4.0 International",
-            "fra": "Creative Commons Attribution – Pas de Modification 4.0 International"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYSA_4_0": {
-        "label": {
-            "dan": "Creative Commons Kreditering-Deling på samme vilkår 4.0 International",
-            "eng": "Creative Commons Attribution–ShareAlike 4.0 International",
-            "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 4.0 International"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BYSA_3_0_NL": {
-        "label": {
-            "dan": "Kreditering-Deling på samme vilkår 3.0 Holland",
-            "eng": "Attribution-ShareAlike 3.0 Netherlands",
-            "fra": "Attribution – Partage dans les Mêmes Conditions 3.0 Pays-Bas"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BY_3_0_NL": {
-        "label": {
-            "dan": "Kreditering 3.0 Holland",
-            "eng": "Attribution 3.0 Netherlands",
-            "fra": "Attribution 3.0 Pays-Bas"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_PDM_1_0": {
-        "label": {
-            "dan": "Public domain-mærke 1.0",
-            "eng": "Public Domain Mark 1.0",
-            "fra": "Marque du Domaine Public 1.0"
-        },
-        "use_conditions": "None",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "CC_BY_3_0_AT": {
-        "label": {
-            "dan": "Kreditering 3.0 Østrig",
-            "eng": "Attribution 3.0 Austria",
-            "fra": "Attribution 3.0 Autriche"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Creative Commons"
-    },
-    "DLDE_BYNC_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Data licence Germany – attribution – non-commercial – Version 1.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "Federal Republic of Germany"
-    },
-    "DLDE_BY_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Data licence Germany – attribution – Version 1.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "Federal Republic of Germany"
-    },
-    "DLDE_BY_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Data licence Germany – attribution – Version 2.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "Federal Republic of Germany"
-    },
-    "DLDE_ZERO_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Data licence Germany – Zero – Version 2.0",
-            "fra": null
-        },
-        "use_conditions": "None",
-        "classification": "Data",
-        "responsible_entity": "Federal Republic of Germany"
-    },
-    "GNU_FDL_1_1": {
-        "label": {
-            "dan": null,
-            "eng": "GNU Free Documentation License 1.1",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Free Software Foundation"
-    },
-    "GNU_FDL_1_2": {
-        "label": {
-            "dan": null,
-            "eng": "GNU Free Documentation License 1.2",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data, literary and artistic works",
-        "responsible_entity": "Free Software Foundation"
-    },
-    "HROD": {
-        "label": {
-            "dan": null,
-            "eng": "Open Licence – The Republic of Croatia",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "Republic of Croatia"
-    },
-    "IODL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Italian Open Data License v1.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "Italian Republic"
-    },
-    "IODL_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Italian Open Data License v2.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "Italian Republic"
-    },
-    "NLOD_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Norwegian Licence for Open Government Data 1.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "Kingdom of Norway"
-    },
-    "OGL_NC": {
-        "label": {
-            "dan": null,
-            "eng": "Non-Commercial Government Licence",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "United Kingdom"
-    },
-    "OGL_ROU_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Non-Commercial Government Licence 1.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "Romania"
-    },
-    "OGL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Open Government Licence 1.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "United Kingdom"
-    },
-    "OGL_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Open Government Licence 2.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "United Kingdom"
-    },
-    "OGL_3_0": {
-        "label": {
-            "dan": null,
-            "eng": "Open Government Licence 3.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "United Kingdom"
-    },
-    "PSEUL": {
-        "label": {
-            "dan": null,
-            "eng": "INSPIRE End User Licence",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "Ordnance Survey"
-    },
-    "BSD_2_CLAUSE": {
-        "label": {
-            "dan": null,
-            "eng": "2-Clause BSD License",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Regents of the University of California"
-    },
-    "BSD_3_CLAUSE": {
-        "label": {
-            "dan": null,
-            "eng": "3-Clause BSD License",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Regents of the University of California"
-    },
-    "APL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Adaptive Public License 1.0",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Data",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "APACHE_1_1": {
-        "label": {
-            "dan": null,
-            "eng": "Apache Software License, version 1.1 (Apache-1.1)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Apache Software Foundation"
-    },
-    "APACHE_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Apache License, Version 2.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Apache Software Foundation"
-    },
-    "APSL_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Apple Public Source License 2.0",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Apple Inc."
-    },
-    "ARTISTIC_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Artistic License 1.0 (Artistic-1.0)",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code and artistic works",
-        "responsible_entity": "The Perl Foundation"
-    },
-    "ARTISTIC_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Artistic License 2.0",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code and artistic works",
-        "responsible_entity": "The Perl Foundation"
-    },
-    "BSL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Boost Software License 1.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Boost.org"
-    },
-    "BSD_PLUS_PATENT": {
-        "label": {
-            "dan": null,
-            "eng": "BSD+Patent",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "CECILL_2_1": {
-        "label": {
-            "dan": null,
-            "eng": "CEA CNRS Inria Free Software License Agreement, v2.1 (CECILL-2.1)",
-            "fra": "CEA CNRS Inria Logiciel Libre License, version 2.1 (CECILL-2.1)"
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "CEA CNRS Inria Logiciel Libre"
-    },
-    "CDDL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Common Development and Distribution License 1.0",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Oracle Corporation"
-    },
-    "CPAL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Common Public Attribution License Version 1.0 (CPAL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "CPL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Common Public License, version 1.0 (CPL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "IBM"
-    },
-    "CATOSL_1_1": {
-        "label": {
-            "dan": null,
-            "eng": "Computer Associates Trusted Open Source License 1.1 (CATOSL-1.1)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "CA Technologies (former Computer Associates International, Inc.)"
-    },
-    "EPL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Eclipse Public License 1.0 (EPL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Eclipse Foundation"
-    },
-    "EPL_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Eclipse Public License version 2.0",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Eclipse Foundation"
-    },
-    "ECOS_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "eCos License version 2.0",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Free Software Foundation"
-    },
-    "ECL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Educational Community License version 1.0 (ECL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code, data, literary and artistic works",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "ECL_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Educational Community License version 2.0 (ECL-2.0)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code, data, literary and artistic works",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "EFL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "The Eiffel Forum License, version 1 (EFL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Non-Profit International Consortium for Eiffel, NICE"
-    },
-    "EFL_2": {
-        "label": {
-            "dan": null,
-            "eng": "Eiffel Forum License, version 2",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Non-Profit International Consortium for Eiffel, NICE"
-    },
-    "ENTESSA": {
-        "label": {
-            "dan": null,
-            "eng": "Entessa Public License Version 1.0 (Entessa)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Entessa, LLC"
-    },
-    "EU_DATAGRID": {
-        "label": {
-            "dan": null,
-            "eng": "EU DataGrid Software License (EUDatagrid)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "DataGrid Project"
-    },
-    "FAIR": {
-        "label": {
-            "dan": null,
-            "eng": "Fair License (Fair)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code, data, literary and artistic works",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "FRAMEWORX_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Frameworx License 1.0 (Frameworx-1.0)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Frameworx Company"
-    },
-    "AGPL_3_0": {
-        "label": {
-            "dan": null,
-            "eng": "GNU Affero General Public License version 3",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code, data, literary and artistic works",
-        "responsible_entity": "Free Software Foundation"
-    },
-    "GPL_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "GNU General Public License version 2",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code",
-        "responsible_entity": "Free Software Foundation"
-    },
-    "GPL_3_0": {
-        "label": {
-            "dan": null,
-            "eng": "GNU General Public License version 3",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code, data, literary and artistic works",
-        "responsible_entity": "Free Software Foundation"
-    },
-    "LGPL_2_1": {
-        "label": {
-            "dan": null,
-            "eng": "GNU Lesser General Public License version 2.1",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Free Software Foundation"
-    },
-    "LGPL_3_0": {
-        "label": {
-            "dan": null,
-            "eng": "GNU Lesser General Public License version 3",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code, data, literary and artistic works",
-        "responsible_entity": "Free Software Foundation"
-    },
-    "HPND": {
-        "label": {
-            "dan": null,
-            "eng": "Historical Permission Notice and Disclaimer (HPND)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "IPL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "IBM Public License Version 1.0 (IPL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "IBM"
-    },
-    "IPA": {
-        "label": {
-            "dan": null,
-            "eng": "IPA Font License (IPA)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "ISC": {
-        "label": {
-            "dan": null,
-            "eng": "ISC License (ISC)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Internet Systems Consortium, Inc. (ISC)"
-    },
-    "LPPL_1_3C": {
-        "label": {
-            "dan": null,
-            "eng": "LaTeX Project Public License v1.3c (LPPL-1.3c)",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code",
-        "responsible_entity": "LaTeX"
-    },
-    "BSD_3_CLAUSE_LBNL": {
-        "label": {
-            "dan": null,
-            "eng": "Lawrence Berkeley National Labs BSD Variant License (BSD-3-Clause-LBNL)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Regents of the University of California"
-    },
-    "LILIQ_P_1_1": {
-        "label": {
-            "dan": null,
-            "eng": "Québec Free and Open-Source Licence – Permissive (LiLiQ-P) version 1.1",
-            "fra": "Licence Libre du Québec – Permissive (LiLiQ-P) version 1.1"
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Quebec"
-    },
-    "LILIQ_R_1_1": {
-        "label": {
-            "dan": null,
-            "eng": "Québec Free and Open-Source Licence – Reciprocity (LiLiQ-R) version 1.1",
-            "fra": "Licence Libre du Québec – Réciprocité (LiLiQ-R) version 1.1"
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Quebec"
-    },
-    "LILIQ_RPLUS_1_1": {
-        "label": {
-            "dan": null,
-            "eng": "Québec Free and Open-Source Licence – Strong Reciprocity (LiLiQ-R+) version 1.1",
-            "fra": "Licence Libre du Québec – Réciprocité forte (LiLiQ-R+) version 1.1"
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code",
-        "responsible_entity": "Quebec"
-    },
-    "LPL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Lucent Public License, Plan 9, version 1.0 (LPL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Alcatel-Lucent"
-    },
-    "LPL_1_02": {
-        "label": {
-            "dan": null,
-            "eng": "Lucent Public License Version 1.02 (LPL-1.02)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Alcatel-Lucent"
-    },
-    "MS_PL": {
-        "label": {
-            "dan": null,
-            "eng": "Microsoft Public License (MS-PL)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Microsoft"
-    },
-    "MS_RL": {
-        "label": {
-            "dan": null,
-            "eng": "Microsoft Reciprocal License (MS-RL)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Microsoft"
-    },
-    "MIROS": {
-        "label": {
-            "dan": null,
-            "eng": "MirOS License (MirOS)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code, data, literary and artistic works",
-        "responsible_entity": "MirOS Project"
-    },
-    "MIT": {
-        "label": {
-            "dan": null,
-            "eng": "The MIT License",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Massachusetts Institute of Technology"
-    },
-    "MOTOSOTO": {
-        "label": {
-            "dan": null,
-            "eng": "Motosoto Open Source License – Version 0.9.1 (Motosoto)",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "MPL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "The Mozilla Public License (MPL), version 1.0 (MPL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Mozilla"
-    },
-    "MPL_1_1": {
-        "label": {
-            "dan": null,
-            "eng": "Mozilla Public License (MPL), version 1.1 (MPL-1.1)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Mozilla"
-    },
-    "MPL_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Mozilla Public License (MPL), version 2.0 (MPL-2.0)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Mozilla"
-    },
-    "MULTICS": {
-        "label": {
-            "dan": null,
-            "eng": "Multics License (Multics)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Multics"
-    },
-    "NASA_1_3": {
-        "label": {
-            "dan": null,
-            "eng": "NASA Open Source Agreement v1.3 (NASA-1.3)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "NASA"
-    },
-    "NAUMEN": {
-        "label": {
-            "dan": null,
-            "eng": "NAUMEN Public License (Naumen)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Naumen"
-    },
-    "NGPL": {
-        "label": {
-            "dan": null,
-            "eng": "The Nethack General Public License (NGPL)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "NetHack"
-    },
-    "NOKIA": {
-        "label": {
-            "dan": null,
-            "eng": "Nokia Open Source License Version 1.0a (NOKIA)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Nokia"
-    },
-    "NPOSL_3_0": {
-        "label": {
-            "dan": null,
-            "eng": "The Non-Profit Open Software License version 3.0 (NPOSL-3.0)",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "NTP": {
-        "label": {
-            "dan": null,
-            "eng": "NTP License (NTP)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Network Time Foundation"
-    },
-    "OCLC_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "The OCLC Research Public License 2.0 License (OCLC-2.0)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "OCLC Research"
-    },
-    "OGTSL": {
-        "label": {
-            "dan": null,
-            "eng": "The Open Group Test Suite License (OGTSL)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Open group"
-    },
-    "OSL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Open Software License, version 1.0 (OSL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Lawrence Rosen"
-    },
-    "OSL_2_1": {
-        "label": {
-            "dan": null,
-            "eng": "The Open Software License, version 2.1 (OSL-2.1)",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code",
-        "responsible_entity": "Lawrence Rosen"
-    },
-    "OSL_3_0": {
-        "label": {
-            "dan": null,
-            "eng": "Open Software License, version 3.0 (OSL-3.0)",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code",
-        "responsible_entity": "Lawrence Rosen"
-    },
-    "OPL_2_1": {
-        "label": {
-            "dan": null,
-            "eng": "OSET Public License version 2.1",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "OSET Foundation"
-    },
-    "PHP_3_0": {
-        "label": {
-            "dan": null,
-            "eng": "The PHP License 3.0 (PHP-3.0)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "PHP Group"
-    },
-    "POSTGRE_SQL": {
-        "label": {
-            "dan": null,
-            "eng": "The PostgreSQL Licence (PostgreSQL)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "PostgreSQL"
-    },
-    "PYTHON_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Python License (Python-2.0)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Python Software Foundation (PSF)"
-    },
-    "CNRI_PYTHON": {
-        "label": {
-            "dan": null,
-            "eng": "The CNRI portion of the multi-part Python License (CNRI-Python)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Corporation for National Research Initiatives (CNRI)"
-    },
-    "QPL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "The Q Public License Version (QPL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Trolltech AS"
-    },
-    "RPSL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "RealNetworks Public Source License Version 1.0 (RPSL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "RealNetworks"
-    },
-    "RPL_1_1": {
-        "label": {
-            "dan": null,
-            "eng": "Reciprocal Public License, version 1.1",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "RPL_1_5": {
-        "label": {
-            "dan": null,
-            "eng": "Reciprocal Public License 1.5 (RPL-1.5)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "RSCPL": {
-        "label": {
-            "dan": null,
-            "eng": "The Ricoh Source Code Public License (RSCPL)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Ricoh Global"
-    },
-    "OFL_1_1": {
-        "label": {
-            "dan": null,
-            "eng": "SIL Open Font License (OFL-1.1)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "SIL International"
-    },
-    "SIMPL_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Simple Public License (SimPL-2.0)",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code",
-        "responsible_entity": "Open Source Initiative (OSI)"
-    },
-    "SLEEPYCAT": {
-        "label": {
-            "dan": null,
-            "eng": "The Sleepycat License (Sleepycat)",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code",
-        "responsible_entity": "Oracle Corporation"
-    },
-    "SPL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Sun Public License Version 1.0 (SPL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "Oracle (Sun)"
-    },
-    "WATCOM_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "The Sybase Open Source Licence (Watcom-1.0)",
-            "fra": null
-        },
-        "use_conditions": "Copyleft",
-        "classification": "Code",
-        "responsible_entity": "Sybase, Inc."
-    },
-    "UPL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "The Universal Permissive License (UPL), Version 1.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Oracle Corporation"
-    },
-    "NCSA": {
-        "label": {
-            "dan": null,
-            "eng": "The University of Illinois/NCSA Open Source License (NCSA)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "University of Illinois (NCSA)"
-    },
-    "UCL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Upstream Compatibility License v1.0",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code, data, literary and artistic works",
-        "responsible_entity": "Lawrence Rosen"
-    },
-    "VSL_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "The Vovida Software License v. 1.0 (VSL-1.0)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Vovida"
-    },
-    "W3C": {
-        "label": {
-            "dan": null,
-            "eng": "The W3C Software Notice and License (W3C)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "World Wide Web Consortium (W3C)"
-    },
-    "WXWINDOWS": {
-        "label": {
-            "dan": null,
-            "eng": "The wxWindows Library Licence (wxWindows)",
-            "fra": null
-        },
-        "use_conditions": "LesserCopyleft",
-        "classification": "Code",
-        "responsible_entity": "wxWidgets"
-    },
-    "XNET": {
-        "label": {
-            "dan": null,
-            "eng": "The X.Net, Inc. License (Xnet)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Altera Corporation"
-    },
-    "0BSD": {
-        "label": {
-            "dan": null,
-            "eng": "Zero-Clause BSD / Free Public License 1.0.0 (0BSD)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Rob Landley"
-    },
-    "ZPL_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "The Zope Public License Version 2.0 (ZPL-2.0)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "Zope Community"
-    },
-    "ZLIB": {
-        "label": {
-            "dan": null,
-            "eng": "The zlib/libpng License (Zlib)",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Code",
-        "responsible_entity": "zlib"
-    },
-    "NLOD_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Norwegian Licence for Open Government Data (NLOD) 2.0",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "Kingdom of Norway"
-    },
-    "GNU_FDL_1_3": {
-        "label": {
-            "dan": null,
-            "eng": "GNU Free Documentation License 1.3",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Literary works",
-        "responsible_entity": "Free Software Foundation"
-    },
-    "CLARIN_ACA_1_0": {
-        "label": {
-            "dan": null,
-            "eng": "Clarin Academic End-User Licence (ACA) 1.0",
-            "fra": null
-        },
-        "use_conditions": "BY",
-        "classification": "Code, data, literary and artistic works",
-        "responsible_entity": "Common Language Resources and Technology Infrastructure (CLARIN)"
-    },
-    "ISA_OML_1_1": {
-        "label": {
-            "dan": null,
-            "eng": "ISA Open Metadata Licence 1.1",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Metadata",
-        "responsible_entity": "European Commission"
-    },
-    "ETALAB_2_0": {
-        "label": {
-            "dan": null,
-            "eng": "Etalab Open Licence V 2.0",
-            "fra": "Licence Ouverte Etalab V 2.0"
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "The State of France"
-    },
-    "EUROGEO_2022": {
-        "label": {
-            "dan": null,
-            "eng": "EuroGeographics Open Data Licence v.2022",
-            "fra": null
-        },
-        "use_conditions": "Attribution",
-        "classification": "Data",
-        "responsible_entity": "EuroGeographics AISBL"
-    }
+  "COM_REUSE": {
+    "label": {
+      "eng": "European Commission reuse notice",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "European Commission"
+  },
+  "ISA_OML": {
+    "label": {
+      "eng": "ISA Open Metadata Licence 1.1",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Metadata",
+    "responsible_entity": "European Commission"
+  },
+  "CC0": {
+    "label": {
+      "eng": "Creative Commons CC0 1.0 Universal",
+      "fra": "Creative Commons CC0 1.0 Universel",
+      "dan": "Creative Commons CC0 1.0 Universel"
+    },
+    "use_conditions": ["None"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BY": {
+    "label": {
+      "eng": "Creative Commons Attribution 4.0 International",
+      "fra": "Creative Commons Attribution 4.0 International",
+      "dan": "Creative Commons Navngivelse 4.0 International"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYSA": {
+    "label": {
+      "eng": "Creative Commons Attribution–ShareAlike 4.0 International",
+      "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 4.0 International",
+      "dan": "Creative Commons Navngivelse–DelPåSammeVilkår 4.0 International"
+    },
+    "use_conditions": ["Attribution", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYND": {
+    "label": {
+      "eng": "Creative Commons Attribution–NoDerivatives 4.0 International",
+      "fra": "Creative Commons Attribution – Pas de Modification 4.0 International",
+      "dan": "Creative Commons Navngivelse–IngenBearbejdelse 4.0 International"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNC": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial 4.0 International",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale 4.0 International",
+      "dan": "Creative Commons Navngivelse–IkkeKommerciel 4.0 International"
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNCSA": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Partage dans les Mêmes Conditions 4.0 International",
+      "dan": "Creative Commons Navngivelse–IkkeKommerciel–DelPåSammeVilkår 4.0 International"
+    },
+    "use_conditions": ["Attribution", "NonCommercial", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNCND": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International",
+      "fra": "Creative Commons Attribution – Pas d'Utilisation Commerciale – Pas de Modification 4.0 International",
+      "dan": "Creative Commons Navngivelse–IkkeKommerciel–IngenBearbejdelse 4.0 International"
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BY_3_0": {
+    "label": {
+      "eng": "Creative Commons Attribution 3.0 Unported",
+      "fra": "Creative Commons Attribution 3.0 non transposé",
+      "dan": "Creative Commons Kreditering 3.0 Ikke porteret"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYSA_3_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–ShareAlike 3.0 Unported",
+      "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 3.0 non transposé",
+      "dan": "Creative Commons Kreditering-DelPåSammeVilkår 3.0 Ikke porteret"
+    },
+    "use_conditions": ["Attribution", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYND_3_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NoDerivs 3.0 Unported",
+      "fra": "Creative Commons Attribution – Pas de Modification 3.0 non transposé",
+      "dan": "Creative Commons Kreditering-IngenBearbejdelse 3.0 Ikke porteret"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNC_3_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial 3.0 Unported",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale 3.0 non transposé",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel 3.0 International"
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNCSA_3_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial–ShareAlike 3.0 Unported",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Partage dans les Mêmes Conditions 3.0 non transposé",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel-DelPåSammeVilkår 3.0 Ikke porteret"
+    },
+    "use_conditions": ["Attribution", "NonCommercial", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNCND_3_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial–NoDerivs 3.0 Unported",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Pas de Modification 3.0 non transposé",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel-IngenBearbejdelse 3.0 Ikke porteret"
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BY_2_0": {
+    "label": {
+      "eng": "Creative Commons Attribution 2.0 Generic",
+      "fra": "Creative Commons Attribution 2.0 Générique",
+      "dan": "Creative Commons Kreditering 2.0 Generisk"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYSA_2_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–ShareAlike 2.0 Generic",
+      "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 2.0 Générique",
+      "dan": "Creative Commons Kreditering-DelPåSammeVilkår 2.0 Generisk"
+    },
+    "use_conditions": ["Attribution", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYND_2_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NoDerivs 2.0 Generic",
+      "fra": "Creative Commons Attribution – Pas de Modification 2.0 Générique",
+      "dan": "Creative Commons Kreditering-IngenBearbejdelse 2.0 Generisk"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNC_2_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial 2.0 Generic",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale 2.0 Générique",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel 2.0 Generisk"
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNCSA_2_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial–ShareAlike 2.0 Generic",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Partage dans les Mêmes Conditions 2.0 Générique",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel-DelPåSammeVilkår 2.0 Generisk"
+    },
+    "use_conditions": ["Attribution", "NonCommercial", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNCND_2_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial–NoDerivs 2.0 Generic",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Pas de Modification 2.0 Générique",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel-IngenBearbejdelse 2.0 Generisk"
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BY_1_0": {
+    "label": {
+      "eng": "Creative Commons Attribution 1.0 Generic",
+      "fra": "Creative Commons Attribution 1.0 Générique",
+      "dan": "Creative Commons Kreditering 1.0 Generisk"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYSA_1_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–ShareAlike 1.0 Generic",
+      "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 1.0 Générique",
+      "dan": "Creative Commons Kreditering-DelPåSammeVilkår 1.0 Generisk"
+    },
+    "use_conditions": ["Attribution", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYND_1_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NoDerivs 1.0 Generic",
+      "fra": "Creative Commons Attribution – Pas de Modification 1.0 Générique",
+      "dan": "Creative Commons Kreditering-IngenBearbejdelse 1.0 Generisk"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNC_1_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial 1.0 Generic",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale 1.0 Générique",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel 1.0 Generisk"
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNCSA_1_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial–ShareAlike 1.0 Generic",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Partage dans les Mêmes Conditions 1.0 Générique",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel-DelPåSammeVilkår 1.0 Generisk"
+    },
+    "use_conditions": ["Attribution", "NonCommercial", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNCND_1_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NoDerivs–NonCommercial 1.0 Generic",
+      "fra": "Creative Commons Attribution – Pas de Modification – Pas d’Utilisation Commerciale 1.0 Générique",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel-IngenBearbejdelse 1.0 Generisk"
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "ODC_PDDL": {
+    "label": {
+      "eng": "Open Data Commons Public Domain Dedication and License 1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["None"],
+    "classification": "Data",
+    "responsible_entity": "Open Data Commons"
+  },
+  "ODC_BY": {
+    "label": {
+      "eng": "Open Data Commons Attribution License v1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "Copyleft"],
+    "classification": "Data",
+    "responsible_entity": "Open Data Commons"
+  },
+  "ODC_BL": {
+    "label": {
+      "eng": "Open Data Commons Open Database License v1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "Copyleft", "ShareAlike"],
+    "classification": "Data",
+    "responsible_entity": "Open Data Commons"
+  },
+  "GNU_FDL": {
+    "label": {
+      "eng": "GNU Free Documentation License",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "LesserCopyleft", "ShareAlike"],
+    "classification": "Literary works",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "CC_BY_2_5": {
+    "label": {
+      "eng": "Creative Commons Attribution 2.5 Generic",
+      "fra": "Creative Commons Attribution 2.5 Générique",
+      "dan": "Creative Commons Kreditering 2.5 Generisk"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYSA_2_5": {
+    "label": {
+      "eng": "Creative Commons Attribution–ShareAlike 2.5 Generic",
+      "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 2.5 Générique",
+      "dan": "Creative Commons Kreditering-DelPåSammeVilkår 2.5 Generisk"
+    },
+    "use_conditions": ["Attribution", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYND_2_5": {
+    "label": {
+      "eng": "Creative Commons Attribution–NoDerivs 2.5 Generic",
+      "fra": "Creative Commons Attribution – Pas de Modification 2.5 Générique",
+      "dan": "Creative Commons Kreditering-IngenBearbejdelse 2.5 Generisk"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNC_2_5": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial 2.5 Generic",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale 2.5 Générique",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel 2.5 Generisk"
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNCSA_2_5": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial–ShareAlike 2.5 Generic",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Partage dans les Mêmes Conditions 2.5 Générique",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel-DelPåSammeVilkår 2.5 Generisk"
+    },
+    "use_conditions": ["Attribution", "NonCommercial", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNCND_2_5": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial–NoDerivs 2.5 Generic",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Pas de Modification 2.5 Générique",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel-IngenBearbejdelse 2.5 Generisk"
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "EUPL_1_0": {
+    "label": {
+      "eng": "European Union Public Licence v.1.0",
+      "fra": "Licence Publique de l’Union européenne v.1.0",
+      "dan": "Europæiske Unions Offentlige Licens v.1.0"
+    },
+    "use_conditions": ["Attribution", "Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "European Commission"
+  },
+  "EUPL_1_1": {
+    "label": {
+      "eng": "European Union Public Licence v. 1.1",
+      "fra": "Licence publique de l'Union européenne v. 1.1",
+      "dan": "Europæiske Unions Offentlige Licens v.1.1"
+    },
+    "use_conditions": ["Attribution", "LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "European Commission"
+  },
+  "EUPL_1_2": {
+    "label": {
+      "eng": "European Union Public Licence v. 1.2",
+      "fra": "Licence publique de l'Union européenne v. 1.2",
+      "dan": "Europæiske Unions Offentlige Licens v.1.2"
+    },
+    "use_conditions": ["Attribution", "LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "European Commission"
+  },
+  "CC_BY_4_0": {
+    "label": {
+      "eng": "Creative Commons Attribution 4.0 International",
+      "fra": "Creative Commons Attribution 4.0 International",
+      "dan": "Creative Commons Kreditering 4.0 International"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNC_4_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial 4.0 International",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale 4.0 International",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel 4.0 International"
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNCND_4_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial–NoDerivs 4.0 International",
+      "fra": "Creative Commons Attribution – Pas d'Utilisation Commerciale – Pas de Modification 4.0 International",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel-IngenBearbejdelse 4.0 International"
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYNCSA_4_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International",
+      "fra": "Creative Commons Attribution – Pas d’Utilisation Commerciale – Partage dans les Mêmes Conditions 4.0 International",
+      "dan": "Creative Commons Kreditering-IkkeKommerciel-DelPåSammeVilkår 4.0 International"
+    },
+    "use_conditions": ["Attribution", "NonCommercial", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYND_4_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–NoDerivs 4.0 International",
+      "fra": "Creative Commons Attribution – Pas de Modification 4.0 International",
+      "dan": "Creative Commons Kreditering-IngenBearbejdelse 4.0 International"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYSA_4_0": {
+    "label": {
+      "eng": "Creative Commons Attribution–ShareAlike 4.0 International",
+      "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 4.0 International",
+      "dan": "Creative Commons Kreditering-DelPåSammeVilkår 4.0 International"
+    },
+    "use_conditions": ["Attribution", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BYSA_3_0_NL": {
+    "label": {
+      "eng": "Creative Commons Attribution-ShareAlike 3.0 Netherlands",
+      "fra": "Creative Commons Attribution – Partage dans les Mêmes Conditions 3.0 Pays-Bas",
+      "dan": "Creative Commons Kreditering-DelPåSammeVilkår 3.0 Holland"
+    },
+    "use_conditions": ["Attribution", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BY_3_0_NL": {
+    "label": {
+      "eng": "Creative Commons Attribution 3.0 Netherlands",
+      "fra": "Creative Commons Attribution 3.0 Pays-Bas",
+      "dan": "Creative Commons Kreditering 3.0 Holland"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_PDM_1_0": {
+    "label": {
+      "eng": "Creative Commons Public Domain Mark 1.0 Universal",
+      "fra": "Creative Commons Marque du Domaine Public 1.0 Universel",
+      "dan": "Creative Commons Public domain-mærke 1.0 Universel"
+    },
+    "use_conditions": ["None"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "CC_BY_3_0_AT": {
+    "label": {
+      "eng": "Creative Commons Attribution 3.0 Austria",
+      "fra": "Creative Commons Attribution 3.0 Autriche",
+      "dan": "Creative Commons Kreditering 3.0 Østrig"
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Creative Commons"
+  },
+  "DLDE_BYNC_1_0": {
+    "label": {
+      "eng": "Data licence Germany – attribution – non-commercial – Version 1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data",
+    "responsible_entity": "Federal Republic of Germany"
+  },
+  "DLDE_BY_1_0": {
+    "label": {
+      "eng": "Data licence Germany – attribution – Version 1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data",
+    "responsible_entity": "Federal Republic of Germany"
+  },
+  "DLDE_BY_2_0": {
+    "label": {
+      "eng": "Data licence Germany – attribution – Version 2.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data",
+    "responsible_entity": "Federal Republic of Germany"
+  },
+  "DLDE_ZERO_2_0": {
+    "label": {
+      "eng": "Data licence Germany – Zero – Version 2.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["None"],
+    "classification": "Data",
+    "responsible_entity": "Federal Republic of Germany"
+  },
+  "GNU_FDL_1_1": {
+    "label": {
+      "eng": "GNU Free Documentation License 1.1",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "LesserCopyleft", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "GNU_FDL_1_2": {
+    "label": {
+      "eng": "GNU Free Documentation License 1.2",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "LesserCopyleft", "ShareAlike"],
+    "classification": "Data, literary and artistic works",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "HROD": {
+    "label": {
+      "eng": "Open Licence – The Republic of Croatia",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data",
+    "responsible_entity": "Republic of Croatia"
+  },
+  "IODL_1_0": {
+    "label": {
+      "eng": "Italian Open Data License v1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "Copyleft", "ShareAlike"],
+    "classification": "Data",
+    "responsible_entity": "Italian Republic"
+  },
+  "IODL_2_0": {
+    "label": {
+      "eng": "Italian Open Data License v2.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data",
+    "responsible_entity": "Italian Republic"
+  },
+  "NLOD_1_0": {
+    "label": {
+      "eng": "Norwegian Licence for Open Government Data 1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data",
+    "responsible_entity": "Kingdom of Norway"
+  },
+  "OGL_NC": {
+    "label": {
+      "eng": "Non-Commercial Government Licence 1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data",
+    "responsible_entity": "United Kingdom"
+  },
+  "OGL_ROU_1_0": {
+    "label": {
+      "eng": "Open Government Licence v1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data",
+    "responsible_entity": "Romania"
+  },
+  "OGL_1_0": {
+    "label": {
+      "eng": "Open Government Licence v1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data",
+    "responsible_entity": "United Kingdom"
+  },
+  "OGL_2_0": {
+    "label": {
+      "eng": "Open Government Licence v2.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data",
+    "responsible_entity": "United Kingdom"
+  },
+  "OGL_3_0": {
+    "label": {
+      "eng": "Open Government Licence v3.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data",
+    "responsible_entity": "United Kingdom"
+  },
+  "PSEUL": {
+    "label": {
+      "eng": "EU INSPIRE End User Licence",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data",
+    "responsible_entity": "Ordnance Survey"
+  },
+  "BSD_2_CLAUSE": {
+    "label": {
+      "eng": "2-Clause BSD License",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Regents of the University of California"
+  },
+  "BSD_3_CLAUSE": {
+    "label": {
+      "eng": "3-Clause BSD License",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Regents of the University of California"
+  },
+  "APL_1_0": {
+    "label": {
+      "eng": "Adaptive Public License 1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Data",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "APACHE_1_1": {
+    "label": {
+      "eng": "Apache Software License, version 1.1 (Apache-1.1)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Apache Software Foundation"
+  },
+  "APACHE_2_0": {
+    "label": {
+      "eng": "Apache License, Version 2.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Apache Software Foundation"
+  },
+  "APSL_2_0": {
+    "label": {
+      "eng": "Apple Public Source License 2.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Apple Inc."
+  },
+  "ARTISTIC_1_0": {
+    "label": {
+      "eng": "Artistic License 1.0 (Artistic-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code and artistic works",
+    "responsible_entity": "The Perl Foundation"
+  },
+  "ARTISTIC_2_0": {
+    "label": {
+      "eng": "Artistic License 2.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code and artistic works",
+    "responsible_entity": "The Perl Foundation"
+  },
+  "BSL_1_0": {
+    "label": {
+      "eng": "Boost Software License 1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Boost.org"
+  },
+  "BSD_PLUS_PATENT": {
+    "label": {
+      "eng": "BSD+Patent",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "Patent"],
+    "classification": "Code",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "CECILL_2_1": {
+    "label": {
+      "eng": "CEA CNRS Inria Free Software License Agreement, v2.1 (CECILL-2.1)",
+      "fra": "CEA CNRS Inria Logiciel Libre License, version 2.1 (CECILL-2.1)",
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "CEA CNRS Inria Logiciel Libre"
+  },
+  "CDDL_1_0": {
+    "label": {
+      "eng": "Common Development and Distribution License 1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Oracle Corporation"
+  },
+  "CPAL_1_0": {
+    "label": {
+      "eng": "Common Public Attribution License Version 1.0 (CPAL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "CPL_1_0": {
+    "label": {
+      "eng": "Common Public License, version 1.0 (CPL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "IBM"
+  },
+  "CATOSL_1_1": {
+    "label": {
+      "eng": "Computer Associates Trusted Open Source License 1.1 (CATOSL-1.1)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "CA Technologies (former Computer Associates International, Inc.)"
+  },
+  "EPL_1_0": {
+    "label": {
+      "eng": "Eclipse Public License 1.0 (EPL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Eclipse Foundation"
+  },
+  "EPL_2_0": {
+    "label": {
+      "eng": "Eclipse Public License version 2.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Eclipse Foundation"
+  },
+  "ECOS_2_0": {
+    "label": {
+      "eng": "eCos License version 2.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "ECL_1_0": {
+    "label": {
+      "eng": "Educational Community License version 1.0 (ECL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code, data, literary and artistic works",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "ECL_2_0": {
+    "label": {
+      "eng": "Educational Community License version 2.0 (ECL-2.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code, data, literary and artistic works",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "EFL_1_0": {
+    "label": {
+      "eng": "The Eiffel Forum License, version 1 (EFL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Non-Profit International Consortium for Eiffel, NICE"
+  },
+  "EFL_2": {
+    "label": {
+      "eng": "Eiffel Forum License, version 2",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Non-Profit International Consortium for Eiffel, NICE"
+  },
+  "ENTESSA": {
+    "label": {
+      "eng": "Entessa Public License Version 1.0 (Entessa)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Entessa, LLC"
+  },
+  "EU_DATAGRID": {
+    "label": {
+      "eng": "EU DataGrid Software License (EUDatagrid)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "DataGrid Project"
+  },
+  "FAIR": {
+    "label": {
+      "eng": "Fair License (Fair)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code, data, literary and artistic works",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "FRAMEWORX_1_0": {
+    "label": {
+      "eng": "Frameworx License 1.0 (Frameworx-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Frameworx Company"
+  },
+  "AGPL_3_0": {
+    "label": {
+      "eng": "GNU Affero General Public License v3.0 only",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code, data, literary and artistic works",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "GPL_2_0": {
+    "label": {
+      "eng": "GNU General Public License v2.0 only",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "GPL_3_0": {
+    "label": {
+      "eng": "GNU General Public License v3.0 only",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code, data, literary and artistic works",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "LGPL_2_1": {
+    "label": {
+      "eng": "GNU Lesser General Public License v2.1 only",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "LGPL_3_0": {
+    "label": {
+      "eng": "GNU Lesser General Public License v3.0 only",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "CODE DATA",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "HPND": {
+    "label": {
+      "eng": "Historical Permission Notice and Disclaimer (HPND)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "IPL_1_0": {
+    "label": {
+      "eng": "IBM Public License Version 1.0 (IPL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "IBM"
+  },
+  "IPA": {
+    "label": {
+      "eng": "IPA Font License (IPA)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "ISC": {
+    "label": {
+      "eng": "ISC License (ISC)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Internet Systems Consortium, Inc. (ISC)"
+  },
+  "LPPL_1_3C": {
+    "label": {
+      "eng": "LaTeX Project Public License v1.3c (LPPL-1.3c)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "LaTeX"
+  },
+  "BSD_3_CLAUSE_LBNL": {
+    "label": {
+      "eng": "Lawrence Berkeley National Labs BSD Variant License (BSD-3-Clause-LBNL)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Regents of the University of California"
+  },
+  "LILIQ_P_1_1": {
+    "label": {
+      "eng": "Québec Free and Open-Source Licence – Permissive (LiLiQ-P) version 1.1",
+      "fra": "Licence Libre du Québec – Permissive (LiLiQ-P) version 1.1",
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Quebec"
+  },
+  "LILIQ_R_1_1": {
+    "label": {
+      "eng": "Québec Free and Open-Source Licence – Reciprocity (LiLiQ-R) version 1.1",
+      "fra": "Licence Libre du Québec – Réciprocité (LiLiQ-R) version 1.1",
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Quebec"
+  },
+  "LILIQ_RPLUS_1_1": {
+    "label": {
+      "eng": "Québec Free and Open-Source Licence – Strong Reciprocity (LiLiQ-R+) version 1.1",
+      "fra": "Licence Libre du Québec – Réciprocité forte (LiLiQ-R+) version 1.1",
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "Quebec"
+  },
+  "LPL_1_0": {
+    "label": {
+      "eng": "Lucent Public License, Plan 9, version 1.0 (LPL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Alcatel-Lucent"
+  },
+  "LPL_1_02": {
+    "label": {
+      "eng": "Lucent Public License Version 1.02 (LPL-1.02)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Alcatel-Lucent"
+  },
+  "MS_PL": {
+    "label": {
+      "eng": "Microsoft Public License (MS-PL)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Microsoft"
+  },
+  "MS_RL": {
+    "label": {
+      "eng": "Microsoft Reciprocal License (MS-RL)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Microsoft"
+  },
+  "MIROS": {
+    "label": {
+      "eng": "MirOS License (MirOS)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code, data, literary and artistic works",
+    "responsible_entity": "MirOS Project"
+  },
+  "MIT": {
+    "label": {
+      "eng": "The MIT License",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Massachusetts Institute of Technology"
+  },
+  "MOTOSOTO": {
+    "label": {
+      "eng": "Motosoto Open Source License – Version 0.9.1 (Motosoto)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "MPL_1_0": {
+    "label": {
+      "eng": "The Mozilla Public License (MPL), version 1.0 (MPL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Mozilla"
+  },
+  "MPL_1_1": {
+    "label": {
+      "eng": "Mozilla Public License (MPL), version 1.1 (MPL-1.1)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Mozilla"
+  },
+  "MPL_2_0": {
+    "label": {
+      "eng": "Mozilla Public License (MPL), version 2.0 (MPL-2.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Mozilla"
+  },
+  "MULTICS": {
+    "label": {
+      "eng": "Multics License (Multics)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Multics"
+  },
+  "NASA_1_3": {
+    "label": {
+      "eng": "NASA Open Source Agreement v1.3 (NASA-1.3)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "NASA"
+  },
+  "NAUMEN": {
+    "label": {
+      "eng": "NAUMEN Public License (Naumen)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Naumen"
+  },
+  "NGPL": {
+    "label": {
+      "eng": "The Nethack General Public License (NGPL)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "NetHack"
+  },
+  "NOKIA": {
+    "label": {
+      "eng": "Nokia Open Source License Version 1.0a (NOKIA)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Nokia"
+  },
+  "NPOSL_3_0": {
+    "label": {
+      "eng": "The Non-Profit Open Software License version 3.0 (NPOSL-3.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "NTP": {
+    "label": {
+      "eng": "NTP License (NTP)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Network Time Foundation"
+  },
+  "OCLC_2_0": {
+    "label": {
+      "eng": "The OCLC Research Public License 2.0 License (OCLC-2.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "OCLC Research"
+  },
+  "OGTSL": {
+    "label": {
+      "eng": "The Open Group Test Suite License (OGTSL)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Open group"
+  },
+  "OSL_1_0": {
+    "label": {
+      "eng": "Open Software License, version 1.0 (OSL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Lawrence Rosen"
+  },
+  "OSL_2_1": {
+    "label": {
+      "eng": "The Open Software License, version 2.1 (OSL-2.1)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "Lawrence Rosen"
+  },
+  "OSL_3_0": {
+    "label": {
+      "eng": "Open Software License, version 3.0 (OSL-3.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "Lawrence Rosen"
+  },
+  "OPL_2_1": {
+    "label": {
+      "eng": "OSET Public License version 2.1",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "OSET Foundation"
+  },
+  "PHP_3_0": {
+    "label": {
+      "eng": "The PHP License 3.0 (PHP-3.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "PHP Group"
+  },
+  "POSTGRE_SQL": {
+    "label": {
+      "eng": "The PostgreSQL Licence (PostgreSQL)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "PostgreSQL"
+  },
+  "PYTHON_2_0": {
+    "label": {
+      "eng": "Python License (Python-2.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Python Software Foundation (PSF)"
+  },
+  "CNRI_PYTHON": {
+    "label": {
+      "eng": "The CNRI portion of the multi-part Python License (CNRI-Python)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Corporation for National Research Initiatives (CNRI)"
+  },
+  "QPL_1_0": {
+    "label": {
+      "eng": "The Q Public License Version (QPL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Trolltech AS"
+  },
+  "RPSL_1_0": {
+    "label": {
+      "eng": "RealNetworks Public Source License Version 1.0 (RPSL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "RealNetworks"
+  },
+  "RPL_1_1": {
+    "label": {
+      "eng": "Reciprocal Public License, version 1.1",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "RPL_1_5": {
+    "label": {
+      "eng": "Reciprocal Public License 1.5 (RPL-1.5)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "RSCPL": {
+    "label": {
+      "eng": "The Ricoh Source Code Public License (RSCPL)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Ricoh Global"
+  },
+  "OFL_1_1": {
+    "label": {
+      "eng": "SIL Open Font License (OFL-1.1)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "SIL International"
+  },
+  "SIMPL_2_0": {
+    "label": {
+      "eng": "Simple Public License (SimPL-2.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "Open Source Initiative (OSI)"
+  },
+  "SLEEPYCAT": {
+    "label": {
+      "eng": "The Sleepycat License (Sleepycat)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "Oracle Corporation"
+  },
+  "SPL_1_0": {
+    "label": {
+      "eng": "Sun Public License Version 1.0 (SPL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Oracle (Sun)"
+  },
+  "WATCOM_1_0": {
+    "label": {
+      "eng": "The Sybase Open Source Licence (Watcom-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "Sybase, Inc."
+  },
+  "UPL_1_0": {
+    "label": {
+      "eng": "The Universal Permissive License (UPL), Version 1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "Patent"],
+    "classification": "Code",
+    "responsible_entity": "Oracle Corporation"
+  },
+  "NCSA": {
+    "label": {
+      "eng": "The University of Illinois/NCSA Open Source License (NCSA)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "University of Illinois (NCSA)"
+  },
+  "UCL_1_0": {
+    "label": {
+      "eng": "Upstream Compatibility License v1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code, data, literary and artistic works",
+    "responsible_entity": "Lawrence Rosen"
+  },
+  "VSL_1_0": {
+    "label": {
+      "eng": "The Vovida Software License v. 1.0 (VSL-1.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Vovida"
+  },
+  "W3C": {
+    "label": {
+      "eng": "The W3C Software Notice and License (W3C)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "World Wide Web Consortium (W3C)"
+  },
+  "WXWINDOWS": {
+    "label": {
+      "eng": "The wxWindows Library Licence (wxWindows)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "wxWidgets"
+  },
+  "XNET": {
+    "label": {
+      "eng": "The X.Net, Inc. License (Xnet)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Altera Corporation"
+  },
+  "0BSD": {
+    "label": {
+      "eng": "Zero-Clause BSD / Free Public License 1.0.0 (0BSD)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Rob Landley"
+  },
+  "ZPL_2_0": {
+    "label": {
+      "eng": "The Zope Public License Version 2.0 (ZPL-2.0)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Zope Community"
+  },
+  "ZLIB": {
+    "label": {
+      "eng": "The zlib/libpng License (Zlib)",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "zlib"
+  },
+  "NLOD_2_0": {
+    "label": {
+      "eng": "Norwegian Licence for Open Government Data (NLOD) 2.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data",
+    "responsible_entity": "Kingdom of Norway"
+  },
+  "GNU_FDL_1_3": {
+    "label": {
+      "eng": "GNU Free Documentation License v1.3 only",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "LesserCopyleft", "ShareAlike"],
+    "classification": "Literary works",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "CLARIN_ACA_1_0": {
+    "label": {
+      "eng": "Clarin Academic End-User Licence (ACA) 1.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["BY", "NORED", "Optional conditions"],
+    "classification": "Code, data, literary and artistic works",
+    "responsible_entity": "Common Language Resources and Technology Infrastructure (CLARIN)"
+  },
+  "ISA_OML_1_1": {
+    "label": {
+      "eng": "ISA Open Metadata Licence 1.1",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Metadata",
+    "responsible_entity": "European Commission"
+  },
+  "ETALAB_2_0": {
+    "label": {
+      "eng": "Etalab Open Licence V 2.0",
+      "fra": "Licence Ouverte Etalab V 2.0",
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data",
+    "responsible_entity": "The State of France"
+  },
+  "EUROGEO_2022": {
+    "label": {
+      "eng": "EuroGeographics Open Data Licence v.2022",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data",
+    "responsible_entity": "EuroGeographics AISBL"
+  },
+  "BSD_3_CLAUSECLEAR": {
+    "label": {
+      "eng": "BSD 3-Clause Clear License",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Regents of the University of California"
+  },
+  "GPL_3_0_OR_LATER": {
+    "label": {
+      "eng": "GNU General Public License v3.0 or later",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code, data, literary and artistic works",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "GPL_2_0_OR_LATER": {
+    "label": {
+      "eng": "GNU General Public License v2.0 or later",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "GNU_FDL_1_3_OR_LATER": {
+    "label": {
+      "eng": "GNU Free Documentation License v1.3 or later",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "LesserCopyleft", "ShareAlike"],
+    "classification": "Literary works",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "AFL_3_0": {
+    "label": {
+      "eng": "Academic Free License v3.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "Lawrence E. Rosen"
+  },
+  "CECILL_C_1_0": {
+    "label": {
+      "eng": "CeCILL-C Free Software License Agreement",
+      "fra": "Contrat de licence de logiciel libre CeCILL-C",
+      "dan": null
+    },
+    "use_conditions": [],
+    "classification": "Code",
+    "responsible_entity": "CEA CNRS Inria Logiciel Libre"
+  },
+  "LGPL_2_1_OR_LATER": {
+    "label": {
+      "eng": "GNU Lesser General Public License v2.1 or later",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "Code",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "AGPL_3_0_OR_LATER": {
+    "label": {
+      "eng": "GNU Affero General Public License v3.0 or later",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code, data, literary and artistic works",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "DFSL_1_0": {
+    "label": {
+      "eng": "German Free Software License",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Copyleft"],
+    "classification": "Code",
+    "responsible_entity": "Institut für Rechtsfragen der Freien und Open Source Software (ifrOSS)"
+  },
+  "UNLICENCE": {
+    "label": {
+      "eng": "The Unlicense",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["None"],
+    "classification": "Code",
+    "responsible_entity": "Arto Bendiken"
+  },
+  "CECILL_B_1_0": {
+    "label": {
+      "eng": "CeCILL-B Free Software License Agreement",
+      "fra": "Contrat de licence de logiciel libre CeCILL-B",
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Code",
+    "responsible_entity": "CEA CNRS Inria Logiciel Libre"
+  },
+  "LGPL_3_0_OR_LATER": {
+    "label": {
+      "eng": "GNU Lesser General Public License v3.0 or later",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["LesserCopyleft"],
+    "classification": "CODE DATA",
+    "responsible_entity": "Free Software Foundation"
+  },
+  "EUROGEO_2024": {
+    "label": {
+      "eng": "EuroGeographics Open Data Licence v.2024",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution"],
+    "classification": "Data",
+    "responsible_entity": "EuroGeographics AISBL"
+  },
+  "OGL_NC_2_0": {
+    "label": {
+      "eng": "Non-Commercial Government Licence 2.0",
+      "fra": null,
+      "dan": null
+    },
+    "use_conditions": ["Attribution", "NonCommercial"],
+    "classification": "Data",
+    "responsible_entity": "United Kingdom"
+  }
 }

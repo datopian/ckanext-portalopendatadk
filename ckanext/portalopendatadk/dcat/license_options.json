@@ -6,6 +6,11 @@
   },
   {
     "id": "ISA_OML",
+    "title": "ISA Open Metadata Licence 1.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/ISA_OML"
+  },
+  {
+    "id": "ISA_OML",
     "title": "ISA Open Metadata Licence 1.1",
     "url": "https://publications.europa.eu/resource/authority/licence/ISA_OML"
   },
@@ -21,27 +26,27 @@
   },
   {
     "id": "CC_BYSA",
-    "title": "Creative Commons Attribution\u2013ShareAlike 4.0 International",
+    "title": "Creative Commons Attribution–ShareAlike 4.0 International",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA"
   },
   {
     "id": "CC_BYND",
-    "title": "Creative Commons Attribution\u2013NoDerivatives 4.0 International",
+    "title": "Creative Commons Attribution–NoDerivatives 4.0 International",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYND"
   },
   {
     "id": "CC_BYNC",
-    "title": "Creative Commons Attribution\u2013NonCommercial 4.0 International",
+    "title": "Creative Commons Attribution–NonCommercial 4.0 International",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNC"
   },
   {
     "id": "CC_BYNCSA",
-    "title": "Creative Commons Attribution\u2013NonCommercial\u2013ShareAlike 4.0 International",
+    "title": "Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCSA"
   },
   {
     "id": "CC_BYNCND",
-    "title": "Creative Commons Attribution\u2013NonCommercial\u2013NoDerivatives 4.0 International",
+    "title": "Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCND"
   },
   {
@@ -51,27 +56,27 @@
   },
   {
     "id": "CC_BYSA_3_0",
-    "title": "Creative Commons Attribution\u2013ShareAlike 3.0 Unported",
+    "title": "Creative Commons Attribution–ShareAlike 3.0 Unported",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA_3_0"
   },
   {
     "id": "CC_BYND_3_0",
-    "title": "Creative Commons Attribution\u2013NoDerivs 3.0 Unported",
+    "title": "Creative Commons Attribution–NoDerivs 3.0 Unported",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYND_3_0"
   },
   {
     "id": "CC_BYNC_3_0",
-    "title": "Creative Commons Attribution\u2013NonCommercial 3.0 Unported",
+    "title": "Creative Commons Attribution–NonCommercial 3.0 Unported",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNC_3_0"
   },
   {
     "id": "CC_BYNCSA_3_0",
-    "title": "Creative Commons Attribution\u2013NonCommercial\u2013ShareAlike 3.0 Unported",
+    "title": "Creative Commons Attribution–NonCommercial–ShareAlike 3.0 Unported",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCSA_3_0"
   },
   {
     "id": "CC_BYNCND_3_0",
-    "title": "Creative Commons Attribution\u2013NonCommercial\u2013NoDerivs 3.0 Unported",
+    "title": "Creative Commons Attribution–NonCommercial–NoDerivs 3.0 Unported",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCND_3_0"
   },
   {
@@ -81,27 +86,27 @@
   },
   {
     "id": "CC_BYSA_2_0",
-    "title": "Creative Commons Attribution\u2013ShareAlike 2.0 Generic",
+    "title": "Creative Commons Attribution–ShareAlike 2.0 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA_2_0"
   },
   {
     "id": "CC_BYND_2_0",
-    "title": "Creative Commons Attribution\u2013NoDerivs 2.0 Generic",
+    "title": "Creative Commons Attribution–NoDerivs 2.0 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYND_2_0"
   },
   {
     "id": "CC_BYNC_2_0",
-    "title": "Creative Commons Attribution\u2013NonCommercial 2.0 Generic",
+    "title": "Creative Commons Attribution–NonCommercial 2.0 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNC_2_0"
   },
   {
     "id": "CC_BYNCSA_2_0",
-    "title": "Creative Commons Attribution\u2013NonCommercial\u2013ShareAlike 2.0 Generic",
+    "title": "Creative Commons Attribution–NonCommercial–ShareAlike 2.0 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCSA_2_0"
   },
   {
     "id": "CC_BYNCND_2_0",
-    "title": "Creative Commons Attribution\u2013NonCommercial\u2013NoDerivs 2.0 Generic",
+    "title": "Creative Commons Attribution–NonCommercial–NoDerivs 2.0 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCND_2_0"
   },
   {
@@ -111,27 +116,27 @@
   },
   {
     "id": "CC_BYSA_1_0",
-    "title": "Creative Commons Attribution\u2013ShareAlike 1.0 Generic",
+    "title": "Creative Commons Attribution–ShareAlike 1.0 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA_1_0"
   },
   {
     "id": "CC_BYND_1_0",
-    "title": "Creative Commons Attribution\u2013NoDerivs 1.0 Generic",
+    "title": "Creative Commons Attribution–NoDerivs 1.0 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYND_1_0"
   },
   {
     "id": "CC_BYNC_1_0",
-    "title": "Creative Commons Attribution\u2013NonCommercial 1.0 Generic",
+    "title": "Creative Commons Attribution–NonCommercial 1.0 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNC_1_0"
   },
   {
     "id": "CC_BYNCSA_1_0",
-    "title": "Creative Commons Attribution\u2013NonCommercial\u2013ShareAlike 1.0 Generic",
+    "title": "Creative Commons Attribution–NonCommercial–ShareAlike 1.0 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCSA_1_0"
   },
   {
     "id": "CC_BYNCND_1_0",
-    "title": "Creative Commons Attribution\u2013NoDerivs\u2013NonCommercial 1.0 Generic",
+    "title": "Creative Commons Attribution–NoDerivs–NonCommercial 1.0 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCND_1_0"
   },
   {
@@ -161,27 +166,27 @@
   },
   {
     "id": "CC_BYSA_2_5",
-    "title": "Creative Commons Attribution\u2013ShareAlike 2.5 Generic",
+    "title": "Creative Commons Attribution–ShareAlike 2.5 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA_2_5"
   },
   {
     "id": "CC_BYND_2_5",
-    "title": "Creative Commons Attribution\u2013NoDerivs 2.5 Generic",
+    "title": "Creative Commons Attribution–NoDerivs 2.5 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYND_2_5"
   },
   {
     "id": "CC_BYNC_2_5",
-    "title": "Creative Commons Attribution\u2013NonCommercial 2.5 Generic",
+    "title": "Creative Commons Attribution–NonCommercial 2.5 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNC_2_5"
   },
   {
     "id": "CC_BYNCSA_2_5",
-    "title": "Creative Commons Attribution\u2013NonCommercial\u2013ShareAlike 2.5 Generic",
+    "title": "Creative Commons Attribution–NonCommercial–ShareAlike 2.5 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCSA_2_5"
   },
   {
     "id": "CC_BYNCND_2_5",
-    "title": "Creative Commons Attribution\u2013NonCommercial\u2013NoDerivs 2.5 Generic",
+    "title": "Creative Commons Attribution–NonCommercial–NoDerivs 2.5 Generic",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCND_2_5"
   },
   {
@@ -206,67 +211,67 @@
   },
   {
     "id": "CC_BYNC_4_0",
-    "title": "Creative Commons Attribution\u2013NonCommercial 4.0 International",
+    "title": "Creative Commons Attribution–NonCommercial 4.0 International",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNC_4_0"
   },
   {
     "id": "CC_BYNCND_4_0",
-    "title": "Creative Commons Attribution\u2013NonCommercial\u2013NoDerivatives 4.0 International",
+    "title": "Creative Commons Attribution–NonCommercial–NoDerivs 4.0 International",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCND_4_0"
   },
   {
     "id": "CC_BYNCSA_4_0",
-    "title": "Creative Commons Attribution\u2013NonCommercial\u2013ShareAlike 4.0 International",
+    "title": "Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYNCSA_4_0"
   },
   {
     "id": "CC_BYND_4_0",
-    "title": "Creative Commons Attribution\u2013NoDerivatives 4.0 International",
+    "title": "Creative Commons Attribution–NoDerivs 4.0 International",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYND_4_0"
   },
   {
     "id": "CC_BYSA_4_0",
-    "title": "Creative Commons Attribution\u2013ShareAlike 4.0 International",
+    "title": "Creative Commons Attribution–ShareAlike 4.0 International",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA_4_0"
   },
   {
     "id": "CC_BYSA_3_0_NL",
-    "title": "Attribution-ShareAlike 3.0 Netherlands",
+    "title": "Creative Commons Attribution-ShareAlike 3.0 Netherlands",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BYSA_3_0_NL"
   },
   {
     "id": "CC_BY_3_0_NL",
-    "title": "Attribution 3.0 Netherlands",
+    "title": "Creative Commons Attribution 3.0 Netherlands",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BY_3_0_NL"
   },
   {
     "id": "CC_PDM_1_0",
-    "title": "Public Domain Mark 1.0",
+    "title": "Creative Commons Public Domain Mark 1.0 Universal",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_PDM_1_0"
   },
   {
     "id": "CC_BY_3_0_AT",
-    "title": "Attribution 3.0 Austria",
+    "title": "Creative Commons Attribution 3.0 Austria",
     "url": "https://publications.europa.eu/resource/authority/licence/CC_BY_3_0_AT"
   },
   {
     "id": "DLDE_BYNC_1_0",
-    "title": "Data licence Germany \u2013 attribution \u2013 non-commercial \u2013 Version 1.0",
+    "title": "Data licence Germany – attribution – non-commercial – Version 1.0",
     "url": "https://publications.europa.eu/resource/authority/licence/DLDE_BYNC_1_0"
   },
   {
     "id": "DLDE_BY_1_0",
-    "title": "Data licence Germany \u2013 attribution \u2013 Version 1.0",
+    "title": "Data licence Germany – attribution – Version 1.0",
     "url": "https://publications.europa.eu/resource/authority/licence/DLDE_BY_1_0"
   },
   {
     "id": "DLDE_BY_2_0",
-    "title": "Data licence Germany \u2013 attribution \u2013 Version 2.0",
+    "title": "Data licence Germany – attribution – Version 2.0",
     "url": "https://publications.europa.eu/resource/authority/licence/DLDE_BY_2_0"
   },
   {
     "id": "DLDE_ZERO_2_0",
-    "title": "Data licence Germany \u2013 Zero \u2013 Version 2.0",
+    "title": "Data licence Germany – Zero – Version 2.0",
     "url": "https://publications.europa.eu/resource/authority/licence/DLDE_ZERO_2_0"
   },
   {
@@ -281,7 +286,7 @@
   },
   {
     "id": "HROD",
-    "title": "Open Licence \u2013 The Republic of Croatia",
+    "title": "Open Licence – The Republic of Croatia",
     "url": "https://publications.europa.eu/resource/authority/licence/HROD"
   },
   {
@@ -301,32 +306,32 @@
   },
   {
     "id": "OGL_NC",
-    "title": "Non-Commercial Government Licence",
+    "title": "Non-Commercial Government Licence 1.0",
     "url": "https://publications.europa.eu/resource/authority/licence/OGL_NC"
   },
   {
     "id": "OGL_ROU_1_0",
-    "title": "Non-Commercial Government Licence 1.0",
+    "title": "Open Government Licence v1.0",
     "url": "https://publications.europa.eu/resource/authority/licence/OGL_ROU_1_0"
   },
   {
     "id": "OGL_1_0",
-    "title": "Open Government Licence 1.0",
+    "title": "Open Government Licence v1.0",
     "url": "https://publications.europa.eu/resource/authority/licence/OGL_1_0"
   },
   {
     "id": "OGL_2_0",
-    "title": "Open Government Licence 2.0",
+    "title": "Open Government Licence v2.0",
     "url": "https://publications.europa.eu/resource/authority/licence/OGL_2_0"
   },
   {
     "id": "OGL_3_0",
-    "title": "Open Government Licence 3.0",
+    "title": "Open Government Licence v3.0",
     "url": "https://publications.europa.eu/resource/authority/licence/OGL_3_0"
   },
   {
     "id": "PSEUL",
-    "title": "INSPIRE End User Licence",
+    "title": "EU INSPIRE End User Licence",
     "url": "https://publications.europa.eu/resource/authority/licence/PSEUL"
   },
   {
@@ -461,27 +466,27 @@
   },
   {
     "id": "AGPL_3_0",
-    "title": "GNU Affero General Public License version 3",
+    "title": "GNU Affero General Public License v3.0 only",
     "url": "https://publications.europa.eu/resource/authority/licence/AGPL_3_0"
   },
   {
     "id": "GPL_2_0",
-    "title": "GNU General Public License version 2",
+    "title": "GNU General Public License v2.0 only",
     "url": "https://publications.europa.eu/resource/authority/licence/GPL_2_0"
   },
   {
     "id": "GPL_3_0",
-    "title": "GNU General Public License version 3",
+    "title": "GNU General Public License v3.0 only",
     "url": "https://publications.europa.eu/resource/authority/licence/GPL_3_0"
   },
   {
     "id": "LGPL_2_1",
-    "title": "GNU Lesser General Public License version 2.1",
+    "title": "GNU Lesser General Public License v2.1 only",
     "url": "https://publications.europa.eu/resource/authority/licence/LGPL_2_1"
   },
   {
     "id": "LGPL_3_0",
-    "title": "GNU Lesser General Public License version 3",
+    "title": "GNU Lesser General Public License v3.0 only",
     "url": "https://publications.europa.eu/resource/authority/licence/LGPL_3_0"
   },
   {
@@ -516,17 +521,17 @@
   },
   {
     "id": "LILIQ_P_1_1",
-    "title": "Qu\u00e9bec Free and Open-Source Licence \u2013 Permissive (LiLiQ-P) version 1.1",
+    "title": "Québec Free and Open-Source Licence – Permissive (LiLiQ-P) version 1.1",
     "url": "https://publications.europa.eu/resource/authority/licence/LILIQ_P_1_1"
   },
   {
     "id": "LILIQ_R_1_1",
-    "title": "Qu\u00e9bec Free and Open-Source Licence \u2013 Reciprocity (LiLiQ-R) version 1.1",
+    "title": "Québec Free and Open-Source Licence – Reciprocity (LiLiQ-R) version 1.1",
     "url": "https://publications.europa.eu/resource/authority/licence/LILIQ_R_1_1"
   },
   {
     "id": "LILIQ_RPLUS_1_1",
-    "title": "Qu\u00e9bec Free and Open-Source Licence \u2013 Strong Reciprocity (LiLiQ-R+) version 1.1",
+    "title": "Québec Free and Open-Source Licence – Strong Reciprocity (LiLiQ-R+) version 1.1",
     "url": "https://publications.europa.eu/resource/authority/licence/LILIQ_RPLUS_1_1"
   },
   {
@@ -561,7 +566,7 @@
   },
   {
     "id": "MOTOSOTO",
-    "title": "Motosoto Open Source License \u2013 Version 0.9.1 (Motosoto)",
+    "title": "Motosoto Open Source License – Version 0.9.1 (Motosoto)",
     "url": "https://publications.europa.eu/resource/authority/licence/MOTOSOTO"
   },
   {
@@ -771,7 +776,7 @@
   },
   {
     "id": "GNU_FDL_1_3",
-    "title": "GNU Free Documentation License 1.3",
+    "title": "GNU Free Documentation License v1.3 only",
     "url": "https://publications.europa.eu/resource/authority/licence/GNU_FDL_1_3"
   },
   {
@@ -793,5 +798,75 @@
     "id": "EUROGEO_2022",
     "title": "EuroGeographics Open Data Licence v.2022",
     "url": "https://publications.europa.eu/resource/authority/licence/EUROGEO_2022"
+  },
+  {
+    "id": "BSD_3_CLAUSECLEAR",
+    "title": "BSD 3-Clause Clear License",
+    "url": "https://publications.europa.eu/resource/authority/licence/BSD_3_CLAUSECLEAR"
+  },
+  {
+    "id": "GPL_3_0_OR_LATER",
+    "title": "GNU General Public License v3.0 or later",
+    "url": "https://publications.europa.eu/resource/authority/licence/GPL_3_0_OR_LATER"
+  },
+  {
+    "id": "GPL_2_0_OR_LATER",
+    "title": "GNU General Public License v2.0 or later",
+    "url": "https://publications.europa.eu/resource/authority/licence/GPL_2_0_OR_LATER"
+  },
+  {
+    "id": "GNU_FDL_1_3_OR_LATER",
+    "title": "GNU Free Documentation License v1.3 or later",
+    "url": "https://publications.europa.eu/resource/authority/licence/GNU_FDL_1_3_OR_LATER"
+  },
+  {
+    "id": "AFL_3_0",
+    "title": "Academic Free License v3.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/AFL_3_0"
+  },
+  {
+    "id": "CECILL_C_1_0",
+    "title": "CeCILL-C Free Software License Agreement",
+    "url": "https://publications.europa.eu/resource/authority/licence/CECILL_C_1_0"
+  },
+  {
+    "id": "LGPL_2_1_OR_LATER",
+    "title": "GNU Lesser General Public License v2.1 or later",
+    "url": "https://publications.europa.eu/resource/authority/licence/LGPL_2_1_OR_LATER"
+  },
+  {
+    "id": "AGPL_3_0_OR_LATER",
+    "title": "GNU Affero General Public License v3.0 or later",
+    "url": "https://publications.europa.eu/resource/authority/licence/AGPL_3_0_OR_LATER"
+  },
+  {
+    "id": "DFSL_1_0",
+    "title": "German Free Software License",
+    "url": "https://publications.europa.eu/resource/authority/licence/DFSL_1_0"
+  },
+  {
+    "id": "UNLICENCE",
+    "title": "The Unlicense",
+    "url": "https://publications.europa.eu/resource/authority/licence/UNLICENCE"
+  },
+  {
+    "id": "CECILL_B_1_0",
+    "title": "CeCILL-B Free Software License Agreement",
+    "url": "https://publications.europa.eu/resource/authority/licence/CECILL_B_1_0"
+  },
+  {
+    "id": "LGPL_3_0_OR_LATER",
+    "title": "GNU Lesser General Public License v3.0 or later",
+    "url": "https://publications.europa.eu/resource/authority/licence/LGPL_3_0_OR_LATER"
+  },
+  {
+    "id": "EUROGEO_2024",
+    "title": "EuroGeographics Open Data Licence v.2024",
+    "url": "https://publications.europa.eu/resource/authority/licence/EUROGEO_2024"
+  },
+  {
+    "id": "OGL_NC_2_0",
+    "title": "Non-Commercial Government Licence 2.0",
+    "url": "https://publications.europa.eu/resource/authority/licence/OGL_NC_2_0"
   }
 ]
