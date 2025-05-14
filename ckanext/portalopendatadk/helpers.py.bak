@@ -109,7 +109,7 @@ def fix_data_themes(data_themes_raw):
         if isinstance(data_themes_raw, list):
             data_themes_raw = data_themes_raw[0]
 
-        if isinstance(data_themes_raw, str):
+        if isinstance(data_themes_raw, (str, unicode)):
             data_themes = data_themes_raw.strip("{}").split(",")
 
     return data_themes
