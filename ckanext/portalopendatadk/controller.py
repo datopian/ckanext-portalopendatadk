@@ -246,9 +246,7 @@ class ODDKUserController(UserController):
         return render('user/request_reset.html')
 
 
-
 class DCATController(BaseController):
-
     def read_catalog(self, _format=None):
 
         if not _format:

@@ -83,7 +83,7 @@
     {
       "preset_name": "resource_format",
       "values": {
-        "validators": "ignore_missing unicode resource_format_validator",
+        "validators": "ignore_missing resource_format_validator",
         "form_placeholder": "eg. CSV, XML or JSON",
         "form_snippet": "resource_format.html"
       }

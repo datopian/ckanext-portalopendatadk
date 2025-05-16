@@ -1,3 +1,5 @@
+{% set dataset_type = h.default_package_type() %}
+
 <div role="main" class="hero">
   <div class="container">
     <div class="row row1">
@@ -22,7 +24,12 @@
         <div class="box">
           <section class="group-list module module-narrow module-shallow">
             <header class="module-heading">
-              <h3 class="media-heading"><a href="{% url_for controller='package', action='search', sort='metadata_created desc' %}">{{ _("Last updated") }}</a></h3>
+              <h3 class="media-heading">
+                {% set search_route = dataset_type ~ '.search' %}
+                <a href="{{ url_for(search_route, sort='metadata_created desc') }}">
+                  {{ _("Last updated") }}
+                </a>
+              </h3>
             </header>
             {% set list_class = "unstyled dataset-list" %}
             {% set item_class = "dataset-item module-content" %}
@@ -36,7 +43,12 @@
         <div class="box">
           <section class="group-list module module-narrow module-shallow">
             <header class="module-heading">
-              <h3 class="media-heading"><a href="{% url_for controller='package', action='search', sort='views_recent desc' %}">{{ _("Popular") }}</a></h3>
+              <h3 class="media-heading">
+                {% set search_route = dataset_type ~ '.search' %}
+                <a href="{{ url_for(search_route, sort='views_recent desc') }}">
+                  {{ _("Popular") }}
+                </a>
+              </h3>
             </header>
             {% snippet 'snippets/package_list.html', packages=h.portalopendatadk_most_popular_datasets(), list_class=list_class, item_class=item_class, truncate=truncate, truncate_title=truncate_title %}
           </section>

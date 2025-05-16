@@ -33,7 +33,9 @@ Example:
               {% endif %}
             {% endblock %}
             {% block heading_title %}
-              {{ h.link_to(h.truncate(title, truncate_title), h.url_for(controller='package', action='read', id=package.name)) }}
+                <a href="{{ h.url_for('%s.read' % package.type, id=package.name) }}" title="{{ title }}">
+                {{ title }}  
+                </a>
             {% endblock %}
             {% block heading_meta %}
               {% if package.get('state', '').startswith('draft') %}
@@ -46,8 +48,12 @@ Example:
             {% endblock %}
 		{% if package.organization %}
 			</br>
-                 	<a href="{{ h.url_for(controller='organization', action='read', id=package.organization["id"]) }}" style="color:#aaaaaa;margin-top:-10px;font-size:13px;font-weight:normal">{{package.organization['title']}}</a>
-                 {% endif %}
+        <a href="{{ h.url_for('organization.read', id=package.organization['id']) }}" 
+        style="color:#aaaaaa;margin-top:-10px;font-size:13px;font-weight:normal">
+        {{ package.organization['title'] }}
+        </a>
+    
+        {% endif %}
           </h3>
         {% endblock %}
         {% block banner %}
@@ -66,11 +72,11 @@ Example:
       {% block resources %}
         {% if package.resources and not hide_resources %}
           {% block resources_outer %}
-            <ul class="dataset-resources unstyled">
+            <ul class="dataset-resources unstyled" style="padding: 0;">
               {% block resources_inner %}
                 {% for resource in h.dict_list_reduce(package.resources, 'format') %}
                 <li>
-                  <a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="{{ resource.lower() }}">{{ resource }}</a>
+                  <a href="{{ h.url_for(package.type ~ '.read', id=package.name) }}" class="badge badge-default label" data-format="{{ resource.lower() }}">{{ resource }}</a>
                 </li>
                 {% endfor %}
               {% endblock %}

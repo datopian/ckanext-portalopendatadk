@@ -1,3 +1,5 @@
+{% set dataset_type = h.default_package_type() %}
+
 {% block header_wrapper %}
 
 <!-- Survey banner   -->
@@ -5,8 +7,8 @@
 
 {% block header_account %}
 <!-- Hello -->
-  <header class="account-masthead">
-    <div class="container">
+<header class="account-masthead">
+  <div class="container">
       {% block header_account_container_content %}
         {% if c.userobj %}
           <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
@@ -19,20 +21,22 @@
                   </a>
                 </li>
               {% endif %}
+              {% block header_account_profile %}
               <li>
-                <a href="{{ h.url_for(controller='user', action='read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
-                  {{ h.gravatar((c.userobj.email_hash if c and c.userobj else ''), size=22) }}
+                <a href="{{ h.url_for('user.read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
+                  {{ h.user_image((c.user if c and c.user else ''), size=22) }}
                   <span class="username">{{ c.userobj.display_name }}</span>
                 </a>
               </li>
-              {% set new_activities = h.new_activities() %}
-              <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
-                {% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
-                <a href="{{ h.url_for(controller='user', action='dashboard') }}" title="{{ notifications_tooltip }}">
-                  <i class="fa fa-tachometer"></i>
-                  <span>{{ new_activities }}</span>
-                </a>
-              </li>
+              {% endblock %}
+              {% block header_dashboard %}
+              <li>
+                  <a href="{{ h.url_for('dashboard.datasets') }}" title="{{ _("View dashboard") }}">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i>
+                    <span class="text">{{ _('Dashboard') }}</span>
+                  </a>
+                </li>
+              {% endblock %}
               {% block header_account_settings_link %}
                 <li>
                   <a href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
@@ -60,67 +64,67 @@
           </nav>
         {% endif %}
       {% endblock %}
-    </div>
-  </header>
+  </div>
+</header>
 {% endblock %}
 <header class="navbar navbar-static-top masthead">
-  {% block header_debug %}
-    {% if g.debug and not g.debug_supress_header %}
-      <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
-    {% endif %}
-  {% endblock %}
-  <div class="container">
-    <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    {# The .header-image class hides the main text and uses image replacement for the title #}
-    <hgroup class="{{ g.header_class }} pull-left">
+  <div class="container navbar__oddk">
+    {% block header_debug %} {% if g.debug and not g.debug_supress_header %}
+    <div class="debug">Blueprint : {{ g.blueprint }}<br />View : {{ g.view }}</div>
+    {% endif %} {% endblock %}
+    <nav class="container-fluid navbar navbar-expand-lg navbar-light">
+      <hgroup class="{{ g.header_class }} navbar-left">
 
       {% block header_logo %}
-        {% if g.site_logo %}
-          <a class="logo" href="{{ h.url_for('home') }}"><img src="{{ h.url_for_static_or_external(g.site_logo) }}" alt="{{ g.site_title }}" title="{{ g.site_title }}" /></a>
-        {% else %}
-          <h1>
-            <a href="{{ h.url_for('home') }}">{{ g.site_title }}</a>
-          </h1>
-          {% if g.site_description %}<h2>{{ g.site_description }}</h2>{% endif %}
-        {% endif %}
+      {% if g.site_logo %}
+      <a class="logo" href="{{ h.url_for('home.index') }}">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpNmYOptwmY73E-Oiiaz7wusXPJ78-SQGnyg&s" alt="{{ g.site_title }}"
+          title="{{ g.site_title }}" />
+      </a>
+      {% else %}
+      <h1>
+        <a href="{{ h.url_for('home.index') }}">{{ g.site_title }}</a>
+      </h1>
+      {% if g.site_description %}
+      <h2>{{ g.site_description }}</h2>
+      {% endif %}
+      {% endif %}
       {% endblock %}
 
-    </hgroup>
+       </hgroup>
+  
 
-    <div class="nav-collapse collapse">
+      <button  data-bs-target="#main-navigation-toggle"  aria-controls="main-navigation-toggle" aria-expanded="false" aria-label="{{ _('Toggle navigation') }}" data-bs-toggle="collapse" class="navbar-toggler" type="button">
+        <i class="fa fa-bars text-white"></i>
+      </button>
 
-      {% block header_site_navigation %}
-        <nav class="section navigation">
-          <ul class="nav nav-pills">
+      <div class="main-navbar collapse navbar-collapse" id="main-navigation-toggle">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav nav-pills">
+          {% block header_site_navigation %}
             {% block header_site_navigation_tabs %}
+              {% set org_type = h.default_group_type('organization') %}
+              {% set group_type = h.default_group_type('group') %}
+
               {{ h.build_nav_main(
-                ('search', _('Datasets')),
-                ('organizations_index', _('Organizations')),
-                ('group_index', _('Groups')),
-                ('about', _('About'))
-              ) }}
-	    <!-- ckanext/portalopendatadk/templates/header.html  -->
-	 <!--   <li><a href="/pages/inspiration">Inspiration</a></li> -->
+                (dataset_type ~ '.search', h.humanize_entity_type('package', dataset_type, 'main nav') or _('Datasets'), ["dataset", "resource"]),
+                (org_type ~ '.index',
+                  h.humanize_entity_type('organization', org_type, 'main nav') or _('Organizations'), ['organization']),
+                (group_type ~ '.index',
+                  h.humanize_entity_type('group', group_type, 'main nav') or _('Groups'), ['group']),
+                ('home.about', _('About')) ) }}
             {% endblock %}
           </ul>
-        </nav>
-      {% endblock %}
 
+      {% endblock %}
       {% block header_site_search %}
-        <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
-          <div class="field">
-            <label for="field-sitewide-search">{% block header_site_search_label %}{{ _('Search Datasets') }}{% endblock %}</label>
-            <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Search') }}" />
-            <button class="btn-search" type="submit"><i class="fa fa-search"></i></button>
-          </div>
-        </form>
+          <form class="d-flex site-search" action="{% url_for dataset_type ~ '.search' %}" method="get">
+              <label class="d-none" for="field-sitewide-search">{% block header_site_search_label %}{{ h.humanize_entity_type('package', dataset_type, 'search_placeholder') or _('Search Datasets...') }}{% endblock %}</label>
+              <input id="field-sitewide-search" class="form-control me-2"  type="text" name="q" placeholder="{{ _('Search') }}" aria-label="{{ h.humanize_entity_type('package', dataset_type, 'search_placeholder') or _('Search datasets...') }}"/>
+              <button class="btn-search" type="submit" style="background: none;outline: none;border: none;margin: -40px;" aria-label="{{ _('Submit') }}"><i class="fa fa-search"></i></button>
+          </form>
       {% endblock %}
-
-    </div>
+      </div>
+    </nav>
   </div>
 </header>
 {% endblock %}
