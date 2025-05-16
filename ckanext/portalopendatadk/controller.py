@@ -53,6 +53,26 @@ unflatten = dictization_functions.unflatten
 
 log = log.getLogger(__name__)
 
+def _get_package_type(id):
+    """
+    Given the id of a package this method will return the type of the
+    package, or 'dataset' if no type is currently set
+    """
+    pkg = model.Package.get(id)
+    if pkg:
+        return pkg.type or 'dataset'
+    return None
+
+
+def check_access_header():
+    _format = None
+
+    # Check Accept headers
+    accept_header = toolkit.request.headers.get('Accept', '')
+    if accept_header:
+        _format = parse_accept_header(accept_header)
+    return _format
+
 
 class ODDKUserController(UserController):
     def __before__(self, action, **env):
@@ -226,29 +246,7 @@ class ODDKUserController(UserController):
         return render('user/request_reset.html')
 
 
-def _get_package_type(id):
-    """
-    Given the id of a package this method will return the type of the
-    package, or 'dataset' if no type is currently set
-    """
-    pkg = model.Package.get(id)
-    if pkg:
-        return pkg.type or 'dataset'
-    return None
-
-
-def check_access_header():
-    _format = None
-
-    # Check Accept headers
-    accept_header = toolkit.request.headers.get('Accept', '')
-    if accept_header:
-        _format = parse_accept_header(accept_header)
-    return _format
-
-
 class DCATController(BaseController):
-
     def read_catalog(self, _format=None):
 
         if not _format:

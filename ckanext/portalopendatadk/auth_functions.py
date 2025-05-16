@@ -8,6 +8,10 @@ Queensland Government CKAN extension
 https://github.com/qld-gov-au/ckanext-qgov
 """
 
+
+import logging
+log = logging.getLogger(__name__)
+
 from ckan import authz, model
 from ckan.logic import auth as logic_auth
 from ckan.plugins.toolkit import _, asbool, auth_allow_anonymous_access
@@ -17,6 +21,7 @@ def user_list(context, data_dict=None):
     """Check whether access to the user list is authorised.
     Restricted to organisation admins or sysadmins.
     """
+    
     return {'success': _requester_is_admin(context)}
 
 

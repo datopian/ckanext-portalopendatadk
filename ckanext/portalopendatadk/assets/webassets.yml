@@ -1,0 +1,11 @@
+styles:
+  output: styles/oddk_style.css
+  contents:
+    - css/style.css
+
+scripts:
+  output: scripts/oddk_script.js
+  contents:
+    - js/dcat.js
+    - js/ga.js
+    - js/promo.banner.js

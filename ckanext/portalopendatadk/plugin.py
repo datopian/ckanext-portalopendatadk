@@ -10,6 +10,8 @@ from ckan.lib.plugins import DefaultTranslation
 #from pylons import config
 from ckan import authz
 from ckan.common import config
+from ckanext.portalopendatadk.views.user import user
+from ckanext.portalopendatadk.views.dcat import dcat, dcat_json_interface
 import logging
 
 from ckanext.portalopendatadk import actions as oddk_actions
@@ -54,18 +56,19 @@ class PortalOpenDataDKPlugin(
 ):
     """portal.opendata.dk theme plugin."""
 
-    #plugins.implements(plugins.IConfigurer)
-    #plugins.implements(plugins.ITemplateHelpers)
-    #plugins.implements(plugins.IActions)
+    plugins.implements(plugins.IConfigurer)
+    plugins.implements(plugins.ITemplateHelpers)
+    # plugins.implements(plugins.IActions)
     #plugins.implements(plugins.ITranslation)
     #plugins.implements(plugins.IDatasetForm, inherit=True)
-    #plugins.implements(plugins.IFacets)
-    #plugins.implements(plugins.IRoutes, inherit=True)
-    #plugins.implements(plugins.IAuthFunctions, inherit=True)
-    #plugins.implements(plugins.IValidators, inherit=True)
-    #plugins.implements(plugins.IPackageController, inherit=True)
-
-    #def before_map(self, map):
+    # plugins.implements(plugins.IFacets)
+    # plugins.implements(plugins.IRoutes, inherit=True)
+    plugins.implements(plugins.IAuthFunctions, inherit=True)
+    plugins.implements(plugins.IValidators)
+    # plugins.implements(plugins.IPackageController)
+    plugins.implements(plugins.IBlueprint)
+    
+    # def before_map(self, map):
     #    # Pass requests to ODDKUserController to verify admin status
     #    map.connect(
     #        '/user',
@@ -138,14 +141,20 @@ class PortalOpenDataDKPlugin(
 
     #    return map
 
-    #def after_map(self, map):
+    # def after_map(self, map):
     #    return map
 
+    # IBlueprint
+    def get_blueprint(self):
+        return [dcat, dcat_json_interface]
+    
+    # IConfigurer
     def update_config(self, config):
         toolkit.add_template_directory(config, 'templates')
         toolkit.add_public_directory(config, 'public')
-        toolkit.add_resource('fanstatic', 'portalopendatadk')
+        toolkit.add_resource('assets', 'portalopendatadk')
 
+    # ITemplateHelpers
     def get_helpers(self):
         return {
             'portalopendatadk_latest_datasets': latest_datasets,
@@ -157,6 +166,8 @@ class PortalOpenDataDKPlugin(
             'get_dcat_info_text': oddk_helpers.get_dcat_info_text,
             'get_dcat_license_options': oddk_helpers.get_dcat_license_options,
         }
+    
+    # IActions
 
     def get_actions(self):
         return {
@@ -188,7 +199,7 @@ class PortalOpenDataDKPlugin(
 
     # IPackageController
 
-    def after_show(self, context, pkg_dict):
+    def after_dataset_show(self, context, pkg_dict):
         data_themes = pkg_dict.get('data_themes')
         data_themes = oddk_helpers.fix_data_themes(data_themes)
 
@@ -197,10 +208,13 @@ class PortalOpenDataDKPlugin(
 
         return pkg_dict
 
-    def before_search(self, search_params):
+    def before_dataset_search(self, search_params):
         return search_params
+    
+    def after_dataset_search(self, search_results, search_params):
+        return search_results
 
-    def before_index(self, pkg_dict):
+    def before_dataset_index(self, pkg_dict):
         data_themes = pkg_dict.get('extras_data_themes')
         data_themes = oddk_helpers.fix_data_themes(data_themes)
 
