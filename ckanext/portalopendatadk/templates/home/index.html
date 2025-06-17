@@ -1,5 +1,4 @@
 {% extends "page.html" %}
-{% set homepage_style = ('1') %}
 
 {% block subtitle %}{{ _("Welcome") }}{% endblock %}
 
@@ -7,76 +6,38 @@
 {% block toolbar %}{% endblock %}
 
 {% block content %}
-  <div class="homepage layout-{{ homepage_style }}">
-    <div class="container">
-      {{ self.flash() }}
+<div class="homepage">
+  <div id="content" class="container">
+    {{ self.flash() }}
+  </div>
+  {% block primary_content %}
+  <div role="main">
+    <div class="main hero">
+      <div class="container">
+        <div class="row">
+          <div>
+            {% block search %}
+            {% snippet 'home/snippets/search.html', search_facets=search_facets %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
     </div>
-    {% block primary_content %}
-      {% snippet "home/layout{0}.html".format(homepage_style) %}
-    {% endblock %}
+    <div class="container">
+      <div class="row row2">
+        <div class="col-md-6">
+          {% block promoted %}
+          {% snippet 'home/snippets/promoted.html' %}
+          {% endblock %}
+        </div>
+        <div class="col-md-6">
+          {% block statistics %}
+          {% snippet 'home/snippets/stats.html' %}
+          {% endblock %}
+      </div>
+    </div>
   </div>
-{# <script>
-    function setCookie(cname,cvalue,exdays) {
-        var d = new Date();        
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        var expires = "expires=" + d.toGMTString();
-        document.cookie = cname+"="+cvalue+"; "+expires;
-    }   
 
-    function getCookie(cname) { 
-        var name = cname + "=";         
-        var ca = document.cookie.split(';');
-        for(var i=0; i<ca.length; i++) {
-            var c = ca[i].split("=");
-            var n = c[0].indexOf(cname);
-            if (n>-1) {
-                return c[1]
-            }       
-        }    
-        return "";    
-    } 
+  {% endblock primary_content %}
 
-    function cookieAccept() { 
-        setCookie("cookiepopup", "true", 30);
-        document.all("cookie-disclaimer").style.display="none";
-    }
-</script>
-<style>
-.cookie-disclaimer {
-  background: #000000;
-  color: #FFF;
-  opacity: 0.9;
-  width: 100%;
-  bottom: 0;
-  left: 0px;
-  z-index: 10;
-  height: 70px;
-  position: fixed;
-}  
-.cookieContainer {  
-  padding-top: 5px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-}
-</style>
-<!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"-->
-<div class="cookie-disclaimer" id="cookie-disclaimer">
-  <div class="cookieContainer">
-    <div class="row">
-        <span class="span7 col1" style="white-space: nowrap;">
-			På portal.opendata.dk bruger vi cookies til at samle statistik og forbedre hjemmesiden.<br/> Du accepterer cookies ved at klikke videre.<br/> Du kan læse mere om vores cookie politik <a href="http://portal.opendata.dk/Cookiepolitikoddk.pdf" target="_new">her</a>.           
-        </span>
-        <span class="span5 col1">
-           <button type="button" class="btn btn-success" style="margin:3px" onclick="cookieAccept()">Ok</button>      
-        </span>          
-    </div>    
-  </div>
-</div>
-<script>
-    var viewed=getCookie("cookiepopup");
-    if (viewed=="true") {
-        document.all("cookie-disclaimer").style.display="none";
-    }
-</script>  #}
-{% endblock %}
-
+{% endblock content %}

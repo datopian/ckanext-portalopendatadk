@@ -194,3 +194,19 @@ msgstr "Health"
 #: Manually added
 msgid "TRAN"
 msgstr "Transport"
+
+#: Manually added
+msgid "Username or Email"
+msgstr ""
+
+#: Manually added
+msgid "No activity found for this type"
+msgstr ""
+
+#: Manually added
+msgid "Edit settings"
+msgstr ""
+
+#: Manually added
+msgid "API Tokens"
+msgstr ""

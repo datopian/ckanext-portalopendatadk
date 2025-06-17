@@ -34,7 +34,7 @@ Example:
             {% endblock %}
             {% block heading_title %}
                 <a href="{{ h.url_for('%s.read' % package.type, id=package.name) }}" title="{{ title }}">
-                {{ title }}  
+                {{ title }}
                 </a>
             {% endblock %}
             {% block heading_meta %}
@@ -44,15 +44,15 @@ Example:
                 <span class="label label-important">{{ _('Deleted') }}</span>
               {% endif %}
               {{ h.popular('recent views', package.tracking_summary.recent, min=10) if package.tracking_summary }}
-	    
+
             {% endblock %}
 		{% if package.organization %}
 			</br>
-        <a href="{{ h.url_for('organization.read', id=package.organization['id']) }}" 
+        <a href="{{ h.url_for('organization.read', id=package.organization['id']) }}"
         style="color:#aaaaaa;margin-top:-10px;font-size:13px;font-weight:normal">
         {{ package.organization['title'] }}
         </a>
-    
+
         {% endif %}
           </h3>
         {% endblock %}

@@ -30,3 +30,8 @@ $(document).ready(function () {
     updateDcatFields();
   }
 });
+
+$('form').on('submit', function(e) {
+  const formData = new FormData(this);
+  console.log([...formData.entries()]);
+});
