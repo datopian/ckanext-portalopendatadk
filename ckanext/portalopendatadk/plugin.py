@@ -7,11 +7,14 @@ from ckan.logic.action.create import user_create as core_user_create
 from ckan.logic.action.update import user_update as core_user_update
 from ckan.lib import mailer
 from ckan.lib.plugins import DefaultTranslation
-#from pylons import config
+
+# from pylons import config
 from ckan import authz
 from ckan.common import config
 from ckanext.portalopendatadk.views.user import user
 from ckanext.portalopendatadk.views.dcat import dcat, dcat_json_interface
+from ckanext.portalopendatadk.views.documentation import doc_blueprint as documentation
+from ckanext.portalopendatadk.views.dataset import dataset
 import logging
 
 from ckanext.portalopendatadk import actions as oddk_actions
@@ -24,31 +27,31 @@ _ = toolkit._
 
 log = logging.getLogger(__name__)
 
-DEFAULT_CATALOG_ENDPOINT = '/catalog.{_format}'
-CUSTOM_ENDPOINT_CONFIG = 'ckanext.dcat.catalog_endpoint'
-ENABLE_RDF_ENDPOINTS_CONFIG = 'ckanext.dcat.enable_rdf_endpoints'
-ENABLE_CONTENT_NEGOTIATION_CONFIG = 'ckanext.dcat.enable_content_negotiation'
-TRANSLATE_KEYS_CONFIG = 'ckanext.dcat.translate_keys'
+DEFAULT_CATALOG_ENDPOINT = "/catalog.{_format}"
+CUSTOM_ENDPOINT_CONFIG = "ckanext.dcat.catalog_endpoint"
+ENABLE_RDF_ENDPOINTS_CONFIG = "ckanext.dcat.enable_rdf_endpoints"
+ENABLE_CONTENT_NEGOTIATION_CONFIG = "ckanext.dcat.enable_content_negotiation"
+TRANSLATE_KEYS_CONFIG = "ckanext.dcat.translate_keys"
 
 
 def latest_datasets():
     """Return a sorted list of the latest datasets."""
 
-    datasets = toolkit.get_action('package_search')(
-        data_dict={'rows': 10, 'sort': 'metadata_created desc'}
+    datasets = toolkit.get_action("package_search")(
+        data_dict={"rows": 10, "sort": "metadata_created desc"}
     )
 
-    return datasets['results']
+    return datasets["results"]
 
 
 def most_popular_datasets():
     """Return a sorted list of the most popular datasets."""
 
-    datasets = toolkit.get_action('package_search')(
-        data_dict={'rows': 10, 'sort': 'views_recent desc'}
+    datasets = toolkit.get_action("package_search")(
+        data_dict={"rows": 10, "sort": "views_recent desc"}
     )
 
-    return datasets['results']
+    return datasets["results"]
 
 
 class PortalOpenDataDKPlugin(
@@ -58,115 +61,43 @@ class PortalOpenDataDKPlugin(
 
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
-    # plugins.implements(plugins.IActions)
-    #plugins.implements(plugins.ITranslation)
-    #plugins.implements(plugins.IDatasetForm, inherit=True)
+    plugins.implements(plugins.IActions)
+    plugins.implements(plugins.ITranslation)
+    # plugins.implements(plugins.IDatasetForm, inherit=True)
     # plugins.implements(plugins.IFacets)
     # plugins.implements(plugins.IRoutes, inherit=True)
     plugins.implements(plugins.IAuthFunctions, inherit=True)
     plugins.implements(plugins.IValidators)
-    # plugins.implements(plugins.IPackageController)
+    plugins.implements(plugins.IPackageController, inherit=True)
     plugins.implements(plugins.IBlueprint)
-    
-    # def before_map(self, map):
-    #    # Pass requests to ODDKUserController to verify admin status
-    #    map.connect(
-    #        '/user',
-    #        controller='ckanext.portalopendatadk.controller:ODDKUserController',
-    #        action='index',
-    #    )
-    #    map.connect(
-    #        '/user/register',
-    #        controller='ckanext.portalopendatadk.controller:ODDKUserController',
-    #        action='register',
-    #    )
-    #    map.connect(
-    #        '/user/edit',
-    #        controller='ckanext.portalopendatadk.controller:ODDKUserController',
-    #        action='edit',
-    #    )
-    #    map.connect(
-    #        '/user/edit/{id:.*}',
-    #        controller='ckanext.portalopendatadk.controller:ODDKUserController',
-    #        action='edit',
-    #    )
-    #    map.connect(
-    #        '/user/reset',
-    #        controller='ckanext.portalopendatadk.controller:ODDKUserController',
-    #        action='request_reset',
-    #    )
-
-    #    dcat_controller = 'ckanext.portalopendatadk.controller:DCATController'
-
-    #    if toolkit.asbool(config.get(ENABLE_RDF_ENDPOINTS_CONFIG, True)):
-    #        map.connect(
-    #            'dcat_catalog',
-    #            config.get('ckanext.dcat.catalog_endpoint', DEFAULT_CATALOG_ENDPOINT),
-    #            controller=dcat_controller,
-    #            action='read_catalog',
-    #            requirements={'_format': 'xml|rdf|n3|ttl|jsonld'},
-    #        )
-
-    #        map.connect(
-    #            'dcat_dataset',
-    #            '/dataset/{_id}.{_format}',
-    #            controller=dcat_controller,
-    #            action='read_dataset',
-    #            requirements={'_format': 'xml|rdf|n3|ttl|jsonld'},
-    #        )
-
-    #    if toolkit.asbool(config.get(ENABLE_CONTENT_NEGOTIATION_CONFIG)):
-    #        map.connect('home', '/', controller=dcat_controller, action='read_catalog')
-
-    #        map.connect(
-    #            'add dataset', '/dataset/new', controller='package', action='new'
-    #        )
-    #        map.connect(
-    #            'dataset_read',
-    #            '/dataset/{_id}',
-    #            controller=dcat_controller,
-    #            action='read_dataset',
-    #            ckan_icon='sitemap',
-    #        )
-
-    #    documentation_controller = (
-    #        'ckanext.portalopendatadk.controller:ODDKDocumentationController'
-    #    )
-
-    #    map.connect(
-    #        '/dataset/{id}/documentation/{resource_id}',
-    #        controller=documentation_controller,
-    #        action='documentation_download',
-    #    )
-
-    #    return map
-
-    # def after_map(self, map):
-    #    return map
 
     # IBlueprint
+
     def get_blueprint(self):
-        return [dcat, dcat_json_interface]
-    
+        return [dcat, dcat_json_interface, documentation, dataset]
+
     # IConfigurer
+
     def update_config(self, config):
-        toolkit.add_template_directory(config, 'templates')
-        toolkit.add_public_directory(config, 'public')
-        toolkit.add_resource('assets', 'portalopendatadk')
+        toolkit.add_template_directory(config, "templates")
+        toolkit.add_public_directory(config, "public")
+        toolkit.add_resource("assets", "portalopendatadk")
 
     # ITemplateHelpers
+
     def get_helpers(self):
         return {
-            'portalopendatadk_latest_datasets': latest_datasets,
-            'portalopendatadk_most_popular_datasets': most_popular_datasets,
-            'get_update_frequencies': get_update_frequencies,
-            'user_has_admin_access': oddk_helpers.user_has_admin_access,
-            'get_resource_file_types': oddk_helpers.get_resource_file_types,
-            'get_language_codes': oddk_helpers.get_language_codes,
-            'get_dcat_info_text': oddk_helpers.get_dcat_info_text,
-            'get_dcat_license_options': oddk_helpers.get_dcat_license_options,
+            "portalopendatadk_latest_datasets": latest_datasets,
+            "portalopendatadk_most_popular_datasets": most_popular_datasets,
+            "get_update_frequencies": get_update_frequencies,
+            "user_has_admin_access": oddk_helpers.user_has_admin_access,
+            "get_resource_file_types": oddk_helpers.get_resource_file_types,
+            "get_language_codes": oddk_helpers.get_language_codes,
+            "get_dcat_info_text": oddk_helpers.get_dcat_info_text,
+            "get_dcat_license_options": oddk_helpers.get_dcat_license_options,
+            "get_site_statistics": oddk_helpers.get_site_statistics,
         }
-    
+
     # IActions
 
     def get_actions(self):
@@ -174,9 +105,9 @@ class PortalOpenDataDKPlugin(
             #'user_create': custom_user_create,
             #'user_update': custom_user_update,
             #'get_user_email': get_user_email,
-            'package_update': oddk_actions.package_update,
-            'package_create': oddk_actions.package_create,
-            'package_search': oddk_actions.package_search,
+            "package_update": oddk_actions.package_update,
+            "package_create": oddk_actions.package_create,
+            "package_search": oddk_actions.package_search,
         }
 
     def package_types(self):
@@ -185,41 +116,50 @@ class PortalOpenDataDKPlugin(
     # IFacets
 
     def dataset_facets(self, facets_dict, package_type):
-        facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
-        facets_dict['data_themes'] = plugins.toolkit._('Categories')
+        facets_dict["update_frequency"] = plugins.toolkit._("Update frequency")
+        facets_dict["data_themes"] = plugins.toolkit._("Categories")
         return facets_dict
 
     def organization_facets(self, facets_dict, organization_type, package_type):
-        facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
+        facets_dict["update_frequency"] = plugins.toolkit._("Update frequency")
         return facets_dict
 
     def group_facets(self, facets_dict, group_type, package_type):
-        facets_dict['update_frequency'] = plugins.toolkit._('Update frequency')
+        facets_dict["update_frequency"] = plugins.toolkit._("Update frequency")
         return facets_dict
 
     # IPackageController
 
     def after_dataset_show(self, context, pkg_dict):
-        data_themes = pkg_dict.get('data_themes')
+        data_themes = pkg_dict.get("data_themes")
         data_themes = oddk_helpers.fix_data_themes(data_themes)
 
         if data_themes:
-            pkg_dict['data_themes'] = data_themes
+            pkg_dict["data_themes"] = data_themes
 
         return pkg_dict
 
     def before_dataset_search(self, search_params):
         return search_params
-    
+
     def after_dataset_search(self, search_results, search_params):
         return search_results
 
     def before_dataset_index(self, pkg_dict):
-        data_themes = pkg_dict.get('extras_data_themes')
+        data_themes = pkg_dict.get("extras_data_themes")
         data_themes = oddk_helpers.fix_data_themes(data_themes)
 
         if data_themes:
-            pkg_dict['data_themes'] = data_themes
+            pkg_dict["data_themes"] = data_themes
+
+        return pkg_dict
+
+    def before_dataset_show(self, pkg_dict):
+        data_themes = pkg_dict.get("data_themes")
+        data_themes = oddk_helpers.fix_data_themes(data_themes)
+
+        if data_themes:
+            pkg_dict["data_themes"] = data_themes
 
         return pkg_dict
 
@@ -228,9 +168,9 @@ class PortalOpenDataDKPlugin(
     def get_auth_functions(self):
         """Override the 'related' auth functions with our own."""
         auth_functions = {
-            'user_list': auth.user_list,
-            'user_show': auth.user_show,
-            'group_show': auth.group_show,
+            "user_list": auth.user_list,
+            "user_show": auth.user_show,
+            "group_show": auth.group_show,
         }
 
         return auth_functions
@@ -239,14 +179,14 @@ class PortalOpenDataDKPlugin(
 
     def get_validators(self):
         return {
-            'resource_format_validator': oddk_validators.resource_format_validator,
+            "resource_format_validator": oddk_validators.resource_format_validator,
         }
 
 
 # Custom actions
 
 
-#def custom_user_create(context, data_dict):
+# def custom_user_create(context, data_dict):
 #    context['schema'] = custom_create_user_schema(
 #        form_schema='password1' in context.get('schema', {})
 #    )
@@ -254,7 +194,7 @@ class PortalOpenDataDKPlugin(
 #    return core_user_create(context, data_dict)
 
 
-#def custom_user_update(context, data_dict):
+# def custom_user_update(context, data_dict):
 #    context['schema'] = custom_update_user_schema(
 #        form_schema='password1' in context.get('schema', {})
 #    )
@@ -265,7 +205,7 @@ class PortalOpenDataDKPlugin(
 # Custom schemas
 
 
-#def custom_create_user_schema(form_schema=False):
+# def custom_create_user_schema(form_schema=False):
 #    schema = default_user_schema()
 #
 #    schema['password'] = [
@@ -287,7 +227,7 @@ class PortalOpenDataDKPlugin(
 #    return schema
 #
 #
-#def custom_update_user_schema(form_schema=False):
+# def custom_update_user_schema(form_schema=False):
 #    schema = default_update_user_schema()
 #
 #    schema['password'] = [
@@ -311,15 +251,15 @@ class PortalOpenDataDKPlugin(
 #
 #
 ## Custom validators
-#WRONG_PASSWORD_MESSAGE = (
+# WRONG_PASSWORD_MESSAGE = (
 #    'Your password must be 8 characters or longer, '
 #    + 'contain at least one capital letter, one small letter, '
 #    + 'one number(0-9) and a '
 #    + 'special_character(!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~)'
-#)
+# )
 #
 #
-#def custom_user_password_validator(key, data, errors, context):
+# def custom_user_password_validator(key, data, errors, context):
 #    value = data[key]
 #    special_chars = string.punctuation
 #
@@ -339,8 +279,8 @@ class PortalOpenDataDKPlugin(
 #        errors[('password',)].append(_(WRONG_PASSWORD_MESSAGE))
 #
 #
-#@toolkit.side_effect_free
-#def get_user_email(context, data_dict):
+# @toolkit.side_effect_free
+# def get_user_email(context, data_dict):
 #    """
 #    Returns the user names and emails of all the users
 #    """
@@ -359,17 +299,17 @@ class PortalOpenDataDKPlugin(
 
 
 def get_update_frequencies():
-    update_frequencies = ['Frequent', 'Monthly', 'Yearly', 'Historical']
+    update_frequencies = ["Frequent", "Monthly", "Yearly", "Historical"]
     update_frequencies_translations = [
-        _('Frequent'),
-        _('Monthly'),
-        _('Yearly'),
-        _('Historical'),
+        _("Frequent"),
+        _("Monthly"),
+        _("Yearly"),
+        _("Historical"),
     ]
     return [
         {
-            'text': update_frequencies_translations[i].title(),
-            'value': update_frequencies[i],
+            "text": update_frequencies_translations[i].title(),
+            "value": update_frequencies[i],
         }
         for i in range(len(update_frequencies))
     ]

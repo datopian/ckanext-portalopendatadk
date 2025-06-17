@@ -46,7 +46,6 @@ def check_access_header():
 
 
 def read_catalog(_format=None):
-
     if not _format:
         _format = check_access_header()
 
@@ -60,7 +59,7 @@ def read_catalog(_format=None):
     _profiles = ["danish_dcat_ap"]
 
     fq = toolkit.request.params.get("fq")
-    log.info(f'working with read_catalog with format: {format}')
+
     if config.get("ckanext.portalopendatadk.dcat_data_directory_only", False):
         if fq:
             fq = fq + " +data_directory:true"
@@ -84,7 +83,7 @@ def read_catalog(_format=None):
         response = Response(result)
         response.headers["Content-Type"] = CONTENT_TYPES[_format]
         return response
-    
+
     except (toolkit.ValidationError, RDFProfileException) as e:
         toolkit.abort(409, str(e))
 
@@ -118,22 +117,16 @@ def read_dataset(_id, _format=None):
     return result
 
 
-if endpoints_enabled():
 
-    # requirements={'_format': 'xml|rdf|n3|ttl|jsonld'}
-    dcat.add_url_rule(
-        config.get(
-            "ckanext.dcat.catalog_endpoint", utils.DEFAULT_CATALOG_ENDPOINT
-        ).replace("{_format}", "<_format>"),
-        view_func=read_catalog,
-    )
-    dcat.add_url_rule("/dataset/<_id>.<_format>", view_func=read_dataset)
+dcat.add_url_rule(
+    config.get(
+        "ckanext.dcat.catalog_endpoint", utils.DEFAULT_CATALOG_ENDPOINT
+    ).replace("{_format}", "<_format>"),
+    view_func=read_catalog,
+)
+dcat.add_url_rule("/dataset/<_id>.<_format>", view_func=read_dataset)
 
-# if toolkit.asbool(config.get(utils.ENABLE_CONTENT_NEGOTIATION_CONFIG)):
 dcat.add_url_rule("/", view_func=read_catalog)
-dcat.add_url_rule("/dataset1/newtest", view_func=CreateView.as_view(str("new")))
-log.info('adding rule for dcat')
-
 dcat.add_url_rule("/dataset/<_id>", view_func=read_dataset)
 
 dcat_json_interface = Blueprint("dcat_json_interface_oddk", __name__)
@@ -155,7 +148,7 @@ def dcat_json():
     response = Response(content, content_type="application/json")
     response.headers["Content-Length"] = str(len(content))
 
-    return content
+    return response
 
 
 dcat_json_interface.add_url_rule(

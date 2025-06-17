@@ -1,4 +1,10 @@
-{% import 'macros/form.html' as form %}
+{% set field_name = field.field_name %}
+
+{% if field_name == 'update_frequency' %}
+  {% import 'macros/dcat_form.html' as form %}
+{% else %}
+  {% import 'macros/form.html' as form %}
+{% endif %}
 
 {%- set options=[] -%}
 {%- set form_restrict_choices_to=field.get('form_restrict_choices_to') -%}
@@ -29,7 +35,10 @@
 {%- endif -%}
 {% set is_required = field.is_required or false %}
 
-{% call form.select(
+{% set dcat_field = field.get('dcat_field', False) %}
+
+{% if field_name == 'update_frequency' %}
+  {% call form.update_frequency_select(
     field.field_name,
     id='field-' + field.field_name,
     label=h.scheming_language_text(field.label),
@@ -39,12 +48,21 @@
     classes=['control-medium'],
     attrs=dict({"class": "form-control", "data-module": "autocomplete"}, **(field.get('form_attrs', {}))),
     is_required=is_required,
-    )
-%}
-    {% set dcat_field = field.get('dcat_field', False) %}
-    {% if dcat_field %}
-      {% set dcat_required = field.get('dcat_required', False) %}
-      {% snippet 'scheming/form_snippets/dcat_text.html', is_required=dcat_required, field_name=field.field_name %}
-    {% endif %}
-    {%- snippet 'scheming/form_snippets/help_text.html', field=field -%}
-{% endcall %}
+    field=field,
+    dcat_field=dcat_field
+  ) %}
+  {% endcall %}
+{% else %}
+  {% call form.select(
+    field.field_name,
+    id='field-' + field.field_name,
+    label=h.scheming_language_text(field.label),
+    options=options,
+    selected=option_selected,
+    error=errors[field.field_name],
+    classes=['control-medium'],
+    attrs=dict({"class": "form-control", "data-module": "autocomplete"}, **(field.get('form_attrs', {}))),
+    is_required=is_required
+    ) %}
+    {% endcall %}
+{% endif %}
