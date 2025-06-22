@@ -144,7 +144,7 @@ def index():
 
 
 def me() -> Response:
-    return h.redirect_to(config.get("ckan.auth.route_after_login", "user.me"))
+    return h.redirect_to(config.get("ckan.auth.route_after_login"))
 
 
 def read(id: str) -> Union[Response, str]:
