@@ -35,7 +35,7 @@ options     - A list/tuple of fields to be used as <options>.
 
 #}
 
-{% macro select(name, id='', label='', options='', selected='', error='', classes=[], attrs={'class': 'form-control'}, is_required=false, dcat_field=false) %}
+{% macro select(name, id='', label='', options='', selected='', error='', classes=[], attrs={'class': 'form-control'}, is_required=false, dcat_field=false, field=field) %}
 {% set classes = (classes|list) %}
 {% do classes.append('control-select') %}
 

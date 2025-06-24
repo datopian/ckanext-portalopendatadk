@@ -193,25 +193,17 @@ html {
   visibility: visible;
 }
 
-.dcat-info-block i {
-  margin-right: 5px;
-}
-
 .dcat-info-text {
   font-weight: bold;
+  margin-left: 200px;
 }
 
 .image-upload {
   width: 465px;
 }
 
-.controls.editor {
-  width: 320px;
-}
-
 .dcat-row {
   display: flex;
-  justify-content: space-between;
 }
 
 .dcat-container {

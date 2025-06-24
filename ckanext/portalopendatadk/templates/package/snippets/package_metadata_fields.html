@@ -1,4 +1,5 @@
 {% import 'macros/form.html' as form %}
+{% import 'macros/dcat_form.html' as dcat_form %}
 
 {% block package_metadata_fields %}
 
@@ -8,7 +9,7 @@
     {{ form.input('author_email', label=_('Author Email'), id='field-author-email', placeholder=_('joe@example.com'), value=data.author_email, error=errors.author_email, classes=['control-medium'], is_required=true) }}
   {% endblock %}
 
-  {{ form.select('update_frequency', label=_('Update fghdfrequency'), id='field-update-frequency', options=h.get_update_frequencies(), selected=data.update_frequency, error=errors.update_frequency) }}
+  {{ dcat_form.update_frequency_select('update_frequency', label=_('Update frequency'), id='field-update-frequency', options=h.get_update_frequencies(), selected=data.update_frequency, error=errors.update_frequency) }}
   {{ form.textarea('update_frequency_notes', id='field-update-frequency-notes', label=_('Update comments'), placeholder=_('For example, update date'), value=data.update_frequency_notes, error=errors.update_frequency_notes) }}
 
   {% if c.userobj.sysadmin %}

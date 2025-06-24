@@ -12,16 +12,13 @@ not used as a form_snippet directly #}
     classes=['control-medium'],
     extra_html=caller() if caller,
     ) %}
-    <div {{form.attributes(field.form_attrs) if 'form_attrs' in field else '' }} class="dcat-row">
-      <div class="dcat-container">
+    <div {{form.attributes(field.form_attrs) if 'form_attrs' in field else '' }} >
         <select id="field-organizations" name="owner_org" {{ form.attributes(field.get('form_select_attrs', {'data-module':'autocomplete'})) }}>
           {% for organization in organizations_available %}
             {% set selected_org = existing_org == organization.id %}
             {{ organization_option_tag(organization, selected_org) }}
           {% endfor %}
         </select>
-      </div>
-      {% snippet 'scheming/form_snippets/dcat_text.html', is_required=True, field_name='owner_org' %}
     </div>
   {% endcall %}
 {% endmacro %}
