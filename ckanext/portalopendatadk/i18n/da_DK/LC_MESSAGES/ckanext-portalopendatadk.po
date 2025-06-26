@@ -1177,3 +1177,7 @@ msgstr "Redigér indstillinger"
 #: Manually added
 msgid "API Tokens"
 msgstr "API nøgler"
+
+#: Manually
+msgid "E.g. environment"
+msgstr "f.eks. parkering"
