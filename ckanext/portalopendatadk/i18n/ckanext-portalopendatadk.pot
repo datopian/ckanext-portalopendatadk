@@ -10,9 +10,11 @@ msgstr ""
 "Project-Id-Version: ckanext-portalopendatadk 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-03-30 13:54+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2021-03-30 13:55+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: da_DK\n"
+"Language-Team: da_DK <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -56,18 +58,1123 @@ msgstr ""
 msgid "joe@example.com"
 msgstr ""
 
-#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:11
+
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
 msgid "Update frequency"
 msgstr ""
 
-#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:13
 msgid "Update comments"
 msgstr ""
 
-#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:12
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:13
 msgid "For example, update date"
+msgstr ""
+
+#: ckanext/portalopendatadk/templates/package/snippets/package_metadata_fields.html:16
+msgid "Data directory"
+msgstr ""
+
+#: ckanext/portalopendatadk/templates/scheming/form_snippets/multiple_checkbox.html:41
+msgid "Metadata transferred to datavejviseren"
 msgstr ""
 
 #: Manually added for missing error message
 msgid "A reset link has been emailed to you (unless the account specified does not exist)"
+msgstr ""
+
+#: Manually added
+msgid "Groups"
+msgstr ""
+
+#: Manually added
+msgid "Organizations"
+msgstr ""
+
+#: Manually added
+msgid "Find more data at"
+msgstr ""
+
+#: Manually added
+msgid "Title (mandatory): Specifies title of the dataset. It can appear once for each language variant of the title."
+msgstr ""
+
+#: Manually added
+msgid "Description (mandatory): Describes the dataset's purpose and content. It can appear once for each language variant of the description."
+msgstr ""
+
+#: Manually added
+msgid "Publisher or Dataset Responsible Organization (mandatory): Indicates the actor (organization or dataset responsible organization) responsible for making the dataset available. Every dataset in a given catalog must be associated with at least one."
+msgstr ""
+
+#: Manually added
+msgid "Update Frequency (recommended): Specifies the frequency with which the dataset is updated. It can appear once for each dataset."
+msgstr ""
+
+#: Manually added
+msgid "Access Rights (recommended): Specifies the conditions under which the dataset can be accessed. It can appear once for each dataset."
+msgstr ""
+
+#: Manually added
+msgid "Documentation (recommended): Provides a downloadable file or link to the documentation of the dataset. It can appear once for each dataset."
+msgstr ""
+
+#: Manually added
+msgid "Temporal Coverage Start (recommended): Specifies the start of the time period covered by the dataset. It can appear once for each dataset."
+msgstr ""
+
+#: Manually added
+msgid "Temporal Coverage End (recommended): Specifies the end of the time period covered by the dataset. It can appear once for each dataset."
+msgstr ""
+
+#: Manually added
+msgid "Landing Page (recommended): Provides a link to the landing page of the dataset. It can appear once for each dataset."
+msgstr ""
+
+#: Manually added
+msgid "Creator (recommended): Specifies the creator of the dataset. It can appear once for each dataset."
+msgstr ""
+
+#: Manually added
+msgid "Contact Point (recommended): Specifies the email address of the creator of the dataset. It can appear once for each dataset."
+msgstr ""
+
+#: Manually added
+msgid "Description (recommended): Provides a text-based description of the resource (distribution). It can appear once for each resource."
+msgstr ""
+
+#: Manually added
+msgid "Distribution (mandatory): Provides a file or link to the resource (distribution) of the dataset. The property can appear once for each distribution."
+msgstr ""
+
+#: Manually added
+msgid "Planned Availability (recommended): Specifies availability type of the resource (distribution). It can appear once for each distribution."
+msgstr ""
+
+#: Manually added
+msgid "License (recommended): Specifies the license of the resource (distribution). It can appear once for each distribution."
+msgstr ""
+
+#: Manually added
+msgid "Format (mandatory if distribution exists): Specifies the file format of the resource (distribution). It can appear once for each distribution."
+msgstr ""
+
+#: Manually added
+msgid "Data Themes (recommended): Specifies the Data Themes (Categories) of the dataset. Multiple Data Themes can be assigned to a dataset."
+msgstr ""
+
+#: Manually added
+msgid "Unknown"
+msgstr ""
+
+#: Manually added
+msgid "Triennial (every three years)"
+msgstr ""
+
+#: Manually added
+msgid "Biennial (every two years)"
+msgstr ""
+
+#: Manually added
+msgid "Annual (every year)"
+msgstr ""
+
+#: Manually added
+msgid "Semiannual (twice a year)"
+msgstr ""
+
+#: Manually added
+msgid "Three times a year"
+msgstr ""
+
+#: Manually added
+msgid "Quarterly (every three months)"
+msgstr ""
+
+#: Manually added
+msgid "Bimonthly (every two months)"
+msgstr ""
+
+#: Manually added
+msgid "Monthly (once a month)"
+msgstr ""
+
+#: Manually added
+msgid "Semimonthly (twice a month)"
+msgstr ""
+
+#: Manually added
+msgid "Biweekly (every two weeks)"
+msgstr ""
+
+#: Manually added
+msgid "Three times a month"
+msgstr ""
+
+#: Manually added
+msgid "Weekly (once a week)"
+msgstr ""
+
+#: Manually added
+msgid "Semiweekly (twice a week)"
+msgstr ""
+
+#: Manually added
+msgid "Three times a week"
+msgstr ""
+
+#: Manually added
+msgid "Daily (once a day)"
+msgstr ""
+
+#: Manually added
+msgid "Continuously updated"
+msgstr ""
+
+#: Manually added
+msgid "Irregular"
+msgstr ""
+
+#: Manually added
+msgid "Other"
+msgstr ""
+
+#: Manually added
+msgid "Twice a day"
+msgstr ""
+
+#: Manually added
+msgid "Continuous"
+msgstr ""
+
+#: Manually added
+msgid "Never"
+msgstr ""
+
+#: Manually added
+msgid "Quadrennial (every four years)"
+msgstr ""
+
+#: Manually added
+msgid "Quinquennial (every five years)"
+msgstr ""
+
+#: Manually added
+msgid "Hourly (every hour)"
+msgstr ""
+
+#: Manually added
+msgid "Decennial (every ten years)"
+msgstr ""
+
+#: Manually added
+msgid "Bihourly (every two hours)"
+msgstr ""
+
+#: Manually added
+msgid "Trihourly (every three hours)"
+msgstr ""
+
+#: Manually added
+msgid "Bidecennial (every twenty years)"
+msgstr ""
+
+#: Manually added
+msgid "Tridecennial (every thirty years)"
+msgstr ""
+
+#: Manually added
+msgid "Public"
+msgstr ""
+
+#: Manually added
+msgid "Restricted"
+msgstr ""
+
+#: Manually added
+msgid "Non-public"
+msgstr ""
+
+#: Manually added
+msgid "Sensitive"
+msgstr ""
+
+#: Manually added
+msgid "Confidential"
+msgstr ""
+
+#: Manually added
+msgid "Normal"
+msgstr ""
+
+#: Manually added
+msgid "Available"
+msgstr ""
+
+#: Manually added
+msgid "Experimental"
+msgstr ""
+
+#: Manually added
+msgid "Stable"
+msgstr ""
+
+#: Manually added
+msgid "Temporary"
+msgstr ""
+
+#: Manually added
+msgid "Provisional"
+msgstr ""
+
+#: Manually added
+msgid "Select language"
+msgstr ""
+
+#: Manually added
+msgid "Select file format"
+msgstr ""
+
+#: Manually added
+msgid "Select access rights"
+msgstr ""
+
+#: Manually added
+msgid "Select update frequency"
+msgstr ""
+
+#: Manually added
+msgid "Select planned availability"
+msgstr ""
+
+#: Manually added
+msgid "Select license"
+msgstr ""
+
+#: Manually added
+msgid "Documentation"
+msgstr ""
+
+#: Manually added
+msgid "Access rights"
+msgstr ""
+
+#: Manually added
+msgid "Temporal coverage start"
+msgstr ""
+
+#: Manually added
+msgid "Temporal coverage end"
+msgstr ""
+
+#: Manually added
+msgid "Landing page"
+msgstr ""
+
+#: Manually added
+msgid "Temporal coverage"
+msgstr ""
+
+#: Manually added
+msgid "Planned availability"
+msgstr ""
+
+#: COM_REUSE
+msgid "European Commission reuse notice"
+msgstr ""
+
+#: CC0
+msgid "Creative Commons CC0 1.0 Universal"
+msgstr ""
+
+#: CC_BY_3_0
+msgid "Creative Commons Attribution 3.0 Unported"
+msgstr ""
+
+#: CC_BYSA_3_0
+msgid "Creative Commons Attribution–ShareAlike 3.0 Unported"
+msgstr ""
+
+#: CC_BYND_3_0
+msgid "Creative Commons Attribution–NoDerivs 3.0 Unported"
+msgstr ""
+
+#: CC_BYNC_3_0
+msgid "Creative Commons Attribution–NonCommercial 3.0 Unported"
+msgstr ""
+
+#: CC_BYNCSA_3_0
+msgid "Creative Commons Attribution–NonCommercial–ShareAlike 3.0 Unported"
+msgstr ""
+
+#: CC_BYNCND_3_0
+msgid "Creative Commons Attribution–NonCommercial–NoDerivs 3.0 Unported"
+msgstr ""
+
+#: CC_BY_2_0
+msgid "Creative Commons Attribution 2.0 Generic"
+msgstr ""
+
+#: CC_BYSA_2_0
+msgid "Creative Commons Attribution–ShareAlike 2.0 Generic"
+msgstr ""
+
+#: CC_BYND_2_0
+msgid "Creative Commons Attribution–NoDerivs 2.0 Generic"
+msgstr ""
+
+#: CC_BYNC_2_0
+msgid "Creative Commons Attribution–NonCommercial 2.0 Generic"
+msgstr ""
+
+#: CC_BYNCSA_2_0
+msgid "Creative Commons Attribution–NonCommercial–ShareAlike 2.0 Generic"
+msgstr ""
+
+#: CC_BYNCND_2_0
+msgid "Creative Commons Attribution–NonCommercial–NoDerivs 2.0 Generic"
+msgstr ""
+
+#: CC_BY_1_0
+msgid "Creative Commons Attribution 1.0 Generic"
+msgstr ""
+
+#: CC_BYSA_1_0
+msgid "Creative Commons Attribution–ShareAlike 1.0 Generic"
+msgstr ""
+
+#: CC_BYND_1_0
+msgid "Creative Commons Attribution–NoDerivs 1.0 Generic"
+msgstr ""
+
+#: CC_BYNC_1_0
+msgid "Creative Commons Attribution–NonCommercial 1.0 Generic"
+msgstr ""
+
+#: CC_BYNCSA_1_0
+msgid "Creative Commons Attribution–NonCommercial–ShareAlike 1.0 Generic"
+msgstr ""
+
+#: CC_BYNCND_1_0
+msgid "Creative Commons Attribution–NoDerivs–NonCommercial 1.0 Generic"
+msgstr ""
+
+#: ODC_PDDL
+msgid "Open Data Commons Public Domain Dedication and License 1.0"
+msgstr ""
+
+#: ODC_BY
+msgid "Open Data Commons Attribution License v1.0"
+msgstr ""
+
+#: ODC_BL
+msgid "Open Data Commons Open Database License v1.0"
+msgstr ""
+
+#: GNU_FDL
+msgid "GNU Free Documentation License"
+msgstr ""
+
+#: CC_BY_2_5
+msgid "Creative Commons Attribution 2.5 Generic"
+msgstr ""
+
+#: CC_BYSA_2_5
+msgid "Creative Commons Attribution–ShareAlike 2.5 Generic"
+msgstr ""
+
+#: CC_BYND_2_5
+msgid "Creative Commons Attribution–NoDerivs 2.5 Generic"
+msgstr ""
+
+#: CC_BYNC_2_5
+msgid "Creative Commons Attribution–NonCommercial 2.5 Generic"
+msgstr ""
+
+#: CC_BYNCSA_2_5
+msgid "Creative Commons Attribution–NonCommercial–ShareAlike 2.5 Generic"
+msgstr ""
+
+#: CC_BYNCND_2_5
+msgid "Creative Commons Attribution–NonCommercial–NoDerivs 2.5 Generic"
+msgstr ""
+
+#: EUPL_1_0
+msgid "European Union Public Licence v.1.0"
+msgstr ""
+
+#: EUPL_1_1
+msgid "European Union Public Licence v. 1.1"
+msgstr ""
+
+#: EUPL_1_2
+msgid "European Union Public Licence v. 1.2"
+msgstr ""
+
+#: CC_BY_4_0
+msgid "Creative Commons Attribution 4.0 International"
+msgstr ""
+
+#: CC_BYNC_4_0
+msgid "Creative Commons Attribution–NonCommercial 4.0 International"
+msgstr ""
+
+#: CC_BYNCND_4_0
+msgid "Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International"
+msgstr ""
+
+#: CC_BYNCSA_4_0
+msgid "Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International"
+msgstr ""
+
+#: CC_BYND_4_0
+msgid "Creative Commons Attribution–NoDerivatives 4.0 International"
+msgstr ""
+
+#: CC_BYSA_4_0
+msgid "Creative Commons Attribution–ShareAlike 4.0 International"
+msgstr ""
+
+#: CC_BYSA_3_0_NL
+msgid "Attribution-ShareAlike 3.0 Netherlands"
+msgstr ""
+
+#: CC_BY_3_0_NL
+msgid "Attribution 3.0 Netherlands"
+msgstr ""
+
+#: CC_PDM_1_0
+msgid "Public Domain Mark 1.0"
+msgstr ""
+
+#: CC_BY_3_0_AT
+msgid "Attribution 3.0 Austria"
+msgstr ""
+
+#: DLDE_BYNC_1_0
+msgid "Data licence Germany – attribution – non-commercial – Version 1.0"
+msgstr ""
+
+#: DLDE_BY_1_0
+msgid "Data licence Germany – attribution – Version 1.0"
+msgstr ""
+
+#: DLDE_BY_2_0
+msgid "Data licence Germany – attribution – Version 2.0"
+msgstr ""
+
+#: DLDE_ZERO_2_0
+msgid "Data licence Germany – Zero – Version 2.0"
+msgstr ""
+
+#: GNU_FDL_1_1
+msgid "GNU Free Documentation License 1.1"
+msgstr ""
+
+#: GNU_FDL_1_2
+msgid "GNU Free Documentation License 1.2"
+msgstr ""
+
+#: HROD
+msgid "Open Licence – The Republic of Croatia"
+msgstr ""
+
+#: IODL_1_0
+msgid "Italian Open Data License v1.0"
+msgstr ""
+
+#: IODL_2_0
+msgid "Italian Open Data License v2.0"
+msgstr ""
+
+#: NLOD_1_0
+msgid "Norwegian Licence for Open Government Data 1.0"
+msgstr ""
+
+#: OGL_NC
+msgid "Non-Commercial Government Licence"
+msgstr ""
+
+#: OGL_ROU_1_0
+msgid "Non-Commercial Government Licence 1.0"
+msgstr ""
+
+#: OGL_1_0
+msgid "Open Government Licence 1.0"
+msgstr ""
+
+#: OGL_2_0
+msgid "Open Government Licence 2.0"
+msgstr ""
+
+#: OGL_3_0
+msgid "Open Government Licence 3.0"
+msgstr ""
+
+#: PSEUL
+msgid "INSPIRE End User Licence"
+msgstr ""
+
+#: BSD_2_CLAUSE
+msgid "2-Clause BSD License"
+msgstr ""
+
+#: BSD_3_CLAUSE
+msgid "3-Clause BSD License"
+msgstr ""
+
+#: APL_1_0
+msgid "Adaptive Public License 1.0"
+msgstr ""
+
+#: APACHE_1_1
+msgid "Apache Software License, version 1.1 (Apache-1.1)"
+msgstr ""
+
+#: APACHE_2_0
+msgid "Apache License, Version 2.0"
+msgstr ""
+
+#: APSL_2_0
+msgid "Apple Public Source License 2.0"
+msgstr ""
+
+#: ARTISTIC_1_0
+msgid "Artistic License 1.0 (Artistic-1.0)"
+msgstr ""
+
+#: ARTISTIC_2_0
+msgid "Artistic License 2.0"
+msgstr ""
+
+#: BSL_1_0
+msgid "Boost Software License 1.0"
+msgstr ""
+
+#: BSD_PLUS_PATENT
+msgid "BSD+Patent"
+msgstr ""
+
+#: CECILL_2_1
+msgid "CEA CNRS Inria Free Software License Agreement, v2.1 (CECILL-2.1)"
+msgstr ""
+
+#: CDDL_1_0
+msgid "Common Development and Distribution License 1.0"
+msgstr ""
+
+#: CPAL_1_0
+msgid "Common Public Attribution License Version 1.0 (CPAL-1.0)"
+msgstr ""
+
+#: CPL_1_0
+msgid "Common Public License, version 1.0 (CPL-1.0)"
+msgstr ""
+
+#: CATOSL_1_1
+msgid "Computer Associates Trusted Open Source License 1.1 (CATOSL-1.1)"
+msgstr ""
+
+#: EPL_1_0
+msgid "Eclipse Public License 1.0 (EPL-1.0)"
+msgstr ""
+
+#: EPL_2_0
+msgid "Eclipse Public License version 2.0"
+msgstr ""
+
+#: ECOS_2_0
+msgid "eCos License version 2.0"
+msgstr ""
+
+#: ECL_1_0
+msgid "Educational Community License version 1.0 (ECL-1.0)"
+msgstr ""
+
+#: ECL_2_0
+msgid "Educational Community License version 2.0 (ECL-2.0)"
+msgstr ""
+
+#: EFL_1_0
+msgid "The Eiffel Forum License, version 1 (EFL-1.0)"
+msgstr ""
+
+#: EFL_2
+msgid "Eiffel Forum License, version 2"
+msgstr ""
+
+#: ENTESSA
+msgid "Entessa Public License Version 1.0 (Entessa)"
+msgstr ""
+
+#: EU_DATAGRID
+msgid "EU DataGrid Software License (EUDatagrid)"
+msgstr ""
+
+#: FAIR
+msgid "Fair License (Fair)"
+msgstr ""
+
+#: FRAMEWORX_1_0
+msgid "Frameworx License 1.0 (Frameworx-1.0)"
+msgstr ""
+
+#: AGPL_3_0
+msgid "GNU Affero General Public License version 3"
+msgstr ""
+
+#: GPL_2_0
+msgid "GNU General Public License version 2"
+msgstr ""
+
+#: GPL_3_0
+msgid "GNU General Public License version 3"
+msgstr ""
+
+#: LGPL_2_1
+msgid "GNU Lesser General Public License version 2.1"
+msgstr ""
+
+#: LGPL_3_0
+msgid "GNU Lesser General Public License version 3"
+msgstr ""
+
+#: HPND
+msgid "Historical Permission Notice and Disclaimer (HPND)"
+msgstr ""
+
+#: IPL_1_0
+msgid "IBM Public License Version 1.0 (IPL-1.0)"
+msgstr ""
+
+#: IPA
+msgid "IPA Font License (IPA)"
+msgstr ""
+
+#: ISC
+msgid "ISC License (ISC)"
+msgstr ""
+
+#: LPPL_1_3C
+msgid "LaTeX Project Public License v1.3c (LPPL-1.3c)"
+msgstr ""
+
+#: BSD_3_CLAUSE_LBNL
+msgid "Lawrence Berkeley National Labs BSD Variant License (BSD-3-Clause-LBNL)"
+msgstr ""
+
+#: LILIQ_P_1_1
+msgid "Québec Free and Open-Source Licence – Permissive (LiLiQ-P) version 1.1"
+msgstr ""
+
+#: LILIQ_R_1_1
+msgid "Québec Free and Open-Source Licence – Reciprocity (LiLiQ-R) version 1.1"
+msgstr ""
+
+#: LILIQ_RPLUS_1_1
+msgid "Québec Free and Open-Source Licence – Strong Reciprocity (LiLiQ-R+) version 1.1"
+msgstr ""
+
+#: LPL_1_0
+msgid "Lucent Public License, Plan 9, version 1.0 (LPL-1.0)"
+msgstr ""
+
+#: LPL_1_02
+msgid "Lucent Public License Version 1.02 (LPL-1.02)"
+msgstr ""
+
+#: MS_PL
+msgid "Microsoft Public License (MS-PL)"
+msgstr ""
+
+#: MS_RL
+msgid "Microsoft Reciprocal License (MS-RL)"
+msgstr ""
+
+#: MIROS
+msgid "MirOS License (MirOS)"
+msgstr ""
+
+#: MIT
+msgid "The MIT License"
+msgstr ""
+
+#: MOTOSOTO
+msgid "Motosoto Open Source License – Version 0.9.1 (Motosoto)"
+msgstr ""
+
+#: MPL_1_0
+msgid "The Mozilla Public License (MPL), version 1.0 (MPL-1.0)"
+msgstr ""
+
+#: MPL_1_1
+msgid "Mozilla Public License (MPL), version 1.1 (MPL-1.1)"
+msgstr ""
+
+#: MPL_2_0
+msgid "Mozilla Public License (MPL), version 2.0 (MPL-2.0)"
+msgstr ""
+
+#: MULTICS
+msgid "Multics License (Multics)"
+msgstr ""
+
+#: NASA_1_3
+msgid "NASA Open Source Agreement v1.3 (NASA-1.3)"
+msgstr ""
+
+#: NAUMEN
+msgid "NAUMEN Public License (Naumen)"
+msgstr ""
+
+#: NGPL
+msgid "The Nethack General Public License (NGPL)"
+msgstr ""
+
+#: NOKIA
+msgid "Nokia Open Source License Version 1.0a (NOKIA)"
+msgstr ""
+
+#: NPOSL_3_0
+msgid "The Non-Profit Open Software License version 3.0 (NPOSL-3.0)"
+msgstr ""
+
+#: NTP
+msgid "NTP License (NTP)"
+msgstr ""
+
+#: OCLC_2_0
+msgid "The OCLC Research Public License 2.0 License (OCLC-2.0)"
+msgstr ""
+
+#: OGTSL
+msgid "The Open Group Test Suite License (OGTSL)"
+msgstr ""
+
+#: OSL_1_0
+msgid "Open Software License, version 1.0 (OSL-1.0)"
+msgstr ""
+
+#: OSL_2_1
+msgid "The Open Software License, version 2.1 (OSL-2.1)"
+msgstr ""
+
+#: OSL_3_0
+msgid "Open Software License, version 3.0 (OSL-3.0)"
+msgstr ""
+
+#: OPL_2_1
+msgid "OSET Public License version 2.1"
+msgstr ""
+
+#: PHP_3_0
+msgid "The PHP License 3.0 (PHP-3.0)"
+msgstr ""
+
+#: POSTGRE_SQL
+msgid "The PostgreSQL Licence (PostgreSQL)"
+msgstr ""
+
+#: PYTHON_2_0
+msgid "Python License (Python-2.0)"
+msgstr ""
+
+#: CNRI_PYTHON
+msgid "The CNRI portion of the multi-part Python License (CNRI-Python)"
+msgstr ""
+
+#: QPL_1_0
+msgid "The Q Public License Version (QPL-1.0)"
+msgstr ""
+
+#: RPSL_1_0
+msgid "RealNetworks Public Source License Version 1.0 (RPSL-1.0)"
+msgstr ""
+
+#: RPL_1_1
+msgid "Reciprocal Public License, version 1.1"
+msgstr ""
+
+#: RPL_1_5
+msgid "Reciprocal Public License 1.5 (RPL-1.5)"
+msgstr ""
+
+#: RSCPL
+msgid "The Ricoh Source Code Public License (RSCPL)"
+msgstr ""
+
+#: OFL_1_1
+msgid "SIL Open Font License (OFL-1.1)"
+msgstr ""
+
+#: SIMPL_2_0
+msgid "Simple Public License (SimPL-2.0)"
+msgstr ""
+
+#: SLEEPYCAT
+msgid "The Sleepycat License (Sleepycat)"
+msgstr ""
+
+#: SPL_1_0
+msgid "Sun Public License Version 1.0 (SPL-1.0)"
+msgstr ""
+
+#: WATCOM_1_0
+msgid "The Sybase Open Source Licence (Watcom-1.0)"
+msgstr ""
+
+#: UPL_1_0
+msgid "The Universal Permissive License (UPL), Version 1.0"
+msgstr ""
+
+#: NCSA
+msgid "The University of Illinois/NCSA Open Source License (NCSA)"
+msgstr ""
+
+#: UCL_1_0
+msgid "Upstream Compatibility License v1.0"
+msgstr ""
+
+#: VSL_1_0
+msgid "The Vovida Software License v. 1.0 (VSL-1.0)"
+msgstr ""
+
+#: W3C
+msgid "The W3C Software Notice and License (W3C)"
+msgstr ""
+
+#: WXWINDOWS
+msgid "The wxWindows Library Licence (wxWindows)"
+msgstr ""
+
+#: XNET
+msgid "The X.Net, Inc. License (Xnet)"
+msgstr ""
+
+#: 0BSD
+msgid "Zero-Clause BSD / Free Public License 1.0.0 (0BSD)"
+msgstr ""
+
+#: ZPL_2_0
+msgid "The Zope Public License Version 2.0 (ZPL-2.0)"
+msgstr ""
+
+#: ZLIB
+msgid "The zlib/libpng License (Zlib)"
+msgstr ""
+
+#: NLOD_2_0
+msgid "Norwegian Licence for Open Government Data (NLOD) 2.0"
+msgstr ""
+
+#: GNU_FDL_1_3
+msgid "GNU Free Documentation License 1.3"
+msgstr ""
+
+#: CLARIN_ACA_1_0
+msgid "Clarin Academic End-User Licence (ACA) 1.0"
+msgstr ""
+
+#: ISA_OML_1_1
+msgid "ISA Open Metadata Licence 1.1"
+msgstr ""
+
+#: ETALAB_2_0
+msgid "Etalab Open Licence V 2.0"
+msgstr ""
+
+#: EUROGEO_2022
+msgid "EuroGeographics Open Data Licence v.2022"
+msgstr ""
+
+#: Manually added
+msgid "UNKNOWN"
+msgstr ""
+
+#: Manually added
+msgid "TRIENNIAL"
+msgstr ""
+
+#: Manually added
+msgid "BIENNIAL"
+msgstr ""
+
+#: Manually added
+msgid "ANNUAL"
+msgstr ""
+
+#: Manually added
+msgid "ANNUAL_2"
+msgstr ""
+
+#: Manually added
+msgid "ANNUAL_3"
+msgstr ""
+
+#: Manually added
+msgid "QUARTERLY"
+msgstr ""
+
+#: Manually added
+msgid "BIMONTHLY"
+msgstr ""
+
+#: Manually added
+msgid "MONTHLY"
+msgstr ""
+
+#: Manually added
+msgid "MONTHLY_2"
+msgstr ""
+
+#: Manually added
+msgid "BIWEEKLY"
+msgstr ""
+
+#: Manually added
+msgid "MONTHLY_3"
+msgstr ""
+
+#: Manually added
+msgid "WEEKLY"
+msgstr ""
+
+#: Manually added
+msgid "WEEKLY_2"
+msgstr ""
+
+#: Manually added
+msgid "WEEKLY_3"
+msgstr ""
+
+#: Manually added
+msgid "DAILY"
+msgstr ""
+
+#: Manually added
+msgid "UPDATE_CONT"
+msgstr ""
+
+#: Manually added
+msgid "IRREG"
+msgstr ""
+
+#: Manually added
+msgid "OTHER"
+msgstr ""
+
+#: Manually added
+msgid "DAILY_2"
+msgstr ""
+
+#: Manually added
+msgid "CONTINOUOUS"
+msgstr ""
+
+#: Manually added
+msgid "NEVER"
+msgstr ""
+
+#: Manually added
+msgid "QUADRENNIAL"
+msgstr ""
+
+#: Manually added
+msgid "QUINQUENNIAL"
+msgstr ""
+
+#: Manually added
+msgid "HOURLY"
+msgstr ""
+
+#: Manually added
+msgid "DECENNIAL"
+msgstr ""
+
+#: Manually added
+msgid "BIHOURLY"
+msgstr ""
+
+#: Manually added
+msgid "TRIHOURLY"
+msgstr ""
+
+#: Manually added
+msgid "BIDECENNIAL"
+msgstr ""
+
+#: Manually added
+msgid "TRIDECENNIAL"
+msgstr ""
+
+#: Manually added
+msgid "ECON"
+msgstr ""
+
+#: Manually added
+msgid "GOVE"
+msgstr ""
+
+#: Manually added
+msgid "AGRI"
+msgstr ""
+
+#: Manually added
+msgid "ENVI"
+msgstr ""
+
+#: Manually added
+msgid "ENER"
+msgstr ""
+
+#: Manually added
+msgid "EDUC"
+msgstr ""
+
+#: Manually added
+msgid "JUST"
+msgstr ""
+
+#: Manually added
+msgid "REGI"
+msgstr ""
+
+#: Manually added
+msgid "INTR"
+msgstr ""
+
+#: Manually added
+msgid "SOCI"
+msgstr ""
+
+#: Manually added
+msgid "OP_DATPRO"
+msgstr ""
+
+#: Manually added
+msgid "TECH"
+msgstr ""
+
+#: Manually added
+msgid "HEAL"
+msgstr ""
+
+#: Manually added
+msgid "TRAN"
+msgstr ""
+
+#: Manually added
+msgid "Username or Email"
+msgstr ""
+
+#: Manually added
+msgid "No activity found for this type"
+msgstr ""
+
+#: Manually added
+msgid "Edit settings"
+msgstr ""
+
+#: Manually added
+msgid "API Tokens"
 msgstr ""

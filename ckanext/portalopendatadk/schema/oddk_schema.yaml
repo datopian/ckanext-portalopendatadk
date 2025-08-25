@@ -218,7 +218,8 @@ dataset_fields:
 - field_name: documentation
   label: Documentation
   upload_label: Documentation
-  preset: documentation_upload
+  #preset: documentation_upload
+  preset: resource_url_upload
 
 - field_name: data_directory
   label: Data directory
@@ -228,7 +229,7 @@ dataset_fields:
       label: Metadata transferred to datavejviseren
   validators: boolean_validator
   output_validators: boolean_validator
-     
+
 resource_fields:
 
 - field_name: url

@@ -382,37 +382,9 @@ msgstr "Tilgængeligstype"
 msgid "European Commission reuse notice"
 msgstr ""
 
-#: ISA_OML
-msgid "ISA Open Metadata Licence 1.1"
-msgstr ""
-
 #: CC0
 msgid "Creative Commons CC0 1.0 Universal"
 msgstr "Creative Commons CC0 1.0 Universel"
-
-#: CC_BY
-msgid "Creative Commons Attribution 4.0 International"
-msgstr "Creative Commons Navngivelse 4.0 International"
-
-#: CC_BYSA
-msgid "Creative Commons Attribution–ShareAlike 4.0 International"
-msgstr "Creative Commons Navngivelse–DelPåSammeVilkår 4.0 International"
-
-#: CC_BYND
-msgid "Creative Commons Attribution–NoDerivatives 4.0 International"
-msgstr "Creative Commons Navngivelse–IngenBearbejdelse 4.0 International"
-
-#: CC_BYNC
-msgid "Creative Commons Attribution–NonCommercial 4.0 International"
-msgstr "Creative Commons Navngivelse–IkkeKommerciel 4.0 International"
-
-#: CC_BYNCSA
-msgid "Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International"
-msgstr "Creative Commons Navngivelse–IkkeKommerciel–DelPåSammeVilkår 4.0 International"
-
-#: CC_BYNCND
-msgid "Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International"
-msgstr "Creative Commons Navngivelse–IkkeKommerciel–IngenBearbejdelse 4.0 International"
 
 #: CC_BY_3_0
 msgid "Creative Commons Attribution 3.0 Unported"
@@ -1189,3 +1161,23 @@ msgstr "Health"
 #: Manually added
 msgid "TRAN"
 msgstr "Transport"
+
+#: Manually added
+msgid "Username or Email"
+msgstr "Brugernavn eller e-mail"
+
+#: Manually added
+msgid "No activity found for this type"
+msgstr "Ingen aktivitet fundet for denne type"
+
+#: Manually added
+msgid "Edit settings"
+msgstr "Redigér indstillinger"
+
+#: Manually added
+msgid "API Tokens"
+msgstr "API nøgler"
+
+#: Manually
+msgid "E.g. environment"
+msgstr "f.eks. parkering"

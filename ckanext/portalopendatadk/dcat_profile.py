@@ -19,7 +19,6 @@ from ckan.lib.munge import munge_tag
 
 from ckanext.dcat.utils import (
     resource_uri,
-    publisher_uri_from_dataset_dict,
     DCAT_EXPOSE_SUBCATALOGS,
     DCAT_CLEAN_TAGS,
 )
@@ -221,7 +220,7 @@ class DanishDCATAPProfile(RDFProfile):
 
         # Dataset URI (explicitly show the missing ones)
         dataset_uri = (
-            unicode(dataset_ref) if isinstance(dataset_ref, rdflib.term.URIRef) else ""
+            str(dataset_ref) if isinstance(dataset_ref, rdflib.term.URIRef) else ""
         )
         dataset_dict["extras"].append({"key": "uri", "value": dataset_uri})
 
@@ -300,7 +299,7 @@ class DanishDCATAPProfile(RDFProfile):
 
             # Distribution URI (explicitly show the missing ones)
             resource_dict["uri"] = (
-                unicode(distribution)
+                str(distribution)
                 if isinstance(distribution, rdflib.term.URIRef)
                 else ""
             )
@@ -327,7 +326,7 @@ class DanishDCATAPProfile(RDFProfile):
     def graph_from_dataset(self, dataset_dict, dataset_ref):
         g = self.g
 
-        for prefix, namespace in namespaces.iteritems():
+        for prefix, namespace in namespaces.items():
             g.bind(prefix, namespace)
 
         g.add((dataset_ref, RDF.type, DCAT.Dataset))
@@ -353,14 +352,14 @@ class DanishDCATAPProfile(RDFProfile):
 
         # Only add 'da' as language for now
         if translated_titles:
-            for lang, title in translated_titles.iteritems():
+            for lang, title in translated_titles.items():
                 if lang == "da":
                     title = title.strip()
                     if title:
                         g.add((dataset_ref, DCT.title, Literal(title, lang=lang)))
 
         if translated_descriptions:
-            for lang, description in translated_descriptions.iteritems():
+            for lang, description in translated_descriptions.items():
                 if lang == "da":
                     description = description.strip()
                     if description:
@@ -461,7 +460,12 @@ class DanishDCATAPProfile(RDFProfile):
         dataset_themes = dataset_dict.get("data_themes", [])
 
         if len(dataset_themes) > 0 and isinstance(dataset_themes, list):
-            themes = dataset_themes[0].strip("{}").split(",")
+            if len(dataset_themes) == 1 and dataset_themes[0].startswith("{"):
+                # Some of the older metadata contains a string wrapped in curly braces.
+                # This _should_ be fixed already, but just in case, we check here and fix if needed.
+                themes = dataset_themes[0].strip("{}").split(",")
+            else:
+                themes = dataset_themes
         else:
             themes = []
 
@@ -505,7 +509,7 @@ class DanishDCATAPProfile(RDFProfile):
         #        g.add((dataset_ref, DCAT.theme, theme_uri))
 
         # Conforms to
-        #g.add((dataset_ref, DCT.conformsTo, URIRef(CONFORMS_TO)))
+        # g.add((dataset_ref, DCT.conformsTo, URIRef(CONFORMS_TO)))
 
         # Language
         # titles_translated = dataset_dict.get('title_translated')
@@ -581,14 +585,17 @@ class DanishDCATAPProfile(RDFProfile):
             [
                 self._get_dataset_value(dataset_dict, "publisher_uri"),
                 self._get_dataset_value(dataset_dict, "publisher_name"),
-                (dataset_dict.get("organization") and dataset_dict["organization"].get("name")),
+                (
+                    dataset_dict.get("organization")
+                    and dataset_dict["organization"].get("name")
+                ),
             ]
         ):
             publisher = dataset_dict.get("organization", {})
             publisher_slug = publisher.get("name") if publisher else None
 
             if not publisher_slug:
-                publisher_uri = publisher_uri_from_dataset_dict(dataset_dict)
+                publisher_uri = dataset_dict.get("organization", {}).get("url")
             else:
                 publisher_uri = "{frontend_site_url}/{organization_name}".format(
                     frontend_site_url=frontend_site_url,
@@ -700,13 +707,13 @@ class DanishDCATAPProfile(RDFProfile):
             dcat_formats = oddk_helpers.formats_from_file()
 
             if fmt and fmt in dcat_formats:
-                #distribution = CleanedURIRef(
+                # distribution = CleanedURIRef(
                 #    "{}/dataset/{}/resource/{}".format(
                 #        config.get("ckan.site_url"),
                 #        dataset_dict.get("name"),
                 #        resource_dict.get("id"),
                 #    )
-                #)
+                # )
                 distribution = URIRef(resource_dict.get("url"))
 
                 g.add((dataset_ref, DCAT.distribution, distribution))
@@ -742,7 +749,7 @@ class DanishDCATAPProfile(RDFProfile):
                     "CC-BY-NC-4.0": "CC_BYNC_4_0",
                 }
                 skos_licenses.update(
-                    {v: v for v in LICENSES.keys() if v not in skos_licenses}
+                    {v: v for v in list(LICENSES.keys()) if v not in skos_licenses}
                 )
 
                 if license_id and license_id in skos_licenses:
@@ -828,7 +835,7 @@ class DanishDCATAPProfile(RDFProfile):
                 self._add_list_triples_from_dict(resource_dict, distribution, items)
 
                 # Conforms to
-                #g.add((distribution, DCT.conformsTo, URIRef(CONFORMS_TO)))
+                # g.add((distribution, DCT.conformsTo, URIRef(CONFORMS_TO)))
 
                 if fmt:
                     fmt_uri = URIRef(FORMAT_BASE_URI + fmt)
@@ -907,7 +914,7 @@ class DanishDCATAPProfile(RDFProfile):
             "ckanext.portalopendatadk.frontend_site_url", config.get("ckan.site_url")
         )
 
-        for prefix, namespace in namespaces.iteritems():
+        for prefix, namespace in namespaces.items():
             g.bind(prefix, namespace)
 
         g.add((catalog_ref, RDF.type, DCAT.Catalog))

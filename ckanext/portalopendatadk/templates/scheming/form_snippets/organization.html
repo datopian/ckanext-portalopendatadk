@@ -10,6 +10,8 @@
   {% endblock %}
 {% endmacro %}
 
+<div class="dcat-row">
+  <div class="dcat-container">
   <div data-module="dataset-visibility">
   {% snippet "scheming/form_snippets/_organization_select.html",
     field=field,
@@ -20,16 +22,23 @@
     organization_option_tag=organization_option_tag %}
 
   {% block package_metadata_fields_visibility %}
-    <div class="control-group form-group control-medium">
-      <label for="field-private" class="control-label">{{ _('Visibility') }}</label>
+    <div class="form-group control-medium">
+      <label for="field-private" class="form-label">{{ _('Visibility') }}</label>
       <div class="controls">
-        <select id="field-private" name="private" class="form-control">
-          {% for option in [('True', _('Private')), ('False', _('Public'))] %}
-          <option value="{{ option[0] }}" {% if option[0] == data.private|trim %}selected="selected"{% endif %}>{{ option[1] }}</option>
-          {% endfor %}
-        </select>
+        <div class="dcat-row">
+          <div class="dcat-container">
+            <select id="field-private" name="private" class="form-control">
+              {% for option in [('True', _('Private')), ('False', _('Public'))] %}
+              <option value="{{ option[0] }}" {% if option[0] == data.private|trim %}selected="selected"{% endif %}>{{ option[1] }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
       </div>
     </div>
   {% endblock %}
 
   </div>
+  </div>
+  {% snippet 'scheming/form_snippets/dcat_text.html', is_required=True, field_name='owner_org' %}
+</div>

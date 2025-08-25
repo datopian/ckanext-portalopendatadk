@@ -15,17 +15,19 @@
     classes=field.classes if 'classes' in field else ['form-format', 'control-medium'],
     extra_html=caller() if caller,
 ) %}
-<div {{ form.attributes(field.form_attrs) if 'form_attrs' in field else '' }}>
-    <select id="field-format" name="format" {{ form.attributes( field.get('form_select_attrs',
-        {'data-module':'autocomplete'})) }}>
-        <option value="" {% if not selected_resource_format %} selected="selected" {% endif %}>
-            {{ _("Select file format") }}
-        </option>
-        {% for resource_format in resource_formats_available %}
-            {% set selected_resource_format = existing_resource_format == resource_format.name %}
-            {{ resource_format_option_tag(resource_format, selected_resource_format) }}
-        {% endfor %}
-    </select>
+<div {{ form.attributes(field.form_attrs) if 'form_attrs' in field else '' }} class="dcat-row">
+    <div class="dcat-container">
+      <select id="field-format" name="format" {{ form.attributes( field.get('form_select_attrs',
+          {'data-module':'autocomplete'})) }}>
+          <option value="" {% if not selected_resource_format %} selected="selected" {% endif %}>
+              {{ _("Select file format") }}
+          </option>
+          {% for resource_format in resource_formats_available %}
+              {% set selected_resource_format = existing_resource_format == resource_format.name %}
+              {{ resource_format_option_tag(resource_format, selected_resource_format) }}
+          {% endfor %}
+      </select>
+    </div>
     {% set field_name = field.field_name %}
     {% snippet 'scheming/form_snippets/dcat_text.html', is_required=True, field_name=field.field_name %}
 </div>
