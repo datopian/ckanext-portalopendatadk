@@ -16,11 +16,13 @@ from ckanext.portalopendatadk.views.dcat import dcat, dcat_json_interface
 from ckanext.portalopendatadk.views.documentation import doc_blueprint as documentation
 from ckanext.portalopendatadk.views.dataset import dataset
 import logging
+import json
 
 from ckanext.portalopendatadk import actions as oddk_actions
 from ckanext.portalopendatadk import auth_functions as auth
 import ckanext.portalopendatadk.helpers as oddk_helpers
 from ckanext.portalopendatadk import validators as oddk_validators
+from ckan import model
 
 _ = toolkit._
 
@@ -154,7 +156,7 @@ class PortalOpenDataDKPlugin(
 
         return pkg_dict
 
-    def before_dataset_show(self, pkg_dict):
+    def before_dataset_view(self, pkg_dict):
         data_themes = pkg_dict.get("data_themes")
         data_themes = oddk_helpers.fix_data_themes(data_themes)
 
@@ -180,6 +182,7 @@ class PortalOpenDataDKPlugin(
     def get_validators(self):
         return {
             "resource_format_validator": oddk_validators.resource_format_validator,
+            "not_empty_except_bg_jobs": oddk_validators.not_empty_except_bg_jobs,
         }
 
 

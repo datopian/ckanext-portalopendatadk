@@ -19,8 +19,7 @@ log = logging.getLogger(__name__)
 
 dcat = Blueprint(
     "dcat_oddk",
-    __name__,
-     url_prefix="/dcat"
+    __name__
 )
 
 
