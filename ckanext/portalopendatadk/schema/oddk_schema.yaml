@@ -90,7 +90,7 @@ dataset_fields:
   label: Author
   form_placeholder: Joe Bloggs
   display_property: dc:creator
-  validators: not_empty
+  validators: not_empty_except_bg_jobs
   dcat_field: True
 
 - field_name: author_email
@@ -99,7 +99,7 @@ dataset_fields:
   display_property: dc:creator
   display_snippet: email.html
   display_email_name_field: author
-  validators: not_empty email_validator
+  validators: not_empty_except_bg_jobs email_validator
   dcat_field: True
 
 - field_name: update_frequency

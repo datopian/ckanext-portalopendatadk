@@ -1,6 +1,12 @@
 from ckan.plugins.toolkit import Invalid, _
+from ckan.lib.navl.validators import not_empty, ignore_missing
 
 import ckanext.portalopendatadk.helpers as oddk_helpers
+
+import logging
+
+
+log = logging.getLogger(__name__)
 
 
 def resource_format_validator(value):
@@ -28,3 +34,15 @@ def language_code_validator(value):
     if value not in allowed_languages:
         raise Invalid(_("Invalid language code: {}").format(value))
     return value
+
+
+def not_empty_except_bg_jobs(key, data,
+                   errors, context):
+    """
+    Validates that a value is not empty, except when the request
+    is from a background job (e.g. harvester).
+    """
+    if not context.get('ignore_auth', False):
+        return not_empty(key, data, errors, context)
+    else:
+        return ignore_missing(key, data, errors, context)

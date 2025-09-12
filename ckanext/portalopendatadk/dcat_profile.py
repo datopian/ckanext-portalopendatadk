@@ -109,6 +109,59 @@ class DanishDCATAPProfile(RDFProfile):
     An RDF profile for the Danish DCAT-AP profile.
     """
 
+    def _publisher(self, subject, predicate):
+        """
+        Returns a dict with details about a dct:publisher entity, a foaf:Agent
+
+        Both subject and predicate must be rdflib URIRef or BNode objects
+
+        Examples:
+
+        <dct:publisher>
+            <foaf:Organization rdf:about="http://orgs.vocab.org/some-org">
+                <foaf:name>Publishing Organization for dataset 1</foaf:name>
+                <foaf:mbox>contact@some.org</foaf:mbox>
+                <foaf:homepage>http://some.org</foaf:homepage>
+                <dct:type rdf:resource="http://purl.org/adms/publishertype/NonProfitOrganisation"/>
+            </foaf:Organization>
+        </dct:publisher>
+
+        {
+            'uri': 'http://orgs.vocab.org/some-org',
+            'name': 'Publishing Organization for dataset 1',
+            'email': 'contact@some.org',
+            'url': 'http://some.org',
+            'type': 'http://purl.org/adms/publishertype/NonProfitOrganisation',
+        }
+
+        <dct:publisher rdf:resource="http://publications.europa.eu/resource/authority/corporate-body/EURCOU" />
+
+        {
+            'uri': 'http://publications.europa.eu/resource/authority/corporate-body/EURCOU'
+        }
+
+        Returns keys for uri, name, email, url and type with the values set to
+        an empty string if they could not be found
+        """
+
+        publisher = {}
+
+        for agent in self.g.objects(subject, predicate):
+
+            publisher["uri"] = (
+                str(agent) if isinstance(agent, rdflib.term.URIRef) else ""
+            )
+
+            publisher["name"] = self._object_value(agent, FOAF.name)
+
+            publisher["email"] = self._object_value(agent, FOAF.mbox)
+
+            publisher["url"] = self._object_value(agent, FOAF.homepage)
+
+            publisher["type"] = self._object_value(agent, DCT.type)
+
+        return publisher
+
     def parse_dataset(self, dataset_dict, dataset_ref):
         dataset_dict["extras"] = []
         dataset_dict["resources"] = []
@@ -179,9 +232,22 @@ class DanishDCATAPProfile(RDFProfile):
 
         # Contact details
         contact = self._contact_details(dataset_ref, DCAT.contactPoint)
+
         if not contact:
             # adms:contactPoint was supported on the first version of DCAT-AP
             contact = self._contact_details(dataset_ref, ADMS.contactPoint)
+
+        if type(contact) is list:
+            if len(contact) == 1:
+                contact = contact[0]
+            elif len(contact) > 1:
+                log.warning(
+                    "Multiple contact points found for dataset %s", dataset_ref
+                )
+                contact = self._contact_details(dataset_ref, DCAT.contactPoint)
+            elif len(contact) == 0:
+                log.warning("No contact points found for dataset %s", dataset_ref)
+                contact = self._contact_details(dataset_ref, ADMS.contactPoint)
 
         if contact:
             for key in ("uri", "name", "email"):
@@ -884,17 +950,36 @@ class DanishDCATAPProfile(RDFProfile):
                                 Literal(resource_dict["size"]),
                             )
                         )
-                # Checksum
+
+                # Checksum (with additional validation and fixes to handle malformed checksums)
                 if resource_dict.get("hash"):
+                    val = resource_dict.get("hash")
+
+                    try:
+                        parsed = json.loads(val)
+                        if isinstance(parsed, dict) and "content" in parsed:
+                            val = parsed["content"]
+                    except ValueError:
+                        pass
+
                     checksum = BNode()
                     g.add((checksum, RDF.type, SPDX.Checksum))
-                    g.add(
-                        (
-                            checksum,
-                            SPDX.checksumValue,
-                            Literal(resource_dict["hash"], datatype=XSD.hexBinary),
+
+                    import re
+
+                    if (
+                        isinstance(val, str)
+                        and re.fullmatch(r"[0-9A-Fa-f]+", val)
+                        and len(val) % 2 == 0
+                    ):
+                        literal = Literal(val, datatype=XSD.hexBinary)
+                    else:
+                        log.warning(
+                            f"Invalid checksumValue '{val}' – storing as plain string"
                         )
-                    )
+                        literal = Literal(val)
+
+                    g.add((checksum, SPDX.checksumValue, literal))
 
                     if resource_dict.get("hash_algorithm"):
                         g.add(
