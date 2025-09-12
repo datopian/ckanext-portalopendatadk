@@ -950,17 +950,36 @@ class DanishDCATAPProfile(RDFProfile):
                                 Literal(resource_dict["size"]),
                             )
                         )
-                # Checksum
+
+                # Checksum (with additional validation and fixes to handle malformed checksums)
                 if resource_dict.get("hash"):
+                    val = resource_dict.get("hash")
+
+                    try:
+                        parsed = json.loads(val)
+                        if isinstance(parsed, dict) and "content" in parsed:
+                            val = parsed["content"]
+                    except ValueError:
+                        pass
+
                     checksum = BNode()
                     g.add((checksum, RDF.type, SPDX.Checksum))
-                    g.add(
-                        (
-                            checksum,
-                            SPDX.checksumValue,
-                            Literal(resource_dict["hash"], datatype=XSD.hexBinary),
+
+                    import re
+
+                    if (
+                        isinstance(val, str)
+                        and re.fullmatch(r"[0-9A-Fa-f]+", val)
+                        and len(val) % 2 == 0
+                    ):
+                        literal = Literal(val, datatype=XSD.hexBinary)
+                    else:
+                        log.warning(
+                            f"Invalid checksumValue '{val}' – storing as plain string"
                         )
-                    )
+                        literal = Literal(val)
+
+                    g.add((checksum, SPDX.checksumValue, literal))
 
                     if resource_dict.get("hash_algorithm"):
                         g.add(
