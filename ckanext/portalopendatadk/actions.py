@@ -112,6 +112,72 @@ def translate_fields(context, data_dict):
     return data_dict
 
 
+def normalize_extras(data_dict):
+    """
+    Normalize extras into schema fields with priority rules:
+      - 'author' always overrides 'contact_name'
+      - 'author_email' always overrides 'contact_email'
+      - 'data_themes' promoted and normalized as a list
+      - All handled keys removed from extras
+    """
+
+    author_val = None
+    contact_val = None
+    author_email_val = None
+    contact_email_val = None
+    data_themes_val = None
+
+    cleaned_extras = []
+
+    for extra in data_dict.get("extras", []):
+        key, val = extra.get("key"), extra.get("value")
+
+        if key == "author":
+            author_val = val
+        elif key == "contact_name":
+            contact_val = val
+        elif key == "author_email":
+            author_email_val = val
+        elif key == "contact_email":
+            contact_email_val = val
+        elif key == "data_themes":
+            data_themes_val = val
+        else:
+            cleaned_extras.append(extra)
+
+    # apply precedence: author > contact_name
+    if author_val is not None:
+        data_dict["author"] = author_val
+    elif contact_val is not None:
+        data_dict["author"] = contact_val
+
+    # apply precedence: author_email > contact_email
+    if author_email_val is not None:
+        data_dict["author_email"] = author_email_val
+    elif contact_email_val is not None:
+        data_dict["author_email"] = contact_email_val
+
+    # normalize data_themes
+    if data_themes_val is not None:
+        if isinstance(data_themes_val, str):
+            try:
+                parsed = json.loads(data_themes_val)
+                if isinstance(parsed, list):
+                    data_dict["data_themes"] = parsed
+                else:
+                    data_dict["data_themes"] = [str(parsed)]
+            except Exception:
+                log.error("Failed to decode data_themes: %r", data_themes_val)
+                data_dict["data_themes"] = [data_themes_val]
+        elif isinstance(data_themes_val, list):
+            data_dict["data_themes"] = data_themes_val
+        else:
+            data_dict["data_themes"] = [str(data_themes_val)]
+
+    data_dict["extras"] = cleaned_extras
+    return data_dict
+
+
 # Overrides the default package_create action to add auto-translation of metadata,
 # add documentation upload, and to handle DCAT dataset fields.
 def package_create(context: Context, data_dict: DataDict) -> ActionResult.PackageCreate:
@@ -217,6 +283,19 @@ def package_create(context: Context, data_dict: DataDict) -> ActionResult.Packag
     model = context["model"]
     user = context["user"]
 
+
+    resources = data_dict.get("resources", [])
+    updated_resources = []
+
+    for resource in resources:
+        resource_format = resource.get("format", "").upper()
+
+        if resource_format == "OGC WFS":
+            resource["format"] = "WFS_SRVC"
+        updated_resources.append(resource)
+
+    data_dict["resources"] = updated_resources
+
     if "type" not in data_dict:
         package_plugin = lib_plugins.lookup_package_plugin()
         try:
@@ -232,12 +311,7 @@ def package_create(context: Context, data_dict: DataDict) -> ActionResult.Packag
 
     schema: Schema = context.get("schema") or package_plugin.create_package_schema()
 
-    for extra in data_dict.get("extras", []):
-        if extra.get("key") == "contact_name" and not data_dict.get("author"):
-            data_dict["author"] = extra["value"]
-        if extra.get("key") == "contact_email" and not data_dict.get("author_email"):
-            data_dict["author_email"] = extra["value"]
-
+    data_dict = normalize_extras(data_dict)
     data_dict = translate_fields(context, data_dict)
 
     _check_access("package_create", context, data_dict)
@@ -377,13 +451,8 @@ def package_update(context: Context, data_dict: DataDict) -> ActionResult.Packag
     data_dict["id"] = pkg.id
     data_dict["type"] = pkg.type
 
-    for extra in data_dict.get("extras", []):
-        if extra.get("key") == "contact_name" and not data_dict.get("author"):
-            data_dict["author"] = extra["value"]
-        if extra.get("key") == "contact_email" and not data_dict.get("author_email"):
-            data_dict["author_email"] = extra["value"]
-
     data_dict = translate_fields(context, data_dict)
+    data_dict = normalize_extras(data_dict)
 
     _check_access("package_update", context, data_dict)
 
