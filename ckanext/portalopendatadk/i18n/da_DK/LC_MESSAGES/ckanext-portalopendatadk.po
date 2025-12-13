@@ -1181,3 +1181,48 @@ msgstr "API nøgler"
 #: Manually
 msgid "E.g. environment"
 msgstr "f.eks. parkering"
+
+#: Manually added
+msgid "WEEKLY_5"
+msgstr "Fem Gange Ugentligt"
+
+#: Manually added
+msgid "SEXENNIAL"
+msgstr "Hvert Sjette År"
+
+#: Manually added
+msgid "15MIN"
+msgstr "Hvert Kvarter"
+
+#: Manually added
+msgid "30MIN"
+msgstr "Hver Halve Time"
+
+#: Manually added
+msgid "10MIN"
+msgstr "Hvert Tiende Minut"
+
+#: Manually added
+msgid "1MIN"
+msgstr "Hvert Minut"
+
+#: Manually added
+msgid "NOT_PLANNED"
+msgstr "Ikke Planlagt"
+
+#: Manually added
+msgid "12HRS"
+msgstr "Hver Tolvte Time"
+
+#: Manually added
+msgid "5MIN"
+msgstr "Hvert Femte Minut"
+
+#: Manually added
+msgid "CONT"
+msgstr "Kontinuerlig"
+
+#: Manually added
+msgid "AS_NEEDED"
+msgstr "Efter Behov "
+
