@@ -210,3 +210,48 @@ msgstr ""
 #: Manually added
 msgid "API Tokens"
 msgstr ""
+
+#: Manually added
+msgid "WEEKLY_5"
+msgstr "Five Times A Week"
+
+#: Manually added
+msgid "SEXENNIAL"
+msgstr "Sexennial"
+
+#: Manually added
+msgid "15MIN"
+msgstr "Every Fifteen Minutes"
+
+#: Manually added
+msgid "30MIN"
+msgstr "Every Thirty Minutes"
+
+#: Manually added
+msgid "10MIN"
+msgstr "Every Ten Minutes"
+
+#: Manually added
+msgid "1MIN"
+msgstr "Every Minute"
+
+#: Manually added
+msgid "NOT_PLANNED"
+msgstr "Not Planned"
+
+#: Manually added
+msgid "12HRS"
+msgstr "Every Twelve Hours"
+
+#: Manually added
+msgid "5MIN"
+msgstr "Every Five Minutes"
+
+#: Manually added
+msgid "CONT"
+msgstr "Continuous"
+
+#: Manually added
+msgid "AS_NEEDED"
+msgstr "As Needed"
+
